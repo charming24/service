@@ -1,0 +1,169 @@
+.toggle-star {
+    background: transparent url("//cdnil20.fiverrcdn.com/assets/v2_globals/icn-master-stars-2de5053d3964fce4bb25423023d89259.png") no-repeat 0 0;
+    width: 21px;
+    height: 19px;
+    float: left;
+    text-indent: -3000px;
+    font-size: 0;
+    cursor: pointer
+}
+
+.toggle-star:hover, .toggle-star.starred {
+    background-position: -200px 0
+}
+
+.order-notes-wrapper {
+    position: relative;
+    padding: 10px 15px 10px 20px;
+    margin: 0 0 -2px 0
+}
+
+.order-notes-wrapper .note-dialog {
+    background: #fff;
+    position: absolute;
+    z-index: 23;
+    top: 36px;
+    left: 50%;
+    width: 420px;
+    min-height: 100px;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 8px 0 #c2c2c2;
+    border-radius: 3px;
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    transform: translate(-50%)
+}
+
+.order-notes-wrapper .note-dialog:before, .order-notes-wrapper .note-dialog:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    transform: translate(-50%)
+}
+
+.order-notes-wrapper .note-dialog:before {
+    z-index: 21;
+    top: -10px;
+    border-left: 8px transparent solid;
+    border-right: 8px transparent solid;
+    border-bottom: 10px #fff solid
+}
+
+.order-notes-wrapper .note-dialog:after {
+    z-index: 20;
+    top: -11px;
+    border-left: 9px transparent solid;
+    border-right: 9px transparent solid;
+    border-bottom: 11px #ddd solid
+}
+
+.order-notes-wrapper .note-dialog textarea {
+    width: 100%;
+    border-color: #ddd;
+    padding: 13px 20px
+}
+
+.order-notes-wrapper .note-dialog .counter {
+    color: #777
+}
+
+.order-notes-wrapper .note-dialog .btn-standard {
+    display: inline-block;
+    float: right;
+    text-transform: none;
+    font-size: 14px;
+    padding: 10px 20px
+}
+
+.order-notes-wrapper .note-dialog .date {
+    color: #999;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+    padding-bottom: 5px
+}
+
+.order-notes-wrapper .note-dialog i {
+    font-size: 14px;
+    color: #999;
+    margin-left: 10px;
+    cursor: pointer;
+    font-style: normal
+}
+
+.order-notes-wrapper .note-dialog i:hover {
+    color: #777
+}
+
+.order-notes-wrapper .note-dialog p {
+    font-size: 14px;
+    font-weight: 400;
+    max-height: 300px;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    overflow: auto;
+    white-space: normal;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-word;
+    word-break: break-word
+}
+
+.order-notes-wrapper .note-dialog .sandbox {
+    position: absolute;
+    z-index: 1;
+    left: 20px;
+    right: 25px;
+    padding: 13px 20px;
+    font-size: 14px;
+    visibility: hidden;
+    white-space: normal;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-word;
+    word-break: break-word
+}
+
+.note-label {
+    font-weight: 500;
+    color: #999;
+    text-transform: uppercase;
+    cursor: pointer
+}
+
+.note-label:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -8px;
+    left: 50%;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%)
+}
+
+.note-label.add:before {
+    background: transparent url("//cdnil20.fiverrcdn.com/assets/v2_globals/sprite-order-notes-888470ad9292dfe70b2d8e0a62144c35.svg") no-repeat 0 0;
+    background-size: 120px 60px
+}
+
+.note-label.add:hover:before {
+    background-position: 0px -30px
+}
+
+.note-label.show:before {
+    background: transparent url("//cdnil20.fiverrcdn.com/assets/v2_globals/sprite-order-notes-888470ad9292dfe70b2d8e0a62144c35.svg") no-repeat -30px 0px;
+    background-size: 120px 60px
+}

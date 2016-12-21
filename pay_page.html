@@ -1,0 +1,197 @@
+<!doctype html>
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-script-type" content="text/javascript">
+
+    <meta name="viewport" content="width=1024">
+    <link href="assets/application.css" media="all"
+          rel="stylesheet"/>
+    <link href="assets/application-deferred.css" media="all"
+          rel="stylesheet"/>
+    <link href="assets/checkout.css" media="all"
+          rel="stylesheet"/>
+    <link href="assets/payments.css" media="all"
+          rel="stylesheet"/>
+    <title>支付 | Tworr</title>
+
+    <link rel="icon" href="/favicon.ico">
+</head>
+<body class="redirect-page">
+<meta content="authenticity_token" itemprop="csrf-param" name="csrf-param"/>
+<meta content="7b+HG1EULaUTmvmhpjhV417lxxkDuG8kLJbKIEr1aYU=" itemprop="csrf-token" name="csrf-token"/>
+
+
+<div id="main-wrapper" class="redirect-wrapper" style="padding-top: 62px;">
+
+
+    <div id="main-wrapper-header">
+        <div class="page-light-overlay js-page-light-overlay hidden"></div>
+
+        <header class="main-header ">
+            <div class="mp-box mp-box-trans">
+                <div class="box-row">
+
+                    <a href="/" class="js-gtm-event" data-gtm-action="logo" data-gtm-event="navigation"
+                       data-gtm-label="clicked">
+                        <i class="ficon ficon-fiverr-logo ficon-white"></i>
+                    </a>
+
+
+                </div>
+            </div>
+
+        </header>
+
+
+    </div>
+
+
+    <div class="main-content">
+
+
+        <script type="text/javascript">
+            document.viewData = {
+                payment_token_id: 'b6ada123d0f891e70efe397a',
+                promo_code: '',
+                is_cart: true,
+                after_decline: false,
+                general: {
+                    env: 'production'
+                }
+            };
+        </script>
+
+        <div class="mp-box mp-global-payments  mp-checkout  js-global-payments">
+
+            <div class="area-warnings js-area-warnings"></div>
+
+            <div class="page box-row p-b-30">
+
+
+                <!-- Payment methods -->
+                <div class="payments-container js-payments-methods slideInDown">
+                    <section class="action-items  js-payment-page-main">
+                        <header>
+                            <h3>选择支付方式</h3>
+                        </header>
+                        <div class="payment-options-area ">
+                            <div class="payment-options">
+                                <label class="fake-radio-green paypal js-methods-label checked">
+                                    <input name="payment-method" type="radio" value="paypal"
+                                           data-server-name="paypal_express_payment">
+                                    <span class="radio-img"></span>
+                                    <i class="credit-card cc-paypal"></i>
+                                </label>
+
+                                <div class="payment-method-container paypal js-payment-method-container"
+                                     data-type="paypal">
+                                    <form accept-charset="UTF-8" action="/payments/redirect_to_paypal" method="post">
+                                        <div class="paypal-billing-agreement">
+
+                                        </div>
+                                        <input type="hidden" name="payment_token_id" value="b6ada123d0f891e70efe397a">
+                                        <input type="hidden" name="authenticity_token"
+                                               value="3EdmG3U6oAzs4BEHkSKMw5ZAJHuQfxzF9FhFVWSYEpo=">
+                                    </form>
+                                </div>
+                                <label class="fake-radio-green paypal_cc includes-credit-and-debit-label js-methods-label">
+                                    <input name="payment-method" type="radio" value="paypal_cc"
+                                           data-server-name="paypal_credit_card">
+                                    <span class="radio-img"></span>
+                                    <i class="credit-card cc-vsa"></i>
+                                    <i class="credit-card cc-msc"></i>
+                                    <i class="credit-card cc-amx"></i>
+                                    <i class="credit-card cc-dis"></i>
+                                    <span class="credit-and-debit-label">Credit &amp; Debit Cards</span>
+                                </label>
+
+                                <div class="payment-method-container paypal_cc m-0 js-payment-method-container hidden">
+                                    <form accept-charset="UTF-8" action="/payments/redirect_to_paypal" method="post">
+                                        <input type="hidden" name="payment_token_id" value="b6ada123d0f891e70efe397a">
+                                        <input type="hidden" name="paypal_cc_view" value="true">
+                                        <input type="hidden" name="authenticity_token"
+                                               value="3EdmG3U6oAzs4BEHkSKMw5ZAJHuQfxzF9FhFVWSYEpo=">
+                                    </form>
+                                </div>
+                                <label class="fake-radio-green coinbase js-methods-label">
+                                    <input name="payment-method" type="radio" value="coinbase"
+                                           data-server-name="coinbase">
+                                    <span class="radio-img"></span>
+                                    <i></i>
+                                </label>
+
+                                <div class="payment-method-container coinbase js-payment-method-container hidden"
+                                     data-type="coinbase">
+                                    <iframe allowtransparency="true"
+                                            src="https://coinbase.com/inline_payments/d95e2b56df44682b5eacc15ed8479b00"
+                                            class="non-mobile"></iframe>
+                                </div>
+                            </div>
+                            <div class="extra-message js-extra-messages">
+                                <i></i>
+                                <h3></h3><br>
+                                <span></span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- Order summary -->
+                <section class="order-summary order js-order-details">
+                    <header>
+                        <h3>总计</h3>
+                    </header>
+                    <ul class="summary-list readonly shopping-cart">
+                        <li class="item-content">
+                            <p class="name"><span class="translation_missing"
+                                                  title="translation missing: en.purchases.general.cart_subtotal">订单费用</span>
+                            </p>
+                            <div class="price js-str-currency">$50.00</div>
+                        </li>
+                        <li class="item-content processing-fee">
+                            <p class="name">
+                                手续费 (5%)
+                            </p>
+                            <div class="price js-str-currency">$2.50</div>
+                        </li>
+                        <li class="total cta">
+                            <div class="item-content">
+                                <p class="name">Total</p>
+                                <div class="price js-str-currency">$52.50</div>
+                            </div>
+                            <div class="item-content js-payment-actions">
+                                <button class="btn-lrg-standard js-button-continue">Continue</button>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="payment-methods">
+            <span class="secure hint--top-right"
+                  data-hint="Your payment is secure. SSL (Secure Sockets Layer) is a method of securing payment information sent over the Internet, by encrypting personal information. This means that your name and payment information is protected and cannot be read or intercepted during transit.">
+                <i class="fa fa-lock"></i>
+                <sub>Secure<br>Server</sub>
+            </span>
+                    </div>
+
+                </section>
+
+                <div class="js-worldpay-footer"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<div id="fb-root"></div>
+
+<div class="pixels_container">
+</div>
+
+
+</body>
+</html>

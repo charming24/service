@@ -1,0 +1,538 @@
+<!doctype html>
+<!--[if lt IE 9]>
+<html class="ie ieold" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#"
+      lang="en" xml:lang="en"><![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#" lang="en"
+      xml:lang="en" class="no-touch svg"><!--<![endif]-->
+<head>
+    <title> 消息</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="viewport" content="width=1024">
+
+    <link href="../assets/application.css" media="all" rel="stylesheet">
+    <link href="../assets/application-deferred.css" media="all" rel="stylesheet">
+    <link href="../assets/conversations.css" media="all" rel="stylesheet">
+    <link href="../assets/react_css/react-inbox.css" media="all" rel="stylesheet">
+    <link href="../assets/appboy.min.css" rel="stylesheet" media="all" type="text/css">
+    <link href="../assets/notification-drawer1.css" rel="stylesheet" media="all" type="text/css">
+    <link href="../assets/realtime.css" rel="stylesheet" media="all" type="text/css">
+    <link href="../assets/appboy-overrides.css" rel="stylesheet" media="all" type="text/css">
+</head>
+
+<body class="body-db wide-screen">
+
+<div id="main-wrapper" class="no-cat" style="padding-top: 168px;">
+
+
+    <div id="main-wrapper-header">
+        <div class="page-light-overlay js-page-light-overlay hidden"></div>
+
+        <header class="main-header with-shadow main-header-logged-in">
+            <div class="mp-box mp-box-opaque">
+                <div class="box-row">
+                    <a href="/" class="js-gtm-event" data-gtm-action="logo" data-gtm-event="navigation"
+                       data-gtm-label="clicked">
+                        <i class="ficon ficon-fiverr-logo ficon-white"></i>
+                    </a>
+                    <nav class="global-search-box top-nav-search omnibox-search">
+                        <div class="inner cf">
+                            <form accept-charset="UTF-8" action="/search/gigs" id="search-form-nav-bar" method="get">
+
+                                <div class="global-search js-global-search omnibox ">
+
+                                    <input class="js-search-input js-report-to-aux-data" id="" maxlength="40"
+                                           name="query"
+                                           placeholder="Find Services" type="text"/>
+                                    <a href="#" class="js-search-submit magnify"></a>
+                                    <span class="loading"></span>
+                                </div>
+                            </form>
+
+                        </div>
+                    </nav>
+
+                    <nav class="main-nav main-nav-user">
+                        <ul>
+
+
+                            <li class="menu-icn icn-inbox js-icn-inbox js-mark hint--bottom" data-mark="inbox"
+                                data-hint="Inbox">
+                                <a href="#!" data-href="/conversations"
+                                   class="hover-drawer-trigger js-hover-drawer-trigger"></a>
+                                <div class="hover-drawer js-hover-drawer hidden">
+                                    <header>
+                                        <h6>Inbox <span class="total-unread-count js-total-unread-count"></span></h6>
+                                        <nav>
+                                            <a href="/users/charming852/edit/account_settings"
+                                               class="icn account-settings hint--bottom js-track"
+                                               data-hint="Notification Settings"></a>
+                                            <a href="/conversations" class="js-view-link js-track">View Inbox</a>
+                                        </nav>
+                                    </header>
+                                    <div class="antiscroll-wrap">
+                                        <div class="antiscroll-inner">
+                                            <ul class="notification-drawer js-notification-drawer"
+                                                data-type="inbox"></ul>
+                                            <div class="notifications-empty-state js-notifications-empty-state">
+                                                <h3>No Notifications</h3>
+                                                <p class="no-notifications">​Browse our amazing catalog of Gigs<br>or
+                                                    offer your talent on Fiverr.</p>
+                                                <p class="notifications-unavailable">Your notifications are temporarily
+                                                    unavailable<br>due to a technical issue. Please try again later.</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <a href="/conversations" class="btn-see-all js-see-all js-track">See All</a>
+                                </div>
+                            </li>
+
+                            <li class="header-shopping-cart js-shopping-cart-header menu-icn icn-cart hint--bottom"
+                                data-hint="Shopping cart">
+                                <a href="#!" class="js-shopping-cart-trigger" rel="noindex, nofollow"></a>
+                                <div class="shopping-cart-container js-shopping-cart-container"></div>
+                            </li>
+
+                            <li class="dropdown-container header-user header-user-is-online">
+                                <a href="/charming852" class="user-trigger js-gtm-event-auto"
+                                   data-gtm-action="black-nav-loggedin" data-gtm-category="navigation"
+                                   data-gtm-label="open username">
+                                    <span class="user-pict-24"><img
+                                            src="https://cldn0.fiverrcdn.com/fiverr/t_profile_mini/profile/photos/48954147/original/tc_login_yonghu.jpg"
+                                            alt="charming852" width="24" height="24"></span>
+                                    <span class="user-is-online  is-online" data-user-id="charming852"><em></em></span>
+
+                                    <span class="user-name">charming852</span>
+                                </a>
+                                <div class="dropdown">
+                                    <ul>
+                                        <li><a class="new js-gtm-event-auto" data-gtm-action="black-nav-loggedin"
+                                               data-gtm-category="navigation" data-gtm-label="my dashboard"
+                                               href="/users/charming852/todos">用户后台</a></li>
+
+                                        <li><a class="js-gtm-event-auto" data-gtm-action="black-nav-loggedin"
+                                               data-gtm-category="navigation" data-gtm-label="log out" href="/logout">退出注销</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </nav>
+
+
+                </div>
+            </div>
+
+        </header>
+
+
+        <nav class="mp-box mp-box-white notop db-top-nav-bar">
+            <div class="box-row">
+                <ul>
+                    <li>
+                        <a class="sel" href="">我的后台</a>
+                    </li>
+                    <li class="menu-expandable">
+                        <a href="">销售管理</a>
+                        <ul>
+                            <li>
+                                <a href="">我的作品</a>
+                            </li>
+                            <li>
+                                <a href="">销售订单</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">购买管理</a>
+                    </li>
+
+                    <li>
+                        <a href="/conversations">消息</a>
+                    </li>
+                    <li class="js-gtm-event-auto menu-expandable">
+                        <a href="/users/charming852/edit/public_profile">个人资料</a>
+                        <ul>
+                            <li>
+                                <a href="/users/charming852/edit/public_profile">个人信息</a>
+                            </li>
+                            <li>
+                                <a href="/users/charming852/edit/security_settings">账号安全</a>
+                            </li>
+                            <li>
+                                <a href="/users/charming852/edit/account_actions">更改密码</a>
+                            </li>
+                            <li class="">
+                                <a href="/users/charming852/paypal_change/edit">支付宝账号</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="main-content">
+        <section class="mp-box">
+            <div class="box-row p-b-100">
+                <article class="db-new-content with-sidebar js-db-cont">
+
+                    <header class="db-new-header db-search-container cf">
+                        <h1 class="alt">消息盒子</h1>
+                    </header>
+
+                    <div class="db-new-main-table db-new-inbox" id="react-inbox">
+                        <div class="inbox" data-reactid=".0">
+                            <div class="db-new-sidebar" data-reactid=".0.0">
+                                <ul data-reactid=".0.0.0">
+                                    <li data-reactid=".0.0.0.$0"><a href="#" class="sel"
+                                                                    data-reactid=".0.0.0.$0.0"><span
+                                            data-reactid=".0.0.0.$0.0.0">全部消息</span><span
+                                            data-reactid=".0.0.0.$0.0.1"> </span><span
+                                            data-reactid=".0.0.0.$0.0.2"></span></a></li>
+                                    <li data-reactid=".0.0.0.$1"><a href="/conversations/type/unread"
+                                                                    data-reactid=".0.0.0.$1.0"><span
+                                            data-reactid=".0.0.0.$1.0.0">未读消息</span><span
+                                            data-reactid=".0.0.0.$1.0.1"> </span><span
+                                            data-reactid=".0.0.0.$1.0.2"></span></a></li>
+
+                                    <li data-reactid=".0.0.0.$3"><a href="/conversations/type/archived"
+                                                                    data-reactid=".0.0.0.$3.0"><span
+                                            data-reactid=".0.0.0.$3.0.0">已发消息</span><span
+                                            data-reactid=".0.0.0.$3.0.1"> </span><span
+                                            data-reactid=".0.0.0.$3.0.2"></span></a></li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                        <div class="db-chatting-wrapper">
+
+                            <header class="db-header">
+
+                                <h1 class="alt">
+                                    <span class="user-pict-65">
+                                        <img src="https://cldn0.fiverrcdn.com/fiverr/t_profile_small/profile/photos/2890977/original/me_with_hat.jpg"
+                                                alt="krisman" width="65" height="65">
+                                    </span>
+                                    <a href="/krisman">krisman</a>
+                                    <div class="badge-container">
+                                            <span class="ach-badge level_two_seller hint--bottom"
+                                                  data-hint="Level 2 Seller"></span>
+                                    </div>
+                                </h1>
+                                <ul class="user-details">
+                                    <li class="time">
+                                        Avg. response time
+                                        <strong>5 Hrs.</strong>
+                                    </li>
+
+                                    <li class="ratings">
+                                        <a href="/krisman#user-reviews">Positive ratings
+                                            <small>99%</small>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </header>
+
+                            <div class="db-content db-conversation-discussion js-messages-flow">
+                                <div class="js-messages">
+                                    <article class="conv-message mine with-action" id="message_1481105651">
+                                        <aside class="msg-action msg-related-to">
+                                            <small>消息与下面项目作品有关:</small>
+                                            <div class="msg-gig with-pict cf">
+                                                    <span class="gig-pict-74"><img
+                                                            src="https://cldn0.fiverrcdn.com/fiverr/t_small_thumbnail2/gigs/2874308/original/Bio_pic_-_skateboard.jpg"
+                                                            class="related-gig-pict"
+                                                            alt="write, edit, and breathe fire into your project"
+                                                            data-reload="inprogress"></span>
+                                                <p class="gig-desc"><a
+                                                        href="/krisman/write-edit-and-breathe-fire-into-your-project?funnel=b71d4bed-4485-4b27-b9a0-8574dc223776">write,
+                                                    edit, and breathe fire into your project</a></p>
+                                                <p class="gig-username">by <a href="/krisman">krisman</a><span
+                                                        class="flag us"></span></p>
+                                            </div>
+                                        </aside>
+
+                                        <div class="msg-push cf">
+                                                <span class="user-pict-50"><a href="/charming852"><img
+                                                        src="https://cldn0.fiverrcdn.com/fiverr/t_profile_small/profile/photos/48954147/original/tc_login_yonghu.jpg"
+                                                        alt="charming852" width="50" height="50"
+                                                        data-reload="inprogress"></a></span>
+                                            <h4>Me</h4>
+                                            <div class="msg-body">
+                                                <p>he</p>
+                                            </div>
+                                        </div>
+
+
+                                        <footer class="msg-footer cf">
+                                            <time datetime="2016-12-07">18:14<span
+                                                    class="p-l-5">December 07, 2016</span></time>
+                                        </footer>
+
+                                    </article>
+
+
+                                    <article class="conv-message mine with-action" id="message_1481106182">
+                                        <aside class="msg-action msg-related-to">
+                                            <small>消息与下面项目作品有关:</small>
+                                            <div class="msg-gig with-pict cf">
+                                                    <span class="gig-pict-74"><img
+                                                            src="https://cldn0.fiverrcdn.com/fiverr/t_small_thumbnail2/gigs/2874308/original/Bio_pic_-_skateboard.jpg"
+                                                            class="related-gig-pict"
+                                                            alt="write, edit, and breathe fire into your project"
+                                                            data-reload="inprogress"></span>
+                                                <p class="gig-desc"><a
+                                                        href="/krisman/write-edit-and-breathe-fire-into-your-project?funnel=b71d4bed-4485-4b27-b9a0-8574dc223776">write,
+                                                    edit, and breathe fire into your project</a></p>
+                                                <p class="gig-username">by <a href="/krisman">krisman</a><span
+                                                        class="flag us"></span></p>
+                                            </div>
+                                        </aside>
+
+                                        <div class="msg-push cf">
+                                                <span class="user-pict-50"><a href="/charming852"><img
+                                                        src="https://cldn0.fiverrcdn.com/fiverr/t_profile_small/profile/photos/48954147/original/tc_login_yonghu.jpg"
+                                                        alt="charming852" width="50" height="50"
+                                                        data-reload="inprogress"></a></span>
+                                            <h4>Me</h4>
+                                            <div class="msg-body">
+                                                <p>?</p>
+                                            </div>
+                                        </div>
+
+
+                                        <footer class="msg-footer cf">
+                                            <time datetime="2016-12-07">18:22<span
+                                                    class="p-l-5">December 07, 2016</span></time>
+                                        </footer>
+
+                                    </article>
+
+
+                                    <article class="conv-message theirs" id="message_1481122748">
+
+                                        <div class="msg-push cf">
+                                                <span class="user-pict-50"><a href="/krisman"><img
+                                                        src="https://cldn0.fiverrcdn.com/fiverr/t_profile_small/profile/photos/2890977/original/me_with_hat.jpg"
+                                                        alt="krisman" width="50" height="50"
+                                                        data-reload="inprogress"></a></span>
+                                            <h4><a href="/krisman">krisman</a></h4>
+                                            <div class="msg-body">
+                                                <p>Have a nice day.</p>
+                                            </div>
+                                        </div>
+
+
+                                        <footer class="msg-footer cf">
+                                            <form method="post"
+                                                  action="/messages/584823a0e51069236828f35b/mark_as_spam?sender=krisman"
+                                                  class="button_to"><input type="submit" value="Report"><input
+                                                    name="authenticity_token" type="hidden"
+                                                    value="/as6JizK6wmNM7If/Ibj+/gk7yhY8XWH3H2zMjnPlqY="></form>
+                                            &nbsp;&nbsp;
+                                            <time datetime="2016-12-07">22:58<span
+                                                    class="p-l-5">December 07, 2016</span></time>
+                                        </footer>
+
+                                    </article>
+
+
+                                    <article class="conv-message mine" id="message_1481254406">
+
+                                        <div class="msg-push cf">
+                                                <span class="user-pict-50"><a href="/charming852"><img
+                                                        src="https://cldn0.fiverrcdn.com/fiverr/t_profile_small/profile/photos/48954147/original/tc_login_yonghu.jpg"
+                                                        alt="charming852" width="50" height="50"
+                                                        data-reload="inprogress"></a></span>
+                                            <h4>Me</h4>
+                                            <div class="msg-body">
+                                                <p>you around?<br></p>
+                                            </div>
+                                        </div>
+
+
+                                        <footer class="msg-footer cf">
+                                            <time datetime="2016-12-09">11:33<span
+                                                    class="p-l-5">December 09, 2016</span></time>
+                                        </footer>
+
+                                    </article>
+
+
+                                    <article class="conv-message theirs" id="message_1481256819">
+
+                                        <div class="msg-push cf">
+                                                <span class="user-pict-50"><a href="/krisman"><img
+                                                        src="https://cldn0.fiverrcdn.com/fiverr/t_profile_small/profile/photos/2890977/original/me_with_hat.jpg"
+                                                        alt="krisman" width="50" height="50"
+                                                        data-reload="inprogress"></a></span>
+                                            <h4><a href="/krisman">krisman</a></h4>
+                                            <div class="msg-body">
+                                                <p>Nope</p>
+                                            </div>
+                                        </div>
+
+
+                                        <footer class="msg-footer cf">
+                                            <form method="post"
+                                                  action="/messages/584a2c0e86f116f21e869fbe/mark_as_spam?sender=krisman"
+                                                  class="button_to"><input type="submit" value="Report"><input
+                                                    name="authenticity_token" type="hidden"
+                                                    value="/as6JizK6wmNM7If/Ibj+/gk7yhY8XWH3H2zMjnPlqY="></form>
+                                            &nbsp;&nbsp;
+                                            <time datetime="2016-12-09">11:59<span
+                                                    class="p-l-5">December 09, 2016</span></time>
+                                        </footer>
+
+                                    </article>
+
+
+                                    <article class="conv-message mine" id="message_1481256163">
+
+                                        <div class="msg-push cf">
+                                                <span class="user-pict-50"><a href="/charming852"><img
+                                                        src="https://cldn0.fiverrcdn.com/fiverr/t_profile_small/profile/photos/48954147/original/tc_login_yonghu.jpg"
+                                                        alt="charming852" width="50" height="50"
+                                                        data-reload="inprogress"></a></span>
+                                            <h4>Me</h4>
+                                            <div class="msg-body">
+                                                <p>ok if you here, pls let me know<br></p>
+                                            </div>
+                                        </div>
+
+
+                                        <footer class="msg-footer cf">
+                                            <time datetime="2016-12-09">12:02<span
+                                                    class="p-l-5">December 09, 2016</span></time>
+                                        </footer>
+
+                                    </article>
+                                </div>
+
+
+                                <form accept-charset="UTF-8" action="/messages"
+                                      class="msg-form msg-form-fixed  js-is-hidden-form-message"
+                                      enctype="multipart/form-data" id="new_message_v2" method="post"
+                                      style="display: block; opacity: 1;">
+                                    <div style="display:none"><input name="utf8" type="hidden" value="✓"><input
+                                            name="authenticity_token" type="hidden"
+                                            value="/as6JizK6wmNM7If/Ibj+/gk7yhY8XWH3H2zMjnPlqY="></div>
+
+
+                                    <input id="message_sender_id" name="message[sender_id]" type="hidden"
+                                           value="48738339">
+                                    <input id="message_to" name="message[to]" type="hidden" value="krisman">
+                                    <input id="message_format" name="message[message_format]" type="hidden">
+                                    <input id="last_message_ts" name="message[last_message_timestamp]" type="hidden"
+                                           value="2016-12-09 12:02:43 +0800">
+
+
+                                    <input type="hidden" name="message[related_order_id]" value="">
+
+
+                                    <input class="attachments-ids" id="message_attachment_id"
+                                           name="message[message_attachment_id]" type="hidden" value="">
+
+
+                                    <div class="conv-write">
+
+                                        <div class="write-wrap invalid">
+
+                                            <div class="write-row cf">
+                                                <div class="ta-wrapper cf">
+                                                    <div id="fileInput-queue"
+                                                         class="uploadifyQueue js-uploadifyQueue"></div>
+                                                    <textarea class="no-min-len" cols="75" data-recipient="krisman"
+                                                              id="message_body" name="message[body]" rows="3"
+                                                              maxlength="1200" style="height: 80px;"></textarea>
+
+                                                </div>
+
+                                                <div class="write-controls cf">
+
+                                                    <span class="char-count"><em>0</em> / 1200 </span>
+                                                    <span class="is-typing js-is-typing">
+                            <strong>krisman</strong> is typing
+                        </span>
+                                                    <div class="attach-files">
+                                                        <div class="attach-inner hint--top"
+                                                             data-hint="Attach files. 30MB max.">
+
+                                                            <div id="uploadifive-fileInput"
+                                                                 class="uploadifive-button default btn-attach-files"
+                                                                 style="height: auto; overflow: hidden; position: relative; text-align: center; width: auto;">
+                                                                <input class="inp-uploadify" id="fileInput"
+                                                                       name="message[message_attachment][asset]"
+                                                                       type="file" style="display: none;"><input
+                                                                    type="file" class="uploadifive-input"
+                                                                    style="opacity: 0; position: absolute; right: -3px; top: -3px; z-index: 999;"
+                                                                    multiple="multiple"></div>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#!" class="emoji-trigger js-emoji-trigger"></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="cta-container js-cta-container">
+                                                <input class="btn-standard btn-green-grad btn-send-message"
+                                                       name="commit" type="submit" value="发送">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="keyboard-shortcut js-keyboard-shortcut">Ctrl + Enter to send</div>
+
+
+                                </form>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <footer class="mp-box main-footer js-main-footer border-top p-t-20 p-b-30 ">
+        <div class="box-row">
+            <div class="footer-top cf">
+                <ul>
+                    <li><a href="/categories">Directory</a></li>
+                    <li><a href="/news">Press</a></li>
+                    <li><a href="/partnerships">Partnerships</a></li>
+                    <li><a href="/jobs">Jobs</a></li>
+                    <li><a href="/terms_of_service">Legal</a></li>
+                    <li><a href="/privacy-policy">Privacy</a></li>
+                    <li><a href="" target="_blank">Forum</a></li>
+                    <li><a href="/academy">Academy</a></li>
+                    <li><a href="">Affiliates</a></li>
+                    <li><a href="" target="_blank">Contact us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-bot cf">
+                <div class="box-regional js-box-regional">
+                    <a href="#" class="js-trigger-regional" data-location="in-footer">
+                        <span class="language-name">English</span>
+                        $ USD
+                        <i class="ficon ficon-chevron-up"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

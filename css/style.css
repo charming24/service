@@ -1,0 +1,196 @@
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #777777;
+}
+
+input:-moz-placeholder, textarea:-moz-placeholder {
+    color: #777777;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+    color: #777777;
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color: #777777;
+}
+
+.login {
+    min-width: 600px;
+    width: 900px;
+    height: 900px;
+    margin: 0 auto
+}
+
+.popup {
+    width: 380px;
+    height: 400px;
+    background-color: #fff;
+
+    border: 1px solid #ebeaea;
+    position: relative;
+    float: right;
+    margin-top: 200px;
+    margin-user-login: 200px;
+    /*left:400px;
+    top:96px;
+    position:absolute;
+    z-index:100;
+    */
+    border-top-left-radius: 10px;
+    border-top-user-login-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-user-login-radius: 10px;
+}
+
+.popup .top_nav {
+    width: 380px;
+    height: 26px;
+    position: relative;
+    line-height: 40px;
+}
+
+.popup .top_nav span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    height: 30px;
+    margin-left: -200px;
+    margin-top: 0px;
+    text-align: center;
+    font: 25px 'microsoft yahei';
+    font-weight: bold;
+    color: black;
+}
+
+.popup .top_nav i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 300px;
+    height: 20px;
+    margin-left: -150px;
+    margin-top: 35px;
+    text-align: center;
+    vertical-align: middle;
+    font: 13px 'microsoft yahei';
+    color: #707070;
+}
+
+.popup .top_nav a.guanbi span {
+    display: none;
+}
+
+.user-login {
+    margin-top: 20%;
+    width: 380px;
+    height: 100px;
+}
+
+.user-login .input-group .form-control {
+    font-size: 16px;
+    width: 325px;
+    height: 45px;
+}
+
+.user-login .forget-pass {
+    font: 13px/18px 'microsoft yahei';
+    color: #666;
+    float: right;
+    margin: 16px 0 0px 6px;
+}
+
+.user-login .forget-pass:hover {
+    color: #06F;
+    text-decoration: underline;
+}
+
+.user-login form .form-control {
+    position:relative;
+    border: 2px solid #ccc;
+    border-radius: 2px;
+    color: #000;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    height: 40px;
+    padding: 0 0 0 34px;
+    margin: 10px 0px 0px 10px;
+    transition: background 0.3s ease-in-out;
+
+}
+
+.user-login form .form-control:focus {
+    outline: none;border: 2px solid green;
+    border-color: #60C4FD;
+    box-shadow: 0 0 0px #019A0D;
+}
+
+.user-login .button {
+    -webkit-appearance: none;
+    background: #36a803;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    height: 50px;
+    font-size: 1.3em;
+    letter-spacing: 0.05em;
+    text-align: center;
+    padding-user-login: 8%;
+    text-transform: uppercase;
+    transition: background 0.3s ease-in-out;
+    width: 300px;
+    font-weight: bold;
+}
+
+.user-login .button:hover {
+
+    background: #019A0D;
+}
+
+.user-login dd {
+    width: 100%;
+    height: 30px;
+}
+
+.user-login dd i {
+    font-size: 12px;
+    float: left;
+    font-style: normal
+}
+
+.user-login dd a {
+    font: 12px 'microsoft yahei';
+    color: #06F;
+    display: inline-block;
+}
+
+.user-login dd a:hover {
+    font: 13px/18px 'microsoft yahei';
+    color: #06F;
+    text-decoration: underline;
+}
+
+.user-login hr {
+    height: 1px;
+    border: none;
+    border-top: 1px dashed #E4E4E4;
+    clear: both;
+    margin: 30px 0 5px 0px;
+}
+
+.register {
+    width: 380px;
+    height: 400px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 100;
+    border: 1px solid #ebeaea;
+    left: 400px;
+    top: 96px;
+    display: none;
+    border-top-left-radius: 10px;
+    border-top-user-login-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-user-login-radius: 10px;
+}
