@@ -4,31 +4,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="content-script-type" content="text/javascript">
     <meta name="viewport" content="width=1024">
-    <link href="../assets/application.css" media="all" rel="stylesheet"/>
-    <link href="../assets/application-deferred.css" media="all" rel="stylesheet"/>
-    <link href="../assets/conversations.css" media="all" rel="stylesheet"/>
-    <link href="../assets/orders.css" media="all" rel="stylesheet"/>
-    <link href="../assets/react_css/react-manage_sales.css" media="all" rel="stylesheet"/>
-
-    <title>购买管理 | Tworr</title>
+    <link href="../../assets/application.css" media="all" rel="stylesheet"/>
+    <link href="../../assets/application-deferred.css" media="all" rel="stylesheet"/>
+    <link href="../../assets/conversations.css" media="all" rel="stylesheet"/>
+    <title> 个人信息</title>
 </head>
-<body class="body-db wide-screen">
-
+<body class="body-db">
 <div id="main-wrapper" class="no-cat">
-
     <div id="main-wrapper-header">
         <div class="page-light-overlay js-page-light-overlay hidden"></div>
 
         <header class="main-header with-shadow main-header-logged-in">
             <div class="mp-box mp-box-opaque">
                 <div class="box-row">
-                    <a href="" class="js-gtm-event" data-gtm-action="logo" data-gtm-event="navigation"
+                    <a href="/" class="js-gtm-event" data-gtm-action="logo" data-gtm-event="navigation"
                        data-gtm-label="clicked">
                         <i class="ficon ficon-fiverr-logo ficon-white"></i>
                     </a>
                     <nav class="global-search-box top-nav-search omnibox-search">
                         <div class="inner cf">
-                            <form accept-charset="UTF-8" action="" id="search-form-nav-bar" method="get">
+                            <form accept-charset="UTF-8" action="/search/gigs" id="search-form-nav-bar" method="get">
 
                                 <div class="global-search js-global-search omnibox ">
 
@@ -45,13 +40,15 @@
 
                     <nav class="main-nav main-nav-user">
                         <ul>
+
+
                             <li class="menu-icn icn-inbox js-icn-inbox js-mark hint--bottom" data-mark="inbox"
                                 data-hint="Inbox">
                                 <a href="#!" data-href="/conversations"
                                    class="hover-drawer-trigger js-hover-drawer-trigger"></a>
                                 <div class="hover-drawer js-hover-drawer hidden">
                                     <header>
-                                        <h6>Inbox <span class="total-unread-count"></span></h6>
+                                        <h6>Inbox <span class="total-unread-count js-total-unread-count"></span></h6>
                                         <nav>
                                             <a href="/users/charming852/edit/account_settings"
                                                class="icn account-settings hint--bottom js-track"
@@ -88,7 +85,7 @@
                                    data-gtm-action="black-nav-loggedin" data-gtm-category="navigation"
                                    data-gtm-label="open username">
                                     <span class="user-pict-24"><img
-                                            src="../images/head.png"
+                                            src="https://cldn0.fiverrcdn.com/fiverr/t_profile_mini/profile/photos/48954147/original/tc_login_yonghu.jpg"
                                             alt="charming852" width="24" height="24"></span>
                                     <span class="user-is-online  is-online" data-user-id="charming852"><em></em></span>
 
@@ -106,10 +103,15 @@
                                     </ul>
                                 </div>
                             </li>
+
+
                         </ul>
                     </nav>
+
+
                 </div>
             </div>
+
         </header>
 
 
@@ -134,26 +136,26 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="sel" href="manage_buy.html">购买管理</a>
+                        <a href="manage_buy.html">购买管理</a>
                     </li>
 
                     <li>
-                        <a href="chatting_records.html">消息</a>
+                        <a href="">消息</a>
                     </li>
                     <li class="menu-expandable">
-                        <a href="settings/public_profile.html">个人资料</a>
+                        <a class="sel" href="public_profile.html">个人资料</a>
                         <ul>
                             <li>
-                                <a href="settings/public_profile.html">个人信息</a>
+                                <a href="public_profile.html">个人信息</a>
                             </li>
                             <li>
                                 <a href="">账号安全</a>
                             </li>
                             <li>
-                                <a href="settings/password_change.html">更改密码</a>
+                                <a href="password_change.html">更改密码</a>
                             </li>
                             <li class="">
-                                <a href="settings/cashoutsetting.html">提现设置</a>
+                                <a href="cashoutsetting.html">提现设置</a>
                             </li>
                         </ul>
                     </li>
@@ -165,81 +167,119 @@
 
     <div class="main-content">
 
+
         <section class="mp-box">
             <div class="box-row p-b-100">
 
-                <article class="db-new-content js-db-cont">
+                <aside class="db-sidebar">
+                    <nav class="db-nav nav-grey">
 
-                    <header class="db-new-header db-search-container cf">
-                        <div class="search fake-hint-wrap rf">
-
-                            <form id="db-search-form" action="/activities/search/sales" method="get">
-                                <input id="query" name="act_search_query" type="search" value=""
-                                       placeholder="Search My History...">
-                                <a href="#!" class="btn-search js-search-submit"></a>
-                            </form>
+                        <ul>
+                            <li ><a class="sel">个人信息</a></li>
+                            <li><a href="">账号安全</a></li>
+                            <li><a href="password_change.html">密码更改</a></li>
+                            <li><a href="cashoutsetting.html">提现设置</a></li>
+                        </ul>
 
 
-                        </div>
+                    </nav>
+                </aside>
 
-                        <h1 class="alt">购买管理</h1>
+
+                <article class="db-content p-30">
+
+                    <header class="db-header-account">
+                        <h1>个人信息设置</h1>
                     </header>
-                    <div id="manage_sales">
-                        <div class="">
-                            <div class="db-new-filters">
-                                <ul class="tabs" >
-                                    <li>
-                                        <a class="js-gtm-event-auto sel" href="#">所有订单</a>
-                                    </li>
-                                    <li>
-                                        <a  href="#">新订单</a>
-                                    </li>
-                                    <li>
-                                        <a  href="#">已完成订单</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">成交订单</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">取消订单</a>
-                                    </li>
 
-                                    <li class="pointer" style="left: 8px;"></li>
-                                </ul>
+                    <div class="profile-form js-profile-form">
+
+
+                        <form accept-charset="UTF-8" action="/users/charming852" class="edit_user"
+                              enctype="multipart/form-data" id="edit_user_48738339" method="post">
+                            <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;"/><input
+                                    name="_method" type="hidden" value="patch"/><input name="authenticity_token"
+                                                                                       type="hidden"
+                                                                                       value="gGxcrm5ffxBgO0dc63zyfaijSNIldkCNUpXcSpQBaC0="/>
                             </div>
-                            <div class="db-new-main-table" >
-                                <table >
-                                    <thead >
-                                    <tr class="header-filter">
-                                        <td colspan="8" >所有订单</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="t-a-center">订单编号</td>
-                                        <td colspan="0" >买家</td>
-                                        <td >项目</td>
-                                        <td>下单时间</td>
-                                        <td >总价</td>
-                                        <td class="t-a-center">状态</td>
-                                        <td class="t-a-center" colspan="1">评价</td>
-                                    </tr>
-                                    </thead>
-                                    <tbody data-reactid=".0.1.0.2">
-                                    <tr data-reactid=".0.1.0.2.0">
-                                        <td colspan="8">当前没有任何订单</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                            <input id="section" name="section" type="hidden" value="public_profile"/>
+
+
+                            <div class="form-row">
+                                <div class="label-wrap"><label for="user_profile_attributes_photo">头像设置</label>
+                                </div>
+                                <div class="input-wrap">
+                                    <span class="user-pict-100 js-user-image-preview"><img
+                                            src="../images/head.png"
+                                            alt="charming852" width="100" height="100"></span>
+                                    <input accept="image/png,image/jpeg" class="hidden" data-min-height="180"
+                                           data-min-width="180" id="user_profile_attributes_photo"
+                                           name="user[profile_attributes][photo]" type="file"/>
+                                    <label for="user_profile_attributes_photo">
+                                        <a  class="btn-standard">浏览</a>
+                                    </label>
+
+                                </div>
                             </div>
-                            <span ></span></div>
+
+                            <div class="profile-descriptions js-profile-descriptions">
+
+                                <div class="form-row form-row-desc">
+
+
+                                    <div class="form-row">
+                                        <div class="label-wrap"><label
+                                                for="user_invoice_attributes_name">您的真实姓名:</label>
+                                        </div>
+                                        <div class="input-wrap"><input id="user_invoice_attributes_name"
+                                                                       name="user[invoice_attributes][name]"
+                                                                       type="text"/></div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="label-wrap"><label
+                                                for="user_invoice_attributes_address">您的邮箱地址:</label></div>
+                                        <div class="input-wrap"><input id="user_invoice_attributes_address"
+                                                                       name="user[invoice_attributes][address]"
+                                                                       type="text"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="profile-description js-profile-description" locale="default_locale">
+
+                                        <div class="label-wrap"><label for="user_profile_attributes_description">关于自己的简介<br>
+                                            (150 - 300 字)</label></div>
+
+                                        <div class="input-wrap js-profile-desc-textarea">
+                                            <a href="#" class="btn-remove-language js-remove-desc-language">x</a>
+                                            <textarea id="user_profile_attributes_description" maxlength="300"
+                                                      name="user[profile_attributes][description[en]]"
+                                                      placeholder="介绍自己，show出你的能力..."
+                                                      rows="10"></textarea>
+                                            <small class="char-count"><em>0</em> / 300</small>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="input-wrap">
+                                </div>
+                            </div>
+                            <div class="form-buttons">
+                                <input class="btn-standard btn-green disableonclick" name="commit" type="submit"
+                                       value="保存更改"/>
+                            </div>
+                        </form>
                     </div>
-
                 </article>
-
             </div>
         </section>
     </div>
 
-    <footer class="mp-box main-footer js-main-footer border-top p-t-20 p-b-30 ">
+
+    <footer class="mp-box main-footer js-main-footer border-top p-t-20 p-b-30">
         <div class="box-row">
             <div class="footer-top cf">
                 <ul>
@@ -254,23 +294,10 @@
                     <li><a href="" target="_blank">Blog</a></li>
                     <li><a href="" target="_blank">Store</a></li>
                     <li><a href="">Affiliates</a></li>
-                    <li><a href="" target="_blank">Contact us</a></li>
                 </ul>
             </div>
         </div>
-
     </footer>
-
 </div>
-<script type="text/javascript" src="../js/jquery.min.js"></script>
-
-<script type="text/javascript">
-    $(function () {
-        $(".db-new-filters .tabs >li").click(function () {
-            $(".pointer").css("left", $(this).index()*82) ;
-        })
-    });
-</script>
-
 </body>
 </html>
