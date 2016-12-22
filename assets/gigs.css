@@ -7544,7 +7544,7 @@ ul.packages-list > li .package-expander a.btn-standard-lrg {
 }
 
 .preview-tabs .nav-tabs {
-    background: #cfd8dc;
+    background: #EEEEEE;
     border-bottom: 1px solid #cfd8dc
 }
 
@@ -7557,7 +7557,7 @@ ul.packages-list > li .package-expander a.btn-standard-lrg {
     font-size: 14px;
     font-weight: bold;
     color: #78909c;
-    background: #cfd8dc;
+    background: #EEEEEE;
     padding: 17px 30px;
     border: 0;
     border-right: 1px solid #b0bec5;

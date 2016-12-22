@@ -140,7 +140,7 @@
 }
 
 .notification-drawer .drawer-item figure .notification-icon {
-    background: transparent url("//assetsv2.fiverrcdn.com/assets/v2_globals/sprite-notification-icons-1960a590a5af784edf39b94adbd2367c.svg") no-repeat 0 0;
+    background: transparent url("//cdnil20.fiverrcdn.com/assets/v2_globals/sprite-notification-icons-1960a590a5af784edf39b94adbd2367c.svg") no-repeat 0 0;
     height: 55px
 }
 
@@ -321,7 +321,7 @@
 
 .notifications-empty-state h3:before {
     content: '';
-    background: transparent url("//assetsv2.fiverrcdn.com/assets/v2_globals/notification-empty-state-35987ea3a84f180c2e500c670db2474a.svg") no-repeat;
+    background: transparent url("//cdnil20.fiverrcdn.com/assets/v2_globals/notification-empty-state-35987ea3a84f180c2e500c670db2474a.svg") no-repeat;
     margin: 0 auto 10px auto;
     display: block;
     width: 55px;
@@ -427,7 +427,7 @@
 }
 
 .notification-drawer .drawer-item aside nav a {
-    background: transparent url("//assetsv2.fiverrcdn.com/assets/v2_globals/notification-drawer-5f80c9c8b6020103e1a0bfeb8ef6533a.svg") no-repeat;
+    background: transparent url("//cdnil20.fiverrcdn.com/assets/v2_globals/notification-drawer-5f80c9c8b6020103e1a0bfeb8ef6533a.svg") no-repeat;
     background-clip: content-box;
     text-decoration: none;
     display: inline-block;
@@ -541,7 +541,7 @@
 }
 
 .hover-drawer > header nav .icn.account-settings {
-    background: transparent url("//assetsv2.fiverrcdn.com/assets/v2_globals/notification-drawer-5f80c9c8b6020103e1a0bfeb8ef6533a.svg") no-repeat -15px -11px;
+    background: transparent url("//cdnil20.fiverrcdn.com/assets/v2_globals/notification-drawer-5f80c9c8b6020103e1a0bfeb8ef6533a.svg") no-repeat -15px -11px;
     display: inline-block;
     width: 12px;
     height: 11px;
@@ -679,4 +679,16 @@
 .dashboard-notifications .notification-drawer .drawer-item aside nav .unread-count {
     display: block;
     padding-top: 5px
+}
+
+.recharge-withdraw {
+    margin-top: 15px;
+
+}
+
+.recharge-withdraw a {
+    background-color: #00abc7;
+    color: #ffffff;
+    width: 40px;
+    height: 20px;
 }

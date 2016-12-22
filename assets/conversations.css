@@ -1074,8 +1074,9 @@ tr .hidden-action .time-ago:before {
 }
 
 .db-new-filters .tabs li {
+    width: 80px;
     display: inline-block;
-    margin-left: 11px;
+
     -webkit-transition: left 0.3s;
     -moz-transition: left 0.3s;
     -o-transition: left 0.3s;
@@ -2615,7 +2616,9 @@ html.no-svg .db-new-filters .search input[type="submit"] {
     overflow: visible;
     box-sizing: border-box
 }
-
+.db-stats-standard div{
+  cursor: pointer;
+}
 .db-stats-standard div:hover{
     background-color: #E5E5E5;
 
