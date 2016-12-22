@@ -687,6 +687,9 @@
 }
 
 .recharge-withdraw a {
+    text-decoration:none;
+    border: 1px solid #00abc7;
+    padding: 5px 10px 5px 10px;
     background-color: #00abc7;
     color: #ffffff;
     width: 40px;

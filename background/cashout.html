@@ -1,0 +1,222 @@
+<!doctype html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="viewport" content="width=1024">
+    <link href="../assets/application.css" media="all" rel="stylesheet"/>
+    <link href="../assets/application-deferred.css" media="all" rel="stylesheet"/>
+    <link href="../assets/recharge.css" media="all" rel="stylesheet"/>
+    <link href="../assets/payments.css" media="all" rel="stylesheet"/>
+    <title>余额提现</title>
+</head>
+<body class="body-db wide-screen">
+
+<div id="main-wrapper" class="no-cat">
+
+    <div id="main-wrapper-header">
+        <div class="page-light-overlay js-page-light-overlay hidden"></div>
+
+        <header class="main-header with-shadow main-header-logged-in">
+            <div class="mp-box mp-box-opaque">
+                <div class="box-row">
+                    <a href="/" class="js-gtm-event" data-gtm-action="logo" data-gtm-event="navigation"
+                       data-gtm-label="clicked">
+                        <i class="ficon ficon-fiverr-logo ficon-white"></i>
+                    </a>
+                    <nav class="global-search-box top-nav-search omnibox-search">
+                        <div class="inner cf">
+                            <form accept-charset="UTF-8" action="/search/gigs" id="search-form-nav-bar" method="get">
+
+                                <div class="global-search js-global-search omnibox ">
+
+                                    <input class="js-search-input js-report-to-aux-data" id="" maxlength="40"
+                                           name="query"
+                                           placeholder="Find Services" type="text"/>
+                                    <a href="#" class="js-search-submit magnify"></a>
+                                    <span class="loading"></span>
+                                </div>
+                            </form>
+
+                        </div>
+                    </nav>
+
+                    <nav class="main-nav main-nav-user">
+                        <ul>
+                            <li class="menu-icn icn-inbox js-icn-inbox js-mark hint--bottom" data-mark="inbox"
+                                data-hint="Inbox">
+                                <a href="#!" data-href="/conversations"
+                                   class="hover-drawer-trigger js-hover-drawer-trigger"></a>
+                                <div class="hover-drawer js-hover-drawer hidden">
+                                    <header>
+                                        <h6>Inbox <span class="total-unread-count js-total-unread-count"></span></h6>
+                                        <nav>
+                                            <a href="/users/charming852/edit/account_settings"
+                                               class="icn account-settings hint--bottom js-track"
+                                               data-hint="Notification Settings"></a>
+                                            <a href="/conversations" class="js-view-link js-track">View Inbox</a>
+                                        </nav>
+                                    </header>
+                                    <div class="antiscroll-wrap">
+                                        <div class="antiscroll-inner">
+                                            <ul class="notification-drawer js-notification-drawer"
+                                                data-type="inbox"></ul>
+                                            <div class="notifications-empty-state js-notifications-empty-state">
+                                                <h3>No Notifications</h3>
+                                                <p class="no-notifications">​Browse our amazing catalog of Gigs<br>or
+                                                    offer your talent on Fiverr.</p>
+                                                <p class="notifications-unavailable">Your notifications are temporarily
+                                                    unavailable<br>due to a technical issue. Please try again later.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/conversations" class="btn-see-all js-see-all js-track">See All</a>
+                                </div>
+                            </li>
+
+                            <li class="header-shopping-cart js-shopping-cart-header menu-icn icn-cart hint--bottom"
+                                data-hint="Shopping cart">
+                                <a href="#!" class="js-shopping-cart-trigger" rel="noindex, nofollow"></a>
+                                <div class="shopping-cart-container js-shopping-cart-container"></div>
+                            </li>
+
+                            <li class="dropdown-container header-user header-user-is-online">
+                                <a href="/charming852" class="user-trigger js-gtm-event-auto"
+                                   data-gtm-action="black-nav-loggedin" data-gtm-category="navigation"
+                                   data-gtm-label="open username">
+                                    <span class="user-pict-24"><img
+                                            src="https://cldn0.fiverrcdn.com/fiverr/t_profile_mini/profile/photos/48954147/original/tc_login_yonghu.jpg"
+                                            alt="charming852" width="24" height="24"></span>
+                                    <span class="user-is-online  is-online" data-user-id="charming852"><em></em></span>
+
+                                    <span class="user-name">charming852</span>
+                                </a>
+                                <div class="dropdown">
+                                    <ul>
+                                        <li><a class="new js-gtm-event-auto" data-gtm-action="black-nav-loggedin"
+                                               data-gtm-category="navigation" data-gtm-label="my dashboard"
+                                               href="/users/charming852/todos">用户后台</a></li>
+
+                                        <li><a class="js-gtm-event-auto" data-gtm-action="black-nav-loggedin"
+                                               data-gtm-category="navigation" data-gtm-label="log out" href="/logout">退出注销</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="main-content">
+
+        <section class="mp-box">
+            <div class="box-row p-b-100">
+                <article class="db-new-content" style="min-height: 600px">
+
+                    <div id="create-claim-main-section" class="a-section spacing-small">
+                        <div class="a-box a-text-left create-claim-form">
+                            <div class="a-box-inner a-padding-none">
+                                <span class="a-declarative" data-action="gc-asv-order-form" data-gc-asv-order-form="{}">
+                                    <form method="post" action="" class="a-spacing-none">
+                                        <div class="a-section create-claim-form-content">
+                                            <h2 class="a-spacing-none a-text-bold">
+                                                余额提现
+                                            </h2>
+                                            <ul class="cashout-info m-t-20 ">
+                                                <li>
+                                                    <span>账户余额：</span>
+                                                     <i>0元</i>
+                                                </li>
+
+                                                <li>
+                                                    <span>可提现金额：</span>
+                                                    <i>0元</i>
+                                                </li>
+                                                <li>
+                                                    <span style="float: left">选择到账账户：</span>
+
+                                                    <div style="width:200px;float: left">
+
+                                                        <input type="radio" checked="checked" name="Sex" value="alipay"/> 支付宝
+
+
+                                                        <input type="radio" name="Sex" value="wechat"/>   微信
+                                                    </div>
+                                                    <!--<i>将提现到您的支付宝账户</i>-->
+                                                </li>
+                                                <li >
+                                                    <span>到账时间：</span>
+                                                     <i>3-7个工作日</i>
+                                                </li>
+
+
+                                                   <li style="clear: left">
+                                                    <span>提现金额：</span>
+                                                     <input type="number" placeholder="￥ 输入提现金额...">元
+                                                </li>
+                                            </ul>
+        <div class="a-section spacing-small a-spacing-top-none hidden">
+            <div class="a-box a-alert-inline a-alert-inline-error">
+                <div class="a-box-inner a-alert-container"><i class="a-icon-alert"></i>
+                    <div class="a-alert-content">没有足够的余额</div>
+                </div>
+            </div>
+        </div>
+                                        </div>
+
+                <div class="a-section a-spacing-none spacing-top-small padding-large text-center form-action">
+                  <span class="a-button spacing-small button-primary proceed-to-checkout" id="a-autoid-6">
+                      <span class="button-inner">
+                          <span class="button-text">提现
+                        </span>
+                      </span>
+                  </span>
+                </div>
+              </form>
+            </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </article>
+
+            </div>
+        </section>
+    </div>
+
+
+    <footer class="mp-box main-footer border-top p-t-20 p-b-30 ">
+        <div class="box-row">
+            <div class="footer-top cf">
+                <ul>
+                    <li><a href="/categories">Directory</a></li>
+                    <li><a href="/news">Press</a></li>
+                    <li><a href="/partnerships">Partnerships</a></li>
+                    <li><a href="/jobs">Jobs</a></li>
+                    <li><a href="/terms_of_service">Legal</a></li>
+                    <li><a href="/privacy-policy">Privacy</a></li>
+                    <li><a href="" target="_blank">Forum</a></li>
+                    <li><a href="/academy">Academy</a></li>
+                    <li><a href="/affiliate_program">Affiliates</a></li>
+                    <li><a href="" target="_blank">Contact us</a></li>
+                    <li><a href="/best-sellers">Best of Fiverr</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+
+</div>
+
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+
+
+</body>
+</html>
