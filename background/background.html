@@ -8,29 +8,25 @@
     <link href="../assets/application.css" media="all" rel="stylesheet"/>
     <link href="../assets/application-deferred.css" media="all" rel="stylesheet"/>
     <link href="../assets/conversations.css" media="all" rel="stylesheet"/>
-    <link href="../assets/notification-drawer1.css" media="all" rel="stylesheet"/>
-
+    <link href="../assets/notification-drawer.css" media="all" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="../css/checbox.css">
-
     <title>用户后台</title>
 </head>
 <script src="../js/jquery.min.js" type="text/javascript"></script>
 <body class="body-db wide-screen">
 <div id="main-wrapper" class="no-cat">
-
     <div id="main-wrapper-header">
         <div class="page-light-overlay js-page-light-overlay hidden"></div>
-
         <header class="main-header with-shadow main-header-logged-in">
             <div class="mp-box mp-box-opaque">
                 <div class="box-row">
-                    <a href="/" class="js-gtm-event" data-gtm-action="logo" data-gtm-event="navigation"
+                    <a href="" class="js-gtm-event" data-gtm-action="logo" data-gtm-event="navigation"
                        data-gtm-label="clicked">
                         <i class="ficon ficon-fiverr-logo ficon-white"></i>
                     </a>
                     <nav class="global-search-box top-nav-search omnibox-search">
                         <div class="inner cf">
-                            <form accept-charset="UTF-8" action="/search/gigs" id="search-form-nav-bar" method="get">
+                            <form accept-charset="UTF-8" action="" id="search-form-nav-bar" method="get">
 
                                 <div class="global-search js-global-search omnibox ">
 
@@ -47,8 +43,6 @@
 
                     <nav class="main-nav main-nav-user">
                         <ul>
-
-
                             <li class="menu-icn icn-inbox js-icn-inbox js-mark hint--bottom" data-mark="inbox"
                                 data-hint="Inbox">
                                 <a href="#!" data-href="/conversations"
@@ -92,7 +86,7 @@
                                    data-gtm-action="black-nav-loggedin" data-gtm-category="navigation"
                                    data-gtm-label="open username">
                                     <span class="user-pict-24"><img
-                                            src=""
+                                            src="../images/head.png"
                                             alt="charming852" width="24" height="24"></span>
                                     <span class="user-is-online  is-online" data-user-id="charming852"><em></em></span>
 
@@ -126,16 +120,16 @@
             <div class="box-row">
                 <ul>
                     <li>
-                        <a class="sel" href="">我的后台</a>
+                        <a class="sel" href="background.html">我的后台</a>
                     </li>
                     <li class="menu-expandable">
-                        <a href="">销售管理</a>
+                        <a href="manage_sell.html">销售管理</a>
                         <ul>
                             <li>
-                                <a href="">销售订单</a>
+                                <a href="manage_sell.html">销售订单</a>
                             </li>
                             <li>
-                                <a href="">我的作品</a>
+                                <a href="my_project.html">我的作品</a>
                             </li>
                             <li>
                                 <a href="">记录分析</a>
@@ -143,23 +137,23 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="">购买管理</a>
+                        <a href="manage_buy.html">购买管理</a>
                     </li>
 
                     <li>
                         <a href="">消息</a>
                     </li>
                     <li class="menu-expandable">
-                        <a href="">个人资料</a>
+                        <a href="public_profile.html">个人资料</a>
                         <ul>
                             <li>
-                                <a href="">个人信息</a>
+                                <a href="public_profile.html">个人信息</a>
                             </li>
                             <li>
                                 <a href="">账号安全</a>
                             </li>
                             <li>
-                                <a href="">更改密码</a>
+                                <a href="password_change.html">更改密码</a>
                             </li>
                             <li class="">
                                 <a href="">支付宝账号</a>
@@ -189,7 +183,7 @@
 
                                     <div class="db-profile-image">
                                         <a class="user-pict-80" href="/charming852">
-                                            <img src="images/head.png" class="user-pict-img" alt="charming852"
+                                            <img src="../images/head.png" class="user-pict-img" alt="charming852"
                                                  itemprop="logo"
                                                  width="80" height="80">
                                         </a>
@@ -201,28 +195,32 @@
                                         </li>
                                         <li style="margin-top: 10px;">
                                             <h3>余 &nbsp 额： <span>0 元</span></h3>
-                                            <input type="button" value="提现"
-                                                   style="margin-right:-60px;float:right;color: #00b22d;width: 40px;height: 20px;">
+                                            <div class="recharge-withdraw">
+                                                <a href="#">提现</a>
+                                                <a href="" style="margin-left: 20px">充值</a>
+                                            </div>
                                         </li>
                                     </ul>
 
                                 </div>
 
+
+
                                 <div class="bottom-content">
                                     <ul>
                                         <li class="fake-hint-wrap" data-rating="100">
                                             个人信息完整度
-                                            <span class="bar azure" style="right: -1px;"></span>
+                                            <span class="bar azure" style="right:0px;"></span>
 
                                         </li>
                                         <li class="fake-hint-wrap" data-rating="100">
                                             买家等级
-                                            <span class="bar azure" style="right: -1px;"></span>
+                                            <span class="bar azure" style="right: 0px;"></span>
 
                                         </li>
                                         <li class="fake-hint-wrap" data-rating="100">
                                             卖家等级
-                                            <span class="bar azure" style="right: -1px;"></span>
+                                            <span class="bar azure" style="right: 0px;"></span>
                                         </li>
                                     </ul>
                                 </div>
@@ -232,7 +230,7 @@
 
                             <div class="content todo-cta ">
 
-                                <h2 class="">Invite your friends</h2>
+                                <h2 class="">集思广益</h2>
 
                                 <div style="background-color:#1BBC3A;text-align:center;margin:0 auto;width:90%;height:40px;line-height:40px;border-radius: 5px;">
                                     <a href=""
@@ -253,16 +251,16 @@
                     <div class=" cf " style="margin-top:-20px;min-width:500px;">
 
                         <div class="db-stats-standard cf" style="margin-top: 20px;">
-                            <div>
+                            <div onclick="window.location.href= 'manage_sell.html';">
                                 <span><small>进行中的订单</small>0</span>
                             </div>
-                            <div>
+                            <div onclick="window.location.href= '../orders.html'">
                                 <span><small>待确定付款订单</small>0</span>
                             </div>
-                            <div>
+                            <div onclick="window.location.href= '../manage_sell.html';">
                                 <span><small>待评价订单</small>0</span>
                             </div>
-                            <div>
+                            <div onclick="window.location.href= '../manage_sell.html';">
                                 <span><small>所有订单</small>0</span>
                             </div>
                         </div>
@@ -309,11 +307,9 @@
                                         <small>订单取消率</small>
                                     </li>
                                     <li>
-
                                         <div class="status-bar progress-status">
                                             <div class="pct-60"></div>
                                             <small>60%</small>
-
                                         </div>
 
                                         <small>资料完整度</small>
@@ -324,7 +320,7 @@
 
                             <div class="db-stats-standard " style="margin-top: 20px;">
                                 <div>
-                                    <span style="display: inline-block;"><small>今日所赚</small>$0</span>
+                                    <span style="display: inline-block;"><small>今日所赚</small>0</span>
                                     <a href="#"
                                        style="font-size:0.5em;border: solid 1px ;border-radius:5px;margin:35px 0 0 -150px;float:right;width: 55px;height: 25px;">需求大厅</a>
                                 </div>
@@ -409,24 +405,6 @@
                     <li><a href="" target="_blank">Contact us</a></li>
 
                 </ul>
-            </div>
-
-            <div class="footer-bot cf">
-                <div class="box-regional js-box-regional">
-                    <a href="#" class="js-trigger-regional" data-location="in-footer">
-                        <span class="language-name">English</span>
-                        $ USD
-                        <i class="ficon ficon-chevron-up"></i>
-                    </a>
-                </div>
-                <a href="http://app.appsflyer.com/id346080608?pid=Organic&c=Web_HP_Footer"
-                   class="btn-mobile-store app-store js-gtm-event" data-gtm-action="clicked-from-footer"
-                   data-gtm-event="ios-promo" data-gtm-label="get-the-app" target="_blank"
-                   data-src="//cdnil20.fiverrcdn.com/assets/v2_buttons/en/btn-app-store-40-f93b303c19c00340ec37f630bc9ff15b.svg"></a>
-                <a href="http://app.appsflyer.com/com.fiverr.fiverr?pid=Organic&c=Web_HP_Footer"
-                   class="btn-mobile-store play-store js-gtm-event" data-gtm-action="clicked-from-footer"
-                   data-gtm-event="android-promo" data-gtm-label="get-the-app" target="_blank"
-                   data-src="//cdnil20.fiverrcdn.com/assets/v2_buttons/en/btn-play-store-40-179b5ea7c58e42508ebc0ced60d48a58.svg"></a>
             </div>
         </div>
     </footer>
