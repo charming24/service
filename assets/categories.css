@@ -3109,7 +3109,7 @@ html.no-svg .mp-empty-search-results .request-cta .icn-request {
     font-weight: 400
 }
 
-.mp-advanced-filter .mp-filter-sidebar > ul.filter-category-list > li:not(:first-child), .mp-advanced-filter .mp-filter-sidebar > div > ul.filter-category-list > li:not(:first-child) {
+.mp-advanced-filter .mp-filter-sidebar > ul.filter-category-list > li:not(:first-child), .mp-advanced-filter .mp-filter-sidebar > div > ul.filter-category-list > li{
     margin-left: 10px
 }
 
@@ -3270,9 +3270,17 @@ html.no-svg .mp-empty-search-results .request-cta .icn-request {
 
 .mp-advanced-filter .mp-filter-sidebar.brighter-version > div > ul.filter-category-list {
     padding-top: 8px;
-    background-color:#5EC3FD ;
+    border: 1px solid #eeeeee;
 }
-
+.mp-advanced-filter .mp-filter-sidebar.brighter-version > div > ul.filter-category-list li{
+    border-bottom: 1px solid #eeeeee;
+}
+.mp-advanced-filter .mp-filter-sidebar.brighter-version > div > ul.filter-category-list li:hover{
+    background-color: #cccccc;
+}
+.mp-advanced-filter .mp-filter-sidebar.brighter-version > div > ul.filter-category-list li a{
+   text-decoration: none;
+}
 .mp-advanced-filter .mp-filter-sidebar.brighter-version > div > h5 {
     font-size: 14px;
     line-height: 16px;

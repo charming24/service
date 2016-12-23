@@ -97,7 +97,6 @@
                                         <li><a class="new js-gtm-event-auto" data-gtm-action="black-nav-loggedin"
                                                data-gtm-category="navigation" data-gtm-label="my dashboard"
                                                href="background.html">用户后台</a></li>
-
                                         <li><a class="js-gtm-event-auto" data-gtm-action="black-nav-loggedin"
                                                data-gtm-category="navigation" data-gtm-label="log out" href="/logout">退出注销</a>
                                         </li>
@@ -245,22 +244,36 @@
                 <div class="db-content todo-content js-db-cont" style="opacity: 1;">
 
                     <div class=" cf " style="margin-top:-20px;min-width:500px;">
-
+                        <h2>购买</h2>
                         <div class="db-stats-standard cf" style="margin-top: 20px;">
-                            <div onclick="window.location.href= 'manage_sell.html';">
+                            <div onclick="window.location.href= 'manage_buy.html'">
                                 <span><small>进行中的订单</small>0</span>
                             </div>
                             <div onclick="window.location.href= '../orders.html'">
                                 <span><small>待确定付款订单</small>0</span>
                             </div>
-                            <div onclick="window.location.href= '../manage_sell.html';">
+                            <div onclick="window.location.href= 'manage_buy.html'">
                                 <span><small>待评价订单</small>0</span>
                             </div>
-                            <div onclick="window.location.href= '../manage_sell.html';">
+                            <div onclick="window.location.href= 'manage_buy.html'">
                                 <span><small>所有订单</small>0</span>
                             </div>
                         </div>
-
+                        <h2>销售</h2>
+                        <div class="db-stats-standard cf" style="margin-top: 20px;">
+                            <div onclick="window.location.href= 'manage_sell.html'">
+                                <span><small>进行中的订单</small>0</span>
+                            </div>
+                            <div onclick="window.location.href= 'manage_sell.html'">
+                                <span><small>已完成订单</small>0</span>
+                            </div>
+                            <div onclick="window.location.href= 'manage_sell.html'">
+                                <span><small>待评价订单</small>0</span>
+                            </div>
+                            <div onclick="window.location.href= 'manage_sell.html'">
+                                <span><small>所有订单</small>0</span>
+                            </div>
+                        </div>
                         <div class="db-stats-standard cf" style="margin-top: 20px;">
                             <div>
                                 <span><small>系统通知</small>0</span>
@@ -321,7 +334,7 @@
                                 </div>
 
                                 <div>
-                                    <span><small>本月所赚</small>0</span>
+                                    <span><small>销售金额</small>N/A</span>
                                 </div>
                                 <div>
                                     <span style="display: inline-block;"><small>余额</small>100000</span><br>
@@ -329,17 +342,7 @@
                                            style="margin-top:-30px ;float:right;color: #00b22d;width: 50px;height: 25px;">
                                 </div>
                             </div>
-                            <div class="db-stats-standard cf" style="margin-top: 20px;">
-                                <div>
-                                    <span><small>未完成订单</small>0</span>
-                                </div>
-                                <div>
-                                    <span><small>总订单数</small>0</span>
-                                </div>
-                                <div>
-                                    <span><small>销售金额</small>N/A</span>
-                                </div>
-                            </div>
+
                             <div class="db-stats-standard cf" style="margin-top: 20px;">
                                 <div>
                                     <span><small>被浏览次数</small>0</span></div>
