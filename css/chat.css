@@ -1,0 +1,523 @@
+.webim {
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    z-index: 1024;
+    font-family: "Microsoft YaHei", sans-serif;
+    box-shadow: 0 10px 10px 1px #999;
+    overflow: hidden;
+    width: 698px;
+    height: 530px;
+}
+
+.webim-normal .webim-box {
+    display: block;
+}
+
+.webim-box {
+    display: none;
+    width: 698px;
+    height: 538px;
+    border-radius: 0 6px 0 0;
+}
+
+.webim-people {
+    width: 200px;
+    height: 100%;
+    background: #F5F5F5;
+    border-radius: 6px 0 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.fl {
+    float: left;
+}
+
+.webim-people .webim-addto-block {
+    display: none;
+    width: 102px;
+    height: 20px;
+    padding: 10px 0 8px 8px;
+    box-shadow: 1px 1px 3px #5d5d5d;
+    color: #999;
+    position: absolute;
+    left: 76px;
+    z-index: 10;
+    background: #fff;
+}
+
+a:link, a:visited, a:hover, a:active {
+    font-family: Arial, Helvetica, sans-serif, "宋体";
+    text-decoration: none;
+    outline: none;
+}
+
+a {
+    color: #0b73bb;
+}
+
+.webim-people .webim-addto-block-icon {
+    width: 20px;
+    height: 20px;
+    background: url(http://a.zbjimg.com/static/common/widget/ui/components/webim-next/ui/img/icon_94fe006.png) no-repeat -23px -88px;
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.webim-people-list {
+    overflow-y: auto;
+    height: 90%;
+    margin: 0;
+    padding: 0;
+}
+
+.webim-people-list li:focus {
+    background-color: #CACDD3;
+}
+
+.webim-people-list li {
+    position: relative;
+    padding: 15px 0 15px 15px;
+    height: 40px;
+    cursor: pointer;
+    color: #000;
+    background: transparent;
+}
+
+.webim-people-list li:hover {
+    background-color: #CACDD3;
+}
+
+.webim-people-list .item-close {
+    display: none;
+    color: #fff;
+    width: 18px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    position: absolute;
+    right: 7px;
+    top: 26px;
+}
+
+.webim-people-list li.active .item-bg {
+    display: none;
+}
+
+.webim-people-list .item-bg {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    width: 52px;
+    height: 40px;
+    background: url(http://a.zbjimg.com/static/common/widget/ui/components/webim-next/ui/img/jianbian_ba938a1.png) no-repeat;
+}
+
+.webim-people-list .item-unread {
+    position: absolute;
+    top: 7px;
+    left: 43px;
+    background: red;
+    color: #fff;
+    padding: 0 5px;
+    height: 16px;
+    line-height: 16px;
+    border-radius: 50%;
+    font-style: normal;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.hide {
+    display: none;
+}
+
+.webim-people-list .item-avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 2px;
+    vertical-align: middle;
+}
+
+.webim-people-list .item-offline {
+    color: #aaa;
+}
+
+.webim-people-list .item-name {
+    display: inline-block;
+    vertical-align: middle;
+    width: 110px;
+    margin-left: 8px;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.webim-people-list .item-status {
+    display: inline-block;
+}
+
+.webim-view-contacts {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    height: 44px;
+    line-height: 44px;
+    width: 100%;
+    background-color: #525252;
+}
+
+.webim-view-contacts a {
+    color: #999;
+}
+
+a:link, a:visited, a:hover, a:active {
+    font-family: Arial, Helvetica, sans-serif, "宋体";
+    text-decoration: none;
+    outline: none;
+}
+
+a {
+    color: #0b73bb;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a {
+    color: #0b73bb;
+}
+
+.webim-chat {
+    background: #fff;
+    position: relative;
+    padding: 40px 0 165px;
+    border-left: 1px solid #eee;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+
+.webim-chat-head {
+    padding-left: 20px;
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    margin-top: -40px;
+    border-bottom: 1px solid #eee;
+
+}
+
+.clearfix {
+}
+
+.clearfix:before, .clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.webim-chat-title {
+    height: 40px;
+    line-height: 40px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-left:35%;
+    text-align: center;
+}
+
+a:link, a:visited, a:hover, a:active {
+    font-family: Arial, Helvetica, sans-serif, "宋体";
+    text-decoration: none;
+    outline: none;
+}
+
+.webim-chat-head .item-action {
+    height: 40px;
+    line-height: 40px;
+    padding-right: 32px;
+}
+
+.webim-chat-sound {
+    background: url(http://a.zbjimg.com/static/common/widget/ui/components/webim-next/ui/img/icon_94fe006.png) no-repeat 0 0;
+}
+
+.webim-chat-fullpage {
+    background: url(http://a.zbjimg.com/static/common/widget/ui/components/webim-next/ui/img/icon_94fe006.png) no-repeat -40px -24px;
+}
+
+.webim-chat-close {
+    background: url(http://a.zbjimg.com/static/common/widget/ui/components/webim-next/ui/img/icon_94fe006.png) no-repeat 0 -24px;
+}
+
+.webim-chat-sound, .webim-chat-fullpage, .webim-chat-close {
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    margin-right: 16px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix:before, .clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.clearfix:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.webim-chat-content.hide-warn {
+    padding-top: 0;
+}
+
+.webim-chat-content {
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    background: #fff;
+    padding: 20px 16px 0;
+}
+
+.webim-history-tip {
+    display: none;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 160px;
+    font-size: 18px;
+}
+
+.webim-chat-tips {
+    display: block;
+    padding: 10px 0 0;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 5px;
+}
+
+.webim-load-history {
+    cursor: pointer;
+}
+
+.webim-chat-tips {
+    display: block;
+    padding: 10px 0 0;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 5px;
+}
+
+.webim-chat-msg {
+    margin-bottom: 15px;
+    width: 100%;
+    color: #484848;
+}
+
+.webim-chat-my-msg .webim-chat-msg-avatar {
+    float: right;
+}
+
+.webim-chat-msg-avatar {
+    display: block;
+    float: left;
+    height: 40px;
+    width: 40px;
+    margin-left: 2px;
+    border-radius: 2px;
+}
+
+.webim-chat-msg-avatar img {
+    width: 40px;
+    height: 40px;
+}
+
+img {
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+.webim-chat-my-msg .webim-chat-msg-dialog {
+    float: right;
+    background: #9EEA6A;
+    margin-right: 10px;
+    margin-left: 0;
+}
+
+.webim-chat-msg-dialog {
+    position: relative;
+    float: left;
+    max-width: 240px;
+    font-size: 12px;
+    padding: 12px 17px;
+    background: #fff;
+    box-shadow: 0 3px 3px #ddd;
+    border-radius: 8px;
+    margin-left: 12px;
+}
+
+.webim-chat-msg-dialog p {
+    margin: 0;
+    line-height: 17px;
+}
+
+.webim-msg-dialog-txt {
+    word-wrap: break-word;
+}
+
+.webim-chat-msg {
+    margin-bottom: 15px;
+    width: 100%;
+    color: #484848;
+}
+
+.webim-chat-msg-avatar {
+    display: block;
+    float: left;
+    height: 40px;
+    width: 40px;
+    margin-left: 2px;
+    border-radius: 2px;
+}
+
+.webim-chat-input {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 166px;
+    background: #fff;
+}
+
+.webim-chat-input-tools {
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    padding-left: 16px;
+    padding-top: 10px;
+}
+
+.webim-chat-input-tools .item-face {
+    background: url(http://a.zbjimg.com/static/common/widget/ui/components/webim-next/ui/img/icon_94fe006.png) no-repeat 0 -64px;
+}
+
+.webim-chat-input-tools .item-face, .webim-chat-input-tools .item-pic, .webim-chat-input-tools .webim-item-history {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin-right: 12px;
+    vertical-align: middle;
+}
+
+:root .webim-chat-input-tools .item-pic {
+    display: inline-block;
+}
+
+.webim-chat-input-tools .item-pic {
+    display: none;
+}
+
+.webim-chat-input-tools .item-pic {
+    background: url(http://a.zbjimg.com/static/common/widget/ui/components/webim-next/ui/img/icon_94fe006.png) no-repeat -23px -64px;
+}
+
+.webim-chat-input-tools .webim-item-history {
+    background: url(http://a.zbjimg.com/static/common/widget/ui/components/webim-next/ui/img/icon_94fe006.png) no-repeat 0 -88px;
+}
+
+.webim-emoji {
+    width: 317px;
+    height: 187px;
+    font-size: 0;
+    padding: 8px 10px 4px;
+    box-shadow: 1px 1px 5px #f0f0f0;
+    position: absolute;
+    top: -205px;
+    display: none;
+    left: 10px;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.webim-emoji span {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 4px;
+}
+
+.webim-emoji b, .webim-msg-dialog-txt b {
+    vertical-align: top;
+}
+
+.RC_Expression {
+    width: 22px;
+    height: 22px;
+    vertical-align: top;
+    background-image: url(http://cdn.ronghub.com/css-sprite_bg.png);
+    display: inline-block;
+}
+
+.webim-chat-input-text-wrap {
+    height: 82px;
+    padding: 5px;
+}
+
+.webim-chat-input-text {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    resize: none;
+    box-shadow: none;
+    line-height: 20px;
+    padding: 0;
+}
+
+.webim-chat-input-foot {
+    height: 40px;
+    line-height: 40px;
+}
+
+.webim-chat-input-btn {
+    border: 0;
+    height: 32px;
+    line-height: 32px;
+    width: 85px;
+    color: #000;
+    font-weight: 700;
+    margin-left: 16px;
+    background: #fff;
+    border: 1px solid #cccccc;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.webim-chat-input-btn:hover {
+    background: #3DCE3D;
+    color: #fff;
+}
+
+.webim-chat-input-foot span {
+    color: #bbb;
+    font-size: 12px;
+}
