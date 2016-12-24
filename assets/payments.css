@@ -1873,3 +1873,320 @@ html.no-svg .icn-pricing-factor {
 .mp-global-payments .split-section .payment-options .balance:first-of-type {
     border-right: 1px #dddddd solid
 }
+
+.a-text-left {
+    text-align: left !important;
+}
+
+.a-box {
+    display: block;
+    border-radius: 4px;
+    border: 1px #ddd solid;
+    background-color: #fff;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.a-box .a-box-inner {
+    border-radius: 4px;
+    position: relative;
+    padding: 14px 18px;
+}
+
+.a-padding-none {
+    padding: 0 !important;
+}
+
+.a-spacing-none, .ws .a-ws-spacing-none {
+    margin-bottom: 0 !important;
+}
+
+form {
+    margin-bottom: 14px;
+}
+
+@media screen and (min-width: 751px) {
+    #create-claim-main-section .create-claim-form .create-claim-form-content {
+        padding: 33px 42px 0 42px;
+    }
+}
+
+.a-section {
+    margin-bottom: 22px;
+}
+.a-section:last-child {
+    margin-bottom: 0;
+}
+
+h1.a-spacing-none, h2.a-spacing-none, h3.a-spacing-none, h4.a-spacing-none {
+    padding-bottom: 0;
+}
+
+.a-text-bold {
+    font-weight: 700 !important;
+}
+
+
+h2 {
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 1.3;
+}
+
+p {
+    padding: 0;
+    margin: 0 0 14px 0;
+}
+
+.a-row {
+    width: 100%;
+}
+
+#create-claim-main-section .create-claim-form ul {
+    margin-left: 0;
+    text-align: left;
+}
+
+.ordered-list.horizontal.button-list, .unordered-list.horizontal.button-list, ol.horizontal.button-list, ul.horizontal.button-list {
+    margin-left: -6px;
+}
+
+.ordered-list.horizontal, .unordered-list.horizontal, ol.horizontal, ul.horizontal {
+    display: block;
+    margin-left: 0;
+}
+
+.ordered-list.nostyle, .unordered-list.nostyle, ol.nostyle, ul.nostyle {
+    margin-left: 0;
+    color: #111;
+}
+
+.ordered-list:last-child, .unordered-list:last-child, ol:last-child, ul:last-child {
+    margin-bottom: 0 !important;
+}
+
+.ordered-list, .unordered-list, ol, ul {
+    padding: 0;
+}
+
+.unordered-list, ul {
+    margin: 0 0 18px 18px;
+    color: #949494;
+}
+
+.ordered-list.horizontal:after, .ordered-list.horizontal:before, .unordered-list.horizontal:after, .unordered-list.horizontal:before, ol.horizontal:after, ol.horizontal:before, ul.horizontal:after, ul.horizontal:before {
+    display: table;
+    content: "";
+    line-height: 0;
+    font-size: 0;
+}
+
+.a-button-toggle-group:after, .a-button-toggle-group:before {
+    display: table;
+    content: "";
+    line-height: 0;
+    font-size: 0;
+}
+
+@media screen and (min-width: 751px) {
+    #create-claim-main-section .create-claim-form .only-as-second-row {
+        display: none;
+    }
+
+    #create-claim-main-section .create-claim-form .predefined-denomination {
+        margin-left: 0;
+        margin-right: 6px;
+        width: 96px;
+    }
+}
+
+.ordered-list.horizontal.button-list li, .unordered-list.horizontal.button-list li, ol.horizontal.button-list li, ul.horizontal.button-list li {
+    margin-left: 6px;
+    margin-right: 0;
+}
+
+.ordered-list.horizontal li, .unordered-list.horizontal li, ol.horizontal li, ul.horizontal li {
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
+
+.ordered-list.nostyle li, .unordered-list.nostyle li, ol.nostyle li, ul.nostyle li {
+    list-style: none;
+}
+
+.button-toggle {
+    border-color: #adb1b8 #a2a6ac #8d9096;
+    background-color: #fff;
+}
+
+.a-button {
+    background: #e7e9ec;
+    border-radius: 3px;
+    border-color: #adb1b8 #a2a6ac #8d9096;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    text-align: center;
+    text-decoration: none !important;
+    vertical-align: middle;
+}
+
+.spacing-mini, .ws .ws-spacing-mini {
+    margin-bottom: 6px !important;
+}
+.button-toggle .button-inner {
+    box-shadow: 0 1px 0 rgba(255,255,255,.6) inset;
+    background-color: #fff;
+    background-image: none;
+    height: auto;
+}
+.a-button .button-inner {
+    background: #fff;
+    background: -webkit-linear-gradient(top,#fff,#fff);
+    background: linear-gradient(to bottom,#fff,#fff);
+}
+.button-inner {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 29px;
+    box-shadow: 0 1px 0 rgba(255,255,255,.6) inset;
+    border-radius: 2px;
+}
+.button-inner:hover {
+    background: #f7f8fa;
+    background: -webkit-linear-gradient(top,#f7f8fa,#e7e9ec);
+    background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
+}
+
+.button-input {
+    position: absolute;
+    background-color: #fff;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: .01;
+    outline: 0;
+    overflow: visible;
+    z-index: 20;
+}
+
+#create-claim-main-section .create-claim-form .predefined-denomination .button-text {
+    text-align: center;
+}
+.button-toggle .button-text {
+    white-space: normal;
+    text-align: left;
+    padding: 5px 10px 5px 11px;
+    line-height: 19px;
+}
+.a-button .button-text {
+    color: #111;
+}
+.button-text {
+    background-color: transparent;
+    border: 0;
+    display: block;
+    font-family: "Hiragino Sans GB","Microsoft Yahei",Arial,sans-serif;
+    font-size: 13px;
+    line-height: 29px;
+    margin: 0;
+    outline: 0;
+    padding: 0 10px 0 11px;
+    text-align: center;
+    white-space: nowrap;
+}
+#create-claim-main-section .create-claim-form .form-action {
+    border-top: 1px solid #ddd;
+    background: #f9f9f9;
+    background: -webkit-linear-gradient(top,#f3f3f3,#fff);
+    background: -o-linear-gradient(#f3f3f3,#fff);
+    background: -moz-linear-gradient(#f3f3f3,#fff);
+    background: linear-gradient(to bottom,#f3f3f3,#fff);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05) inset;
+}
+
+
+.text-center {
+    text-align: center!important;
+}
+.padding-large {
+    padding: 18px 22px!important;
+}
+.spacing-top-small {
+    margin-top: 10px!important;
+}
+
+#create-claim-main-section .create-claim-form .form-action .proceed-to-checkout {
+    width: 190px;
+}
+.button-primary {
+    background: #f0c14b;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+}
+
+.spacing-small, .ws .ws-spacing-small {
+    margin-bottom: 10px!important;
+}
+.button-primary .button-inner {
+    box-shadow: 0 1px 0 rgba(255,255,255,.4) inset;
+}
+.button-primary .button-inner {
+    background: #f3d078;
+    background: -webkit-linear-gradient(top,#f7dfa5,#f0c14b);
+    background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+}
+
+.button-toggle.money-button-selected .button-inner, .button-toggle.money-button-selected:hover .button-inner {
+    background-color: #fef8f2;
+    background-image: none;
+}
+#create-claim-main-section .create-claim-form .predefined-denomination .predefined-denomination-button {
+    margin-left: 0;
+    margin-right: 0;
+    width: 95%;
+}
+.button-toggle.money-button-selected, .button-toggle.money-button-selected.button-unavailable {
+    border-color: #e77600;
+}
+
+.cashout-info{
+    font-size: 16px;
+    color: #000;
+}
+.cashout-info li{
+    margin-top: 20px;
+    width: 850px;
+}
+.cashout-info li span{
+    display:-moz-inline-box; display:inline-block; width:150px;
+    position: relative;
+    text-align: right;
+    padding-right: 20px;
+}
+.cashout-info li i{
+    text-align: right;
+    font-style: normal;
+    text-align: left;
+}
+.cashout-info li input{
+    border: 1px solid #EEEEEE;
+
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+input[type="number"]{-moz-appearance:textfield;}

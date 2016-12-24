@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=1024">
     <link href="../assets/application.css" media="all" rel="stylesheet"/>
     <link href="../assets/application-deferred.css" media="all" rel="stylesheet"/>
-    <link href="../assets/recharge.css" media="all" rel="stylesheet"/>
     <link href="../assets/payments.css" media="all" rel="stylesheet"/>
+    <link href="../assets/notification-drawer.css" media="all" rel="stylesheet"/>
     <title>充值中心</title>
 </head>
 <body class="body-db wide-screen">
@@ -18,18 +18,17 @@
     <div id="main-wrapper-header">
         <div class="page-light-overlay js-page-light-overlay hidden"></div>
 
-        <header class="main-header with-shadow main-header-logged-in">
+        <header class="main-header with-shadow">
             <div class="mp-box mp-box-opaque">
                 <div class="box-row">
-                    <a href="/" class="js-gtm-event" data-gtm-action="logo" data-gtm-event="navigation"
-                       data-gtm-label="clicked">
+                    <a href="/">
                         <i class="ficon ficon-fiverr-logo ficon-white"></i>
                     </a>
                     <nav class="global-search-box top-nav-search omnibox-search">
                         <div class="inner cf">
-                            <form accept-charset="UTF-8" action="/search/gigs" id="search-form-nav-bar" method="get">
+                            <form accept-charset="UTF-8" action="" id="search-form-nav-bar" method="get">
 
-                                <div class="global-search js-global-search omnibox ">
+                                <div class="global-search js-global-search  ">
 
                                     <input class="js-search-input js-report-to-aux-data" id="" maxlength="40"
                                            name="query"
@@ -44,8 +43,6 @@
 
                     <nav class="main-nav main-nav-user">
                         <ul>
-
-
                             <li class="menu-icn icn-inbox js-icn-inbox js-mark hint--bottom" data-mark="inbox"
                                 data-hint="Inbox">
                                 <a href="#!" data-href="/conversations"
@@ -89,7 +86,7 @@
                                    data-gtm-action="black-nav-loggedin" data-gtm-category="navigation"
                                    data-gtm-label="open username">
                                     <span class="user-pict-24"><img
-                                            src="https://cldn0.fiverrcdn.com/fiverr/t_profile_mini/profile/photos/48954147/original/tc_login_yonghu.jpg"
+                                            src="../images/head.png"
                                             alt="charming852" width="24" height="24"></span>
                                     <span class="user-is-online  is-online" data-user-id="charming852"><em></em></span>
 
@@ -97,13 +94,8 @@
                                 </a>
                                 <div class="dropdown">
                                     <ul>
-                                        <li><a class="new js-gtm-event-auto" data-gtm-action="black-nav-loggedin"
-                                               data-gtm-category="navigation" data-gtm-label="my dashboard"
-                                               href="/users/charming852/todos">用户后台</a></li>
-
-                                        <li><a class="js-gtm-event-auto" data-gtm-action="black-nav-loggedin"
-                                               data-gtm-category="navigation" data-gtm-label="log out" href="/logout">退出注销</a>
-                                        </li>
+                                        <li><a href="">用户后台</a></li>
+                                        <li><a href="">退出注销</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -131,9 +123,8 @@
                     <div id="create-claim-main-section" class="a-section spacing-small">
                         <div class="a-box a-text-left create-claim-form">
                             <div class="a-box-inner a-padding-none">
-                                <span class="a-declarative" data-action="gc-asv-order-form" data-gc-asv-order-form="{}">
+                                <span class="a-declarative">
                                     <form method="post" action="" class="a-spacing-none">
-                                        <input type="hidden" name="__mk_zh_CN" value="亚马逊网站">
                                         <div class="a-section create-claim-form-content">
                                             <h2 class="a-spacing-none a-text-bold">
                                                 账户充值
