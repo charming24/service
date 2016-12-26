@@ -402,18 +402,6 @@
     width: 112px
 }
 
-html.ieold .form-post-request .form-row:hover .post-request-tooltip {
-    display: block
-}
-
-html.ieold .form-post-request .form-row .post-request-tooltip {
-    display: none
-}
-
-html.ieold .form-post-request .form-row .input-wrap:before {
-    background-image: url("//assetsv2.fiverrcdn.com/assets/v2_globals/icn-dashboard-request-nosvg-8bad045f3d2d45ab074b7d22e5b7d3da.png")
-}
-
 .post-request-tooltip {
     background-color: #deeff0;
     display: block;

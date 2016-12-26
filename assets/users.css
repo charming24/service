@@ -1,107 +1,4 @@
-ul.language-container {
-    display: inline;
-    margin: 0;
-    padding: 0;
-    border: none
-}
 
-ul.language-container > li {
-    display: inline;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: auto
-}
-
-ul.language-container > li:after {
-    content: ", ";
-    margin-left: -3px
-}
-
-ul.language-container > li:last-child:after {
-    content: ""
-}
-
-ul.language-container > li:before {
-    display: none
-}
-
-ul.language-container > li em {
-    font-weight: 500;
-    font-style: normal
-}
-
-.language-selection .btn-add-language {
-    font-size: 12px;
-    margin-left: 30px;
-    text-transform: capitalize
-}
-
-.language-selection .btn-add-language i {
-    margin-right: 5px
-}
-
-.language-selection .language-selection-list li {
-    width: auto;
-    padding: 0
-}
-
-.language-selection .language-selection-list > li {
-    height: 40px;
-    position: relative
-}
-
-.language-selection .language-selection-list > li.with-error {
-    height: 70px
-}
-
-.language-selection .language-selection-list > li.with-error .error-msg {
-    color: #ff4d4d;
-    font-size: 11px
-}
-
-.language-selection .language-selection-list > li .invalid .filter-select {
-    height: 30px
-}
-
-.language-selection .language-selection-list > li .invalid .dropdown-toggle, .language-selection .language-selection-list > li .invalid input[type="text"] {
-    border-color: #ff4d4d
-}
-
-.language-selection .language-selection-list > li .dropdown-menu {
-    padding-right: 40px
-}
-
-.language-selection .language-selection-list > li .lang-autocomplete {
-    margin: 0 10px 0 30px;
-    width: 120px
-}
-
-.language-selection .language-selection-list > li .lang-autocomplete .autocomplete-suggestion {
-    font-size: 14px;
-    padding: 6px 10px;
-    cursor: pointer
-}
-
-.language-selection .language-selection-list > li .lang-autocomplete input[type="text"] {
-    text-transform: uppercase;
-    width: 120px
-}
-
-.language-selection .language-selection-list > li a.btn-remove-language {
-    background: transparent url("//assetsv2.fiverrcdn.com/assets/v2_globals/icn-master-small-b1960bdd84446a5d4f6fb2033318459c.png") no-repeat -100px -803px;
-    position: absolute;
-    z-index: 1;
-    left: 5px;
-    top: 9px;
-    width: 12px;
-    height: 12px;
-    text-indent: -3000px
-}
-
-.language-selection .language-selection-list > li a.btn-remove-language:hover {
-    color: #777777
-}
 
 .hero-3-step {
     display: block;
@@ -327,16 +224,6 @@ ul.language-container > li em {
     text-transform: none;
     color: #555555;
     border: none
-}
-
-.mp-facets-header .badge-ribbon {
-    bottom: 14px;
-    left: -16px
-}
-
-.mp-facets-header .badge-ribbon.badge-right {
-    left: auto;
-    right: -18px
 }
 
 @media (min-width: 1260px) {
@@ -1536,10 +1423,6 @@ html.no-svg .hero-tags .hero-3-step li:after, html.no-svg .hero-tags .hero-3-ste
     background-position: -501px -851px
 }
 
-.ieold .deliveries-slider .delivery-item:hover .delivery-hover {
-    background: #2c2c2c
-}
-
 .pagination {
     text-align: center;
     line-height: 15px
@@ -2054,14 +1937,6 @@ body.ismobile .pagination .prev-first-page {
     opacity: 1
 }
 
-html.ieold .gig-item .gig-collect .icn-heart-toggle {
-    display: none
-}
-
-html.ieold .gig-item:hover .gig-collect .icn-heart-toggle {
-    display: block
-}
-
 .giglist-packages-box {
     width: 100%;
     float: left;
@@ -2343,10 +2218,6 @@ html.ieold .gig-item:hover .gig-collect .icn-heart-toggle {
     padding-bottom: 0 !important
 }
 
-html.ieold .giglist-packages-box .package-slide:hover .package-desc {
-    background: #fff
-}
-
 .mp-user-search {
     min-height: 600px
 }
@@ -2398,11 +2269,6 @@ html.ieold .giglist-packages-box .package-slide:hover .package-desc {
     min-height: 40px;
     margin: 0 -22px;
     opacity: 1
-}
-
-.mp-user-search .user-items .user-item {
-    width: 180px;
-    margin: 0 0 22px 22px
 }
 
 body.body-search .mp-gig-filter {
@@ -3876,18 +3742,6 @@ html.no-svg .mp-empty-search-results .request-cta .icn-request {
     width: 112px
 }
 
-html.ieold .form-post-request .form-row:hover .post-request-tooltip {
-    display: block
-}
-
-html.ieold .form-post-request .form-row .post-request-tooltip {
-    display: none
-}
-
-html.ieold .form-post-request .form-row .input-wrap:before {
-    background-image: url("//assetsv2.fiverrcdn.com/assets/v2_globals/icn-dashboard-request-nosvg-8bad045f3d2d45ab074b7d22e5b7d3da.png")
-}
-
 .post-request-tooltip {
     background-color: #deeff0;
     display: block;
@@ -4387,10 +4241,6 @@ html.no-svg .db-manage-requests-new-resume .educational-resume-header li:before 
     vertical-align: middle
 }
 
-.mp-user-hero-new .badges {
-    margin-left: 15px
-}
-
 .mp-user-hero-new .oneliner-wrapper {
     color: #fff;
     padding-bottom: 5px
@@ -4869,15 +4719,6 @@ html.no-svg .db-manage-requests-new-resume .educational-resume-header li:before 
     text-decoration: none
 }
 
-.ieold .mp-user-hero .hero-profile-image .user-pict-130 {
-    border: 1px #fff solid
-}
-
-.ieold .mp-user-hero .hero-profile-image .user-badge-round-med {
-    left: 112px;
-    bottom: -15px
-}
-
 .mp-user-info .best-seller-exp {
     padding-right: 10px !important
 }
@@ -5065,10 +4906,6 @@ html.no-svg .db-manage-requests-new-resume .educational-resume-header li:before 
     font-weight: 500;
     font-style: normal;
     color: #555555
-}
-
-.mp-user-info .user-stats .edit-mode.language-container {
-    display: none
 }
 
 .mp-user-info .user-stats .edit-mode.edit-language {
@@ -5378,10 +5215,6 @@ html.no-svg .mp-user-info .angel-badge {
     margin-top: 15px;
     text-align: right;
     line-height: 21px
-}
-
-.mp-user-reviews .reviews-list .footer .badges {
-    margin-right: 10px
 }
 
 .mp-user-reviews .reviews-list .footer .review-date {

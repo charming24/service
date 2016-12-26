@@ -4,7 +4,7 @@
     right: 10px;
     z-index: 1024;
     font-family: "Microsoft YaHei", sans-serif;
-    box-shadow: 0 10px 10px 1px #999;
+
     overflow: hidden;
     width: 698px;
     height: 530px;
@@ -420,7 +420,7 @@ img {
     background: url(http://a.zbjimg.com/static/common/widget/ui/components/webim-next/ui/img/icon_94fe006.png) no-repeat 0 -64px;
 }
 
-.webim-chat-input-tools .item-face, .webim-chat-input-tools .item-pic, .webim-chat-input-tools .webim-item-history {
+.webim-chat-input-tools .item-face, .webim-chat-input-tools .item-file, .webim-chat-input-tools .webim-item-history {
     display: inline-block;
     height: 20px;
     width: 20px;
@@ -428,15 +428,15 @@ img {
     vertical-align: middle;
 }
 
-:root .webim-chat-input-tools .item-pic {
+:root .webim-chat-input-tools .item-file {
     display: inline-block;
 }
 
-.webim-chat-input-tools .item-pic {
+.webim-chat-input-tools .item-file {
     display: none;
 }
 
-.webim-chat-input-tools .item-pic {
+.webim-chat-input-tools .item-file {
     background: url(http://a.zbjimg.com/static/common/widget/ui/components/webim-next/ui/img/icon_94fe006.png) no-repeat -23px -64px;
 }
 
@@ -452,7 +452,7 @@ img {
     box-shadow: 1px 1px 5px #f0f0f0;
     position: absolute;
     top: -205px;
-    display: none;
+    display: block;
     left: 10px;
     background: #fff;
     border-radius: 4px;

@@ -1543,9 +1543,6 @@ html.no-svg .hero-tags .hero-3-step li:after, html.no-svg .hero-tags .hero-3-ste
     background-position: -501px -851px
 }
 
-.ieold .deliveries-slider .delivery-item:hover .delivery-hover {
-    background: #2c2c2c
-}
 
 .pagination {
     text-align: center;

@@ -476,12 +476,6 @@
     display: inline
 }
 
-.db-new-inbox .user-icon {
-    float: none;
-    display: inline-block;
-    vertical-align: middle
-}
-
 .db-new-inbox .badge-inbox {
     background-color: #78cdd2;
     font-size: 10px;
@@ -568,12 +562,6 @@
 .db-new-inbox table tbody tr td .labels-wrap {
     float: left;
     padding-right: 5px
-}
-
-.db-new-inbox table tbody tr td .labels-wrap .label-marker {
-    vertical-align: middle;
-    margin-top: -1px;
-    margin-right: 3px
 }
 
 .db-new-inbox table tbody tr td .badges-wrap {
