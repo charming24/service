@@ -5,16 +5,11 @@
     <meta http-equiv="content-script-type" content="text/javascript">
 
     <meta name="viewport" content="width=1024">
-    <link href="../assets/application.css" media="all"
-          rel="stylesheet"/>
-    <link href="../assets/application-deferred.css" media="all"
-          rel="stylesheet"/>
-    <link href="../assets/conversations.css" media="all"
-          rel="stylesheet"/>
-    <link href="../assets/orders.css" media="all"
-          rel="stylesheet"/>
-    <link href="../assets/react_css/react-manage_sales.css"
-          media="all" rel="stylesheet"/>
+    <link href="../assets/application.css" media="all" rel="stylesheet"/>
+    <link href="../assets/application-deferred.css" media="all" rel="stylesheet"/>
+    <link href="../assets/conversations.css" media="all" rel="stylesheet"/>
+    <link href="../assets/orders.css" media="all" rel="stylesheet"/>
+
     <title>我的作品</title>
 </head>
 <body class="body-db wide-screen">
@@ -25,11 +20,6 @@
     <div id="main-wrapper-header">
         <div class="page-light-overlay js-page-light-overlay hidden"></div>
 
-
-        <div class="main-flashes">
-
-        </div>
-
         <header class="main-header with-shadow main-header-logged-in">
             <div class="mp-box mp-box-opaque">
                 <div class="box-row">
@@ -39,7 +29,7 @@
                     </a>
                     <nav class="global-search-box top-nav-search omnibox-search">
                         <div class="inner cf">
-                            <form accept-charset="UTF-8" action="/search/gigs" id="search-form-nav-bar" method="get">
+                            <form accept-charset="UTF-8" action="" id="search-form-nav-bar" method="get">
 
                                 <div class="global-search js-global-search omnibox ">
 
@@ -56,8 +46,6 @@
 
                     <nav class="main-nav main-nav-user">
                         <ul>
-
-
                             <li class="menu-icn icn-inbox js-icn-inbox js-mark hint--bottom" data-mark="inbox"
                                 data-hint="Inbox">
                                 <a href="#!" data-href="/conversations"
@@ -146,9 +134,6 @@
                             <li>
                                 <a href="my_project.html">我的作品</a>
                             </li>
-                            <li>
-                                <a href="">记录分析</a>
-                            </li>
                         </ul>
                     </li>
                     <li>
@@ -156,7 +141,7 @@
                     </li>
 
                     <li>
-                        <a href="">消息</a>
+                        <a href="messagebox.html">消息</a>
                     </li>
                     <li class="menu-expandable">
                         <a href="settings/public_profile.html">个人资料</a>
@@ -186,15 +171,17 @@
     <div class="main-content">
 
         <section class="mp-box">
+
             <div class="box-row p-b-100">
+
                 <article class="db-new-content db-manage-gigs js-db-cont">
+                    <header class="db-new-header cf">
+                        <h1 class="alt">我的作品</h1>
+                    </header>
                     <div class="db-new-filters">
                         <ul class="tabs js-db-status-tabs" style="cursor: pointer;">
-                            <li><a class="js-showing sel">展示中</a></li>
-                            <li><a class="js-draft" data-count-extended="1" data-count="1"
-                                   data-gtm-action="click on filter" data-gtm-category="my-gigs"
-                                   data-gtm-label="draft gigs" data-type="draft"
-                                   >草稿</a></li>
+                            <li><a class="js-showing sel" data-count-extended="0" data-count="1">展示中</a></li>
+                            <li><a class="js-draft" data-count-extended="10" data-count="1">草稿</a></li>
 
                             <li><a class="js-show-out" data-count-extended="0" data-count="0"
                                    data-gtm-action="click on filter" data-gtm-category="my-gigs"
@@ -205,16 +192,13 @@
 
                         <a class="btn-standard btn-azure-grad btn-create-gig js-gtm-event-auto "
                            data-gtm-action="Add New Gig" data-gtm-category="My Gigs" data-gtm-label="Main"
-                           href="/users/charming852/manage_gigs/new">上架新作品</a>
+                           href="../service/service_upload.html">上架新作品</a>
                     </div>
 
 
                     <div class="db-new-main-table js-db-table">
                         <table>
                             <thead>
-                            <tr class="header-filter">
-                                <td colspan="10"></td>
-                            </tr>
                             <tr>
                                 <td>
                                     <label class="fake-check-black">
@@ -224,19 +208,20 @@
                                 </td>
                                 <td colspan="3"><span class="hint--bottom"  data-hint="你的作品">作品</span></td>
 
-                                <td><span class="hint--top-right"
-                                          data-hint="Total number of clicks this Gig received in the last 30 days">月浏览次数</span>
+                                <td class="t-a-center"><span class="hint--top-right"
+                                          data-hint="过去一个月该项服务获得页面点击次数">月浏览次数</span>
                                 </td>
-                                <td><span class="hint--top-right"
-                                          data-hint="Total number of page views this Gig received in the last 30 days">月平均停留时长</span>
+                                <td class="t-a-center"><span class="hint--top-right"
+                                          data-hint="过去一个月该项服务获得平均页面浏览时间">月平均停留时长</span>
                                 </td>
-                                <td><span class="hint--top-right"
-                                          data-hint="Total number of orders from this Gig in the last 30 days">月订单数</span>
+                                <td class="t-a-center"><span class="hint--top-right"
+                                          data-hint="过去一个月该项服务获得的订单数量">月订单数</span>
                                 </td>
-                                <td><span class="hint--top-right"
-                                          data-hint="Cancellation rate: Number of cancelled orders divided by the number of orders from this Gig in the last 30 days">取消率</span>
+                                <td class="t-a-center"><span class="hint--top-right"
+                                          data-hint="过去一个月该项服务获得的订单取消率">取消率</span>
                                 </td>
-                                <td colspan="2"></td>
+                                <td colspan="2">
+                                </td>
                             </tr>
                             </thead>
 
@@ -249,17 +234,20 @@
                                         <span class="chk-img"></span>
                                     </label>
                                 </td>
-                                <td colspan="3"><span>作品</span></td>
+                                <td colspan="3" ><span>logo设计</span></td>
 
-                                <td><span>月浏览次数</span>
+                                <td class="t-a-center"><span>12</span>
                                 </td>
-                                <td><span>月平均停留时长</span>
+                                <td class="t-a-center"><span>50</span>
                                 </td>
-                                <td><span>月订单数</span>
+                                <td class="t-a-center"><span>1</span>
                                 </td>
-                                <td><span>取消率</span>
+                                <td class="t-a-center">0%
                                 </td>
-                                <td colspan="2"></td>
+                                <td colspan="2" width="10%">
+                                    <a class="operation-edit" href=""> 编辑</a>
+                                    <a class="operation-delete" href=""> 删除</a>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
@@ -268,10 +256,7 @@
                             <div class="bounce2"></div>
                             <div class="bounce3"></div>
                         </div>
-
-
                     </div>
-
                 </article>
             </div>
         </section>
@@ -302,12 +287,12 @@
         </div>
     </footer>
 </div>
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
 
 <script type="text/javascript">
     $(function () {
         $(".db-new-filters .tabs >li").click(function () {
-            $(".pointer").css("left", $(this).index() * 68);
+            $(".pointer").css("left", $(this).index() * 85);
           //  $(".spinner").css("visibility","hidden");
         });
 

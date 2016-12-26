@@ -1059,7 +1059,7 @@ tr .hidden-action .time-ago:before {
 }
 
 .db-new-filters .tabs li {
-    width: 80px;
+    width:85px;
     display: inline-block;
 
     -webkit-transition: left 0.3s;
@@ -1397,7 +1397,14 @@ html.no-svg .db-new-filters .search input[type="submit"] {
     padding-right: 15px;
     word-wrap: break-word
 }
-
+.db-new-main-table table td.text-wide .request-content{
+    width: 40em ;
+    height:58px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;-webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+}
 .db-new-main-table table td.action-btn {
     width: 120px
 }
@@ -1460,6 +1467,19 @@ html.no-svg .db-new-filters .search input[type="submit"] {
     height: 95px
 }
 
+.db-new-main-table .operation-edit{
+    text-decoration: none;
+    background-color: #1BBC3A;
+    color: #fff;
+    font-size: 13px;
+    padding: 5px 8px 5px 8px;
+    border-radius: 5px;
+
+}
+.db-new-main-table .operation-delete{
+   color: #fff;background-color: rgb(234, 110, 110); font-size: 13px;  text-decoration: none;
+    padding: 5px 8px 5px 8px;  border-radius: 5px;
+}
 .db-new-main-table table td.profile {
     width: 90px;
     padding: 10px 20px 0 0;
