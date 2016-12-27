@@ -22,14 +22,18 @@
 }
 
 .webim-people {
-    width: 200px;
+    width: 220px;
     height: 100%;
     background: #F5F5F5;
     border-radius: 6px 0 0;
     overflow: hidden;
     position: relative;
 }
-
+.webim-people .search-filter{
+    width:100%;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
 .fl {
     float: left;
 }
@@ -37,14 +41,27 @@
 .webim-people .webim-addto-block {
     display: none;
     width: 102px;
-    height: 20px;
-    padding: 10px 0 8px 8px;
+    height: 60px;
+
     box-shadow: 1px 1px 3px #5d5d5d;
     color: #999;
     position: absolute;
     left: 76px;
     z-index: 10;
     background: #fff;
+}
+.webim-people .webim-addto-block p{
+    line-height: 30px;
+    padding-left:20px;
+    height: 20px;
+    padding-bottom: 10px;
+}
+.webim-people .webim-addto-block p:hover{
+    background: #CACDD3;
+    color: #fff;
+}
+.webim-people .webim-addto-block .add-black{
+
 }
 
 a:link, a:visited, a:hover, a:active {
@@ -67,8 +84,11 @@ a {
 }
 
 .webim-people-list {
+    border: 1px solid #cccccc; border-radius: 6px 0 0;
+    border-bottom: none;
+    border-right: none;
     overflow-y: auto;
-    height: 90%;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -480,7 +500,29 @@ img {
     height: 82px;
     padding: 5px;
 }
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+.webim-chat-content::-webkit-scrollbar, .webim-chat-input-text::-webkit-scrollbar,.webim-people-list::-webkit-scrollbar
+{
+    width: 6px;
+    height: 16px;
+    background-color: #F5F5F5;
+}
 
+/*定义滚动条轨道 内阴影+圆角*/
+.webim-chat-content::-webkit-scrollbar-track, .webim-chat-input-text::-webkit-scrollbar-track,.webim-people-list::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px #B2B2B2;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+.webim-chat-content::-webkit-scrollbar-thumb, .webim-chat-input-text::-webkit-scrollbar-thumb,.webim-people-list::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px #B2B2B2;
+    background-color: #B2B2B2;
+}
 .webim-chat-input-text {
     width: 100%;
     height: 100%;
@@ -488,7 +530,11 @@ img {
     resize: none;
     box-shadow: none;
     line-height: 20px;
-    padding: 0;
+    padding: 0 0 0 10px;
+ outline:none;border: none;
+}
+.webim-chat-input-text:focus{
+    border: none;outline:none;
 }
 
 .webim-chat-input-foot {

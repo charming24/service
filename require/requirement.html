@@ -212,11 +212,20 @@
     <div class="webim webim-normal" id="webim">
 
         <div class="webim-box" id="webim-box">
-            <div class="webim-people fl"><a href="javascript:void(0)" class="webim-addto-block" id="webim-addto-block"
-                                            style="display: none;"> <i class="webim-addto-block-icon"></i> 加入黑名单 </a>
+            <div class="webim-people fl">
+                <a href="javascript:void(0)" class="webim-addto-block" id="webim-addto-block" style="display: none;">
+                   <p class="add-black">加入黑名单</p>
+                    <p class="webim-people-delete">删除</p>
+                </a>
+
+
+                <div style="display: inline-block;width: 100%">
+                    <input type="text" class="search-filter"  maxlength="15">
+                    <img src="../images/search.png" width="16px" height="16px" style="position:relative;float: right;
+                    margin:-23px 10px 0 0 ;">
+                </div>
                 <ul class="webim-people-list" id="webim-people-list">
                     <li title="上上策品牌设计" class="active">
-                        <span class="item-open fr" data-id="7e67d787ed2ddb0716081052">×</span>
                         <span class="item-bg"></span>
                         <i class="item-unread hide">0</i>
                         <img src="http://avatar.zbjimg.com/016/08/10/200x200_avatar_52.jpg!small" class="item-avatar">
@@ -224,6 +233,15 @@
                             <span class="item-status">在线</span>
                         </span>
                     </li>
+                    <li title="上上策品牌设计" class="active">
+                        <span class="item-bg"></span>
+                        <i class="item-unread hide">0</i>
+                        <img src="http://avatar.zbjimg.com/016/08/10/200x200_avatar_52.jpg!small" class="item-avatar">
+                        <span class="item-name">上上策品牌设计<br>
+                            <span class="item-status">在线</span>
+                        </span>
+                    </li>
+
                 </ul>
                 <p class="webim-view-contacts" id="webim-view-contacts"><a
                         href="http://u.zbj.com/notice/ChatV2-page-1?_t=1482577709143" target="_blank">查看全部聊天列表</a></p>
@@ -233,10 +251,11 @@
                     <span class="webim-chat-title " id="webim-chat-title">
                         <a href="http://home.zbj.com/16081052/" target="_blank" title="上上策品牌设计">上上策品牌设计</a>
                     </span>
-                        <span class="item-action fr">
+                    <span class="item-action fr">
                         <span class="webim-chat-sound" title="关闭提示音" id="webim-sound-set"></span>
 
-                        <span class="webim-chat-close" title="关闭" id="webim-chat-close"></span>                </span></div>
+                        <span class="webim-chat-close" title="关闭" id="webim-chat-close"></span>                </span>
+                </div>
                 <div class="webim-chat-content hide-warn" id="webim-chat-body">
                     <div class="webim-chat-tips webim-history-tip hidden"> 聊天列表为空<br>
                         <a href="http://u.zbj.com/notice/ChatV2-page-1" target="_blank">点击这里查看历史聊天记录</a>
@@ -304,77 +323,141 @@
                         <a href="javascript:void(0);" title="文件" class="item-file" id="webim-upload-img"
                            style="position: relative; z-index: 1;"></a>
                         <a class="webim-item-history j-webim-history-link" target="_blank" title="历史聊天记录"
-                                href="http://u.zbj.com/notice/ChatDetailV2-page-1-dialogueUserId-16081052"></a>
+                           href="http://u.zbj.com/notice/ChatDetailV2-page-1-dialogueUserId-16081052"></a>
 
-                        <div class="webim-emoji">
-                            <span class="RongIMExpression_rinning" name="[大笑]"><b class="RC_Expression" style="background-position: 0px 0px;"></b></span>
-                            <span class="RongIMExpression_rin" name="[露齿而笑]"><b class="RC_Expression" style="background-position: -22px 0px;"></b></span>
-                            <span class="RongIMExpression_oy" name="[欢乐]"><b class="RC_Expression" style="background-position: -44px 0px;"></b></span>
-                            <span class="RongIMExpression_mile" name="[微笑]"><b class="RC_Expression" style="background-position: -66px 0px;"></b></span>
-                            <span class="RongIMExpression_weat_smile" name="[赔笑]"><b class="RC_Expression" style="background-position: -88px 0px;"></b></span>
-                            <span class="RongIMExpression_atisfied" name="[满意]"><b class="RC_Expression" style="background-position: -110px 0px;"></b></span>
-                            <span class="RongIMExpression_nnocent" name="[无辜]"><b class="RC_Expression" style="background-position: -132px 0px;"></b></span>
-                            <span class="RongIMExpression_miling_imp" name="[坏笑]"><b class="RC_Expression" style="background-position: -154px 0px;"></b></span>
-                            <span class="RongIMExpression_ink" name="[眨眼]"><b class="RC_Expression" style="background-position: -176px 0px;"></b></span>
-                            <span class="RongIMExpression_xpressionless" name="[面无表情]"><b class="RC_Expression" style="background-position: -198px 0px;"></b></span>
-                            <span class="RongIMExpression_namused" name="[一脸不快]"><b class="RC_Expression" style="background-position: -220px 0px;"></b></span>
-                            <span class="RongIMExpression_weat" name="[汗]"><b class="RC_Expression" style="background-position: -242px 0px;"></b></span>
-                            <span class="RongIMExpression_ensive" name="[哀思]"><b class="RC_Expression" style="background-position: -264px 0px;"></b></span>
-                            <span class="RongIMExpression_onfused" name="[迷茫]"><b class="RC_Expression" style="background-position: -286px 0px;"></b></span>
-                            <span class="RongIMExpression_onfounded" name="[困惑的]"><b class="RC_Expression" style="background-position: -308px 0px;"></b></span>
-                            <span class="RongIMExpression_issing_heart" name="[亲一个]"><b class="RC_Expression" style="background-position: -330px 0px;"></b></span>
-                            <span class="RongIMExpression_age" name="[愤怒]"><b class="RC_Expression" style="background-position: -352px 0px;"></b></span>
-                            <span class="RongIMExpression_ob" name="[哭泣]"><b class="RC_Expression" style="background-position: -1826px 0px;"></b></span>
-                            <span class="RongIMExpression_ersevere" name="[使劲]"><b class="RC_Expression" style="background-position: -396px 0px;"></b></span>
-                            <span class="RongIMExpression_riumph" name="[生气]"><b class="RC_Expression" style="background-position: -418px 0px;"></b></span>
-                            <span class="RongIMExpression_earful" name="[可怕]"><b class="RC_Expression" style="background-position: -440px 0px;"></b></span>
-                            <span class="RongIMExpression_eary" name="[厌倦]"><b class="RC_Expression" style="background-position: -462px 0px;"></b></span>
-                            <span class="RongIMExpression_old_sweat" name="[冷汗]"><b class="RC_Expression" style="background-position: -484px 0px;"></b></span>
-                            <span class="RongIMExpression_cream" name="[惊叫]"><b class="RC_Expression" style="background-position: -506px 0px;"></b></span>
-                            <span class="RongIMExpression_stonished" name="[惊讶]"><b class="RC_Expression" style="background-position: -528px 0px;"></b></span>
-                            <span class="RongIMExpression_lushed" name="[呆住]"><b class="RC_Expression" style="background-position: -550px 0px;"></b></span>
-                            <span class="RongIMExpression_leeping" name="[睡眠]"><b class="RC_Expression" style="background-position: -572px 0px;"></b></span>
-                            <span class="RongIMExpression_izzy_face" name="[断电了]"><b class="RC_Expression" style="background-position: -594px 0px;"></b></span>
-                            <span class="RongIMExpression_o_mouth" name="[无口]"><b class="RC_Expression" style="background-position: -616px 0px;"></b></span>
-                            <span class="RongIMExpression_ask" name="[病了]"><b class="RC_Expression" style="background-position: -638px 0px;"></b></span>
-                            <span class="RongIMExpression_icrophone" name="[KTV]"><b class="RC_Expression" style="background-position: -660px 0px;"></b></span>
-                            <span class="RongIMExpression_ame_die" name="[色子]"><b class="RC_Expression" style="background-position: -682px 0px;"></b></span>
-                            <span class="RongIMExpression_usical_note" name="[音乐]"><b class="RC_Expression" style="background-position: -704px 0px;"></b></span>
-                            <span class="RongIMExpression_asketball" name="[篮球]"><b class="RC_Expression" style="background-position: -726px 0px;"></b></span>
-                            <span class="RongIMExpression_nowboarder" name="[单板滑雪]"><b class="RC_Expression" style="background-position: -748px 0px;"></b></span>
-                            <span class="RongIMExpression_ouse_with_garden" name="[房子]"><b class="RC_Expression" style="background-position: -770px 0px;"></b></span>
-                            <span class="RongIMExpression_ahjong" name="[麻将]"><b class="RC_Expression" style="background-position: -792px 0px;"></b></span>
-                            <span class="RongIMExpression_ulb" name="[灯泡]"><b class="RC_Expression" style="background-position: -814px 0px;"></b></span>
-                            <span class="RongIMExpression_nger" name="[爆筋]"><b class="RC_Expression" style="background-position: -836px 0px;"></b></span>
-                            <span class="RongIMExpression_omb" name="[炸弹]"><b class="RC_Expression" style="background-position: -858px 0px;"></b></span>
-                            <span class="RongIMExpression_zz" name="[ZZZ]"><b class="RC_Expression" style="background-position: -880px 0px;"></b></span>
-                            <span class="RongIMExpression_hit" name="[狗屁]"><b class="RC_Expression" style="background-position: -902px 0px;"></b></span>
-                            <span class="RongIMExpression_uscle" name="[肌肉]"><b class="RC_Expression" style="background-position: -924px 0px;"></b></span>
-                            <span class="RongIMExpression_oneybag" name="[钱袋]"><b class="RC_Expression" style="background-position: -946px 0px;"></b></span>
-                            <span class="RongIMExpression_ooks" name="[书籍]"><b class="RC_Expression" style="background-position: -968px 0px;"></b></span>
-                            <span class="RongIMExpression_elephone_receiver" name="[电话]"><b class="RC_Expression" style="background-position: -990px 0px;"></b></span>
-                            <span class="RongIMExpression_oudspeaker" name="[扩音器]"><b class="RC_Expression" style="background-position: -1012px 0px;"></b></span>
-                            <span class="RongIMExpression_top" name="[停止]"><b class="RC_Expression" style="background-position: -1034px 0px;"></b></span>
-                            <span class="RongIMExpression_hower" name="[淋浴]"><b class="RC_Expression" style="background-position: -1056px 0px;"></b></span>
-                            <span class="RongIMExpression_arth_asia" name="[土]"><b class="RC_Expression" style="background-position: -1078px 0px;"></b></span>
-                            <span class="RongIMExpression_unflower" name="[向日葵]"><b class="RC_Expression" style="background-position: -1100px 0px;"></b></span>
-                            <span class="RongIMExpression_ice" name="[饭]"><b class="RC_Expression" style="background-position: -1122px 0px;"></b></span>
-                            <span class="RongIMExpression_hocolate_bar" name="[巧克力]"><b class="RC_Expression" style="background-position: -1144px 0px;"></b></span>
-                            <span class="RongIMExpression_eers" name="[啤酒]"><b class="RC_Expression" style="background-position: -1166px 0px;"></b></span>
-                            <span class="RongIMExpression_ist" name="[拳头]"><b class="RC_Expression" style="background-position: -2618px 0px;"></b></span>
-                            <span class="RongIMExpression_k_hand" name="[没问题]"><b class="RC_Expression" style="background-position: -1210px 0px;"></b></span>
-                            <span class="RongIMExpression_" name="[1]"><b class="RC_Expression" style="background-position: -1232px 0px;"></b></span>
-                            <span class="RongIMExpression_1" name="[-1]"><b class="RC_Expression" style="background-position: -1254px 0px;"></b></span>
-                            <span class="RongIMExpression_lap" name="[拍]"><b class="RC_Expression" style="background-position: -1276px 0px;"></b></span>
-                            <span class="RongIMExpression_amily" name="[家庭]"><b class="RC_Expression" style="background-position: -1298px 0px;"></b></span>
-                            <span class="RongIMExpression_ouple" name="[情侣]"><b class="RC_Expression" style="background-position: -1320px 0px;"></b></span>
-                            <span class="RongIMExpression_rimacing" name="[鬼脸]"><b class="RC_Expression" style="background-position: -1804px 0px;"></b></span>
-                            <span class="RongIMExpression_ngel" name="[天使]"><b class="RC_Expression" style="background-position: -1364px 0px;"></b></span>
-                            <span class="RongIMExpression_lien" name="[外星人]"><b class="RC_Expression" style="background-position: -1386px 0px;"></b></span>
+                        <div class="webim-emoji hidden">
+                            <span class="RongIMExpression_rinning" name="[大笑]"><b class="RC_Expression"
+                                                                                  style="background-position: 0px 0px;"></b></span>
+                            <span class="RongIMExpression_rin" name="[露齿而笑]"><b class="RC_Expression"
+                                                                                style="background-position: -22px 0px;"></b></span>
+                            <span class="RongIMExpression_oy" name="[欢乐]"><b class="RC_Expression"
+                                                                             style="background-position: -44px 0px;"></b></span>
+                            <span class="RongIMExpression_mile" name="[微笑]"><b class="RC_Expression"
+                                                                               style="background-position: -66px 0px;"></b></span>
+                            <span class="RongIMExpression_weat_smile" name="[赔笑]"><b class="RC_Expression"
+                                                                                     style="background-position: -88px 0px;"></b></span>
+                            <span class="RongIMExpression_atisfied" name="[满意]"><b class="RC_Expression"
+                                                                                   style="background-position: -110px 0px;"></b></span>
+                            <span class="RongIMExpression_nnocent" name="[无辜]"><b class="RC_Expression"
+                                                                                  style="background-position: -132px 0px;"></b></span>
+                            <span class="RongIMExpression_miling_imp" name="[坏笑]"><b class="RC_Expression"
+                                                                                     style="background-position: -154px 0px;"></b></span>
+                            <span class="RongIMExpression_ink" name="[眨眼]"><b class="RC_Expression"
+                                                                              style="background-position: -176px 0px;"></b></span>
+                            <span class="RongIMExpression_xpressionless" name="[面无表情]"><b class="RC_Expression"
+                                                                                          style="background-position: -198px 0px;"></b></span>
+                            <span class="RongIMExpression_namused" name="[一脸不快]"><b class="RC_Expression"
+                                                                                    style="background-position: -220px 0px;"></b></span>
+                            <span class="RongIMExpression_weat" name="[汗]"><b class="RC_Expression"
+                                                                              style="background-position: -242px 0px;"></b></span>
+                            <span class="RongIMExpression_ensive" name="[哀思]"><b class="RC_Expression"
+                                                                                 style="background-position: -264px 0px;"></b></span>
+                            <span class="RongIMExpression_onfused" name="[迷茫]"><b class="RC_Expression"
+                                                                                  style="background-position: -286px 0px;"></b></span>
+                            <span class="RongIMExpression_onfounded" name="[困惑的]"><b class="RC_Expression"
+                                                                                     style="background-position: -308px 0px;"></b></span>
+                            <span class="RongIMExpression_issing_heart" name="[亲一个]"><b class="RC_Expression"
+                                                                                        style="background-position: -330px 0px;"></b></span>
+                            <span class="RongIMExpression_age" name="[愤怒]"><b class="RC_Expression"
+                                                                              style="background-position: -352px 0px;"></b></span>
+                            <span class="RongIMExpression_ob" name="[哭泣]"><b class="RC_Expression"
+                                                                             style="background-position: -1826px 0px;"></b></span>
+                            <span class="RongIMExpression_ersevere" name="[使劲]"><b class="RC_Expression"
+                                                                                   style="background-position: -396px 0px;"></b></span>
+                            <span class="RongIMExpression_riumph" name="[生气]"><b class="RC_Expression"
+                                                                                 style="background-position: -418px 0px;"></b></span>
+                            <span class="RongIMExpression_earful" name="[可怕]"><b class="RC_Expression"
+                                                                                 style="background-position: -440px 0px;"></b></span>
+                            <span class="RongIMExpression_eary" name="[厌倦]"><b class="RC_Expression"
+                                                                               style="background-position: -462px 0px;"></b></span>
+                            <span class="RongIMExpression_old_sweat" name="[冷汗]"><b class="RC_Expression"
+                                                                                    style="background-position: -484px 0px;"></b></span>
+                            <span class="RongIMExpression_cream" name="[惊叫]"><b class="RC_Expression"
+                                                                                style="background-position: -506px 0px;"></b></span>
+                            <span class="RongIMExpression_stonished" name="[惊讶]"><b class="RC_Expression"
+                                                                                    style="background-position: -528px 0px;"></b></span>
+                            <span class="RongIMExpression_lushed" name="[呆住]"><b class="RC_Expression"
+                                                                                 style="background-position: -550px 0px;"></b></span>
+                            <span class="RongIMExpression_leeping" name="[睡眠]"><b class="RC_Expression"
+                                                                                  style="background-position: -572px 0px;"></b></span>
+                            <span class="RongIMExpression_izzy_face" name="[断电了]"><b class="RC_Expression"
+                                                                                     style="background-position: -594px 0px;"></b></span>
+                            <span class="RongIMExpression_o_mouth" name="[无口]"><b class="RC_Expression"
+                                                                                  style="background-position: -616px 0px;"></b></span>
+                            <span class="RongIMExpression_ask" name="[病了]"><b class="RC_Expression"
+                                                                              style="background-position: -638px 0px;"></b></span>
+                            <span class="RongIMExpression_icrophone" name="[KTV]"><b class="RC_Expression"
+                                                                                     style="background-position: -660px 0px;"></b></span>
+                            <span class="RongIMExpression_ame_die" name="[色子]"><b class="RC_Expression"
+                                                                                  style="background-position: -682px 0px;"></b></span>
+                            <span class="RongIMExpression_usical_note" name="[音乐]"><b class="RC_Expression"
+                                                                                      style="background-position: -704px 0px;"></b></span>
+                            <span class="RongIMExpression_asketball" name="[篮球]"><b class="RC_Expression"
+                                                                                    style="background-position: -726px 0px;"></b></span>
+                            <span class="RongIMExpression_nowboarder" name="[单板滑雪]"><b class="RC_Expression"
+                                                                                       style="background-position: -748px 0px;"></b></span>
+                            <span class="RongIMExpression_ouse_with_garden" name="[房子]"><b class="RC_Expression"
+                                                                                           style="background-position: -770px 0px;"></b></span>
+                            <span class="RongIMExpression_ahjong" name="[麻将]"><b class="RC_Expression"
+                                                                                 style="background-position: -792px 0px;"></b></span>
+                            <span class="RongIMExpression_ulb" name="[灯泡]"><b class="RC_Expression"
+                                                                              style="background-position: -814px 0px;"></b></span>
+                            <span class="RongIMExpression_nger" name="[爆筋]"><b class="RC_Expression"
+                                                                               style="background-position: -836px 0px;"></b></span>
+                            <span class="RongIMExpression_omb" name="[炸弹]"><b class="RC_Expression"
+                                                                              style="background-position: -858px 0px;"></b></span>
+                            <span class="RongIMExpression_zz" name="[ZZZ]"><b class="RC_Expression"
+                                                                              style="background-position: -880px 0px;"></b></span>
+                            <span class="RongIMExpression_hit" name="[狗屁]"><b class="RC_Expression"
+                                                                              style="background-position: -902px 0px;"></b></span>
+                            <span class="RongIMExpression_uscle" name="[肌肉]"><b class="RC_Expression"
+                                                                                style="background-position: -924px 0px;"></b></span>
+                            <span class="RongIMExpression_oneybag" name="[钱袋]"><b class="RC_Expression"
+                                                                                  style="background-position: -946px 0px;"></b></span>
+                            <span class="RongIMExpression_ooks" name="[书籍]"><b class="RC_Expression"
+                                                                               style="background-position: -968px 0px;"></b></span>
+                            <span class="RongIMExpression_elephone_receiver" name="[电话]"><b class="RC_Expression"
+                                                                                            style="background-position: -990px 0px;"></b></span>
+                            <span class="RongIMExpression_oudspeaker" name="[扩音器]"><b class="RC_Expression"
+                                                                                      style="background-position: -1012px 0px;"></b></span>
+                            <span class="RongIMExpression_top" name="[停止]"><b class="RC_Expression"
+                                                                              style="background-position: -1034px 0px;"></b></span>
+                            <span class="RongIMExpression_hower" name="[淋浴]"><b class="RC_Expression"
+                                                                                style="background-position: -1056px 0px;"></b></span>
+                            <span class="RongIMExpression_arth_asia" name="[土]"><b class="RC_Expression"
+                                                                                   style="background-position: -1078px 0px;"></b></span>
+                            <span class="RongIMExpression_unflower" name="[向日葵]"><b class="RC_Expression"
+                                                                                    style="background-position: -1100px 0px;"></b></span>
+                            <span class="RongIMExpression_ice" name="[饭]"><b class="RC_Expression"
+                                                                             style="background-position: -1122px 0px;"></b></span>
+                            <span class="RongIMExpression_hocolate_bar" name="[巧克力]"><b class="RC_Expression"
+                                                                                        style="background-position: -1144px 0px;"></b></span>
+                            <span class="RongIMExpression_eers" name="[啤酒]"><b class="RC_Expression"
+                                                                               style="background-position: -1166px 0px;"></b></span>
+                            <span class="RongIMExpression_ist" name="[拳头]"><b class="RC_Expression"
+                                                                              style="background-position: -2618px 0px;"></b></span>
+                            <span class="RongIMExpression_k_hand" name="[没问题]"><b class="RC_Expression"
+                                                                                  style="background-position: -1210px 0px;"></b></span>
+                            <span class="RongIMExpression_" name="[1]"><b class="RC_Expression"
+                                                                          style="background-position: -1232px 0px;"></b></span>
+                            <span class="RongIMExpression_1" name="[-1]"><b class="RC_Expression"
+                                                                            style="background-position: -1254px 0px;"></b></span>
+                            <span class="RongIMExpression_lap" name="[拍]"><b class="RC_Expression"
+                                                                             style="background-position: -1276px 0px;"></b></span>
+                            <span class="RongIMExpression_amily" name="[家庭]"><b class="RC_Expression"
+                                                                                style="background-position: -1298px 0px;"></b></span>
+                            <span class="RongIMExpression_ouple" name="[情侣]"><b class="RC_Expression"
+                                                                                style="background-position: -1320px 0px;"></b></span>
+                            <span class="RongIMExpression_rimacing" name="[鬼脸]"><b class="RC_Expression"
+                                                                                   style="background-position: -1804px 0px;"></b></span>
+                            <span class="RongIMExpression_ngel" name="[天使]"><b class="RC_Expression"
+                                                                               style="background-position: -1364px 0px;"></b></span>
+                            <span class="RongIMExpression_lien" name="[外星人]"><b class="RC_Expression"
+                                                                                style="background-position: -1386px 0px;"></b></span>
                         </div>
                         <div id="html5_1b4o85p0nrvv1faq1ffd1d93qni3_container" class="moxie-shim moxie-shim-html5"
                              style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px; overflow: hidden; z-index: 0;">
-                            <input id="html5_1b4o85p0nrvv1faq1ffd1d93qni3" type="file"
+                            <input type="file"
                                    style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
                                    accept="image/jpeg,.jpg,image/png,.png,.jpeg"></div>
                     </div>
@@ -391,7 +474,68 @@
     </div>
     <script src="../js/jquery.min.js"></script>
     <script type="text/javascript">
-        jQuery(document).ready(
+
+        $(document).ready(function () {
+            $('.webim-people-list, .webim-addto-block').bind('contextmenu',function(){
+                return false;
+            });
+
+            $('.webim-people-list li').mousedown(function(e){
+                if(3 == e.which){
+                    $(this).siblings("li").css("background-color","transparent");
+                    $(this).css("background-color","#CACDD3");
+                    $(".webim-addto-block").css("display","block");
+                    $(".webim-addto-block").css("top",$(this).index()*70);
+                }else if(1 == e.which){
+                    $(this).siblings("li").css("background-color","transparent");
+                   $(this).css("background-color","#CACDD3");
+                }
+            })
+
+            var body =  $(".body-db");
+            var chat_emoji_toggle =  $(".item-face");
+            var chat_emoji = $(".webim-emoji");
+
+            body.click(function(e){
+                var _target = $(e.target);
+                if (_target.closest(".webim-addto-block").length == 0) {
+                    $(".webim-addto-block").hide();
+                   // chat_emoji.hide();
+                }
+                if(_target.closest(chat_emoji).length == 0 &&_target.closest(chat_emoji_toggle).length == 0  ){
+                   chat_emoji.addClass("hidden");
+                }
+            });
+
+            $(".webim-addto-block").click(function () {
+                $(this).css("display","none");
+                //-------------------------
+                $.ajax({
+                    url: '',
+                    data: {},
+                    dataType: 'json',
+                    type: 'POST',
+                    success: function(data){
+                    },
+                    error: function(xhr, status){
+                    },
+                    complete: function(){
+
+                    }
+                });
+            });
+            chat_emoji_toggle.click(function () {
+                if(chat_emoji.hasClass("hidden")){
+                    chat_emoji.removeClass("hidden");
+                }else {
+                    chat_emoji.addClass("hidden");
+
+                }
+            });
+
+        });
+
+            jQuery(document).ready(
                 function () {
                     $('.webim-chat-head,.webim-chat-input-tools,.webim-chat-input-foot').mousedown(
                             function (event) {
@@ -401,9 +545,8 @@
                                 $(document).mousemove(function (event) {
                                             if (isMove) {
                                                 var obj = $('#webim');
-                                                var  moveTop = Math.min($(window).height()-200,event.pageY - abs_y-$(window).scrollTop());
-                                                console.log(moveTop);
-                                                obj.css({'left':event.pageX - abs_x, 'top':moveTop});
+                                                var moveTop = Math.min($(window).height() - 200, event.pageY - abs_y - $(window).scrollTop());
+                                                obj.css({'left': event.pageX - abs_x, 'top': moveTop});
                                             }
                                         }
                                 ).mouseup(
@@ -415,6 +558,7 @@
                     );
 
                 }
+
         );
     </script>
     <footer class="mp-box main-footer js-main-footer border-top p-t-20 p-b-30 ">
