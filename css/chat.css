@@ -4,7 +4,6 @@
     right: 10px;
     z-index: 1024;
     font-family: "Microsoft YaHei", sans-serif;
-
     overflow: hidden;
     width: 698px;
     height: 530px;
@@ -16,8 +15,8 @@
 
 .webim-box {
     display: none;
-    width: 698px;
-    height: 538px;
+    width: 100%;
+    height: 100%;
     border-radius: 0 6px 0 0;
 }
 
@@ -29,11 +28,13 @@
     overflow: hidden;
     position: relative;
 }
-.webim-people .search-filter{
-    width:100%;
+
+.webim-people .search-filter {
+    width: 100%;
     border: 1px solid #cccccc;
     border-radius: 5px;
 }
+
 .fl {
     float: left;
 }
@@ -50,17 +51,20 @@
     z-index: 10;
     background: #fff;
 }
-.webim-people .webim-addto-block p{
+
+.webim-people .webim-addto-block p {
     line-height: 30px;
-    padding-left:20px;
+    padding-left: 20px;
     height: 20px;
     padding-bottom: 10px;
 }
-.webim-people .webim-addto-block p:hover{
+
+.webim-people .webim-addto-block p:hover {
     background: #CACDD3;
     color: #fff;
 }
-.webim-people .webim-addto-block .add-black{
+
+.webim-people .webim-addto-block .add-black {
 
 }
 
@@ -84,7 +88,8 @@ a {
 }
 
 .webim-people-list {
-    border: 1px solid #cccccc; border-radius: 6px 0 0;
+    border: 1px solid #cccccc;
+    border-radius: 6px 0 0;
     border-bottom: none;
     border-right: none;
     overflow-y: auto;
@@ -248,7 +253,7 @@ a {
     line-height: 40px;
     font-weight: 700;
     font-size: 14px;
-    margin-left:35%;
+    margin-left: 35%;
     text-align: center;
 }
 
@@ -434,6 +439,7 @@ img {
     font-size: 12px;
     padding-left: 16px;
     padding-top: 10px;
+    border-top: 1px solid #cccccc;
 }
 
 .webim-chat-input-tools .item-face {
@@ -450,6 +456,7 @@ img {
 
 :root .webim-chat-input-tools .item-file {
     display: inline-block;
+    cursor: pointer;
 }
 
 .webim-chat-input-tools .item-file {
@@ -458,6 +465,7 @@ img {
 
 .webim-chat-input-tools .item-file {
     background: url(http://a.zbjimg.com/static/common/widget/ui/components/webim-next/ui/img/icon_94fe006.png) no-repeat -23px -64px;
+
 }
 
 .webim-chat-input-tools .webim-item-history {
@@ -500,29 +508,28 @@ img {
     height: 82px;
     padding: 5px;
 }
+
 /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
-.webim-chat-content::-webkit-scrollbar, .webim-chat-input-text::-webkit-scrollbar,.webim-people-list::-webkit-scrollbar
-{
+.webim-chat-content::-webkit-scrollbar, .webim-chat-input-text::-webkit-scrollbar, .webim-people-list::-webkit-scrollbar {
     width: 6px;
     height: 16px;
     background-color: #F5F5F5;
 }
 
 /*定义滚动条轨道 内阴影+圆角*/
-.webim-chat-content::-webkit-scrollbar-track, .webim-chat-input-text::-webkit-scrollbar-track,.webim-people-list::-webkit-scrollbar-track
-{
+.webim-chat-content::-webkit-scrollbar-track, .webim-chat-input-text::-webkit-scrollbar-track, .webim-people-list::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px #B2B2B2;
     border-radius: 10px;
     background-color: #F5F5F5;
 }
 
 /*定义滑块 内阴影+圆角*/
-.webim-chat-content::-webkit-scrollbar-thumb, .webim-chat-input-text::-webkit-scrollbar-thumb,.webim-people-list::-webkit-scrollbar-thumb
-{
+.webim-chat-content::-webkit-scrollbar-thumb, .webim-chat-input-text::-webkit-scrollbar-thumb, .webim-people-list::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px #B2B2B2;
     background-color: #B2B2B2;
 }
+
 .webim-chat-input-text {
     width: 100%;
     height: 100%;
@@ -531,10 +538,13 @@ img {
     box-shadow: none;
     line-height: 20px;
     padding: 0 0 0 10px;
- outline:none;border: none;
+    outline: none;
+    border: none;
 }
-.webim-chat-input-text:focus{
-    border: none;outline:none;
+
+.webim-chat-input-text:focus {
+    border: none;
+    outline: none;
 }
 
 .webim-chat-input-foot {
@@ -566,4 +576,15 @@ img {
 .webim-chat-input-foot span {
     color: #bbb;
     font-size: 12px;
+}
+
+.chat-toggle a {
+    padding: 10px 18px 10px 18px;
+    color: #fff;
+    position: fixed;
+    bottom: 20px;
+    right: 50px;
+    z-index: 1000;
+    background-color: #00b22d;
+    cursor: pointer;
 }

@@ -209,25 +209,24 @@
     </div>
 
 
-    <div class="webim webim-normal" id="webim">
+    <div class="webim webim-normal hidden" id="webim">
 
         <div class="webim-box" id="webim-box">
             <div class="webim-people fl">
                 <a href="javascript:void(0)" class="webim-addto-block" id="webim-addto-block" style="display: none;">
-                   <p class="add-black">加入黑名单</p>
+                    <p class="add-black">加入黑名单</p>
                     <p class="webim-people-delete">删除</p>
                 </a>
 
-
                 <div style="display: inline-block;width: 100%">
-                    <input type="text" class="search-filter"  maxlength="15">
+                    <input type="text" class="search-filter" maxlength="15">
                     <img src="../images/search.png" width="16px" height="16px" style="position:relative;float: right;
                     margin:-23px 10px 0 0 ;">
                 </div>
                 <ul class="webim-people-list" id="webim-people-list">
                     <li title="上上策品牌设计" class="active">
                         <span class="item-bg"></span>
-                        <i class="item-unread hide">0</i>
+                        <i class="item-unread ">10</i>
                         <img src="http://avatar.zbjimg.com/016/08/10/200x200_avatar_52.jpg!small" class="item-avatar">
                         <span class="item-name">上上策品牌设计<br>
                             <span class="item-status">在线</span>
@@ -253,8 +252,9 @@
                     </span>
                     <span class="item-action fr">
                         <span class="webim-chat-sound" title="关闭提示音" id="webim-sound-set"></span>
-
-                        <span class="webim-chat-close" title="关闭" id="webim-chat-close"></span>                </span>
+                         <span class="webim-chat-fullpage" title="最大化" id="webim-chat-fullpage"></span>
+                        <span class="webim-chat-close" title="关闭" id="webim-chat-close"></span>
+                    </span>
                 </div>
                 <div class="webim-chat-content hide-warn" id="webim-chat-body">
                     <div class="webim-chat-tips webim-history-tip hidden"> 聊天列表为空<br>
@@ -320,14 +320,17 @@
                 <div class="webim-chat-input" id="webim-chat-foot">
                     <div class="webim-chat-input-tools" style="position: relative;">
                         <a href="javascript:void(0);" title="表情" class="item-face"></a>
-                        <a href="javascript:void(0);" title="文件" class="item-file" id="webim-upload-img"
-                           style="position: relative; z-index: 1;"></a>
+                        <!--<a href="javascript:void(0);" title="文件" class="item-file" id="webim-upload-file"-->
+                        <!--style="position: relative; z-index: 1;">-->
+                        <label for="upload-file" class="item-file"></label>
+                        <input type='file' id="upload-file" class="hidden">
+                        <!--</a>-->
                         <a class="webim-item-history j-webim-history-link" target="_blank" title="历史聊天记录"
-                           href="http://u.zbj.com/notice/ChatDetailV2-page-1-dialogueUserId-16081052"></a>
+                           href="../background/messagebox.html"></a>
 
                         <div class="webim-emoji hidden">
-                            <span class="RongIMExpression_rinning" name="[大笑]"><b class="RC_Expression"
-                                                                                  style="background-position: 0px 0px;"></b></span>
+                            <span class="RongIMExpression_rinning" name="[大笑]">
+                                <b class="RC_Expression" style="background-position: 0px 0px;"></b></span>
                             <span class="RongIMExpression_rin" name="[露齿而笑]"><b class="RC_Expression"
                                                                                 style="background-position: -22px 0px;"></b></span>
                             <span class="RongIMExpression_oy" name="[欢乐]"><b class="RC_Expression"
@@ -461,81 +464,165 @@
                                    style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
                                    accept="image/jpeg,.jpg,image/png,.png,.jpeg"></div>
                     </div>
-                    <div class="webim-chat-input-text-wrap"><textarea class="webim-chat-input-text"
-                                                                      id="webim-chat-input"></textarea></div>
-                    <div class="webim-chat-input-foot"><a class="webim-people-rule fl"
-                                                          href="http://help.zbj.com/1037.html" target="_blank">《消息系统使用规则》</a>
-                        <button class="webim-chat-input-btn fr" id="chat_input_btn">发送</button>
-                        <span class="fr">enter发送，ctrl+enter换行</span></div>
+                    <div class="webim-chat-input-text-wrap">
+                        <textarea class="webim-chat-input-text" id="webim-chat-input"></textarea>
+                    </div>
+                    <div class="webim-chat-input-foot">
+                        <a class="webim-people-rule fl" href="" target="_blank">《消息系统使用规则》</a>
+                        <button class="webim-chat-input-btn fr" id="chat_input_btn" onclick="send_msg()">发送</button>
+                        <span class="fr">enter发送，ctrl+enter换行</span>
+                    </div>
                 </div>
             </div>
         </div>
-        <audio class="hide" id="webim-sound" src="http://cms.zbjimg.com/webim/income.mp3" controls="controls"></audio>
+        <audio id="webim-sound" src="../images/newsound.mp3"></audio>
     </div>
+
+
+    <div class="chat-toggle">
+        <a>联系人</a>
+    </div>
+
     <script src="../js/jquery.min.js"></script>
     <script type="text/javascript">
+        var isSound = true;
+        var isFullPage = false;
+        var chatMsg = "";
+        var chat_input_area = $("#webim-chat-input");
+        var chat_close = $(".webim-chat-close");
+        var body = $(".body-db");
+        var chatContent = $(".webim");
+        var chatBox = $(".webim-box");
+        var chat_emoji_toggle = $(".item-face");
+        var chat_emoji = $(".webim-emoji");
+        var chatBody = $(".webim-chat-content");
+        var chat_toggle = $(".chat-toggle");
+        var chat_sound = $(".webim-chat-sound");
+        var chat_fullpage = $(".webim-chat-fullpage");
+        function checkChatToggle() {
+            if (chatContent.hasClass("hidden")) {
+                chatContent.removeClass("hidden");
+            } else {
+                chatContent.addClass("hidden");
+            }
+        }
 
         $(document).ready(function () {
-            $('.webim-people-list, .webim-addto-block').bind('contextmenu',function(){
+            chatBody.scrollTop(chatBody[0].scrollHeight);
+            chat_toggle.click(function () {
+                checkChatToggle();
+            });
+            chat_close.click(function () {
+                chatContent.addClass("hidden");
+                chat_toggle.removeClass("hidden");
+            });
+            chat_sound.click(function () {
+                isSound = !isSound;
+            });
+            chat_fullpage.click(function () {
+
+                if (isFullPage){
+                    chatContent.removeAttr("style");
+                    chatContent.css("width","698px");
+                    chatContent.css("height","530px");
+                    chatContent.css("right",10);
+                    chatContent.css("bottom",0);
+                    isFullPage = false;
+                }else {
+                   // chatContent.removeAttr("style");
+                    chatContent.css("width","100%");
+                    chatContent.css("height","100%");
+                    chatContent.css("top",0);
+                    chatContent.css("left",0);
+                    chatContent.css("z-index",10000);
+                    isFullPage = true;
+                }
+            });
+            $('.webim-people-list, .webim-addto-block').bind('contextmenu', function () {
                 return false;
             });
 
-            $('.webim-people-list li').mousedown(function(e){
-                if(3 == e.which){
-                    $(this).siblings("li").css("background-color","transparent");
-                    $(this).css("background-color","#CACDD3");
-                    $(".webim-addto-block").css("display","block");
-                    $(".webim-addto-block").css("top",$(this).index()*70);
-                }else if(1 == e.which){
-                    $(this).siblings("li").css("background-color","transparent");
-                   $(this).css("background-color","#CACDD3");
+            $('.webim-people-list li').mousedown(function (e) {
+                if (3 == e.which) {
+                    $(this).siblings("li").css("background-color", "transparent");
+                    $(this).css("background-color", "#CACDD3");
+                    $(".webim-addto-block").css("display", "block");
+                    $(".webim-addto-block").css("top", $(this).index() * 70);
+                } else if (1 == e.which) {
+                    $(this).siblings("li").css("background-color", "transparent");
+                    $(this).css("background-color", "#CACDD3");
                 }
-            })
+            });
 
-            var body =  $(".body-db");
-            var chat_emoji_toggle =  $(".item-face");
-            var chat_emoji = $(".webim-emoji");
-
-            body.click(function(e){
+            body.click(function (e) {
                 var _target = $(e.target);
                 if (_target.closest(".webim-addto-block").length == 0) {
                     $(".webim-addto-block").hide();
-                   // chat_emoji.hide();
+                    // chat_emoji.hide();
                 }
-                if(_target.closest(chat_emoji).length == 0 &&_target.closest(chat_emoji_toggle).length == 0  ){
-                   chat_emoji.addClass("hidden");
+                if (_target.closest(chat_emoji).length == 0 && _target.closest(chat_emoji_toggle).length == 0) {
+                    chat_emoji.addClass("hidden");
                 }
             });
 
             $(".webim-addto-block").click(function () {
-                $(this).css("display","none");
+                $(this).css("display", "none");
                 //-------------------------
                 $.ajax({
                     url: '',
                     data: {},
                     dataType: 'json',
                     type: 'POST',
-                    success: function(data){
+                    success: function (data) {
                     },
-                    error: function(xhr, status){
+                    error: function (xhr, status) {
                     },
-                    complete: function(){
-
+                    complete: function () {
                     }
                 });
             });
             chat_emoji_toggle.click(function () {
-                if(chat_emoji.hasClass("hidden")){
+                if (chat_emoji.hasClass("hidden")) {
                     chat_emoji.removeClass("hidden");
-                }else {
+                } else {
                     chat_emoji.addClass("hidden");
-
                 }
             });
 
+            chat_emoji.find("span").click(function () {
+                chatMsg = chatMsg + $(this).attr("name");
+                chat_input_area.val(chatMsg);
+                chat_emoji.addClass("hidden");
+            });
+
+            chat_input_area.bind("keydown", function (e) {
+                if (e.ctrlKey) {
+                    if (e.keyCode == 13) {
+                        $(this).val(this.value + "\r\n");
+                    }
+                }
+                else if (e.keyCode == 13) {
+                    send_msg();
+                    return false;
+                } else if (e.keyCode == 8) {
+                    chatMsg = $(this).val();
+                }
+
+            })
         });
 
-            jQuery(document).ready(
+        function send_msg() {
+            chatMsg = chat_input_area.val();
+            if (!(chatMsg.trim() == "")) {
+                var replaceChatMsg = chatMsg.replace(/(\r\n)|(\n)|(\r)/g, '<br>');
+                var dom = " <div class='webim-chat-msg webim-chat-my-msg clearfix'><span class='webim-chat-msg-avatar'><img src='../images/head.png'></span> <div class='webim-chat-msg-dialog'><p class='webim-msg-dialog-txt'> " + replaceChatMsg + "</p></div></div>"
+                $(".webim-chat-content-bd > div").last().after(dom);
+                chat_input_area.val("");
+                chatMsg = "";
+                chatBody.scrollTop(chatBody[0].scrollHeight);
+            }
+        }
+        jQuery(document).ready(
                 function () {
                     $('.webim-chat-head,.webim-chat-input-tools,.webim-chat-input-foot').mousedown(
                             function (event) {
@@ -558,7 +645,6 @@
                     );
 
                 }
-
         );
     </script>
     <footer class="mp-box main-footer js-main-footer border-top p-t-20 p-b-30 ">
