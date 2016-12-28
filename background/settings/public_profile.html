@@ -206,13 +206,13 @@
                                 <div class="label-wrap"><label for="user_profile_attributes_photo">头像设置</label>
                                 </div>
                                 <div class="input-wrap">
-                                    <span class="user-pict-100 js-user-image-preview"><img
-                                            src="../images/head.png"
+                                    <span class="user-pict-100 js-user-headimage-preview"><img
+                                            src="../../images/head.png"
                                             alt="charming852" width="100" height="100"></span>
                                     <input accept="image/png,image/jpeg" class="hidden" data-min-height="180"
                                            data-min-width="180" id="user_profile_attributes_photo"
                                            name="user[profile_attributes][photo]" type="file"/>
-                                    <label for="user_profile_attributes_photo">
+                                    <label for="user_profile_attributes_photo" style="line-height: 100px;height: 100px">
                                         <a  class="btn-standard">浏览</a>
                                     </label>
 
@@ -222,11 +222,9 @@
                             <div class="profile-descriptions js-profile-descriptions">
 
                                 <div class="form-row form-row-desc">
-
-
                                     <div class="form-row">
                                         <div class="label-wrap"><label
-                                                for="user_invoice_attributes_name">您的真实姓名:</label>
+                                                for="user_invoice_attributes_name">您的昵称:</label>
                                         </div>
                                         <div class="input-wrap"><input id="user_invoice_attributes_name"
                                                                        name="user[invoice_attributes][name]"
@@ -274,6 +272,29 @@
             </div>
         </section>
     </div>
+
+    <script src="../../js/jquery.min.js"></script>
+    <script>
+        $("#user_profile_attributes_photo").change(function () {
+            var imgObjPreview = $(".js-user-headimage-preview").find("img");
+            var objUrl = getObjectURL(this.files[0]);
+            if (objUrl) {
+                imgObjPreview.attr("src", objUrl);
+            }
+        });
+
+        function getObjectURL(file) {
+            var url = null;
+            if (window.createObjectURL != undefined) { // basic
+                url = window.createObjectURL(file);
+            } else if (window.URL != undefined) { // mozilla(firefox)
+                url = window.URL.createObjectURL(file);
+            } else if (window.webkitURL != undefined) { // webkit or chrome
+                url = window.webkitURL.createObjectURL(file);
+            }
+            return url;
+        }
+    </script>
 
 
     <footer class="mp-box main-footer js-main-footer border-top p-t-20 p-b-30">
