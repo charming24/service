@@ -3,25 +3,26 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="content-script-type" content="text/javascript">
-
     <meta name="viewport" content="width=1024">
-    <link href="../assets/application.css" media="all" rel="stylesheet"/>
-    <link href="../assets/application-deferred.css" media="all" rel="stylesheet"/>
-    <link href="../assets/conversations.css" media="all" rel="stylesheet"/>
-    <link href="../assets/orders.css" media="all" rel="stylesheet"/>
+    <link href="../../assets/application.css" media="all" rel="stylesheet"/>
+    <link href="../../assets/application-deferred.css" media="all" rel="stylesheet"/>
+    <link href="../../assets/conversations.css" media="all" rel="stylesheet"/>
+    <link href="../../assets/orders.css" media="all" rel="stylesheet"/>
+    <link href="../../assets/react_css/react-manage_sales.css" media="all" rel="stylesheet"/>
 
-    <title>我的需求</title>
+    <title>账单</title>
 </head>
 <body class="body-db wide-screen">
 
 <div id="main-wrapper" class="no-cat">
+
     <div id="main-wrapper-header">
         <div class="page-light-overlay js-page-light-overlay hidden"></div>
 
         <header class="main-header with-shadow main-header-logged-in">
             <div class="mp-box mp-box-opaque">
                 <div class="box-row">
-                    <a href="/" class="js-gtm-event" data-gtm-action="logo" data-gtm-event="navigation"
+                    <a href="" class="js-gtm-event" data-gtm-action="logo" data-gtm-event="navigation"
                        data-gtm-label="clicked">
                         <i class="ficon ficon-fiverr-logo ficon-white"></i>
                     </a>
@@ -50,7 +51,7 @@
                                    class="hover-drawer-trigger js-hover-drawer-trigger"></a>
                                 <div class="hover-drawer js-hover-drawer hidden">
                                     <header>
-                                        <h6>Inbox <span class="total-unread-count js-total-unread-count"></span></h6>
+                                        <h6>Inbox <span class="total-unread-count"></span></h6>
                                         <nav>
                                             <a href="/users/charming852/edit/account_settings"
                                                class="icn account-settings hint--bottom js-track"
@@ -87,7 +88,7 @@
                                    data-gtm-action="black-nav-loggedin" data-gtm-category="navigation"
                                    data-gtm-label="open username">
                                     <span class="user-pict-24"><img
-                                            src="https://cldn0.fiverrcdn.com/fiverr/t_profile_mini/profile/photos/48954147/original/tc_login_yonghu.jpg"
+                                            src="../images/head.png"
                                             alt="charming852" width="24" height="24"></span>
                                     <span class="user-is-online  is-online" data-user-id="charming852"><em></em></span>
 
@@ -105,15 +106,10 @@
                                     </ul>
                                 </div>
                             </li>
-
-
                         </ul>
                     </nav>
-
-
                 </div>
             </div>
-
         </header>
 
 
@@ -121,150 +117,105 @@
             <div class="box-row">
                 <ul>
                     <li>
-                        <a href="background.html">我的后台</a>
+                        <a href="../background.html">我的后台</a>
                     </li>
                     <li class="menu-expandable">
-                        <a href="manage_sell.html">销售管理</a>
+                        <a href="../manage_sell.html">销售管理</a>
                         <ul>
                             <li>
-                                <a href="manage_sell.html">销售订单</a>
+                                <a href="../manage_sell.html">销售订单</a>
                             </li>
                             <li>
-                                <a href="my_project.html">我的作品</a>
+                                <a href="../my_project.html">我的作品</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a  class="sel" href="manage_buy.html">购买管理</a>
+                        <a href="../manage_buy.html">账单记录</a>
                     </li>
 
                     <li>
-                        <a href="messagebox.html">消息</a>
+                        <a href="../messagebox.html">消息</a>
                     </li>
                     <li class="menu-expandable">
-                        <a href="settings/public_profile.html">个人资料</a>
+                        <a class="sel" href="public_profile.html">个人资料</a>
                         <ul>
                             <li>
-                                <a href="settings/public_profile.html">个人信息</a>
+                                <a href="public_profile.html">个人信息</a>
                             </li>
                             <li>
-                                <a href="settings/bill_record.html">账单记录</a>
+                                <a href="bill_record.html">账单记录</a>
                             </li>
                             <li>
-                                <a href="settings/password_change.html">更改密码</a>
+                                <a href="password_change.html">更改密码</a>
                             </li>
                             <li class="">
-                                <a href="settings/cashoutsetting.html">提现设置</a>
+                                <a href="cashoutsetting.html">提现设置</a>
                             </li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </nav>
-
-
     </div>
 
 
     <div class="main-content">
 
         <section class="mp-box">
-
             <div class="box-row p-b-100">
 
-                <article class="db-new-content db-manage-gigs js-db-cont">
-                    <header class="db-new-header cf">
-                        <h1 class="alt">我的需求</h1>
+                <article class="db-new-content js-db-cont">
+
+                    <header class="db-new-header db-search-container cf">
+                        <h1 class="alt">账单记录</h1>
                     </header>
-                    <div class="db-new-filters" style="height: 50px">
+                    <div id="manage_sales">
+                        <div class="">
+                            <div class="db-new-filters" id="slideContainer">
+                                <ul class="tabs" >
+                                    <li class="selectedMenuItem">
+                                        <a class="js-gtm-event-auto sel" href="#">全部</a>
+                                    </li>
+                                    <li>
+                                        <a  href="#">提现记录</a>
+                                    </li>
+                                    <li>
+                                        <a  href="#">充值记录</a>
+                                    </li>
 
+                                </ul>
+                            </div>
+                            <div class="db-new-main-table" >
+                                <table >
+                                    <thead >
 
-                        <a class="btn-standard btn-azure-grad btn-create-gig js-gtm-event-auto "
-                           href="../require/post.html" target="_blank">发布需求</a>
-                    </div>
-
-
-                    <div class="db-new-main-table align-top js-db-table">
-                        <table>
-                            <thead>
-                            <tr>
-                                <td>日期</td>
-                                <td>需求</td>
-                                <td>金额/预算</td>
-                                <td class="p-l-15">被浏览次数</td>
-                                <td class="t-a-right"></td>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="date  height95">
-                                    2016.12.16<br> 17:24
-                                </td>
-                                <td class="text-wide">
-                                    需求标题
-                                        <div class="request-content info-line">
-                                            爱是飞洒发沙发沙发沙发沙发是飞洒发沙发沙发沙发噶搜噶搜噶搜噶搜噶色鬼按时噶啥
-                                            爱是飞洒发沙发沙发沙发沙发是飞洒发沙发沙发沙发噶搜噶搜噶搜噶搜噶色鬼按时噶啥
-                                            爱是飞洒发沙发沙发沙发沙发是飞洒发沙发沙发沙发噶搜噶搜噶搜噶搜噶色鬼按时噶啥
-                                            爱是飞洒发沙发沙发沙发沙发是飞洒发沙发沙发沙发噶搜噶搜噶搜噶搜噶色鬼按时噶啥
-                                        </div>
-                                </td>
-
-                                <td class=" ">
-                                    120元
-                                </td>
-
-                                <td class="applications t-a-center">
-                                   21
-                                </td>
-                                <td class="dropdown">
-                                    <a class="btn-standard rf"><em>
-                                    </em> 删除</a>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="date  height95">
-                                    2016.12.16<br> 17:24
-                                </td>
-                                <td class="text-wide">
-                                    需求标题
-                                    <div class="request-content info-line">
-                                        爱是飞洒发沙发沙发沙发沙发是飞洒发沙发沙发沙发噶搜噶搜噶搜噶搜噶色鬼按时噶啥
-                                        爱是飞洒发沙发沙发沙发沙发是飞洒发沙发沙发沙发噶搜噶搜噶搜噶搜噶色鬼按时噶啥
-                                        爱是飞洒发沙发沙发沙发沙发是飞洒发沙发沙发沙发噶搜噶搜噶搜噶搜噶色鬼按时噶啥
-                                        爱是飞洒发沙发沙发沙发沙发是飞洒发沙发沙发沙发噶搜噶搜噶搜噶搜噶色鬼按时噶啥
-                                    </div>
-                                </td>
-
-                                <td class=" ">
-                                    120元
-                                </td>
-
-                                <td class="applications t-a-center">
-                                    21
-                                </td>
-                                <td class="dropdown">
-                                    <a class="btn-standard rf"><em>
-                                    </em> 删除</a>
-
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                                    <tr>
+                                        <td class="t-a-center" >类型</td>
+                                        <td class="t-a-center" >时间</td>
+                                        <td class="t-a-center">金额</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="t-a-center" >充值</td>
+                                        <td class="t-a-center" >2016.12.22 21：12</td>
+                                        <td class="t-a-center">50元</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <span ></span></div>
                     </div>
 
                 </article>
+
             </div>
         </section>
     </div>
 
-
     <footer class="mp-box main-footer js-main-footer border-top p-t-20 p-b-30 ">
-
-
         <div class="box-row">
-
             <div class="footer-top cf">
                 <ul>
                     <li><a href="">Directory</a></li>
@@ -278,26 +229,27 @@
                     <li><a href="" target="_blank">Blog</a></li>
                     <li><a href="" target="_blank">Store</a></li>
                     <li><a href="">Affiliates</a></li>
+                    <li><a href="" target="_blank">Contact us</a></li>
                 </ul>
-
             </div>
         </div>
+
     </footer>
+
 </div>
-<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/menuSlider.js"></script>
 
 <script type="text/javascript">
     $(function () {
-        $(".db-new-filters .tabs >li").click(function () {
-            $(".pointer").css("left", $(this).index() * 85);
-            //  $(".spinner").css("visibility","hidden");
-        });
-
-        $("#choose-all").click(function () {
-            var isChecked = $(this).prop("checked");
-            $("tbody input[type='checkbox'] ").prop("checked", isChecked);
-        });
-
+//        $(".db-new-filters .tabs >li").click(function () {
+//
+//            var menuWidth = $(this).width();
+//            //console.log($(document.body).width());
+//
+//            $(".pointer").css("left", $(this).index()*menuWidth) ;
+//        });
+        $("#slideContainer").menuSlider({thickness:"5px", borderColor:"#00b22d",speed:0.3, tStyle:"ease-out"});
     });
 </script>
 

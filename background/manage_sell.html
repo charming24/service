@@ -152,7 +152,7 @@
                                 <a href="settings/public_profile.html">个人信息</a>
                             </li>
                             <li>
-                                <a href="">账号安全</a>
+                                <a href="settings/bill_record.html">账单记录</a>
                             </li>
                             <li>
                                 <a href="settings/password_change.html">更改密码</a>
@@ -181,9 +181,9 @@
                     </header>
                     <div id="manage_sales">
                         <div class="">
-                            <div class="db-new-filters">
+                            <div class="db-new-filters" id="slideContainer">
                                 <ul class="tabs">
-                                    <li>
+                                    <li class="selectedMenuItem">
                                         <a class="js-gtm-event-auto sel" href="#">所有订单</a>
                                     </li>
                                     <li>
@@ -199,7 +199,7 @@
                                         <a href="#">取消订单</a>
                                     </li>
 
-                                    <li class="pointer" style="left: 8px;"></li>
+                                    <!--<li class="pointer" style="left: 8px;"></li>-->
                                 </ul>
                             </div>
                             <div class="db-new-main-table">
@@ -256,88 +256,6 @@
             </div>
         </section>
     </div>
-    <div id="app">
-        {{message}}
-        <input type="text" v-model="message" v-show="seen">
-        <ul style="list-style:square ">
-            <li v-for="todo in todos">
-                {{todo.text}}
-            </li>
-        </ul>
-
-
-    </div>
-
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <script>
-        var app = new Vue({
-            el:"#app",
-            data:{
-                todos:[{text:"a"},{text:"b"},{text:"c"}],
-                message:'hello+++',
-                seen:false
-            }
-        })
-
-    </script>
-
-
-
-    <script>
-        var default_content = "";
-        $(document).ready(function () {
-
-            checkURL();
-            $('ul li a').click(function (e) {
-
-                checkURL(this.hash);
-
-            });
-
-            //filling in the default content
-            default_content = $('#pageContent').html();
-
-
-        });
-
-        var lasturl = "";
-
-        function checkURL(hash) {
-            if (!hash) hash = window.location.hash;
-
-            if (hash != lasturl) {
-                lasturl = hash;
-
-                if (hash == "")
-                    $('#pageContent').html(default_content);
-
-                else
-                    loadPage(hash);
-            }
-        }
-
-        function loadPage(url) {
-            url = url.replace('#page', '');
-
-            $('#loading').css('visibility', 'visible');
-
-            $.ajax({
-                type: "POST",
-                url: "load_page.php",
-                data: 'page=' + url,
-                dataType: "html",
-                success: function (msg) {
-
-                    if (parseInt(msg) != 0) {
-                        $('#pageContent').html(msg);
-                        $('#spinner').css('visibility', 'hidden');
-
-                    }
-                }
-
-            });
-        }
-    </script>
 
     <footer class="mp-box main-footer js-main-footer border-top p-t-20 p-b-30 ">
         <div class="box-row">
@@ -387,13 +305,16 @@
 
 
 <script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/menuSlider.js"></script>
 
 <script type="text/javascript">
     $(function () {
-        $(".db-new-filters .tabs >li").click(function () {
-            $(".pointer").css("left", $(this).index() * 85);
-            $(".spinner").css("visibility","hidden");
-        });
+        $("#slideContainer").menuSlider({thickness:"5px", borderColor:"#00b22d",speed:0.3, tStyle:"ease-out"});
+
+//        $(".db-new-filters .tabs >li").click(function () {
+//            $(".pointer").css("left", $(this).index() * 85);
+//            $(".spinner").css("visibility","hidden");
+//        });
 
         $("#choose-all").click(function () {
             var isChecked = $(this).prop("checked");

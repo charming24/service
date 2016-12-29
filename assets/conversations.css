@@ -1061,7 +1061,7 @@ tr .hidden-action .time-ago:before {
 .db-new-filters .tabs li {
     width:85px;
     display: inline-block;
-
+    text-align: center;
     -webkit-transition: left 0.3s;
     -moz-transition: left 0.3s;
     -o-transition: left 0.3s;
@@ -8934,20 +8934,20 @@ html.no-svg .educational-header li.step-3:after {
     height: 120px;
     position: relative;
     text-indent: -9999px;
-    margin: 0 auto
+    margin: 0 auto;
 }
 
 .user-dashboard-stats .seller-graphs .sparkline-pie canvas {
     display: block !important
 }
 
-.user-dashboard-stats .seller-graphs .sparkline-pie:after {
+.user-dashboard-stats .seller-graphs #positive-rate:after{
     position: absolute;
-    content: attr(data);
+    content: attr(data) "%";
     top: 19px;
-    left: 19px;
-    width: 80px;
-    height: 80px;
+    left: 25px;
+    width: 0px;
+    height: 0px;
     box-shadow: 0 0 5px #cccccc;
     border: 1px #cccccc solid;
     background: #fff;
@@ -8958,7 +8958,23 @@ html.no-svg .educational-header li.step-3:after {
     color: #0e0e0f;
     border-radius: 40px
 }
-
+.user-dashboard-stats .seller-graphs #cancellation-rate:after{
+    position: absolute;
+    content: attr(data) "%";
+    top: 19px;
+    left: 38px;
+    width: 0px;
+    height: 0px;
+    box-shadow: 0 0 5px #cccccc;
+    border: 1px #cccccc solid;
+    background: #fff;
+    text-indent: 0;
+    text-align: center;
+    line-height: 80px;
+    font-size: 26px;
+    color: #0e0e0f;
+    border-radius: 40px
+}
 .user-dashboard-stats .seller-levels {
     width: 100%;
     height: 130px;

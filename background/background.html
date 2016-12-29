@@ -146,7 +146,7 @@
                                 <a href="settings/public_profile.html">个人信息</a>
                             </li>
                             <li>
-                                <a href="">账号安全</a>
+                                <a href="settings/bill_record.html">账单记录</a>
                             </li>
                             <li>
                                 <a href="settings/password_change.html">更改密码</a>
@@ -310,12 +310,12 @@
                                         <h5>0</h5>
                                         <small>没有评论数</small>
                                     </li>
-                                    <li>
-                                        <div class="sparkline-pie" data="100%"></div>
+                                    <li style="margin: 0 auto">
+                                        <div class="sparkline-pie" data="100" id="positive-rate" style="text-align: center;margin: 0 auto"></div>
                                         <small>好评率</small>
                                     </li>
-                                    <li>
-                                        <div class="sparkline-pie" data="0%"></div>
+                                    <li style="margin: 0 auto">
+                                        <div class="sparkline-pie" data="50" id="cancellation-rate" style="text-align: center;margin: 0 auto"></div>
                                         <small>订单取消率</small>
                                     </li>
                                     <li>
@@ -417,6 +417,7 @@
 </div>
 
 <script src="../js/Chart.js"></script>
+<script src="../js/radialIndicator.js"></script>
 
 
 <script type="text/javascript">
@@ -442,6 +443,22 @@
 
     $(function () {
 
+        $('#positive-rate').radialIndicator({
+            barColor: '#87CEEB',
+            barWidth: 10,
+            displayNumber: false,
+            initValue: $('#positive-rate').attr("data"),
+            roundCorner : true,
+            percentage: true
+        });
+        $('#cancellation-rate').radialIndicator({
+            barColor: '#87CEEB',
+            barWidth: 10,
+            displayNumber: false,
+            initValue: $('#cancellation-rate').attr("data"),
+            roundCorner : true,
+            percentage: true
+        });
         $("#checkbox_c1").click(function () {
             if ($("input[type='checkbox']").is(':checked')) {
                 $(".js-analytics").removeClass("hidden");

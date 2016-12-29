@@ -144,7 +144,7 @@
                                 <a href="settings/public_profile.html">个人信息</a>
                             </li>
                             <li>
-                                <a href="">账号安全</a>
+                                <a href="settings/bill_record.html">账单记录</a>
                             </li>
                             <li>
                                 <a href="settings/password_change.html">更改密码</a>
@@ -183,9 +183,9 @@
                     </header>
                     <div id="manage_sales">
                         <div class="">
-                            <div class="db-new-filters">
+                            <div class="db-new-filters" id="slideContainer">
                                 <ul class="tabs" >
-                                    <li>
+                                    <li class="selectedMenuItem">
                                         <a class="js-gtm-event-auto sel" href="#">所有订单</a>
                                     </li>
                                     <li>
@@ -201,7 +201,7 @@
                                         <a href="#">取消订单</a>
                                     </li>
 
-                                    <li class="pointer" style="left: 0px;"></li>
+                                    <!--<li class="pointer" style="left: 0px;"></li>-->
                                 </ul>
                             </div>
                             <div class="db-new-main-table" >
@@ -260,16 +260,18 @@
 
 </div>
 <script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/menuSlider.js"></script>
 
 <script type="text/javascript">
     $(function () {
-        $(".db-new-filters .tabs >li").click(function () {
-
-            var menuWidth = $(this).width();
-            //console.log($(document.body).width());
-            console.log(menuWidth);
-            $(".pointer").css("left", $(this).index()*menuWidth) ;
-        })
+//        $(".db-new-filters .tabs >li").click(function () {
+//
+//            var menuWidth = $(this).width();
+//            //console.log($(document.body).width());
+//
+//            $(".pointer").css("left", $(this).index()*menuWidth) ;
+//        });
+        $("#slideContainer").menuSlider({thickness:"5px", borderColor:"#00b22d",speed:0.3, tStyle:"ease-out"});
     });
 </script>
 
