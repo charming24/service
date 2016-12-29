@@ -137,7 +137,7 @@
                     </li>
 
                     <li>
-                        <a href="">消息</a>
+                        <a href="../messagebox.html">消息</a>
                     </li>
                     <li class="menu-expandable">
                         <a class="sel" href="public_profile.html">个人资料</a>
@@ -224,34 +224,42 @@
                                 <div class="form-row form-row-desc">
                                     <div class="form-row">
                                         <div class="label-wrap"><label
-                                                for="user_invoice_attributes_name">您的昵称:</label>
+                                                for="user_nickname">用户名:</label>
                                         </div>
-                                        <div class="input-wrap"><input id="user_invoice_attributes_name"
-                                                                       name="user[invoice_attributes][name]"
+                                        <div class="input-wrap"><input id="user_nickname" maxlength="10"
+                                                                       name="user_nickname"
                                                                        type="text"/></div>
+                                        <div>
+                                            <p class="rf" >您的昵称:</p>
+                                        </div>
                                     </div>
 
                                     <div class="form-row">
                                         <div class="label-wrap"><label
-                                                for="user_invoice_attributes_address">您的邮箱地址:</label></div>
-                                        <div class="input-wrap"><input id="user_invoice_attributes_address"
-                                                                       name="user[invoice_attributes][address]"
+                                                for="user_email_address">您的邮箱地址:</label></div>
+                                        <div class="input-wrap">
+                                            <input id="user_email_address"  value=""
+                                                                       name="user_email_address"
                                                                        type="text"/>
+
+                                                <input class="btn-standard rf m-t-10 btn-green hidden" name="commit" type="button"
+                                                       value="绑定"/>
+
                                         </div>
                                     </div>
 
                                     <div class="profile-description js-profile-description" locale="default_locale">
 
-                                        <div class="label-wrap"><label for="user_profile_attributes_description">关于自己的简介<br>
+                                        <div class="label-wrap"><label for="user_description">关于自己的简介<br>
                                             (150 - 300 字)</label></div>
 
                                         <div class="input-wrap js-profile-desc-textarea">
                                             <a href="#" class="btn-remove-language js-remove-desc-language">x</a>
-                                            <textarea id="user_profile_attributes_description" maxlength="300"
-                                                      name="user[profile_attributes][description[en]]"
+                                            <textarea id="user_description" maxlength="300"
+                                                      name="user_description"
                                                       placeholder="介绍自己，show出你的能力..."
                                                       rows="10"></textarea>
-                                            <small class="char-count"><em>0</em> / 300</small>
+                                            <small class="char-count js-description-count"><em>0</em> / 300</small>
                                         </div>
 
                                     </div>
@@ -263,7 +271,7 @@
                                 </div>
                             </div>
                             <div class="form-buttons">
-                                <input class="btn-standard btn-green disableonclick" name="commit" type="submit"
+                                <input class="btn-standard btn-green disableonclick" name="commit" type="submit" id="info-submit"
                                        value="保存更改"/>
                             </div>
                         </form>
@@ -275,6 +283,8 @@
 
     <script src="../../js/jquery.min.js"></script>
     <script>
+
+
         $("#user_profile_attributes_photo").change(function () {
             var imgObjPreview = $(".js-user-headimage-preview").find("img");
             var objUrl = getObjectURL(this.files[0]);
@@ -282,6 +292,32 @@
                 imgObjPreview.attr("src", objUrl);
             }
         });
+
+        $("#info-submit").click(function () {
+
+            var nickname =$("#user_nickname").val();
+            if (nickname.trim().length==""){
+
+                return false;
+            }
+            return checkEmail();
+        });
+
+        $("#user_description").bind("input propertychange",function () {
+            $(".js-description-count").html("<em>" + $(this).val().length + "</em> / 300 字")
+        })
+
+
+
+        function checkEmail() {
+            var email=$("#user_email_address").val();
+            if(!email.match(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/))
+            {
+
+                $("#user_email_address").focus();
+                return false;
+            }
+        }
 
         function getObjectURL(file) {
             var url = null;

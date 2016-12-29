@@ -92,12 +92,14 @@ a {
     border-radius: 6px 0 0;
     border-bottom: none;
     border-right: none;
-    overflow-y: auto;
+    overflow-y: hidden;
     height: 100%;
     margin: 0;
     padding: 0;
 }
-
+.webim-people-list:hover{
+    overflow-y: auto;
+}
 .webim-people-list li:focus {
     background-color: #CACDD3;
 }
@@ -230,7 +232,7 @@ a {
 }
 
 .webim-chat-head {
-    padding-left: 20px;
+    /*padding-left: 20px;*/
     height: 40px;
     width: 100%;
     position: absolute;
@@ -253,7 +255,7 @@ a {
     line-height: 40px;
     font-weight: 700;
     font-size: 14px;
-    margin-left: 35%;
+
     text-align: center;
 }
 
@@ -266,7 +268,7 @@ a:link, a:visited, a:hover, a:active {
 .webim-chat-head .item-action {
     height: 40px;
     line-height: 40px;
-    padding-right: 32px;
+    /*padding-right: 32px;*/
 }
 
 .webim-chat-sound {
@@ -314,9 +316,15 @@ a:link, a:visited, a:hover, a:active {
 .webim-chat-content {
     height: 100%;
     box-sizing: border-box;
-    overflow-y: auto;
     background: #fff;
     padding: 20px 16px 0;
+    overflow-y: hidden;
+}
+.webim-chat-content:hover{
+    overflow-y: auto;
+}
+.webim-chat-content-bd {
+    width: 440px;
 }
 
 .webim-history-tip {
@@ -525,7 +533,7 @@ img {
 
 /*定义滑块 内阴影+圆角*/
 .webim-chat-content::-webkit-scrollbar-thumb, .webim-chat-input-text::-webkit-scrollbar-thumb, .webim-people-list::-webkit-scrollbar-thumb {
-    border-radius: 10px;
+    border-radius: 8px;
     -webkit-box-shadow: inset 0 0 6px #B2B2B2;
     background-color: #B2B2B2;
 }

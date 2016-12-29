@@ -224,31 +224,31 @@
     padding-left: 45px
 }
 
-.form-post-request .form-row.post-request-describe {
+.form-post-request .form-row.post-request-describe,.form-post-request .form-row .post-request-title{
     border-bottom: none
 }
 
-.form-post-request .form-row.post-request-describe .input-wrap:before {
+.form-post-request .form-row.post-request-describe .input-wrap:before ,.form-post-request .form-row.post-request-title .input-wrap:before{
     background-position: 0 0
 }
 
-.form-post-request .form-row.post-request-describe .request-desc textarea {
+.form-post-request .form-row.post-request-describe .request-desc textarea ,.form-post-request .form-row.post-request-title .request-desc textarea{
     height: 315px;
     width: 522px
 }
-.form-post-request .form-row.post-request-describe .request-title input {
+.form-post-request .form-row.post-request-describe .request-title input ,.form-post-request .form-row.post-request-title .request-title input{
     height: 30px;
     font-size: 18px;
     width: 524px;
     text-indent: 55px;
 }
-.form-post-request .form-row.post-request-describe  .title-count {
+.form-post-request .form-row.post-request-describe  .title-count, .form-post-request .form-row.post-request-title  .title-count{
     float: right;
     font-size: 12px;
     color: #999999;
     padding-top: 10px;
 }
-.form-post-request .form-row.post-request-describe .input-wrap .char-count {
+.form-post-request .form-row.post-request-describe .input-wrap .char-count ,.form-post-request .form-row.post-request-title .input-wrap .char-count{
     color: #999999;
     font-size: 12px;
     position: absolute;
