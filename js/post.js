@@ -85,13 +85,6 @@ $(document).ready(function () {
         }
     });
 
-    budget.bind("input propertychange",function () {
-
-        var value = budget.val();
-
-    });
-
-
     var postSummit = $(".js-post-form-submit");
     postSummit.click(function () {
 
@@ -100,7 +93,14 @@ $(document).ready(function () {
          var deliveryTimeCorrect = checkDeliveryTime();
         var describeCorrect = checkDescribe();
         var budgetCorrect = checkBudget();
-        return titleCorrect && categoryCorrect && deliveryTimeCorrect&& describeCorrect && budgetCorrect;
+        if(titleCorrect && categoryCorrect && deliveryTimeCorrect&& describeCorrect && budgetCorrect){
+
+            $(this).attr("disabled",true);
+            $(this).addClass("disabled");
+            //访问请求
+        }else {
+            return false;
+        }
     })
 });
 

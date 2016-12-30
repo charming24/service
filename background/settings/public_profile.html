@@ -173,7 +173,7 @@
 
                         <ul>
                             <li ><a class="sel">个人信息</a></li>
-                            <li><a href="">账号安全</a></li>
+                            <li><a href="bill_record.html">账单记录</a></li>
                             <li><a href="password_change.html">密码更改</a></li>
                             <li><a href="cashoutsetting.html">提现设置</a></li>
                         </ul>
@@ -222,17 +222,17 @@
                             <div class="profile-descriptions js-profile-descriptions">
 
                                 <div class="form-row form-row-desc">
-                                    <div class="form-row">
-                                        <div class="label-wrap"><label
-                                                for="user_nickname">用户名:</label>
-                                        </div>
-                                        <div class="input-wrap"><input id="user_nickname" maxlength="10"
-                                                                       name="user_nickname"
-                                                                       type="text"/></div>
-                                        <div>
-                                            <p class="rf" >您的昵称:</p>
-                                        </div>
-                                    </div>
+                                    <!--<div class="form-row">-->
+                                        <!--<div class="label-wrap"><label-->
+                                                <!--for="user_nickname">用户名:</label>-->
+                                        <!--</div>-->
+                                        <!--<div class="input-wrap"><input id="user_nickname" maxlength="10"-->
+                                                                       <!--name="user_nickname"-->
+                                                                       <!--type="text"/></div>-->
+                                        <!--<div>-->
+                                            <!--<p class="rf" >您的昵称:</p>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
 
                                     <div class="form-row">
                                         <div class="label-wrap"><label
@@ -295,11 +295,6 @@
 
         $("#info-submit").click(function () {
 
-            var nickname =$("#user_nickname").val();
-            if (nickname.trim().length==""){
-
-                return false;
-            }
             return checkEmail();
         });
 
@@ -313,7 +308,6 @@
             var email=$("#user_email_address").val();
             if(!email.match(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/))
             {
-
                 $("#user_email_address").focus();
                 return false;
             }

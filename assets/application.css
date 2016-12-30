@@ -8930,7 +8930,7 @@ textarea, input[type="date"], input[type="datetime"], input[type="datetime-local
     background-color: #fff;
     font: 400 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #777777;
-    /*border: 1px #b2b2b2 solid;*/
+    border: 1px #b2b2b2 solid;
     padding: 6px 7px 7px 7px;
     margin: 0;
     resize: none;

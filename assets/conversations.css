@@ -2716,7 +2716,7 @@ html.no-svg .mp-payoneer footer .steps li:before {
 .profile-form .change-password-form .form-buttons {
     width: 62%;
     height: 32px;
-    margin-left: 38%;
+    margin-left: 25%;
     position: relative;
     text-align: left
 }
@@ -2788,7 +2788,7 @@ html.no-svg .mp-payoneer footer .steps li:before {
 }
 
 .profile-form .form-row .label-wrap {
-    width: 33%;
+    width: 20%;
     padding: 0 5% 10px 0;
     vertical-align: top
 }
@@ -8255,7 +8255,8 @@ html.no-svg .db-sidebar.todo-sidebar .todo-cta p:after {
 .show-and-packages .try-now .activate-packages {
     padding: 10px 40px;
     margin-bottom: 10px;
-    text-transform: capitalize
+    text-transform: capitalize;
+    text-decoration: none;
 }
 
 .show-and-packages .try-now .learn-more {
@@ -12064,3 +12065,48 @@ a.emoji-trigger:hover:after, a.emoji-trigger.open:after {
 .conv-message .msg-push h4 a {
     color: #00698c
 }
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot');
+    src:  url('../fonts/icomoon.eot#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf') format('truetype'),
+    url('../fonts/icomoon.woff') format('woff'),
+    url('../fonts/icomoon.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.icon-correct:after {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    font-weight: 900;
+    font-size: 35px;
+    color: rgb(0,210,0);
+    margin-top: 200px;
+    content: "\e928";
+}
+.icon-error:after {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    font-weight: 900;
+    font-size: 35px;
+    color: rgb(210,0,0);
+    margin-top: 200px;
+    content: "\e929";
+}
+.icon-file-play:before {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+
+    color: rgb(210,0,0);
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+     content: "\e929";
+ }
