@@ -75,10 +75,10 @@ $(document).ready(function () {
     });
 
     budget.keydown(function () {
-        var value = budget.val();
         var e = $(this).event || window.event;
         var code = parseInt(e.keyCode);
-        if (code >= 96 && code <= 105 || code >= 48 && code <= 57 || code == 8 && value>0 && value <100) {
+        console.log("aaa")
+        if ((code >= 96 && code <= 105) ||(code >= 48 && code <= 57)   || code == 8 || (code >= 37 && code <= 40)) {
             return true;
         } else {
             return false;

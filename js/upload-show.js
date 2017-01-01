@@ -330,45 +330,228 @@ $(document).ready(function () {
         setTimeout("A()", 500);
     })
 
+    var isMultiPackages = false;
+    $(".js-btn-toggle-multi-packages").click(function (event) {
+        event.preventDefault();
+        var isChecked = $(this).find("input").is(':checked');
 
-    var isOpenPackages = false;
-    $(".js-toggle-multi-packages").click(function () {
-
-    })
-
-
-
+        if (isChecked) {
+            $(this).find("input").prop("checked", false);
+            $(".try-now").removeClass("hidden");
+            isMultiPackages = false;
+        } else {
+            $(this).find("input").prop("checked", true);
+            $(".try-now").addClass("hidden");
+            isMultiPackages = true;
+        }
+    });
+    $(".js-start-packages").click(function () {
+        $(".try-now").addClass("hidden");
+        $(".js-btn-toggle-multi-packages").find("input").prop("checked", true);
+        isMultiPackages = true;
+        return false;
+    });
 
     $(".js-packages-expected-duration .dropdown-menu li").click(function () {
-
         $(this).siblings("li").find("a").removeClass("selected");
         $(this).find("a").addClass("selected");
-
         var index = $(this).index();
         var choose = $(this).find(".text-inner").text();
         ($($(this).parent()).next().val(index));
         ($($(this).parent()).prev().html(choose));
-        //  show-duration
-        // alert($(this).find(".text-inner").text());
     });
 
-    $(".js-add-show-extra").click(function () {
-        if($('.js-gig-extra').length<4){
-            var new_extra=$('.js-gig-extra:last').clone();
-            $(".js-custom-extra-wrapper").find(".js-gig-extra:last").after(new_extra);
-            if ($('.js-gig-extra').length==4){
-                $(this).parent().remove();
+
+    $(".js-packages-title").find("textarea").blur(function () {
+        $(".js-show-packages-title").each(function (index, domEle) {
+            var package_title_error = $(".js-show-and-packages .js-title-error");
+            if (isMultiPackages) {
+                if ($(domEle).val().trim() == "") {
+                    package_title_error.css("display", "block");
+                    return false;
+                } else {
+                    package_title_error.css("display", "none");
+                }
+            } else {
+                if (index == 0) {
+                    if ($(domEle).val().trim() == "") {
+                        package_title_error.css("display", "block");
+                        return false;
+                    } else {
+                        package_title_error.css("display", "none");
+                    }
+                }
+            }
+        });
+    });
+
+    $(".js-packages-description").find("textarea").blur(function () {
+
+        $(".js-show-packages-description").each(function (index, domEle) {
+            var package_desc_error = $(".js-show-and-packages .js-desc-error");
+            if (isMultiPackages) {
+                if ($(domEle).val().trim() == "") {
+                    package_desc_error.css("display", "block");
+                    return false;
+                } else {
+                    package_desc_error.css("display", "none");
+                }
+            } else {
+                if (index == 0) {
+                    if ($(domEle).val().trim() == "") {
+                        package_desc_error.css("display", "block");
+                        return false;
+                    } else {
+                        package_desc_error.css("display", "none");
+                    }
+                }
+            }
+        });
+    });
+
+    var packages_price = $(".js-packages-price").find("input");
+    packages_price.keydown(function () {
+        var e = $(this).event || window.event;
+        var code = parseInt(e.keyCode);
+        if ((code >= 96 && code <= 105) || (code >= 48 && code <= 57) || code == 8 || (code >= 37 && code <= 40)) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+    var package_money_error = $(".js-show-and-packages .js-money-error");
+    $("#show_packages_price_1,#show_packages_price_2,#show_packages_price_3").blur(function () {
+        if ($(this).val() < 2 || $(this).val() > 2000) {
+            package_money_error.css("display", "block");
+        } else {
+
+            $(".js-show-packages-price").each(function (index, domEle) {
+
+                if (isMultiPackages) {
+                    if ($(domEle).val().trim() == "") {
+                        package_money_error.css("display", "block");
+                        return false;
+                    } else {
+                        package_money_error.css("display", "none");
+                    }
+                } else {
+                    if (index == 0) {
+                        if ($(domEle).val().trim() == "") {
+                            package_money_error.css("display", "block");
+                            return false;
+                        } else {
+                            package_money_error.css("display", "none");
+                        }
+                    }
+                }
+            });
+
+        }
+    });
+
+
+    var isExtraPrice = false;
+    $(".js-btn-toggle-extra-service").click(function (event) {
+        event.preventDefault();
+        var isChecked = $(this).find("input").is(':checked');
+
+        if (isChecked) {
+            $(this).find("input").prop("checked", false);
+            $(".js-extra-service-wrapper").addClass("hidden");
+            isExtraPrice = false;
+        } else {
+            $(this).find("input").prop("checked", true);
+            $(".js-extra-service-wrapper").removeClass("hidden");
+            isExtraPrice = true;
+        }
+    });
+
+
+    $(".js-extra-service-wrapper").on("blur", ".js-extra-title", function () {
+        if (isExtraPrice) {
+            if ($(this).val().trim() == "") {
+                $(this).parents(".js-gig-extra").find(".js-title-error").css("display", "block");
+            }else {
+                $(this).parents(".js-gig-extra").find(".js-title-error").css("display", "none");
+            }
+        }
+    });
+    $(".js-extra-service-wrapper").on("blur", ".js-extra-description", function () {
+        if (isExtraPrice) {
+            if ($(this).val().trim() == "") {
+                $(this).parents(".js-gig-extra").find(".js-desc-error").css("display", "block");
+            }else {
+                $(this).parents(".js-gig-extra").find(".js-desc-error").css("display", "none");
+            }
+        }
+    });
+    $(".js-extra-service-wrapper").on("blur", ".js-extra-money", function () {
+        if (isExtraPrice) {
+            if ($(this).val().trim()<2 || $(this).val().trim()>2000){
+                $(this).parents(".js-gig-extra").find(".js-money-error").css("display", "block");
+            }else if ($(this).val().trim() == "") {
+                $(this).parents(".js-gig-extra").find(".js-money-error").css("display", "block");
+            }else {
+                $(this).parents(".js-gig-extra").find(".js-money-error").css("display", "none");
             }
         }
     });
 
+
+    $(".js-add-show-extra").click(function () {
+
+        var length = $('.js-gig-extra').length;
+
+        if (length > 0 && length < 4) {
+            var extra_num = Number($('.js-gig-extra:last').attr("extras-num"));
+            var new_extra = $('.js-gig-extra:last').clone();
+            new_extra.attr("extras-num", extra_num + 1);
+            new_extra.find("#show_items_extra_" + extra_num).attr("id", "show_items_extra_" + (extra_num + 1));
+            new_extra.find("label").attr("for", "show_items_extra_" + (extra_num + 1));
+            new_extra.find(".js-extra-title").attr("name", "show_items_extra_" + (extra_num + 1));
+            new_extra.find(".js-extra-title").val("");
+            new_extra.find(".js-extra-description").attr("name", "show_extra_description_" + (extra_num + 1));
+            new_extra.find(".js-extra-description").val("");
+
+            new_extra.find("#show_extra_price_" + extra_num).prop("name", "show_items_extra_" + (extra_num + 1));
+            new_extra.find("#show_extra_price_" + extra_num).val("");
+            new_extra.find("#show_extra_price_" + extra_num).attr("id", "show_items_extra_" + (extra_num + 1));
+
+
+            new_extra.find(".js-title-error").css("display","none");
+            new_extra.find(".js-desc-error").css("display","none");
+            new_extra.find(".js-money-error").css("display","none");
+
+            $(".js-extra-service-wrapper").find(".js-gig-extra:last").after(new_extra);
+            if ($('.js-gig-extra').length == 4) {
+                $(".add-gig-extra").addClass("hidden");
+            }
+        }
+    });
+    $("body").on("click", ".js-checkbox-label", function () {
+        event.preventDefault();
+        var length = $('.js-gig-extra').length;
+        if (length == 1) {
+            alert("最后一个了");
+            return false;
+        } else {
+            $(".add-gig-extra").removeClass("hidden");
+        }
+
+        var isChecked = $(this).find("input").is(':checked');
+
+        if (isChecked) {
+            $(this).find("input").prop("checked", false);
+            $(this).parents(".js-gig-extra").remove();
+        }
+    });
 
     /**
      * 图片上传
      */
     var imageID = 1;
     var imageCount = $(".js-image .has-image").length;
-    $(".js-image .js-counter").text("(" + imageCount + "/3)");
+    $(".js-image .js-counter").text("(" + imageCount + "/6)");
 
     $(".js-image").on("change", ".js-file-upload", function () {
         var dropzone = $(this).parents(".dropzone");
@@ -386,14 +569,17 @@ $(document).ready(function () {
         var objUrl = getObjectURL(this.files[0]); //获取图片的路径，该路径不是图片在本地的路径
 
         if (objUrl) {
-            imgObjPreview.attr("src", objUrl); //将图片路径存入src中，显示出图片
+
+            dropzone.find(".wrapper").removeClass("hidden");
             dropzone.addClass("has-image").removeClass("empty-state");
             dropzone.removeClass("blank");
             dropzoneNext.removeClass("blank");
 
-
+            //上传服务器完成
+            imgObjPreview.attr("src", objUrl);
+            dropzone.find(".wrapper").addClass("hidden");
             imageCount++;
-            $(".js-image .js-counter").text("(" + imageCount + "/3)");
+            $(".js-image .js-counter").text("(" + imageCount + "/6)");
         }
     });
 
@@ -407,27 +593,25 @@ $(document).ready(function () {
         console.log(dropzoneLast.index());
 
 
-        if (dropzone.index() == dropzoneLast.index() || imageCount == 3) {
+        if (dropzone.index() == dropzoneLast.index() || imageCount == 6) {
             // dropzone.addClass("empty-state").removeClass("has-image");
             // dropzone.find("img").attr("src","");
 
-            var msg = "<div class='dropzone empty-state  js-dropzone' data-type='portfolio'><div class= 'empty-state-box'> <span class='icon cover-icon'></span><br>Drag a Photo or <label for=" +
-                imageID + ">browse</label><input type='file' id=" +
-                imageID + " class='gallery-file-field js-file-upload' name='image_file' multiple></div> <div class='done-box js-done-box'><img></div><nav class='controls'><i class='fa fa-trash js-delete-file'></i></nav><div class='primary'>展示页</div></div>";
-
+            var msg = "<div class='dropzone empty-state  js-dropzone' data-type='portfolio'><div class='wrapper hidden'> <div class='load-bar'><div class='load-bar-inner'> <div><i class='percent'>100%</i></div></div></div></div><div class= 'empty-state-box'><label for=" +
+                "uploadimage" + imageID + "><img src='../images/plus.png'></label><input type='file' id=" +
+                "uploadimage" + imageID + " class='gallery-file-field js-file-upload' name='image_file' multiple></div> <div class='done-box js-done-box'><img></div><nav class='controls'><i class='fa fa-trash js-delete-file'></i></nav><div class='primary'>展示页</div></div>";
             dropzoneLast.after(msg);
             dropzone.remove();
         } else {
-
-            // console.log(dropzoneLast);
             dropzone.remove();
-            var msg = "<div class='dropzone empty-state blank js-dropzone' data-type='portfolio'><div class= 'empty-state-box'> <span class='icon cover-icon'></span><br>Drag a Photo or <label for=" +
-                imageID + ">browse</label><input type='file' id=" +
-                imageID + " class='gallery-file-field js-file-upload' name='image_file' multiple></div> <div class='done-box js-done-box'><img></div><nav class='controls'><i class='fa fa-trash js-delete-file'></i></nav><div class='primary'>展示页</div></div>";
+            var msg = "<div class='dropzone empty-state blank js-dropzone' data-type='portfolio'><div class='wrapper hidden'> <div class='load-bar'><div class='load-bar-inner'> <div><i class='percent'>100%</i></div></div></div></div><div class= 'empty-state-box'><label for=" +
+                "uploadimage" + imageID + "><img src='../images/plus.png'></label><input type='file' id=" +
+                "uploadimage" + imageID + " class='gallery-file-field js-file-upload' name='image_file' multiple></div> <div class='done-box js-done-box'><img></div><nav class='controls'><i class='fa fa-trash js-delete-file'></i></nav><div class='primary'>展示页</div></div>";
             dropzoneLast.after(msg);
         }
         imageCount--;
-        $(".js-image .js-counter").text("(" + imageCount + "/3)");
+        console.log("imageID--" + imageID);
+        $(".js-image .js-counter").text("(" + imageCount + "/6)");
     })
 
 

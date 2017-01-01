@@ -552,33 +552,35 @@
                                                         </div>
                                                         <span class="fake-hint-title">标题</span>
                                                         <ul>
-                                                            <li>为你的梯度设置一个标题, 描述该梯度包括的内容。
-                                                            </li>
-
+                                                            <li>为你的梯度设置一个标题, 描述该梯度包括的内容。</li>
+                                                            <li>标题字数限制在30个字</li>
                                                         </ul>
                                                     </div>
                                                 </th>
                                                 <td class="js-packages-title" data-package="1">
                                                     <label>
-                                                        <textarea name="gig[packages][1][title]" maxlength="35"
+                                                        <textarea name="show_packages_title_1" maxlength="30"
+                                                                  class="js-show-packages-title"
                                                                   type="text"
-                                                                  placeholder="Name your package">a a</textarea>
+                                                                  placeholder="该梯度的标题">a a</textarea>
                                                         <i class="fa fa-pencil"></i>
                                                     </label>
                                                 </td>
                                                 <td class="js-packages-title" data-package="2">
                                                     <label>
-                                                        <textarea name="gig[packages][2][title]" maxlength="35"
+                                                        <textarea name="show_packages_title_2" maxlength="30"
+                                                                  class="js-show-packages-title"
                                                                   type="text"
-                                                                  placeholder="Name your package">asfdfg</textarea>
+                                                                  placeholder="该梯度的标题">asfdfg</textarea>
                                                         <i class="fa fa-pencil"></i>
                                                     </label>
                                                 </td>
                                                 <td class="js-packages-title" data-package="3">
                                                     <label>
-                                                        <textarea name="gig[packages][3][title]" maxlength="35"
+                                                        <textarea name="show_packages_title_3" maxlength="30"
+                                                                  class="js-show-packages-title"
                                                                   type="text"
-                                                                  placeholder="Name your package">asdgaeg</textarea>
+                                                                  placeholder="该梯度的标题">asdgaeg</textarea>
                                                         <i class="fa fa-pencil"></i>
                                                     </label>
                                                 </td>
@@ -595,30 +597,29 @@
                                                             </li>
                                                             <li>最多能输入100个字</li>
                                                         </ul>
-
                                                     </div>
                                                 </th>
                                                 <td class="js-packages-description" data-package="1">
                                                     <label>
-                                                        <textarea name="gig[packages][1][description]" maxlength="100"
-                                                                  type="text"
-                                                                  placeholder="Describe the details of your offering">as s </textarea>
+                                                        <textarea name="show_packages_description_1" maxlength="100"
+                                                                  type="text" class="js-show-packages-description"
+                                                                  placeholder="描述你的价格梯度能提供的细节">as s </textarea>
                                                         <i class="fa fa-pencil"></i>
                                                     </label>
                                                 </td>
                                                 <td class="js-packages-description" data-package="2">
                                                     <label>
-                                                        <textarea name="gig[packages][2][description]" maxlength="100"
-                                                                  type="text"
-                                                                  placeholder="Describe the details of your offering">asfas</textarea>
+                                                        <textarea name="show_packages_description_2" maxlength="100"
+                                                                  type="text" class="js-show-packages-description"
+                                                                  placeholder="描述你的价格梯度能提供的细节">asfas</textarea>
                                                         <i class="fa fa-pencil"></i>
                                                     </label>
                                                 </td>
                                                 <td class="js-packages-description" data-package="3">
                                                     <label>
-                                                        <textarea name="gig[packages][3][description]" maxlength="100"
-                                                                  type="text"
-                                                                  placeholder="Describe the details of your offering">asdgd</textarea>
+                                                        <textarea name="show_packages_description_3" maxlength="100"
+                                                                  type="text" class="js-show-packages-description"
+                                                                  placeholder="描述你的价格梯度能提供的细节">asdgd</textarea>
                                                         <i class="fa fa-pencil"></i>
                                                     </label>
                                                 </td>
@@ -832,7 +833,8 @@
                                                                 </li>
                                                             </ul>
 
-                                                            <input type="hidden" name="show-package1-duration" id="show-duration"
+                                                            <input type="hidden" name="show-package1-duration"
+                                                                   id="show-duration"
                                                                    value="4"></div>
 
                                                     </div>
@@ -1343,8 +1345,8 @@
                                                                     </a>
                                                                 </li>
                                                             </ul>
-                                                            <input type="hidden" name="show-packages3-duration"
-                                                                   id="" value="4">
+                                                            <input type="hidden" name="show-logo-number"
+                                                                   id="show-logo-number" value="4">
                                                         </div>
 
                                                     </div>
@@ -1687,10 +1689,13 @@
                                                          data-hidden-input-name="gig[packages][1][price]">
 
                                                         <div class="fake-dropdown"
-                                                             style="visibility: visible;text-align:center;margin: 0 auto">
-                                                            <input type="number" id="show-packages-1-price"
-                                                                   name="show-packages-1-price"
+                                                             style="visibility: visible;text-align:center;margin: 0 auto;display: inline-block">
+                                                            <span>
+                                                            <input type="text" id="show_packages_price_1"
+                                                                   class="js-show-packages-price"
+                                                                   name="show_packages_price_1" style="width: 80%"
                                                                    placeholder="请输入2-2000元">
+                                                           元</span>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -1698,9 +1703,12 @@
                                                     <div class="filter-select cf "
                                                          data-hidden-input-name="gig[packages][2][price]">
                                                         <div class="fake-dropdown" style="visibility: visible;">
-                                                            <input type="number" id="show-packages-2-price"
-                                                                   name="show-packages-2-price"
-                                                                   placeholder="请输入2-2000元">
+                                                            <span>
+                                                                <input type="text" id="show_packages_price_2"
+                                                                       class="js-packages-price"
+                                                                       name="show_packages_price_2" style="width: 80%"
+                                                                       placeholder="请输入2-2000元">
+                                                                元</span>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -1708,9 +1716,12 @@
                                                     <div class="filter-select cf "
                                                          data-hidden-input-name="gig[packages][3][price]">
                                                         <div class="fake-dropdown" style="visibility: visible;">
-                                                            <input type="number" id="show-packages-3-price"
-                                                                   name="show-packages-3-price"
+                                                            <span>
+                                                            <input type="text" id="show_packages_price_3"
+                                                                   class="js-packages-price"
+                                                                   name="show_packages_price_3" style="width: 80%"
                                                                    placeholder="请输入2-2000元">
+                                                                元</span>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -1720,7 +1731,8 @@
                                         <div class="try-now " style="opacity: 1;">
                                             <h3>开启价格梯度<br>呈列三种价格梯度</h3>
 
-                                            <a href="" class="btn-lrg-standard btn-azure-grad activate-packages">现在开启</a>
+                                            <a href=""
+                                               class="btn-lrg-standard btn-azure-grad activate-packages js-start-packages">现在开启</a>
 
                                         </div>
                                         <div class="js-reload-packages reload-packages hidden">
@@ -1738,44 +1750,58 @@
                                                     <li>根据下面提示，每一种梯度你可能需要分别选择子选项。</li>
                                                     <li>总定价应该是高级梯度 > 标准梯度 > 基础梯度</li>
                                                 </ul>
-
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="error-container js-title-error"><p class="msg-error">请设置标题</p></div>
+                                    <div class="error-container js-desc-error"><p class="msg-error">请描述作品内容</p></div>
+                                    <div class="error-container js-deliver-time"><p class="msg-error">请设置1-30天的完成时间</p>
+                                    </div>
+                                    <div class="error-container js-money-error"><p class="msg-error">请设置2-2000元梯度价格</p>
+                                    </div>
+
                                     <input type="hidden" name="" value="3">
                                 </section>
 
                                 <section class="upcrate-box upgrades js-upgrades">
-                                    <header>
-                                        <h3>普通定价</h3>
+                                    <header class="pricing-header">
+                                        <h3>额外定价</h3>
+                                        <div class="toggle-wrapper toggle-multi-packages js-toggle-multi-packages">
+                                            <label class="js-btn-toggle-extra-service hint--bottom">
+                                                额外定价
+                                                <input type="checkbox" name="extra_service_toggle">
+                                                <span class="fake-toggle"></span>
+                                            </label>
+                                        </div>
                                     </header>
-
-                                    <div class="b-t-0 js-custom-extra-wrapper">
-                                        <div class="gig-extra js-gig-extra cf" data-extras-count="9">
+                                    <div class="b-t-0 js-extra-service-wrapper hidden">
+                                        <div class="gig-extra js-gig-extra cf" extras-num="1">
                                             <div class="form-check-row cf">
                                                 <div class="label-wrap">
-                                                    <label class="fake-check-black check-text"
-                                                           for="gig_gig_items_attributes_9_active">
+                                                    <label class="fake-check-black check-text js-checkbox-label"
+                                                           for="show_items_extra_1">
                                                         <input class="js-extra-checkbox"
-                                                               id="gig_gig_items_attributes_9_active"
-                                                               name="gig[gig_items_attributes][9][active]"
+                                                               id="show_items_extra_1"
+                                                               name="show_items_extra_1"
                                                                type="checkbox" value="1" checked="checked">
                                                         <span class="chk-img"></span>
                                                         标题
                                                     </label>
                                                 </div>
-                                                <textarea class="input-wrap js-extra-title" maxlength="40" name="show-extra-1-title"
-                                                          placeholder="请输入额外服务的标题" rows="1">Sss</textarea>
+                                                <textarea class="input-wrap js-extra-title" maxlength="30"
+                                                          name="show_extra_title_1"
+                                                          placeholder="请输入额外服务的标题" rows="1"></textarea>
                                             </div>
 
                                             <div class="form-extra-row cf">
-                                                <label class="label-wrap" for="gig_gig_items_attributes_9_active">
+                                                <label class="label-wrap">
                                                     描述
                                                 </label>
                                                 <span class="will-text">我可以</span><textarea
-                                                    class="input-wrap js-extra-description" maxlength="100" name="show-extra-1-description"
+                                                    class="input-wrap js-extra-description" maxlength="100"
+                                                    name="show_extra_description_1"
                                                     placeholder="描述你额外提供的服务或东西" rows="1"
-                                                    style="text-indent: 43px;">ssssssss</textarea>
+                                                    style="text-indent: 43px;"></textarea>
                                             </div>
 
                                             <div class="form-extra-row cf">
@@ -1787,62 +1813,22 @@
                                                          data-initial-price="5">
                                                         <div class="filter-select cf ">
                                                             <div class="fake-dropdown" style="visibility: visible;">
-                                                                <input type="number" id="show-extra-1-price"
-                                                                       name="show-extra-1-price"
+                                                                <input type="number" id="show_extra_price_1"
+                                                                       name="show_extra_price_1" class="js-extra-money"
                                                                        placeholder="请输入2-2000元">
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="gig-extra js-gig-extra cf" data-extras-count="10">
-                                            <div class="form-check-row cf">
-                                                <div class="label-wrap">
-                                                    <label class="fake-check-black check-text"
-                                                           for="gig_gig_items_attributes_10_active">
-                                                        <input class="js-extra-checkbox"
-                                                               id="gig_gig_items_attributes_10_active"
-                                                               name="gig[gig_items_attributes][10][active]"
-                                                               type="checkbox" value="1" checked="checked">
-                                                        <span class="chk-img"></span>
-                                                        标题
-                                                    </label>
-                                                </div>
-                                                <textarea class="input-wrap js-extra-title" maxlength="40"
-                                                          name="show-extra-2-title"
-                                                          placeholder="请输入额外服务的标题"
-                                                          rows="1">Sssss</textarea>
+                                            <div class="error-container js-title-error"><p class="msg-error">请设置标题</p>
                                             </div>
-
-                                            <div class="form-extra-row cf">
-                                                <label class="label-wrap" for="gig_gig_items_attributes_9_active">
-                                                    描述
-                                                </label>
-                                                <span class="will-text">我可以</span><textarea
-                                                    class="input-wrap js-extra-description" maxlength="100" name="show-extra-2-description"
-                                                    placeholder="描述你额外提供的服务或东西" rows="1"
-                                                    style="text-indent: 43px;">ssssssss</textarea>
+                                            <div class="error-container js-desc-error"><p class="msg-error">请填写描述</p>
                                             </div>
-
-                                            <div class="form-extra-row cf">
-                                                <label class="label-wrap">
-                                                    额外的收费
-                                                </label>
-                                                <div class="input-wrap">
-                                                    <div class="fdd js-fdd js-fdd-price" data-fdd-name="price"
-                                                         data-initial-price="5">
-                                                        <div class="filter-select cf ">
-                                                            <div class="fake-dropdown" style="visibility: visible;">
-                                                                <input type="number" id="show-extra-2-price"
-                                                                       name="show-extra-2-price"
-                                                                       placeholder="请输入2-2000元">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <div class="error-container js-money-error"><p class="msg-error">请输入2-2000元附加金额</p>
                                             </div>
                                         </div>
+
                                         <!--<div>-->
                                         <!--<input type="button" value="添加" style="margin-top: 10px;background-color: #fff;width: 100%;height: 30px;">-->
                                         <!--</div>-->
@@ -1888,20 +1874,29 @@
                                         <header>
                                             <h3>
                                                 项目作品图片</span> <span class="grey-colored">(需至少上传一张)</span>
-                                                <span class="grey-colored counter js-counter">(0/3)</span>
+                                                <span class="grey-colored counter js-counter">(0/6)</span>
                                             </h3>
                                             <span>上传图片能够更好的显示你的作品。</span>
                                         </header>
 
                                         <div class="dropzone has-image js-dropzone" data-type="portfolio">
+
+                                            <div class="wrapper">
+                                                <div class="load-bar">
+
+                                                    <div class="load-bar-inner" data-loading="0">
+                                                        <div><i class="percent">100%</i></div></div>
+                                                </div>
+                                            </div>
+
                                             <div class="empty-state-box">
-                                                <span class="icon cover-icon"></span><br>
-                                                Drag a Photo or
-                                                <label for="portfolio">browse</label>
-                                                <input type="file" id="portfolio"
+                                                <label for="image1">
+                                                    <img src="../images/plus.png"></label>
+                                                <input type="file" id="image1"
                                                        class="gallery-file-field js-file-upload" name="image_file"
                                                        multiple>
                                             </div>
+
                                             <div class="done-box js-done-box">
                                                 <img src="https://cldn0.fiverrcdn.com/fiverr/t_gallery_medium/gigs/68157021/original/9da8f2e083922a559268be63609bf219fb56142d.jpg"
                                                      alt="draw a picture a">
@@ -1909,34 +1904,17 @@
                                             <nav class="controls">
                                                 <i class="fa fa-trash js-delete-file"></i>
                                             </nav>
-                                            <div class="primary">展示页</div>
+                                            <div class="primary">封面</div>
                                         </div>
 
-                                        <div class="dropzone empty-state  js-dropzone" data-type="portfolio">
+                                        <div class="dropzone empty-state js-dropzone" data-type="portfolio">
                                             <div class="empty-state-box">
-                                                <span class="icon cover-icon"></span><br>
-                                                Drag a Photo or
-                                                <label for="portfolio2">browse</label>
-                                                <input type="file" id="portfolio2"
-                                                       class="gallery-file-field js-file-upload" name="image_file"
-                                                       multiple>
-                                            </div>
-                                            <div class="done-box js-done-box">
-                                                <img src="https://cldn0.fiverrcdn.com/fiverr/t_gallery_medium/gigs/68157021/original/9da8f2e083922a559268be63609bf219fb56142d.jpg"
-                                                     alt="draw a picture a">
-                                            </div>
-                                            <nav class="controls">
-                                                <i class="fa fa-trash js-delete-file"></i>
-                                            </nav>
-                                            <div class="primary">展示页</div>
-                                        </div>
-
-                                        <div class="dropzone empty-state blank js-dropzone" data-type="portfolio">
-                                            <div class="empty-state-box">
-                                                <span class="icon cover-icon"></span><br>
-                                                Drag a Photo or
-                                                <label for="portfolio3">browse</label>
-                                                <input type="file" id="portfolio3"
+                                                <label for="image2">
+                                                    <img src="../images/plus.png"></label>
+                                                <!--<span class="icon cover-icon"></span><br>-->
+                                                <!--Drag a Photo or-->
+                                                <!--<label for="portfolio2">browse</label>-->
+                                                <input type="file" id="image2"
                                                        class="gallery-file-field js-file-upload" name="image_file"
                                                        multiple>
                                             </div>
@@ -1946,9 +1924,83 @@
                                             <nav class="controls">
                                                 <i class="fa fa-trash js-delete-file"></i>
                                             </nav>
-                                            <div class="primary">展示页</div>
+                                            <div class="primary">封面</div>
                                         </div>
 
+                                        <div class="dropzone empty-state blank js-dropzone" data-type="portfolio">
+
+                                            <div class="empty-state-box">
+
+                                                <label for="image3">
+                                                    <img src="../images/plus.png"></label>
+
+                                                <input type="file" id="image3"
+                                                       class="gallery-file-field js-file-upload" name="image_file"
+                                                       multiple>
+                                            </div>
+                                            <div class="done-box js-done-box">
+                                                <img>
+                                            </div>
+                                            <nav class="controls">
+                                                <i class="fa fa-trash js-delete-file"></i>
+                                            </nav>
+                                            <div class="primary">封面</div>
+                                        </div>
+
+                                        <div class="dropzone empty-state blank js-dropzone" data-type="portfolio">
+                                            <div class="empty-state-box">
+
+                                                <label for="image4">
+                                                    <img src="../images/plus.png"></label>
+
+                                                <input type="file" id="image4"
+                                                       class="gallery-file-field js-file-upload" name="image_file"
+                                                       multiple>
+                                            </div>
+                                            <div class="done-box js-done-box">
+                                                <img>
+                                            </div>
+                                            <nav class="controls">
+                                                <i class="fa fa-trash js-delete-file"></i>
+                                            </nav>
+                                            <div class="primary">封面</div>
+                                        </div>
+                                        <div class="dropzone empty-state blank js-dropzone" data-type="portfolio">
+                                            <div class="empty-state-box">
+
+                                                <label for="image5">
+                                                    <img src="../images/plus.png"></label>
+
+                                                <input type="file" id="image5"
+                                                       class="gallery-file-field js-file-upload" name="image_file"
+                                                       multiple>
+                                            </div>
+                                            <div class="done-box js-done-box">
+                                                <img>
+                                            </div>
+                                            <nav class="controls">
+                                                <i class="fa fa-trash js-delete-file"></i>
+                                            </nav>
+                                            <div class="primary">封面</div>
+                                        </div>
+                                        <div class="dropzone empty-state blank js-dropzone" data-type="portfolio">
+                                            <div class="empty-state-box">
+
+                                                <label for="image6">
+                                                    <img src="../images/plus.png"></label>
+
+                                                <input type="file" id="image6"
+                                                       class="gallery-file-field js-file-upload" name="image_file"
+                                                       multiple>
+                                            </div>
+                                            <div class="done-box js-done-box">
+                                                <img>
+                                            </div>
+                                            <nav class="controls">
+                                                <i class="fa fa-trash js-delete-file"></i>
+                                            </nav>
+                                            <div class="primary">封面</div>
+                                        </div>
                                         <div class="fake-hint basic-mode blue">
                                             <div class="icn">
                                                 <i class="fa fa-lightbulb-o"></i>
@@ -1959,7 +2011,7 @@
                                             <ol class="upload-explain">
                                                 <li>禁止上传他人的作品</li>
                                                 <li>图片的格式可以是 JPEG, JPG 或者 PNG</li>
-                                                <li>图片大小不能超过200K.</li>
+                                                <li>图片大小不能超过3M.</li>
                                             </ol>
                                         </div>
                                     </article>
@@ -1974,9 +2026,9 @@
 
                                         <div class="dropzone empty-state   js-dropzone" data-type="video">
                                             <div class="empty-state-box">
-                                                <span class="icon video-icon"></span><br>
-                                                Drag a Video or
-                                                <label for="video">browse</label>
+                                                <label for="video">
+                                                    <img src="../images/plus.png" width="80px" height="80px"
+                                                         style="border-radius: 5px;"></label>
                                                 <input type="file" class="gallery-file-field js-file-upload" id="video"
                                                        name="file">
                                             </div>

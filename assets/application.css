@@ -10587,7 +10587,7 @@ html.no-svg .mp-hero-new .btn-video-play {
     text-align: left;
     padding: 10px;
     margin: -3px 0 0 0;
-    border: 1px solid #ff4d4d
+    /*border: 1px solid #ff4d4d*/
 }
 
 .error-container .msg-error a {
