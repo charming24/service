@@ -322,12 +322,27 @@ $(document).ready(function () {
         $('.tag-input').focus();
     });
 
+    var currentStep = 0;
 
     $(".js-save").click(function () {
         $(".js-section-overlay").removeClass("hidden");
         //上传数据
 
-        setTimeout("A()", 500);
+        switch (currentStep) {
+            case 0:
+                setTimeout("saveOverride()", 500);
+                currentStep++;
+                break;
+            case 1:
+                setTimeout("savePrice()", 500);
+                currentStep++;
+                break;
+            case 2:
+                setTimeout("saveUpload()", 500);
+                currentStep++;
+                break;
+        }
+
     })
 
     var isMultiPackages = false;
@@ -471,7 +486,7 @@ $(document).ready(function () {
         if (isExtraPrice) {
             if ($(this).val().trim() == "") {
                 $(this).parents(".js-gig-extra").find(".js-title-error").css("display", "block");
-            }else {
+            } else {
                 $(this).parents(".js-gig-extra").find(".js-title-error").css("display", "none");
             }
         }
@@ -480,18 +495,18 @@ $(document).ready(function () {
         if (isExtraPrice) {
             if ($(this).val().trim() == "") {
                 $(this).parents(".js-gig-extra").find(".js-desc-error").css("display", "block");
-            }else {
+            } else {
                 $(this).parents(".js-gig-extra").find(".js-desc-error").css("display", "none");
             }
         }
     });
     $(".js-extra-service-wrapper").on("blur", ".js-extra-money", function () {
         if (isExtraPrice) {
-            if ($(this).val().trim()<2 || $(this).val().trim()>2000){
+            if ($(this).val().trim() < 2 || $(this).val().trim() > 2000) {
                 $(this).parents(".js-gig-extra").find(".js-money-error").css("display", "block");
-            }else if ($(this).val().trim() == "") {
+            } else if ($(this).val().trim() == "") {
                 $(this).parents(".js-gig-extra").find(".js-money-error").css("display", "block");
-            }else {
+            } else {
                 $(this).parents(".js-gig-extra").find(".js-money-error").css("display", "none");
             }
         }
@@ -518,9 +533,9 @@ $(document).ready(function () {
             new_extra.find("#show_extra_price_" + extra_num).attr("id", "show_items_extra_" + (extra_num + 1));
 
 
-            new_extra.find(".js-title-error").css("display","none");
-            new_extra.find(".js-desc-error").css("display","none");
-            new_extra.find(".js-money-error").css("display","none");
+            new_extra.find(".js-title-error").css("display", "none");
+            new_extra.find(".js-desc-error").css("display", "none");
+            new_extra.find(".js-money-error").css("display", "none");
 
             $(".js-extra-service-wrapper").find(".js-gig-extra:last").after(new_extra);
             if ($('.js-gig-extra').length == 4) {
@@ -588,10 +603,6 @@ $(document).ready(function () {
         var dropzone = $(this).parents(".dropzone");
 
         var dropzoneLast = $(this).parents(".js-gallery-item").find(".dropzone:last");
-
-        console.log(dropzone.index());
-        console.log(dropzoneLast.index());
-
 
         if (dropzone.index() == dropzoneLast.index() || imageCount == 6) {
             // dropzone.addClass("empty-state").removeClass("has-image");
@@ -662,8 +673,6 @@ $(document).ready(function () {
         videoCount--;
         $(".js-video .js-counter").text("(" + videoCount + "/1)");
     })
-
-
 });
 
 
@@ -681,9 +690,17 @@ function getObjectURL(file) {
     return url;
 }
 
-
-function A() {
+function saveOverride() {
     $(".js-edit-general").addClass("hidden");
     $(".js-edit-pricing").removeClass("hidden");
     $(".js-section-overlay").addClass("hidden");
+}
+function savePrice() {
+    $(".js-edit-pricing").addClass("hidden");
+    $(".js-upload").removeClass("hidden");
+    $(".js-section-overlay").addClass("hidden");
+}
+
+function saveUpload() {
+
 }

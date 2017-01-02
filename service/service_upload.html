@@ -186,16 +186,16 @@
                             </a>
                         </li>
                         <li class="step hint--bottom">
-                            <a href="#!" class=""
+                            <a href="#!" class="valid"
                                data-index="2" data-for="pricing"
-                               disabled=&quot;disabled&quot;>
+                               disabled="disabled">
                                 定价
                             </a>
                         </li>
                         <li class="step hint--bottom">
                             <a href="#!" class=""
                                data-index="3" data-for="faq_description"
-                               disabled=&quot;disabled&quot;>
+                               disabled="disabled">
                                 上传作品
                             </a>
                         </li>
@@ -205,7 +205,7 @@
                             <a href="#" class="save">保存</a>
                         </li>
                         <li>
-                            <a href="/gigs/preview_loader?preview-gig=/charming852/draw-a-picture-a"
+                            <a href=""
                                class="save-and-preview" target="_blank">保存并预览</a>
                         </li>
                     </ul>
@@ -221,13 +221,9 @@
                 <div class="db-edit-gig db-content content-left db-content-edit-gig p-t-50 js-db-edit-gig">
                     <div class="edit-gig-form-wrap db-content-inner">
                         <form accept-charset="UTF-8" action="#"
-                              class="edit-gig create-gig js-edit-gig" data-current-section="general"
+                              class="edit-gig  js-edit-gig" data-current-section="general"
                               enctype="multipart/form-data" id="gig-create-general" method="post">
-                            <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;"/><input
-                                    name="_method" type="hidden" value="patch"/><input name="authenticity_token"
-                                                                                       type="hidden"
-                                                                                       value="u30vRSaUeKBOrVrD6lW9PoQw7OqrUV5F2WV577/WxFc="/>
-                            </div>
+
                             <div class="section-overlay js-section-overlay hidden">
                                 <div class="spinner" style=" position: absolute;z-index: 1;top: 30%;left: 45%;">
                                     <div class="bounce1"></div>
@@ -502,7 +498,7 @@
                                     </div>
                                 </section>
                             </section>
-                            <section data-name="pricing" data-section-name="" class="js-edit-pricing ">
+                            <section data-name="pricing" data-section-name="prices" class="js-edit-pricing hidden">
 
                                 <header class="pricing-header">
                                     <h1 class="alt">定价范围</h1>
@@ -1861,7 +1857,7 @@
 
                             </section>
 
-                            <section data-name="gallery" data-section-name="images" class="">
+                            <section data-name="gallery" data-section-name="upload" class="js-upload hidden">
                                 <header class="pricing-header">
                                     <h1 class="alt">上传作品</h1>
                                 </header>
@@ -2087,61 +2083,23 @@
     <footer class="mp-box main-footer js-main-footer border-top p-t-20 p-b-30 ">
         <div class="box-row">
             <div class="footer-top cf">
-                <nav class="footer-social">
-                    <a href="https://plus.google.com/108306936820925170087/" target="_blank"
-                       class="ficon ficon-google js-gtm-event" data-gtm-action="footer-share" data-gtm-event="social"
-                       data-gtm-label="google-plus" title="Fiverr on Google+"></a>
-                    <a href="https://www.linkedin.com/company/fiverr-com" target="_blank"
-                       class="ficon ficon-linkedin js-gtm-event" data-gtm-action="footer-share" data-gtm-event="social"
-                       data-gtm-label="linkedin" title="Fiverr on LinkedIn"></a>
-                    <a href="http://twitter.com/fiverr" target="_blank" class="ficon ficon-twitter js-gtm-event"
-                       data-gtm-action="footer-share" data-gtm-event="social" data-gtm-label="twitter"
-                       title="Fiverr on Twitter"></a>
-                    <a href="http://www.pinterest.com/fiverr" target="_blank" class="ficon ficon-pinterest js-gtm-event"
-                       data-gtm-action="footer-share" data-gtm-event="social" data-gtm-label="pinterest"
-                       title="Fiverr on Pinterest"></a>
-                    <a href="http://www.facebook.com/fiverr" target="_blank" class="ficon ficon-facebook js-gtm-event"
-                       data-gtm-action="footer-share" data-gtm-event="social" data-gtm-label="facebook"
-                       title="Fiverr on Facebook"></a>
-                    <a href="http://instagram.com/fiverr" target="_blank" class="ficon ficon-instagram js-gtm-event"
-                       data-gtm-action="footer-share" data-gtm-event="social" data-gtm-label="instagram"
-                       title="Fiverr on Instagram"></a>
-                </nav>
-
                 <ul>
-                    <li><a href="/categories">Directory</a></li>
-                    <li><a href="/news">Press</a></li>
-                    <li><a href="/partnerships">Partnerships</a></li>
-                    <li><a href="/jobs">Jobs</a></li>
-                    <li><a href="/terms_of_service">Legal</a></li>
-                    <li><a href="/privacy-policy">Privacy</a></li>
+                    <li><a href="">Directory</a></li>
+                    <li><a href="">Press</a></li>
+                    <li><a href="">Partnerships</a></li>
+                    <li><a href="">Jobs</a></li>
+                    <li><a href="">Legal</a></li>
+                    <li><a href="">Privacy</a></li>
                     <li><a href="" target="_blank">Forum</a></li>
-                    <li><a href="/academy">Academy</a></li>
-                    <li><a href="" target="_blank">Blog</a></li>
-                    <li><a href="" target="_blank">Store</a></li>
-                    <li><a href="/affiliate_program">Affiliates</a></li>
-
+                    <li><a href="">Academy</a></li>
+                    <li><a href="">Affiliates</a></li>
+                    <li><a href="" target="_blank">Contact us</a></li>
+                    <li><a href="">Best of Fiverr</a></li>
                 </ul>
             </div>
 
-            <div class="footer-bot cf">
-                <div class="box-regional js-box-regional">
-                    <a href="#" class="js-trigger-regional" data-location="in-footer">
-                        <span class="language-name">English</span>
-                        $ USD
-                        <i class="ficon ficon-chevron-up"></i>
-                    </a>
-                </div>
-                <a href="http://app.appsflyer.com/id346080608?pid=Organic&c=Web_HP_Footer"
-                   class="btn-mobile-store app-store js-gtm-event" data-gtm-action="clicked-from-footer"
-                   data-gtm-event="ios-promo" data-gtm-label="get-the-app" target="_blank"
-                   data-src="//cdnil20.fiverrcdn.com/assets/v2_buttons/en/btn-app-store-40-f93b303c19c00340ec37f630bc9ff15b.svg"></a>
-                <a href="http://app.appsflyer.com/com.fiverr.fiverr?pid=Organic&c=Web_HP_Footer"
-                   class="btn-mobile-store play-store js-gtm-event" data-gtm-action="clicked-from-footer"
-                   data-gtm-event="android-promo" data-gtm-label="get-the-app" target="_blank"
-                   data-src="//cdnil20.fiverrcdn.com/assets/v2_buttons/en/btn-play-store-40-179b5ea7c58e42508ebc0ced60d48a58.svg"></a>
-            </div>
         </div>
+
     </footer>
 </div>
 
