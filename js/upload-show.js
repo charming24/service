@@ -563,8 +563,6 @@ $(document).ready(function () {
     });
 
 
-
-
     $(".js-add-show-extra").click(function () {
 
         var length = $('.js-gig-extra').length;
@@ -726,40 +724,53 @@ $(document).ready(function () {
         $(".js-video .js-counter").text("(" + videoCount + "/1)");
     })
 
-
+    var isFaq = false;
+    $(".js-btn-toggle-faq").click(function (event) {
+        event.preventDefault();
+        var isChecked = $(this).find("input").is(':checked');
+        if (isChecked) {
+            $(".faq-wrapper").addClass("hidden");
+            $(this).find("input").prop("checked", false);
+            isFaq = false;
+        } else {
+            $(".faq-wrapper").removeClass("hidden");
+            $(this).find("input").prop("checked", true);
+            isFaq = true;
+        }
+    });
 
     $(".js-add-faq").click(function () {
         var question = $(".js-faq-question");
         var answer = $(".js-faq-answer");
-        if (question.val() == "" || answer.val() == ""){
-            question.css("border-color","red");
-            answer.css("border-color","red");
+        if (question.val() == "" || answer.val() == "") {
+            question.css("border-color", "red");
+            answer.css("border-color", "red");
             return;
         }
 
-        question.css("border-color","#b2b2b2");
-        answer.css("border-color","#b2b2b2");
+        question.css("border-color", "#b2b2b2");
+        answer.css("border-color", "#b2b2b2");
 
-        var msg = "<li class=''><header>"+question.val()+"<a>删除</a></header> <div class='panel'>"+answer.val()+"</div></li>"
+        var msg = "<li class=''><header>" + question.val() + "<a>删除</a></header> <div class='panel'>" + answer.val() + "</div></li>"
         // $(".js-component-accordion").animate({ "left": 500 }, 2000).animate({ "left": 0 }, 2000);
         $(".js-component-accordion").append(msg);
-        $(".js-component-accordion li:last").css("display","none");
-        $(".js-component-accordion li:last").animate({ "left": -500 }, 100,function () {
-            $(this).css("display","block")
-        }).animate({ "left": 20 }, 500).animate({ "left": -10 }, 500).animate({ "left": 0 }, 500);
+        $(".js-component-accordion li:last").css("display", "none");
+        $(".js-component-accordion li:last").animate({"left": -500}, 100, function () {
+            $(this).css("display", "block")
+        }).animate({"left": 20}, 500).animate({"left": -10}, 500).animate({"left": 0}, 500);
     })
 
-    $("body").on("click",".js-component-accordion li",function () {
-        if($(this).hasClass("opened")){
+    $("body").on("click", ".js-component-accordion li", function () {
+        if ($(this).hasClass("opened")) {
             $(this).removeClass("opened")
-        }else {
+        } else {
             $(this).addClass("opened")
         }
     })
-    $("body").on("click",".js-component-accordion li a",function (e) {
+    $("body").on("click", ".js-component-accordion li a", function (e) {
         e.stopPropagation();
-       // alert($(this).parents("li").index());
-        $(this).parents("li").animate({ "left": 20 }, 300).animate({ "left": -500 }, 800,function () {
+        // alert($(this).parents("li").index());
+        $(this).parents("li").animate({"left": 20}, 300).animate({"left": -800}, 800, function () {
             $(this).remove();
         })
     })
@@ -782,7 +793,7 @@ function getObjectURL(file) {
 var currentStep = 0;
 function saveOverride() {
     var titleCorrect = checkTitle();
-   // var categoryCorrect = checkCategory();
+    // var categoryCorrect = checkCategory();
     var describeCorrect = checkDesc();
     var tagCorrect = checkTag();
     // if (!(titleCorrect && categoryCorrect && describeCorrect && tagCorrect)) {
@@ -829,25 +840,25 @@ function checkTitle() {
     }
 }
 function checkCategory() {
-    if ($("#host-category-id").val() !== "" && $("#sub-category-id").val() !== ""){
+    if ($("#host-category-id").val() !== "" && $("#sub-category-id").val() !== "") {
         return true;
-    }else {
-        $(".show-edit-category-wrap .js-category-error").css("display","block");
+    } else {
+        $(".show-edit-category-wrap .js-category-error").css("display", "block");
         return false;
     }
 }
 function checkDesc() {
 
-    if ($("#show-description").val().length <12){
-        $("#js-show-desc-wrap .js-desc-error").css("display","block");
+    if ($("#show-description").val().length < 12) {
+        $("#js-show-desc-wrap .js-desc-error").css("display", "block");
         return false;
     } else {
         return true;
     }
 }
 function checkTag() {
-    if ($("#hidden-tag-input").val().split(",").length<3){
-        $(".show-edit-tags-input-wrap .js-tag-error").css("display","block");
+    if ($("#hidden-tag-input").val().split(",").length < 3) {
+        $(".show-edit-tags-input-wrap .js-tag-error").css("display", "block");
         return false;
     } else {
         return true;
