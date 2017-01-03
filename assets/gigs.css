@@ -2516,6 +2516,7 @@ body ul.component-accordion {
 }
 
 body ul.component-accordion li {
+    position: relative;
     background-color: #fff;
     cursor: pointer;
     vertical-align: top;
@@ -2644,7 +2645,11 @@ body:not(.is-mobile-responsive) ul.component-accordion.col-count-3:nth-of-type(2
     -o-transition: -o-transform 0.3s;
     transition: transform 0.3s
 }
-
+.gig-page-section-faq .component-accordion li a {
+    color: red;
+    font-size: 15px;
+    float: right;
+}
 .gig-page-section-faq .component-accordion li:last-child {
     margin-bottom: 0
 }

@@ -10582,7 +10582,7 @@ html.no-svg .mp-hero-new .btn-video-play {
 
 .error-container .msg-error {
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 700;!important;
     color: #ff4d4d;
     text-align: left;
     padding: 10px;

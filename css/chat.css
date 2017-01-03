@@ -526,7 +526,7 @@ img {
 
 /*定义滚动条轨道 内阴影+圆角*/
 .webim-chat-content::-webkit-scrollbar-track, .webim-chat-input-text::-webkit-scrollbar-track, .webim-people-list::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px #B2B2B2;
+    -webkit-box-shadow: inset 0 0 6px #F7F7F7;
     border-radius: 10px;
     background-color: #F5F5F5;
 }
@@ -534,7 +534,7 @@ img {
 /*定义滑块 内阴影+圆角*/
 .webim-chat-content::-webkit-scrollbar-thumb, .webim-chat-input-text::-webkit-scrollbar-thumb, .webim-people-list::-webkit-scrollbar-thumb {
     border-radius: 8px;
-    -webkit-box-shadow: inset 0 0 6px #B2B2B2;
+    -webkit-box-shadow: inset 0 0 6px #F7F7F7;
     background-color: #B2B2B2;
 }
 

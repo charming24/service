@@ -11,6 +11,7 @@
     <link href="../assets/conversations.css" media="all" rel="stylesheet"/>
     <link href="../assets/react_css/react-description_faq.css" media="all" rel="stylesheet"/>
     <link href="../assets/project-upload.css" media="all" rel="stylesheet"/>
+    <!--<link href="../assets/gigs.css" media="all" rel="stylesheet"/>-->
 
     <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
@@ -186,7 +187,7 @@
                             </a>
                         </li>
                         <li class="step hint--bottom">
-                            <a href="#!" class="valid"
+                            <a href="#!" class=""
                                data-index="2" data-for="pricing"
                                disabled="disabled">
                                 定价
@@ -346,7 +347,7 @@
                                                             </ul>
 
                                                             <input type="hidden" name="host-category-id"
-                                                                   id="hots-category-id" value="0"></div>
+                                                                   id="host-category-id" value=""></div>
 
                                                     </div>
                                                 </div>
@@ -364,13 +365,21 @@
                                                             <ul class="dropdown-menu" id="sub-dropdown-menu" role="menu"
                                                                 style="top: -2px; width: 260px;"></ul>
 
-                                                            <input type="hidden" name="gig[sub_category_id]"
-                                                                   id="gig[sub_category_id]" value="53"></div>
+                                                            <input type="hidden" name="sub-category-id"
+                                                                   id="sub-category-id" value=""></div>
 
                                                     </div>
                                                 </div>
+
                                             </div>
-                                            <div class="cf gig-edit-suggestions-wrapper">
+
+                                            <div class="error-container js-category-error" style="position:relative;">
+                                                <p class="msg-error">请选择类目</p>
+                                            </div>
+
+
+                                            <div class=" gig-edit-suggestions-wrapper">
+
                                                 <div class="gig-edit-suggestion-desc">
                                                     热门的类目:
                                                 </div>
@@ -406,14 +415,14 @@
                                         <div class="label-wrap padding-top">
                                             <label class="">简要描述你的项目及其他说明</label>
                                         </div>
-                                        <div class="write-wrap input-wrap" id="js-gig-desc-wrap">
+                                        <div class="write-wrap input-wrap" id="js-show-desc-wrap">
                                             <div class="textarea-component-container">
                                                 <div class="gig-edit-editor-wrap inside">
                                                     <!--
                                                           <div class="show-edit-area" id="show" contenteditable="true" style="padding: 10px 0 0 25px;height: 320px;max-height: 320px;" >
                                                           </div>
                                                           -->
-                                                    <textarea id="show-description" name="gig[description]"></textarea>
+                                                    <textarea id="show-description" name="show-description"></textarea>
 
                                                     <input type="hidden" name="_wysihtml5_mode" value="1">
 
@@ -440,6 +449,9 @@
                                                     <span>120</span>
                                                     </span></div>
                                             </div>
+                                            <div class="error-container js-desc-error">
+                                                <p class="msg-error">请输入作品描述及说明</p>
+                                            </div>
                                         </div>
                                         <aside class="gig-tooltip">
                                             <figure>
@@ -457,7 +469,7 @@
                                         <div class="label-wrap">
                                             <label class="" for="show_tag_list">标签</label>
                                         </div>
-                                        <div class="input-wrap gig-edit-tags-input-wrap">
+                                        <div class="input-wrap show-edit-tags-input-wrap">
                                             <div class="show-edit-tags-wrap general-form-field-wrap" id="js-show-tags">
                                                 <textarea class="tagstext" cols="74" id="show_tag_list" maxlength="100"
                                                           name="gig[tag_list]" rows="2" style="display: none;">asdasd,asd,qww</textarea>
@@ -478,12 +490,16 @@
                                                 <input type="text" class="tag-input" name="tag-input" maxlength="10"
                                                        style="outline: none"
                                                 >
-                                                <input type="hidden" name="hidden-tag-input" value="asdasd,asd,qww">
+                                                <input type="hidden" name="hidden-tag-input" id="hidden-tag-input"
+                                                       value="asdasd,asd,qww">
 
                                                 <ul class="js-tag-list auto-complete-tags"></ul>
                                             </div>
                                             <div class="gig-edit-tags-desc">
                                                 请添加3个标签，方便他人搜索到您
+                                            </div>
+                                            <div class="error-container js-tag-error">
+                                                <p class="msg-error">请输入三个以上的标签</p>
                                             </div>
                                         </div>
                                         <aside class="gig-tooltip">
@@ -515,13 +531,6 @@
                                     <header>
                                         <h3>梯度价格</h3>
                                     </header>
-
-                                    <section class="js-box-change-service-type box-change-service-type hidden">
-                                        <h4>Service Type</h4>
-                                        <strong></strong>
-                                        <div class="ddl-change-service-type hidden"></div>
-                                        <a href="#">Change</a>
-                                    </section>
 
                                     <div class="table-container">
                                         <table>
@@ -557,6 +566,7 @@
                                                     <label>
                                                         <textarea name="show_packages_title_1" maxlength="30"
                                                                   class="js-show-packages-title"
+                                                                  id="show_packages_title_1"
                                                                   type="text"
                                                                   placeholder="该梯度的标题">a a</textarea>
                                                         <i class="fa fa-pencil"></i>
@@ -566,6 +576,7 @@
                                                     <label>
                                                         <textarea name="show_packages_title_2" maxlength="30"
                                                                   class="js-show-packages-title"
+                                                                  id="show_packages_title_2"
                                                                   type="text"
                                                                   placeholder="该梯度的标题">asfdfg</textarea>
                                                         <i class="fa fa-pencil"></i>
@@ -575,6 +586,7 @@
                                                     <label>
                                                         <textarea name="show_packages_title_3" maxlength="30"
                                                                   class="js-show-packages-title"
+                                                                  id="show_packages_title_3"
                                                                   type="text"
                                                                   placeholder="该梯度的标题">asdgaeg</textarea>
                                                         <i class="fa fa-pencil"></i>
@@ -640,13 +652,10 @@
                                                     data-package="1">
                                                     <div class="filter-select cf "
                                                          data-hidden-input-name="gig[packages][1][duration]">
-
-
                                                         <div class="fake-dropdown" style="visibility: visible;">
 
                                                             <a class="dropdown-toggle" data-toggle="dropdown">
                                                                 1 天完成
-
                                                             </a>
 
                                                             <ul class="dropdown-menu max-height" data-max-height="250"
@@ -1821,7 +1830,8 @@
                                             </div>
                                             <div class="error-container js-desc-error"><p class="msg-error">请填写描述</p>
                                             </div>
-                                            <div class="error-container js-money-error"><p class="msg-error">请输入2-2000元附加金额</p>
+                                            <div class="error-container js-money-error"><p class="msg-error">
+                                                请输入2-2000元附加金额</p>
                                             </div>
                                         </div>
 
@@ -1857,7 +1867,7 @@
 
                             </section>
 
-                            <section data-name="gallery" data-section-name="upload" class="js-upload hidden">
+                            <section data-name="gallery" data-section-name="upload" class="js-upload">
                                 <header class="pricing-header">
                                     <h1 class="alt">上传作品</h1>
                                 </header>
@@ -1881,7 +1891,8 @@
                                                 <div class="load-bar">
 
                                                     <div class="load-bar-inner" data-loading="0">
-                                                        <div><i class="percent">100%</i></div></div>
+                                                        <div><i class="percent">100%</i></div>
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -2054,10 +2065,66 @@
                                                 <li>视频的上线是10M。</li>
                                             </ol>
                                         </div>
-
                                     </article>
 
                                     <div class="js-image-validation-box image-validation-box"></div>
+                                    <section class="upcrate-box upgrades js-upgrades" style="border-bottom: none">
+                                        <header class="pricing-header">
+                                            <h3>常见问题与解答(可选)</h3>
+                                            <div class="toggle-wrapper js-toggle-faq">
+                                                <label class="js-btn-toggle-faq hint--bottom">
+                                                    常见问题与解答
+                                                    <input type="checkbox" name="faq_toggle">
+                                                    <span class="fake-toggle"></span>
+                                                </label>
+                                            </div>
+                                        </header>
+
+
+                                        <div class="faq-wrapper fake-hint-wrap">
+                                            <div class="tooltip-wrapper fake-hint blue">
+                                                <div class="icn"><i class="fa fa-lightbulb-o"></i></div>
+                                                <span class="fake-hint-title">什么是FAQs?</span>
+                                                <div><p>Here you can add answers to the most commonly asked questions.
+                                                    Your FAQs will be displayed in your Gig page.</p>
+                                                    <div class="tooltip-examples-component"><span class="sub-title">for example:</span>
+                                                        <p><strong>Question:</strong> Can you provide a British accent?
+                                                        </p>
+                                                        <p><strong>Answer:</strong> Of course, I lived in England for 3
+                                                            years! That won't be a problem.</p></div>
+                                                </div>
+                                            </div>
+
+                                            <section class="form-wrapper">
+                                                <input type="text" class="js-faq-question" placeholder="问题" maxlength="150">
+                                                <textarea placeholder="解答" class="js-faq-answer" maxlength="300"></textarea>
+                                                <div class="counter">0/300字</div>
+                                                <div class="btns-container">
+                                                    <input type="button" class="btn-standard btn-green-grad js-add-faq" value="添加">
+                                                </div>
+                                            </section>
+                                            <div class="gig-page-section gig-page-section-faq last-gig-section ">
+                                                <header>
+                                                    <h3 class="gig-fancy-header">已设置的问题解答</h3>
+                                                </header>
+                                                <ul class="component-accordion col-count-1 js-component-accordion">
+                                                    <li class="">
+                                                        <header>fg<a>删除</a></header>
+                                                        <div class="panel">fg</div>
+                                                    </li>
+                                                    <li class="opened">
+                                                        <header>sdgdsh<a>删除</a></header>
+                                                        <div class="panel">qw</div>
+                                                    </li>
+                                                    <li class="">
+                                                        <header>etfwe<a>删除</a></header>
+                                                        <div class="panel">sdghwe</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </section>
+
                                 </section>
 
                             </section>

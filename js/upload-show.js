@@ -3,6 +3,58 @@
  */
 $(document).ready(function () {
 
+    $(".upload-steps li a").click(function () {
+
+        if ($(this).attr("disabled") == "disabled" || !$(this).hasClass("valid")) {
+            return;
+        }
+
+        switch ($(this).parent().index()) {
+            case 0:
+                $(".js-edit-general").removeClass("hidden");
+                $(".js-edit-pricing").addClass("hidden");
+                $(".js-upload").addClass("hidden");
+
+
+                $(".js-save").val("保存并继续");
+                currentStep = 0;
+                break;
+            case 1:
+                $(".js-edit-general").addClass("hidden");
+                $(".js-edit-pricing").removeClass("hidden");
+                $(".js-upload").addClass("hidden");
+
+
+                $(".js-save").val("保存并继续");
+                currentStep = 1;
+                break;
+            case 2:
+                $(".js-edit-general").addClass("hidden");
+                $(".js-edit-pricing").addClass("hidden");
+                $(".js-upload").removeClass("hidden");
+                $(".js-save").val("发布");
+                currentStep = 2;
+                break;
+        }
+
+        //当前
+        // switch (currentStep){
+        //     case 0:
+        //         break;
+        //     case 1:
+        //         break;
+        //     case 2:
+        //         break;
+        // }
+        //选中
+        // $(".upload-steps li:eq(1) a").removeClass("current").addClass("valid");
+        // $(".upload-steps li:eq(1) a").removeAttr("disabled");
+        // $(".upload-steps li:eq(2) a").addClass("current");
+
+
+    });
+
+
     var titleText = $(".show-title-text");
     var charCount = $(".char-count");
     var charCountDesc = $(".char-count-desc");
@@ -322,30 +374,28 @@ $(document).ready(function () {
         $('.tag-input').focus();
     });
 
-    var currentStep = 0;
 
     $(".js-save").click(function () {
-        $(".js-section-overlay").removeClass("hidden");
-        //上传数据
 
+        //上传数据
         switch (currentStep) {
             case 0:
                 setTimeout("saveOverride()", 500);
-                currentStep++;
+
                 break;
             case 1:
                 setTimeout("savePrice()", 500);
-                currentStep++;
+
                 break;
             case 2:
                 setTimeout("saveUpload()", 500);
-                currentStep++;
+
                 break;
         }
 
     })
 
-    var isMultiPackages = false;
+
     $(".js-btn-toggle-multi-packages").click(function (event) {
         event.preventDefault();
         var isChecked = $(this).find("input").is(':checked');
@@ -513,6 +563,8 @@ $(document).ready(function () {
     });
 
 
+
+
     $(".js-add-show-extra").click(function () {
 
         var length = $('.js-gig-extra').length;
@@ -673,6 +725,44 @@ $(document).ready(function () {
         videoCount--;
         $(".js-video .js-counter").text("(" + videoCount + "/1)");
     })
+
+
+
+    $(".js-add-faq").click(function () {
+        var question = $(".js-faq-question");
+        var answer = $(".js-faq-answer");
+        if (question.val() == "" || answer.val() == ""){
+            question.css("border-color","red");
+            answer.css("border-color","red");
+            return;
+        }
+
+        question.css("border-color","#b2b2b2");
+        answer.css("border-color","#b2b2b2");
+
+        var msg = "<li class=''><header>"+question.val()+"<a>删除</a></header> <div class='panel'>"+answer.val()+"</div></li>"
+        // $(".js-component-accordion").animate({ "left": 500 }, 2000).animate({ "left": 0 }, 2000);
+        $(".js-component-accordion").append(msg);
+        $(".js-component-accordion li:last").css("display","none");
+        $(".js-component-accordion li:last").animate({ "left": -500 }, 100,function () {
+            $(this).css("display","block")
+        }).animate({ "left": 20 }, 500).animate({ "left": -10 }, 500).animate({ "left": 0 }, 500);
+    })
+
+    $("body").on("click",".js-component-accordion li",function () {
+        if($(this).hasClass("opened")){
+            $(this).removeClass("opened")
+        }else {
+            $(this).addClass("opened")
+        }
+    })
+    $("body").on("click",".js-component-accordion li a",function (e) {
+        e.stopPropagation();
+       // alert($(this).parents("li").index());
+        $(this).parents("li").animate({ "left": 20 }, 300).animate({ "left": -500 }, 800,function () {
+            $(this).remove();
+        })
+    })
 });
 
 
@@ -686,21 +776,89 @@ function getObjectURL(file) {
     } else if (window.webkitURL != undefined) { // webkit or chrome
         url = window.webkitURL.createObjectURL(file);
     }
-
     return url;
 }
 
+var currentStep = 0;
 function saveOverride() {
+    var titleCorrect = checkTitle();
+   // var categoryCorrect = checkCategory();
+    var describeCorrect = checkDesc();
+    var tagCorrect = checkTag();
+    // if (!(titleCorrect && categoryCorrect && describeCorrect && tagCorrect)) {
+    //     $(window).scrollTop(0);
+    //     return false;
+    // }
+    if (!(titleCorrect && describeCorrect && tagCorrect)) {
+        $(window).scrollTop(0);
+        return false;
+    }
+    $(".js-section-overlay").removeClass("hidden");
     $(".js-edit-general").addClass("hidden");
     $(".js-edit-pricing").removeClass("hidden");
     $(".js-section-overlay").addClass("hidden");
+    $(".upload-steps li:eq(0) a").removeClass("current").addClass("valid");
+    $(".upload-steps li:eq(1) a").addClass("current");
+    $(window).scrollTop(0);
+    currentStep = 1;
 }
+
 function savePrice() {
+    $(".js-section-overlay").removeClass("hidden");
     $(".js-edit-pricing").addClass("hidden");
     $(".js-upload").removeClass("hidden");
     $(".js-section-overlay").addClass("hidden");
+
+    $(".upload-steps li:eq(1) a").removeClass("current").addClass("valid");
+    $(".upload-steps li:eq(1) a").removeAttr("disabled");
+    $(".upload-steps li:eq(2) a").addClass("current");
+    $(window).scrollTop(0);
+    $(".js-save").val("发布");
+    currentStep = 2;
 }
 
 function saveUpload() {
+    currentStep = 0;
+}
+
+function checkTitle() {
+    if ($("#show_title").val().length < 5) {
+        return false;
+    } else {
+        return true;
+    }
+}
+function checkCategory() {
+    if ($("#host-category-id").val() !== "" && $("#sub-category-id").val() !== ""){
+        return true;
+    }else {
+        $(".show-edit-category-wrap .js-category-error").css("display","block");
+        return false;
+    }
+}
+function checkDesc() {
+
+    if ($("#show-description").val().length <12){
+        $("#js-show-desc-wrap .js-desc-error").css("display","block");
+        return false;
+    } else {
+        return true;
+    }
+}
+function checkTag() {
+    if ($("#hidden-tag-input").val().split(",").length<3){
+        $(".show-edit-tags-input-wrap .js-tag-error").css("display","block");
+        return false;
+    } else {
+        return true;
+    }
+}
+
+var isMultiPackages = false;
+function checkPackageTitle() {
 
 }
+
+
+
+

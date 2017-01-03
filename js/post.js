@@ -18,8 +18,8 @@ $(document).ready(function () {
     });
 
     describe.bind("input propertychange", function () {
-        console.log( describe.val().length);
-        describeCount.html( describe.val().length +" / 300 字")
+        console.log(describe.val().length);
+        describeCount.html(describe.val().length + " / 300 字")
 
     });
 
@@ -47,8 +47,6 @@ $(document).ready(function () {
     });
 
 
-
-
     requiredDays.click(function () {
         $(this).siblings("a").removeClass("sel");
         $(this).addClass("sel");
@@ -66,9 +64,9 @@ $(document).ready(function () {
     })
     user_defined_required_days.blur(function () {
         var reg = /^[0-9]*$/;
-        if (reg.test($(this).val().trim())   ) {
-               checkDeliveryTime();
-        }else {
+        if (reg.test($(this).val().trim())) {
+            checkDeliveryTime();
+        } else {
             $(this).addClass("red-border");
 
         }
@@ -78,7 +76,7 @@ $(document).ready(function () {
         var e = $(this).event || window.event;
         var code = parseInt(e.keyCode);
         console.log("aaa")
-        if ((code >= 96 && code <= 105) ||(code >= 48 && code <= 57)   || code == 8 || (code >= 37 && code <= 40)) {
+        if ((code >= 96 && code <= 105) || (code >= 48 && code <= 57) || code == 8 || (code >= 37 && code <= 40)) {
             return true;
         } else {
             return false;
@@ -90,15 +88,15 @@ $(document).ready(function () {
 
         var titleCorrect = checkTitle();
         var categoryCorrect = checkCategory();
-         var deliveryTimeCorrect = checkDeliveryTime();
+        var deliveryTimeCorrect = checkDeliveryTime();
         var describeCorrect = checkDescribe();
         var budgetCorrect = checkBudget();
-        if(titleCorrect && categoryCorrect && deliveryTimeCorrect&& describeCorrect && budgetCorrect){
+        if (titleCorrect && categoryCorrect && deliveryTimeCorrect && describeCorrect && budgetCorrect) {
 
-            $(this).attr("disabled",true);
+            $(this).attr("disabled", true);
             $(this).addClass("disabled");
             //访问请求
-        }else {
+        } else {
             return false;
         }
     })
@@ -108,16 +106,16 @@ function checkTitle() {
     if (title.val().trim().length < 3) {
         $(".post-request-title .error-container").removeClass("hidden");
         return false;
-    }else {
+    } else {
         $(".post-request-title .error-container").addClass("hidden");
         return true;
     }
 }
 function checkDescribe() {
-    if (describe.val().length<10) {
+    if (describe.val().length < 10) {
         $(".post-request-describe .error-container").removeClass("hidden");
         return false;
-    }else {
+    } else {
         $(".post-request-describe .error-container").addClass("hidden");
         return true;
     }
@@ -126,17 +124,17 @@ function checkCategory() {
     if ($("#sub-category-id").val() == 0) {
         $(".post-request-category .error-container").removeClass("hidden");
         return false;
-    }else {
+    } else {
         $(".post-request-category .error-container").addClass("hidden");
         return true;
     }
 }
 function checkDeliveryTime() {
-    if (requiredDays.hasClass("sel") || (user_defined_required_days.val()>0 &&user_defined_required_days.val()<30 )){
+    if (requiredDays.hasClass("sel") || (user_defined_required_days.val() > 0 && user_defined_required_days.val() < 30 )) {
 
         $(".post-request-required-days .error-container").addClass("hidden");
         return false;
-    }else {
+    } else {
         $(".post-request-required-days .error-container").removeClass("hidden");
         return true;
     }
@@ -144,10 +142,10 @@ function checkDeliveryTime() {
 
 function checkBudget() {
 
-    if(budget.val()<2  || budget.val()>6000){
+    if (budget.val() < 2 || budget.val() > 6000) {
         $(".post-request-budget .error-container").removeClass("hidden");
         return false;
-    }else {
+    } else {
         $(".post-request-budget .error-container").addClass("hidden");
         return true;
     }
