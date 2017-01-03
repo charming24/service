@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a031eb79-f35e-4284-a674-48402e7395da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/upload-show.js" afterPath="$PROJECT_DIR$/js/upload-show.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/service_upload.html" afterPath="$PROJECT_DIR$/service/service_upload.html" />
     </list>
     <ignored path="dashboard.iws" />
@@ -77,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="service_upload.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="service_upload.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service/service_upload.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="2083" column="85" selection-start-line="2083" selection-start-column="85" selection-end-line="2083" selection-end-column="85" />
+            <state relative-caret-position="564">
+              <caret line="1869" column="107" selection-start-line="1869" selection-start-column="107" selection-end-line="1869" selection-end-column="107" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#section#0;n#section#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
@@ -105,7 +104,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="upload-show.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="upload-show.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/upload-show.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="702">
@@ -214,8 +213,8 @@
         <option value="$PROJECT_DIR$/require/requirement_hall.html" />
         <option value="$PROJECT_DIR$/assets/gigs.css" />
         <option value="$PROJECT_DIR$/assets/react_css/react-description_faq.css" />
-        <option value="$PROJECT_DIR$/service/service_upload.html" />
         <option value="$PROJECT_DIR$/js/upload-show.js" />
+        <option value="$PROJECT_DIR$/service/service_upload.html" />
       </list>
     </option>
   </component>
@@ -935,7 +934,7 @@
       <workItem from="1483153278599" duration="25535000" />
       <workItem from="1483231514680" duration="4579000" />
       <workItem from="1483318132772" duration="31964000" />
-      <workItem from="1483405338126" duration="8322000" />
+      <workItem from="1483405338126" duration="8448000" />
     </task>
     <task id="LOCAL-00001" summary="123">
       <created>1482307314442</created>
@@ -1091,11 +1090,18 @@
       <option name="project" value="LOCAL" />
       <updated>1483413993461</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="aa">
+      <created>1483414457106</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1483414457106</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="690902000" />
+    <option name="totallyTimeSpent" value="691028000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1514,10 +1520,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/gigs.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="2650" column="17" selection-start-line="2650" selection-start-column="17" selection-end-line="2650" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/upload-show.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="733" column="25" selection-start-line="733" selection-start-column="25" selection-end-line="733" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/service/service_upload.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="2083" column="85" selection-start-line="2083" selection-start-column="85" selection-end-line="2083" selection-end-column="85" />
+        <state relative-caret-position="564">
+          <caret line="1869" column="107" selection-start-line="1869" selection-start-column="107" selection-end-line="1869" selection-end-column="107" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#section#0;n#section#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
@@ -1537,22 +1559,6 @@
             <element signature="n#style#0;n#img#0;n#label#0;n#div#0;n#div#0;n#article#1;n#section#0;n#section#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#section#0;n#section#0;n#section#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/gigs.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="2650" column="17" selection-start-line="2650" selection-start-column="17" selection-end-line="2650" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/upload-show.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="733" column="25" selection-start-line="733" selection-start-column="25" selection-end-line="733" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
