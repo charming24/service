@@ -60,7 +60,7 @@
        $("li", list).click(function() {
             var pos = $(this).position();
 
-           console.log($(this).find("a").length);
+           console.log($("li").find("a").val());
             hoverItem = $(this);
             if (cssTransitionsSupported) {
                 $(slider).css ({"width": $(this).width(),

@@ -1,5 +1,5 @@
 <!doctype html>
-
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -12,10 +12,11 @@
     <link href="../assets/react_css/react-description_faq.css" media="all" rel="stylesheet"/>
     <link href="../assets/project-upload.css" media="all" rel="stylesheet"/>
     <!--<link href="../assets/gigs.css" media="all" rel="stylesheet"/>-->
-
     <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
 
+    <script src="http://cdn.bootcss.com/vue/2.1.8/vue.js"></script>
+    <script src="http://cdn.bootcss.com/vue-resource/1.0.3/vue-resource.js"></script>
     <script src="../js/upload-show.js"></script>
     <title>提交作品</title>
 
@@ -40,11 +41,6 @@
 
                             <form accept-charset="UTF-8" action="/search/gigs" id="search-form-nav-bar" method="post"
                                   onsubmit="return false;">
-                                <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;"/></div>
-                                <input id="search_in" name="search_in" type="hidden" value="everywhere"/>
-                                <input id="source" name="source" type="hidden" value="top-bar"/>
-                                <input id="locale" name="locale" type="hidden" value="en"/>
-
                                 <div class="global-search js-global-search omnibox ">
 
                                     <input class="js-search-input js-report-to-aux-data"
@@ -178,25 +174,25 @@
             </div>
             <div class="mp-box mp-box-white notop db-top-nav-bar upcrate-page " data-mode="wizard">
                 <div class="box-row ">
-
                     <ul class="upload-steps cf">
                         <li class="step hint--bottom">
-                            <a href="#!" class="current"
-                               data-index="1" data-for="general">
+                            <a href="javascript:void(0)"
+                               v-bind:class="[current_step==1?'current':'',current_step==2?'valid':'',current_step==3?'valid':'']"
+                               @click="firstStep">
                                 概述
                             </a>
                         </li>
                         <li class="step hint--bottom">
-                            <a href="#!" class=""
-                               data-index="2" data-for="pricing"
-                               disabled="disabled">
+                            <a href="javascript:void(0)" class=""
+                               v-bind:class="[current_step==1?'':'',current_step==2?'current':'',current_step==3?'valid':'']"
+                               data-index="2" @click="secondStep">
                                 定价
                             </a>
                         </li>
                         <li class="step hint--bottom">
-                            <a href="#!" class=""
-                               data-index="3" data-for="faq_description"
-                               disabled="disabled">
+                            <a href="javascript:void(0)" class=""
+                               v-bind:class="[current_step==1?'':'',current_step==2?'':'',current_step==3?'current':'']"
+                               data-index="3" @click="thirdStep">
                                 上传作品
                             </a>
                         </li>
@@ -206,8 +202,7 @@
                             <a href="#" class="save">保存</a>
                         </li>
                         <li>
-                            <a href=""
-                               class="save-and-preview" target="_blank">保存并预览</a>
+                            <a href="" class="save-and-preview" target="_blank">保存并预览</a>
                         </li>
                     </ul>
                 </div>
@@ -233,14 +228,14 @@
                                 </div>
                             </div>
 
-                            <section class="js-edit-general" data-name="general" data-section-name="general_or_title">
+                            <section class="js-edit-general" data-name="general" data-section-name="general_or_title"
+                                     id="js-edit-general" v-if="current_step == 1">
 
                                 <section id="gig-edit-general" class="gig-edit-form-section" data-action="submit"
                                          data-action-text="Save &amp; Continue">
                                     <header class="pricing-header">
                                         <h1 class="alt">概述</h1>
                                     </header>
-
                                     <div class="form-row">
                                         <div class="label-wrap">
                                             <label for="show_title">项目标题</label>
@@ -248,9 +243,11 @@
                                         <div class="input-wrap gig-edit-title-wrap" id="js-gig-title-wrap">
                                             <textarea class="show-title-text" id="show_title"
                                                       name="title" placeholder="一些你所擅长的事情"
-                                                      rows="2" maxlength="30" style="text-indent:120px;">draw a picture a</textarea>
-                                            <div class="char-count"><em>0</em> / 30 字</div>
-                                            <div class="char-count-desc" style="color:red;">满足至少5个字
+                                                      rows="2" maxlength="30" v-model="title"
+                                                      style="text-indent:120px;"></textarea>
+                                            <div class="char-count"><em v-text="title.length"></em> / 30 字</div>
+                                            <div class="char-count-desc" v-bind:style="{color:activeColor}"
+                                                 v-text="titleInput">
                                             </div>
                                             <span class="show-before-title">我可以</span>
                                         </div>
@@ -278,125 +275,77 @@
                                                         <div class="fake-dropdown" style="visibility: visible;">
                                                             <a class="dropdown-toggle" id="host-dropdown-toggle"
                                                                data-toggle="dropdown"
-                                                               style="width: 220px;">图形与设计</a>
+                                                               style="width: 220px;" v-text="current_hostcategory">
+                                                                &nbsp;</a>
                                                             <ul class="dropdown-menu" id="host-dropdown-menu"
                                                                 role="menu"
                                                                 style="top: -2px; width: 230px;">
-                                                                <li>
+                                                                <li v-for="category in host_categories"
+                                                                    @click="choose_hostcategory(category.category)">
                                                                     <a data-val="1">
-                                                                        <span class="text-inner">图形设计</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="2">
-                                                                        <span class="text-inner">漫画设计</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="3">
-                                                                        <span class="text-inner">翻译与文案</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="4">
-                                                                        <span class="text-inner">推广与营销</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="5">
-                                                                        <span class="text-inner">淘宝服务</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="6">
-                                                                        <span class="text-inner">编程及技术</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="7">
-                                                                        <span class="text-inner">视频制作</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="8">
-                                                                        <span class="text-inner">商业服务</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="9">
-                                                                        <span class="text-inner">体验服务</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="10">
-                                                                        <span class="text-inner">音乐与音频</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="11">
-                                                                        <span class="text-inner">其他服务</span>
-
+                                                                        <span class="text-inner"
+                                                                              v-text="category.category"></span>
                                                                     </a>
                                                                 </li>
                                                             </ul>
 
                                                             <input type="hidden" name="host-category-id"
+                                                                   v-model="current_hostcategory"
                                                                    id="host-category-id" value=""></div>
-
                                                     </div>
                                                 </div>
                                                 <div class="categories-wrapper js-subcategories-wrapper"
                                                      style="margin-left: 12px;">
                                                     <div class="filter-select cf ">
 
-
                                                         <div class="fake-dropdown" style="visibility: visible;">
 
                                                             <a class="dropdown-toggle" id="sub-dropdown-toggle"
                                                                data-toggle="dropdown"
-                                                               style="width: 220px;">请选择子类目</a>
+                                                               style="width: 220px;"
+                                                               v-text="current_subcategory">&nbsp</a>
 
                                                             <ul class="dropdown-menu" id="sub-dropdown-menu" role="menu"
-                                                                style="top: -2px; width: 260px;"></ul>
+                                                                style="top: -2px; width: 260px;">
+
+                                                                <li v-for="item in items"
+                                                                    @click=" choose_subcategory(item.subcategoriy)">
+                                                                    <a data-val="11">
+                                                                        <span class="text-inner">{{item.subcategoriy}}</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
 
                                                             <input type="hidden" name="sub-category-id"
-                                                                   id="sub-category-id" value=""></div>
+                                                                   id="sub-category-id" v-model="current_subcategory">
+                                                        </div>
 
                                                     </div>
                                                 </div>
 
                                             </div>
 
-                                            <div class="error-container js-category-error" style="position:relative;">
+                                            <div class="error-container js-category-error"
+                                                 v-if="true&&current_subcategory=='请选择子类目'"
+                                                 style="position:relative;display: block">
                                                 <p class="msg-error">请选择类目</p>
                                             </div>
 
-
                                             <div class=" gig-edit-suggestions-wrapper">
-
                                                 <div class="gig-edit-suggestion-desc">
                                                     热门的类目:
                                                 </div>
-                                                <div class="gig-edit-suggestions">
-                                                    <a href="#!" class="gig-edit-suggestion js-choose-category shown"
-                                                       cat-id="3" sub-cat-id="50"
-                                                       sub-cat-name="Illustration">图形设计>插画</a>
-                                                    <a href="#!" class="gig-edit-suggestion js-choose-category shown"
-                                                       cat-id="3" sub-cat-id="48"
-                                                       sub-cat-name="Cartoons &amp; Caricatures">图形设计>卡通漫画</a>
-                                                    <a href="#!" class="gig-edit-suggestion js-choose-category shown"
-                                                       cat-id="3" sub-cat-id="53" sub-cat-name="Photoshop Editing">图形设计>Photoshop编辑</a>
+                                                <div class="">
+                                                    <a href="#!" class="show-edit-suggestion js-choose-category shown"
+                                                       @click="hot_suggestion_1"
+                                                       host-category-id="1" sub-category-id="50">图形设计>插画</a>
+                                                    <a href="#!" class="show-edit-suggestion js-choose-category shown"
+                                                       @click="hot_suggestion_2"
+                                                       host-category-id="1" sub-category-id="48">图形设计>卡通漫画</a>
+                                                    <a href="#!" class="show-edit-suggestion js-choose-category shown"
+                                                       @click="hot_suggestion_3"
+                                                       host-category-id="1" sub-category-id="53">图形设计>Photoshop编辑</a>
                                                 </div>
-                                                <input type="hidden" name="suggestions" id="suggestions"
-                                                       value="3|50,3|48,3|53">
-                                                <input type="hidden" name="user_received_suggestions"
-                                                       id="user_received_suggestions" value="true">
                                             </div>
                                         </div>
                                         <aside class="gig-tooltip">
@@ -422,7 +371,8 @@
                                                           <div class="show-edit-area" id="show" contenteditable="true" style="padding: 10px 0 0 25px;height: 320px;max-height: 320px;" >
                                                           </div>
                                                           -->
-                                                    <textarea id="show-description" name="show-description"></textarea>
+                                                    <textarea id="show-description" name="show-description"
+                                                              v-model="description" maxlength="1200"></textarea>
 
                                                     <input type="hidden" name="_wysihtml5_mode" value="1">
 
@@ -444,12 +394,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="textarea-input-requirements cf">
-                                                    <span class="rf">1036/1200 字</span>
+                                                    <span class="rf" v-text="descInput"></span>
                                                     <span>min.</span>
                                                     <span>120</span>
                                                     </span></div>
                                             </div>
-                                            <div class="error-container js-desc-error">
+                                            <div class="error-container js-desc-error" v-if="true&&description==''"
+                                                 style="display: block">
                                                 <p class="msg-error">请输入作品描述及说明</p>
                                             </div>
                                         </div>
@@ -473,25 +424,17 @@
                                             <div class="show-edit-tags-wrap general-form-field-wrap" id="js-show-tags">
                                                 <textarea class="tagstext" cols="74" id="show_tag_list" maxlength="100"
                                                           name="gig[tag_list]" rows="2" style="display: none;">asdasd,asd,qww</textarea>
-                                                <span class="production-tag" id="rNdrL_1"><span>asdasd</span><a
-                                                        class="tm-tag-remove"
-                                                        id="rNdrL_Remover_1"
-                                                        tagidtoremove="1">x</a></span>
-                                                <span
-                                                        class="production-tag" id="rNdrL_2"><span>asd</span><a
-                                                        class="tm-tag-remove"
-                                                        id="rNdrL_Remover_2"
-                                                        tagidtoremove="2">x</a></span>
-                                                <span
-                                                        class="production-tag" id="rNdrL_3"><span>qww</span><a
-                                                        class="tm-tag-remove"
-                                                        id="rNdrL_Remover_3" tagidtoremove="3">x</a></span>
+
+                                                <span class="production-tag" v-for="(tag,index) in tags"><span
+                                                        v-text="tag"></span><a class="tm-tag-remove"
+                                                                               @click="deleteTag(index,tag)">x</a></span>
 
                                                 <input type="text" class="tag-input" name="tag-input" maxlength="10"
-                                                       style="outline: none"
-                                                >
+                                                       v-if="tags.length!=5" v-on:keyup.13="enterToConfirm(tagInput)"
+                                                       v-on:keyup.8="deleteLastTag" v-model="tagInput"
+                                                       style="outline: none">
                                                 <input type="hidden" name="hidden-tag-input" id="hidden-tag-input"
-                                                       value="asdasd,asd,qww">
+                                                       v-model="tags">
 
                                                 <ul class="js-tag-list auto-complete-tags"></ul>
                                             </div>
@@ -514,14 +457,16 @@
                                     </div>
                                 </section>
                             </section>
-                            <section data-name="pricing" data-section-name="prices" class="js-edit-pricing hidden">
+                            <section data-name="pricing" data-section-name="prices" class="js-edit-pricing "
+                                     v-if="current_step == 2">
 
                                 <header class="pricing-header">
                                     <h1 class="alt">定价范围</h1>
                                     <div class="toggle-wrapper toggle-multi-packages js-toggle-multi-packages">
                                         <label class="js-btn-toggle-multi-packages hint--bottom">
                                             梯度价格
-                                            <input type="checkbox" name="active_packages_count_toggle">
+                                            <input type="checkbox" name="active_packages_count_toggle"
+                                                   @click="toggleStartPackages" v-model="isMultiPackages">
                                             <span class="fake-toggle"></span>
                                         </label>
                                     </div>
@@ -549,7 +494,7 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr class="input-packages fake-hint-wrap" data-name="title">
+                                            <tr class="input-packages fake-hint-wrap">
                                                 <th class="">梯度标题
                                                     <div class="fake-hint blue">
                                                         <div class="icn">
@@ -562,38 +507,41 @@
                                                         </ul>
                                                     </div>
                                                 </th>
-                                                <td class="js-packages-title" data-package="1">
+                                                <td class="js-packages-title">
                                                     <label>
                                                         <textarea name="show_packages_title_1" maxlength="30"
                                                                   class="js-show-packages-title"
                                                                   id="show_packages_title_1"
                                                                   type="text"
-                                                                  placeholder="该梯度的标题">a a</textarea>
+                                                                  placeholder="该梯度的标题"
+                                                                  v-model="currentPackageTitle_1"></textarea>
                                                         <i class="fa fa-pencil"></i>
                                                     </label>
                                                 </td>
-                                                <td class="js-packages-title" data-package="2">
+                                                <td class="js-packages-title">
                                                     <label>
                                                         <textarea name="show_packages_title_2" maxlength="30"
                                                                   class="js-show-packages-title"
                                                                   id="show_packages_title_2"
                                                                   type="text"
-                                                                  placeholder="该梯度的标题">asfdfg</textarea>
+                                                                  placeholder="该梯度的标题"
+                                                                  v-model="currentPackageTitle_2"></textarea>
                                                         <i class="fa fa-pencil"></i>
                                                     </label>
                                                 </td>
-                                                <td class="js-packages-title" data-package="3">
+                                                <td class="js-packages-title">
                                                     <label>
                                                         <textarea name="show_packages_title_3" maxlength="30"
                                                                   class="js-show-packages-title"
                                                                   id="show_packages_title_3"
                                                                   type="text"
-                                                                  placeholder="该梯度的标题">asdgaeg</textarea>
+                                                                  placeholder="该梯度的标题"
+                                                                  v-model="currentPackageTitle_3"></textarea>
                                                         <i class="fa fa-pencil"></i>
                                                     </label>
                                                 </td>
                                             </tr>
-                                            <tr class="input-packages fake-hint-wrap" data-name="description">
+                                            <tr class="input-packages fake-hint-wrap">
                                                 <th class="">梯度描述
                                                     <div class="fake-hint blue">
                                                         <div class="icn">
@@ -607,34 +555,82 @@
                                                         </ul>
                                                     </div>
                                                 </th>
-                                                <td class="js-packages-description" data-package="1">
+                                                <td class="js-packages-description">
                                                     <label>
                                                         <textarea name="show_packages_description_1" maxlength="100"
                                                                   type="text" class="js-show-packages-description"
-                                                                  placeholder="描述你的价格梯度能提供的细节">as s </textarea>
+                                                                  placeholder="描述你的价格梯度能提供的细节"
+                                                                  v-model="currentPackageDesc_1"></textarea>
                                                         <i class="fa fa-pencil"></i>
                                                     </label>
                                                 </td>
-                                                <td class="js-packages-description" data-package="2">
+                                                <td class="js-packages-description">
                                                     <label>
                                                         <textarea name="show_packages_description_2" maxlength="100"
                                                                   type="text" class="js-show-packages-description"
-                                                                  placeholder="描述你的价格梯度能提供的细节">asfas</textarea>
+                                                                  placeholder="描述你的价格梯度能提供的细节"
+                                                                  v-model="currentPackageDesc_2"></textarea>
                                                         <i class="fa fa-pencil"></i>
                                                     </label>
                                                 </td>
-                                                <td class="js-packages-description" data-package="3">
+                                                <td class="js-packages-description">
                                                     <label>
                                                         <textarea name="show_packages_description_3" maxlength="100"
                                                                   type="text" class="js-show-packages-description"
-                                                                  placeholder="描述你的价格梯度能提供的细节">asdgd</textarea>
+                                                                  placeholder="描述你的价格梯度能提供的细节"
+                                                                  v-model="currentPackageDesc_3"></textarea>
                                                         <i class="fa fa-pencil"></i>
                                                     </label>
                                                 </td>
                                             </tr>
+                                            <tr class="input-packages fake-hint-wrap pricing-factor-row js-pricing-factor-row">
+                                                <th>
+                                                    Words Included
+                                                    <div class="fake-hint blue">
+                                                        <div class="icn m-b-0">
+                                                            <i class="fa fa-lightbulb-o"></i>
+                                                        </div>
+                                                        <span class="fake-hint-title">Select to include in your packages</span>
+                                                        <div class="fake-hint-sub">Words Included</div>
+                                                        <p>
+                                                            Set the maximum number of words that are included in the
+                                                            package (you can set the price for additional words below in
+                                                            My Gig Extras).
+                                                        </p>
+                                                    </div>
+                                                </th>
+                                                <td class="js-packages-word-count js-number" data-package="1"
+                                                    data-pf="word_count">
+                                                    <input type="number"
+                                                           name="gig[packages][1][content][614][pricing_factor][data_value]"
+                                                           data-field-type="data_value" value="" min="0" class="">
+                                                    <i class="fa fa-pencil"></i>
+                                                    <a href="#!" class="add"></a>
+                                                    <a href="#!" class="sub"></a>
+                                                </td>
+                                                <td class="js-packages-word-count js-number" data-package="2"
+                                                    data-pf="word_count">
+                                                    <input type="number"
+                                                           name="gig[packages][2][content][717][pricing_factor][data_value]"
+                                                           data-field-type="data_value" value="" min="0"
+                                                           class="content-hidden">
+                                                    <i class="fa fa-pencil"></i>
+                                                    <a href="#!" class="add"></a>
+                                                    <a href="#!" class="sub"></a>
+                                                </td>
+                                                <td class="js-packages-word-count js-number" data-package="3"
+                                                    data-pf="word_count">
+                                                    <input type="number"
+                                                           name="gig[packages][3][content][820][pricing_factor][data_value]"
+                                                           data-field-type="data_value" value="" min="0"
+                                                           class="content-hidden">
+                                                    <i class="fa fa-pencil"></i>
+                                                    <a href="#!" class="add"></a>
+                                                    <a href="#!" class="sub"></a>
+                                                </td>
+                                            </tr>
                                             <tr class="dd-packages fake-hint-wrap" data-name="duration">
                                                 <th class="">完成时间
-
                                                     <div class="fake-hint blue multi-mode-only">
                                                         <div class="icn">
                                                             <i class="fa fa-lightbulb-o"></i>
@@ -648,193 +644,19 @@
                                                         </ul>
                                                     </div>
                                                 </th>
-                                                <td class="js-packages-expected-duration js-dd capitalized"
-                                                    data-package="1">
-                                                    <div class="filter-select cf "
-                                                         data-hidden-input-name="gig[packages][1][duration]">
+                                                <td class="capitalized">
+                                                    <div class="filter-select cf">
                                                         <div class="fake-dropdown" style="visibility: visible;">
-
-                                                            <a class="dropdown-toggle" data-toggle="dropdown">
-                                                                1 天完成
+                                                            <a class="dropdown-toggle" data-toggle="dropdown"
+                                                               v-text="currentPackageDeliverTime_1">
                                                             </a>
 
                                                             <ul class="dropdown-menu max-height" data-max-height="250"
                                                                 role="menu" style="top: -2px; max-height: 250px;">
-
-
-                                                                <li>
-                                                                    <a data-val="1">
-                                                                        <span class="text-inner">1 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="2">
-                                                                        <span class="text-inner">2 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="3">
-                                                                        <span class="text-inner">3 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="4" class="selected">
-                                                                        <span class="text-inner">4 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="5">
-                                                                        <span class="text-inner">5 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="6">
-                                                                        <span class="text-inner">6 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="7">
-                                                                        <span class="text-inner">7 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="8">
-                                                                        <span class="text-inner">8 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="9">
-                                                                        <span class="text-inner">9 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="10">
-                                                                        <span class="text-inner">10 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="11">
-                                                                        <span class="text-inner">11 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="12">
-                                                                        <span class="text-inner">12 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="13">
-                                                                        <span class="text-inner">13 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="14">
-                                                                        <span class="text-inner">14 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="15">
-                                                                        <span class="text-inner">15 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="16">
-                                                                        <span class="text-inner">16 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="17">
-                                                                        <span class="text-inner">17 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="18">
-                                                                        <span class="text-inner">18 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="19">
-                                                                        <span class="text-inner">19 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="20">
-                                                                        <span class="text-inner">20 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="21">
-                                                                        <span class="text-inner">21 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="22">
-                                                                        <span class="text-inner">22 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="23">
-                                                                        <span class="text-inner">23 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="24">
-                                                                        <span class="text-inner">24 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="25">
-                                                                        <span class="text-inner">25 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="26">
-                                                                        <span class="text-inner">26 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="27">
-                                                                        <span class="text-inner">27 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="28">
-                                                                        <span class="text-inner">28 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="29">
-                                                                        <span class="text-inner">29 天完成</span>
-
-                                                                    </a>
+                                                                <li v-for="time in deliverTime"
+                                                                    @click="chooseDeleverTime(1,time)">
+                                                                    <a><span class="text-inner"
+                                                                             v-text="time"></span></a>
                                                                 </li>
                                                             </ul>
 
@@ -844,194 +666,23 @@
 
                                                     </div>
                                                 </td>
-                                                <td class="js-packages-expected-duration js-dd capitalized"
-                                                    data-package="2">
+                                                <td class="capitalized">
                                                     <div class="filter-select cf "
                                                          data-hidden-input-name="gig[packages][2][duration]">
 
 
                                                         <div class="fake-dropdown" style="visibility: visible;">
 
-                                                            <a class="dropdown-toggle" data-toggle="dropdown">
-                                                                1 天完成
-
+                                                            <a class="dropdown-toggle" data-toggle="dropdown"
+                                                               v-text="currentPackageDeliverTime_2">
                                                             </a>
 
                                                             <ul class="dropdown-menu max-height" data-max-height="250"
                                                                 role="menu" style="top: -2px; max-height: 250px;">
-
-
-                                                                <li>
+                                                                <li v-for="time in deliverTime"
+                                                                    @click="chooseDeleverTime(2,time)">
                                                                     <a data-val="1">
-                                                                        <span class="text-inner">1 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="2">
-                                                                        <span class="text-inner">2 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="3" class="selected">
-                                                                        <span class="text-inner">3 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="4">
-                                                                        <span class="text-inner">4 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="5">
-                                                                        <span class="text-inner">5 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="6">
-                                                                        <span class="text-inner">6 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="7">
-                                                                        <span class="text-inner">7 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="8">
-                                                                        <span class="text-inner">8 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="9">
-                                                                        <span class="text-inner">9 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="10">
-                                                                        <span class="text-inner">10 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="11">
-                                                                        <span class="text-inner">11 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="12">
-                                                                        <span class="text-inner">12 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="13">
-                                                                        <span class="text-inner">13 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="14">
-                                                                        <span class="text-inner">14 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="15">
-                                                                        <span class="text-inner">15 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="16">
-                                                                        <span class="text-inner">16 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="17">
-                                                                        <span class="text-inner">17 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="18">
-                                                                        <span class="text-inner">18 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="19">
-                                                                        <span class="text-inner">19 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="20">
-                                                                        <span class="text-inner">20 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="21">
-                                                                        <span class="text-inner">21 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="22">
-                                                                        <span class="text-inner">22 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="23">
-                                                                        <span class="text-inner">23 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="24">
-                                                                        <span class="text-inner">24 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="25">
-                                                                        <span class="text-inner">25 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="26">
-                                                                        <span class="text-inner">26 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="27">
-                                                                        <span class="text-inner">27 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="28">
-                                                                        <span class="text-inner">28 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="29">
-                                                                        <span class="text-inner">29 天完成</span>
+                                                                        <span class="text-inner" v-text="time"></span>
 
                                                                     </a>
                                                                 </li>
@@ -1042,194 +693,22 @@
 
                                                     </div>
                                                 </td>
-                                                <td class="js-packages-expected-duration js-dd capitalized"
-                                                    data-package="3">
-                                                    <div class="filter-select cf "
-                                                         data-hidden-input-name="gig[packages][3][duration]">
+                                                <td class="capitalized">
+                                                    <div class="filter-select cf">
 
 
                                                         <div class="fake-dropdown" style="visibility: visible;">
 
-                                                            <a class="dropdown-toggle" data-toggle="dropdown">
-                                                                1 天完成
-
+                                                            <a class="dropdown-toggle" data-toggle="dropdown"
+                                                               v-text="currentPackageDeliverTime_3">
                                                             </a>
 
                                                             <ul class="dropdown-menu max-height" data-max-height="250"
                                                                 role="menu" style="top: -2px; max-height: 250px;">
-
-
-                                                                <li>
+                                                                <li v-for="time in deliverTime"
+                                                                    @click="chooseDeleverTime(3,time)">
                                                                     <a data-val="1">
-                                                                        <span class="text-inner">1 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="2">
-                                                                        <span class="text-inner">2 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="3">
-                                                                        <span class="text-inner">3 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="4" class="selected">
-                                                                        <span class="text-inner">4 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="5">
-                                                                        <span class="text-inner">5 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="6">
-                                                                        <span class="text-inner">6 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="7">
-                                                                        <span class="text-inner">7 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="8">
-                                                                        <span class="text-inner">8 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="9">
-                                                                        <span class="text-inner">9 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="10">
-                                                                        <span class="text-inner">10 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="11">
-                                                                        <span class="text-inner">11 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="12">
-                                                                        <span class="text-inner">12 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="13">
-                                                                        <span class="text-inner">13 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="14">
-                                                                        <span class="text-inner">14 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="15">
-                                                                        <span class="text-inner">15 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="16">
-                                                                        <span class="text-inner">16 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="17">
-                                                                        <span class="text-inner">17 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="18">
-                                                                        <span class="text-inner">18 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="19">
-                                                                        <span class="text-inner">19 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="20">
-                                                                        <span class="text-inner">20 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="21">
-                                                                        <span class="text-inner">21 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="22">
-                                                                        <span class="text-inner">22 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="23">
-                                                                        <span class="text-inner">23 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="24">
-                                                                        <span class="text-inner">24 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="25">
-                                                                        <span class="text-inner">25 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="26">
-                                                                        <span class="text-inner">26 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="27">
-                                                                        <span class="text-inner">27 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="28">
-                                                                        <span class="text-inner">28 天完成</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="29">
-                                                                        <span class="text-inner">29 天完成</span>
+                                                                        <span class="text-inner" v-text="time"></span>
 
                                                                     </a>
                                                                 </li>
@@ -1243,311 +722,8 @@
                                                 </td>
                                             </tr>
 
-                                            <tr class="dd-packages fake-hint-wrap pricing-factor-row js-pricing-factor-row">
-                                                <th>
-
-                                                    # of images
-                                                    <div class="fake-hint blue">
-                                                        <div class="icn m-b-0">
-                                                            <i class="fa fa-lightbulb-o"></i>
-                                                        </div>
-                                                        <span class="fake-hint-title">Select to include in your packages</span>
-                                                        <div class="fake-hint-sub"># of images</div>
-                                                        <p>
-                                                            If you choose to offer "batch processing" of multiple files,
-                                                            include this category and define the maximum number of files
-                                                            you are willing to edit.
-                                                        </p>
-                                                    </div>
-                                                </th>
-                                                <td class="js-packages-number-of-images js-dd capitalized"
-                                                    data-package="1" data-pf="number_of_images">
-
-                                                    <div class="filter-select cf ">
-
-
-                                                        <div class="fake-dropdown" style="visibility: visible;">
-
-                                                            <a class="dropdown-toggle" data-toggle="dropdown">
-                                                                Select
-
-                                                            </a>
-
-                                                            <ul class="dropdown-menu max-height" data-max-height="250"
-                                                                role="menu" style="top: -2px; max-height: 250px;">
-
-
-                                                                <li>
-                                                                    <a data-val="select">
-                                                                        <span class="text-inner">Select</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="1">
-                                                                        <span class="text-inner">1</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="2">
-                                                                        <span class="text-inner">2</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="3">
-                                                                        <span class="text-inner">3</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="4">
-                                                                        <span class="text-inner">4</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="5">
-                                                                        <span class="text-inner">5</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="6">
-                                                                        <span class="text-inner">6</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="7">
-                                                                        <span class="text-inner">7</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="8">
-                                                                        <span class="text-inner">8</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="9">
-                                                                        <span class="text-inner">9</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="10">
-                                                                        <span class="text-inner">10</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="999999">
-                                                                        <span class="text-inner">UNLIMITED</span>
-
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                            <input type="hidden" name="show-logo-number"
-                                                                   id="show-logo-number" value="4">
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-                                                <td class="js-packages-number-of-images js-dd capitalized"
-                                                    data-package="2" data-pf="number_of_images">
-
-                                                    <div class="filter-select cf ">
-
-
-                                                        <div class="fake-dropdown" style="visibility: visible;">
-
-                                                            <a class="dropdown-toggle" data-toggle="dropdown">
-                                                                Select
-
-                                                            </a>
-
-                                                            <ul class="dropdown-menu max-height" data-max-height="250"
-                                                                role="menu" style="top: -2px; max-height: 250px;">
-
-
-                                                                <li>
-                                                                    <a data-val="select">
-                                                                        <span class="text-inner">Select</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="1">
-                                                                        <span class="text-inner">1</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="2">
-                                                                        <span class="text-inner">2</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="3">
-                                                                        <span class="text-inner">3</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="4">
-                                                                        <span class="text-inner">4</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="5">
-                                                                        <span class="text-inner">5</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="6">
-                                                                        <span class="text-inner">6</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="7">
-                                                                        <span class="text-inner">7</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="8">
-                                                                        <span class="text-inner">8</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="9">
-                                                                        <span class="text-inner">9</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="10">
-                                                                        <span class="text-inner">10</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="999999">
-                                                                        <span class="text-inner">UNLIMITED</span>
-
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-                                                <td class="js-packages-number-of-images js-dd capitalized"
-                                                    data-package="3" data-pf="number_of_images">
-
-                                                    <div class="filter-select cf ">
-                                                        <div class="fake-dropdown" style="visibility: visible;">
-
-                                                            <a class="dropdown-toggle" data-toggle="dropdown">
-                                                                Select
-
-                                                            </a>
-
-                                                            <ul class="dropdown-menu max-height" data-max-height="250"
-                                                                role="menu" style="top: -2px; max-height: 250px;">
-
-
-                                                                <li>
-                                                                    <a data-val="select">
-                                                                        <span class="text-inner">Select</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="1">
-                                                                        <span class="text-inner">1</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="2">
-                                                                        <span class="text-inner">2</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="3">
-                                                                        <span class="text-inner">3</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="4">
-                                                                        <span class="text-inner">4</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="5">
-                                                                        <span class="text-inner">5</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="6">
-                                                                        <span class="text-inner">6</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="7">
-                                                                        <span class="text-inner">7</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="8">
-                                                                        <span class="text-inner">8</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="9">
-                                                                        <span class="text-inner">9</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="10">
-                                                                        <span class="text-inner">10</span>
-
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-val="999999">
-                                                                        <span class="text-inner">UNLIMITED</span>
-
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-                                            </tr>
                                             <tr class="chk-packages fake-hint-wrap pricing-factor-row js-pricing-factor-row">
                                                 <th>
-
                                                     源文件
                                                     <div class="fake-hint blue">
                                                         <div class="icn m-b-0">
@@ -1689,40 +865,40 @@
                                                         </ul>
                                                     </div>
                                                 </th>
-                                                <td class="js-packages-price js-dd capitalized" data-package="1">
-                                                    <div class="filter-select cf "
-                                                         data-hidden-input-name="gig[packages][1][price]">
+                                                <td class="js-dd capitalized">
+                                                    <div class="filter-select cf ">
 
                                                         <div class="fake-dropdown"
                                                              style="visibility: visible;text-align:center;margin: 0 auto;display: inline-block">
                                                             <span>
                                                             <input type="text" id="show_packages_price_1"
                                                                    class="js-show-packages-price"
+                                                                   v-model="currentPackagePrice_1"
                                                                    name="show_packages_price_1" style="width: 80%"
                                                                    placeholder="请输入2-2000元">
                                                            元</span>
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td class="js-packages-price js-dd capitalized" data-package="2">
-                                                    <div class="filter-select cf "
-                                                         data-hidden-input-name="gig[packages][2][price]">
+                                                <td class="js-dd capitalized">
+                                                    <div class="filter-select cf">
                                                         <div class="fake-dropdown" style="visibility: visible;">
                                                             <span>
                                                                 <input type="text" id="show_packages_price_2"
                                                                        class="js-packages-price"
+                                                                       v-model="currentPackagePrice_2"
                                                                        name="show_packages_price_2" style="width: 80%"
                                                                        placeholder="请输入2-2000元">
                                                                 元</span>
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td class="js-packages-price js-dd capitalized" data-package="3">
-                                                    <div class="filter-select cf "
-                                                         data-hidden-input-name="gig[packages][3][price]">
+                                                <td class="js-dd capitalized">
+                                                    <div class="filter-select cf ">
                                                         <div class="fake-dropdown" style="visibility: visible;">
                                                             <span>
                                                             <input type="text" id="show_packages_price_3"
+                                                                   v-model="currentPackagePrice_3"
                                                                    class="js-packages-price"
                                                                    name="show_packages_price_3" style="width: 80%"
                                                                    placeholder="请输入2-2000元">
@@ -1733,10 +909,10 @@
                                             </tr>
                                             </tbody>
                                         </table>
-                                        <div class="try-now " style="opacity: 1;">
+                                        <div class="try-now" style="opacity: 1;" v-if="!isMultiPackages">
                                             <h3>开启价格梯度<br>呈列三种价格梯度</h3>
 
-                                            <a href=""
+                                            <a href="javascript:void(0)" @click="toggleStartPackages"
                                                class="btn-lrg-standard btn-azure-grad activate-packages js-start-packages">现在开启</a>
 
                                         </div>
@@ -1758,13 +934,18 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="error-container js-title-error"><p class="msg-error">请设置标题</p></div>
-                                    <div class="error-container js-desc-error"><p class="msg-error">请描述作品内容</p></div>
-                                    <div class="error-container js-deliver-time"><p class="msg-error">请设置1-30天的完成时间</p>
+                                    <div class="error-container" style="display: block"
+                                         v-if="(isMultiPackages&&(currentPackageTitle_1.length==0||currentPackageTitle_2.length==0||currentPackageTitle_3.length==0))|| currentPackageTitle_1.length==0">
+                                        <p class="msg-error">请设置标题</p>
                                     </div>
-                                    <div class="error-container js-money-error"><p class="msg-error">请设置2-2000元梯度价格</p>
+                                    <div class="error-container" style="display: block"
+                                         v-if="(isMultiPackages&&(currentPackageDesc_1.length==0||currentPackageDesc_2.length==0||currentPackageDesc_3.length==0))|| currentPackageDesc_1.length==0">
+                                        <p class="msg-error">请描述作品内容</p></div>
+                                    <div class="error-container" style="display: block"
+                                         v-if="(isMultiPackages&&(!isPriceCorrect(currentPackagePrice_1)||!isPriceCorrect(currentPackagePrice_2)||!isPriceCorrect(currentPackagePrice_3) ))
+                                         || !isPriceCorrect(currentPackagePrice_1)">
+                                        <p class="msg-error">请设置2-2000元梯度价格</p>
                                     </div>
-
                                     <input type="hidden" name="" value="3">
                                 </section>
 
@@ -1774,26 +955,30 @@
                                         <div class="toggle-wrapper toggle-multi-packages js-toggle-multi-packages">
                                             <label class="js-btn-toggle-extra-service hint--bottom">
                                                 额外定价
-                                                <input type="checkbox" name="extra_service_toggle">
+                                                <input type="checkbox" name="extra_service_toggle"
+                                                       @click="toggleExtraPrice" v-model="isExtraPrice">
                                                 <span class="fake-toggle"></span>
                                             </label>
                                         </div>
                                     </header>
-                                    <div class="b-t-0 js-extra-service-wrapper hidden">
-                                        <div class="gig-extra js-gig-extra cf" extras-num="1">
+                                    <div class="b-t-0 js-extra-service-wrapper" v-if="isExtraPrice">
+                                        <div class="gig-extra js-gig-extra cf" extras-num="1"
+                                             v-for="(item,index) in extraPrices">
                                             <div class="form-check-row cf">
                                                 <div class="label-wrap">
                                                     <label class="fake-check-black check-text js-checkbox-label"
-                                                           for="show_items_extra_1">
+                                                           v-bind:for="item.extraCheckboxId"
+                                                           @click="deleteExtraPrice(index)">
                                                         <input class="js-extra-checkbox"
-                                                               id="show_items_extra_1"
+                                                               v-bind:id="item.extraCheckboxId"
                                                                name="show_items_extra_1"
-                                                               type="checkbox" value="1" checked="checked">
+                                                               type="checkbox" value="1" checked>
                                                         <span class="chk-img"></span>
                                                         标题
                                                     </label>
                                                 </div>
                                                 <textarea class="input-wrap js-extra-title" maxlength="30"
+                                                          v-model="item.titleInput"
                                                           name="show_extra_title_1"
                                                           placeholder="请输入额外服务的标题" rows="1"></textarea>
                                             </div>
@@ -1803,8 +988,8 @@
                                                     描述
                                                 </label>
                                                 <span class="will-text">我可以</span><textarea
-                                                    class="input-wrap js-extra-description" maxlength="100"
-                                                    name="show_extra_description_1"
+                                                    class="input-wrap" maxlength="100"
+                                                    name="show_extra_description_1" v-model="item.descInput"
                                                     placeholder="描述你额外提供的服务或东西" rows="1"
                                                     style="text-indent: 43px;"></textarea>
                                             </div>
@@ -1820,17 +1005,18 @@
                                                             <div class="fake-dropdown" style="visibility: visible;">
                                                                 <input type="number" id="show_extra_price_1"
                                                                        name="show_extra_price_1" class="js-extra-money"
+                                                                       v-model="item.priceInput"
                                                                        placeholder="请输入2-2000元">
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="error-container js-title-error"><p class="msg-error">请设置标题</p>
+                                            <div class="error-container"><p class="msg-error">请设置标题</p>
                                             </div>
-                                            <div class="error-container js-desc-error"><p class="msg-error">请填写描述</p>
+                                            <div class="error-container"><p class="msg-error">请填写描述</p>
                                             </div>
-                                            <div class="error-container js-money-error"><p class="msg-error">
+                                            <div class="error-container"><p class="msg-error">
                                                 请输入2-2000元附加金额</p>
                                             </div>
                                         </div>
@@ -1839,9 +1025,10 @@
                                         <!--<input type="button" value="添加" style="margin-top: 10px;background-color: #fff;width: 100%;height: 30px;">-->
                                         <!--</div>-->
 
-                                        <div class="add-gig-extra " style="text-align: center">
+                                        <div class="add-gig-extra " style="text-align: center"
+                                             v-if="!(this.extraPrices.length == 4)">
                                             <i class="fa fa-plus"></i>
-                                            <a class="js-add-show-extra" style="cursor: pointer">添加</a>
+                                            <a class="js-add-show-extra" style="cursor: pointer" @click="addExtraPrice">添加</a>
                                         </div>
                                     </div>
                                 </section>
@@ -1867,7 +1054,8 @@
 
                             </section>
 
-                            <section data-name="gallery" data-section-name="upload" class="js-upload hidden">
+                            <section data-name="gallery" data-section-name="upload" class="js-upload"
+                                     v-if="current_step==3">
                                 <header class="pricing-header">
                                     <h1 class="alt">上传作品</h1>
                                 </header>
@@ -1885,129 +1073,40 @@
                                             <span>上传图片能够更好的显示你的作品。</span>
                                         </header>
 
-                                        <div class="dropzone has-image js-dropzone" data-type="portfolio">
+                                        <div :class="['dropzone' ,imageItem.hasImage?'has-image':'empty-state' ,{'blank':!(imageItem.status=='current')}]"
+                                             v-for="(imageItem,index) in uploadImages">
 
-                                            <div class="wrapper">
+                                            <div class="wrapper" v-if="imageItem.status =='uploading' ">
                                                 <div class="load-bar">
-
                                                     <div class="load-bar-inner" data-loading="0">
                                                         <div><i class="percent">100%</i></div>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div class="empty-state-box">
-                                                <label for="image1">
+                                            <div class="empty-state-box" v-if="imageItem.status =='current' ">
+                                                <label v-bind:for="imageItem.fileInputId">
                                                     <img src="../images/plus.png"></label>
-                                                <input type="file" id="image1"
-                                                       class="gallery-file-field js-file-upload" name="image_file"
+                                                <input type="file" v-bind:id="imageItem.fileInputId"
+                                                       class="gallery-file-field" name="image_file"
+                                                       v-on:change="uploadImage(index)"
                                                        multiple>
                                             </div>
 
-                                            <div class="done-box js-done-box">
-                                                <img src="https://cldn0.fiverrcdn.com/fiverr/t_gallery_medium/gigs/68157021/original/9da8f2e083922a559268be63609bf219fb56142d.jpg"
+                                            <div class="done-box js-done-box" v-if="imageItem.hasImage">
+                                                <img v-bind:src="imageItem.imgUrl"
                                                      alt="draw a picture a">
                                             </div>
+
                                             <nav class="controls">
-                                                <i class="fa fa-trash js-delete-file"></i>
+                                                <!--<i class="fa fa-trash js-delete-file" style="left: 10px;position: absolute;"></i>-->
+                                                <i class="fa fa-trash js-delete-file"
+                                                   @click="deleteUploadImage(index,imageItem)"></i>
                                             </nav>
+
                                             <div class="primary">封面</div>
                                         </div>
 
-                                        <div class="dropzone empty-state js-dropzone" data-type="portfolio">
-                                            <div class="empty-state-box">
-                                                <label for="image2">
-                                                    <img src="../images/plus.png"></label>
-                                                <!--<span class="icon cover-icon"></span><br>-->
-                                                <!--Drag a Photo or-->
-                                                <!--<label for="portfolio2">browse</label>-->
-                                                <input type="file" id="image2"
-                                                       class="gallery-file-field js-file-upload" name="image_file"
-                                                       multiple>
-                                            </div>
-                                            <div class="done-box js-done-box">
-                                                <img>
-                                            </div>
-                                            <nav class="controls">
-                                                <i class="fa fa-trash js-delete-file"></i>
-                                            </nav>
-                                            <div class="primary">封面</div>
-                                        </div>
-
-                                        <div class="dropzone empty-state blank js-dropzone" data-type="portfolio">
-
-                                            <div class="empty-state-box">
-
-                                                <label for="image3">
-                                                    <img src="../images/plus.png"></label>
-
-                                                <input type="file" id="image3"
-                                                       class="gallery-file-field js-file-upload" name="image_file"
-                                                       multiple>
-                                            </div>
-                                            <div class="done-box js-done-box">
-                                                <img>
-                                            </div>
-                                            <nav class="controls">
-                                                <i class="fa fa-trash js-delete-file"></i>
-                                            </nav>
-                                            <div class="primary">封面</div>
-                                        </div>
-
-                                        <div class="dropzone empty-state blank js-dropzone" data-type="portfolio">
-                                            <div class="empty-state-box">
-
-                                                <label for="image4">
-                                                    <img src="../images/plus.png"></label>
-
-                                                <input type="file" id="image4"
-                                                       class="gallery-file-field js-file-upload" name="image_file"
-                                                       multiple>
-                                            </div>
-                                            <div class="done-box js-done-box">
-                                                <img>
-                                            </div>
-                                            <nav class="controls">
-                                                <i class="fa fa-trash js-delete-file"></i>
-                                            </nav>
-                                            <div class="primary">封面</div>
-                                        </div>
-                                        <div class="dropzone empty-state blank js-dropzone" data-type="portfolio">
-                                            <div class="empty-state-box">
-
-                                                <label for="image5">
-                                                    <img src="../images/plus.png"></label>
-
-                                                <input type="file" id="image5"
-                                                       class="gallery-file-field js-file-upload" name="image_file"
-                                                       multiple>
-                                            </div>
-                                            <div class="done-box js-done-box">
-                                                <img>
-                                            </div>
-                                            <nav class="controls">
-                                                <i class="fa fa-trash js-delete-file"></i>
-                                            </nav>
-                                            <div class="primary">封面</div>
-                                        </div>
-                                        <div class="dropzone empty-state blank js-dropzone" data-type="portfolio">
-                                            <div class="empty-state-box">
-
-                                                <label for="image6">
-                                                    <img src="../images/plus.png"></label>
-
-                                                <input type="file" id="image6"
-                                                       class="gallery-file-field js-file-upload" name="image_file"
-                                                       multiple>
-                                            </div>
-                                            <div class="done-box js-done-box">
-                                                <img>
-                                            </div>
-                                            <nav class="controls">
-                                                <i class="fa fa-trash js-delete-file"></i>
-                                            </nav>
-                                            <div class="primary">封面</div>
-                                        </div>
                                         <div class="fake-hint basic-mode blue">
                                             <div class="icn">
                                                 <i class="fa fa-lightbulb-o"></i>
@@ -2031,18 +1130,20 @@
                                             <span>上传一个视频展示你的逼格来提高你的销售</span>
                                         </header>
 
-                                        <div class="dropzone empty-state   js-dropzone" data-type="video">
+                                        <div class="dropzone empty-state js-dropzone">
                                             <div class="empty-state-box">
                                                 <label for="video">
-                                                    <img src="../images/plus.png" width="80px" height="80px"
-                                                         style="border-radius: 5px;"></label>
-                                                <input type="file" class="gallery-file-field js-file-upload" id="video"
-                                                       name="file">
+                                                    <img src="../images/plus.png">
+                                                </label>
+
+                                                <input type="file" class="gallery-file-field" id="video"
+                                                       v-on:change="uploadVideo1"
+                                                       name="file" multiple>
                                             </div>
                                             <div class="done-box js-done-box">
                                             </div>
                                             <nav class="controls">
-                                                <i class="fa fa-trash js-delete-file"></i>
+                                                <i class="fa fa-trash js-delete-file" @click="deleteUploadVideo"></i>
                                                 <i class="fa fa-pencil-square-o js-open-video-thumbnail-popup"></i>
                                             </nav>
                                         </div>
@@ -2074,14 +1175,14 @@
                                             <div class="toggle-wrapper js-toggle-faq">
                                                 <label class="js-btn-toggle-faq hint--bottom">
                                                     常见问题与解答
-                                                    <input type="checkbox" name="faq_toggle">
+                                                    <input type="checkbox" name="faq_toggle" @click="toggleFaq">
                                                     <span class="fake-toggle"></span>
                                                 </label>
                                             </div>
                                         </header>
 
 
-                                        <div class="faq-wrapper fake-hint-wrap hidden">
+                                        <div class="faq-wrapper fake-hint-wrap" v-if="isOpenFaq">
                                             <div class="tooltip-wrapper fake-hint blue">
                                                 <div class="icn"><i class="fa fa-lightbulb-o"></i></div>
                                                 <span class="fake-hint-title">什么是FAQs?</span>
@@ -2095,31 +1196,47 @@
                                                 </div>
                                             </div>
 
-                                            <section class="form-wrapper">
-                                                <input type="text" class="js-faq-question" placeholder="问题" maxlength="150">
-                                                <textarea placeholder="解答" class="js-faq-answer" maxlength="300"></textarea>
+                                            <section class="form-wrapper" v-if="!(faqs.length==5)">
+                                                <input type="text" placeholder="问题" v-model="currentFaqQuestion" maxlength="150" v-bind:style="{border:faqQuestionBorder}">
+                                                <textarea placeholder="解答" maxlength="300" v-model="currentFaqAnswer" v-bind:style="{border:faqAnswerBorder}"></textarea>
                                                 <div class="counter">0/300字</div>
                                                 <div class="btns-container">
-                                                    <input type="button" class="btn-standard btn-green-grad js-add-faq" value="添加">
+                                                    <input type="button" class="btn-standard btn-green-grad" @click="addFaq" value="添加">
                                                 </div>
                                             </section>
                                             <div class="gig-page-section gig-page-section-faq last-gig-section ">
                                                 <header>
                                                     <h3 class="gig-fancy-header">已设置的问题解答</h3>
                                                 </header>
-                                                <ul class="component-accordion col-count-1 js-component-accordion">
-                                                    <li class="">
-                                                        <header>fg<a>删除</a></header>
-                                                        <div class="panel">fg</div>
-                                                    </li>
-                                                    <li class="opened">
-                                                        <header>sdgdsh<a>删除</a></header>
-                                                        <div class="panel">qw</div>
-                                                    </li>
-                                                    <li class="">
-                                                        <header>etfwe<a>删除</a></header>
-                                                        <div class="panel">sdghwe</div>
-                                                    </li>
+                                                <ul class="component-accordion col-count-1">
+                                                    <transition-group name="bounce" tag="">
+                                                        <li :class={'opened':faq.answerOpen} v-for="(faq,index) in faqs"
+                                                            v-bind:key="faq" @click="answerOpenToggle(index)">
+                                                            <header>
+
+                                                                <input type="text" v-model="faq.question"
+                                                                       v-if="faq.isEditOrSave=='edit'"
+                                                                       @click="preventDefault">
+                                                                <div v-else v-text="faq.question"></div>
+                                                                <div style="float: right">
+                                                                    <a class="faq-edit" @click="editFaq(index)"
+                                                                       v-if="faq.isEditOrSave=='save'">编辑</a>
+                                                                    <a class="faq-save" @click="saveFaq(index,faq)"
+                                                                       v-if="faq.isEditOrSave=='edit'">保存</a>
+                                                                    <a @click="deleteFaq(index)">删除</a>
+                                                                </div>
+
+                                                            </header>
+
+                                                            <div class="panel">
+                                                                <textarea type="text" v-model="faq.answer"
+                                                                          v-if="faq.isEditOrSave=='edit'"
+                                                                          @click="preventDefault"></textarea>
+                                                                <div v-else v-text="faq.answer"></div>
+                                                            </div>
+
+                                                        </li>
+                                                    </transition-group>
                                                 </ul>
                                             </div>
                                         </div>
@@ -2132,10 +1249,9 @@
                             <input type="hidden" name="current_tab" id="current_tab">
 
                             <div class="form-buttons js-next-back">
-                                <a href="/users/charming852/manage_gigs" class="btn-lrg-standard btn-white-grad cancel">Cancel</a>
-                                <input type="button" class="btn-lrg-standard js-save"
+                                <a href="" class="btn-lrg-standard btn-white-grad cancel">取消</a>
+                                <input type="button" class="btn-lrg-standard js-save" @click="save_upload"
                                        value="保存并继续">
-
                             </div>
                         </form>
                     </div>
@@ -2145,7 +1261,6 @@
         </div>
 
     </div>
-
 
     <footer class="mp-box main-footer js-main-footer border-top p-t-20 p-b-30 ">
         <div class="box-row">
@@ -2164,16 +1279,13 @@
                     <li><a href="">Best of Fiverr</a></li>
                 </ul>
             </div>
-
         </div>
-
     </footer>
 </div>
+<script src="../js/publish.js"></script>
+<script>
 
-<div id="fb-root"></div>
-
-<div class="pixels_container">
-</div>
+</script>
 
 
 </body>

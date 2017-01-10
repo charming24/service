@@ -6,99 +6,98 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
     <title>登录 | Tworr</title>
     <link type="text/css" rel="stylesheet" href="../css/style.css"/>
+    <link href="../assets/application.css" media="all" rel="stylesheet"/>
+    <link href="../assets/application-deferred.css" media="all" rel="stylesheet"/>
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script type="text/javascript" src="../js/service-login.js"></script>
 </head>
 <body>
 
-<div class="login">
-
-    <div class="popup">
-
-        <div class="top_nav" id='top_nav'>
-            <div align="center">
-
-                <span>WELCOME !!</span>
-
-                <i>3 Million+ Services. Secure Transactions. Unbeatable Value.</i>
-
-            </div>
-        </div>
-
-        <div class="user-login">
-            <form method="POST" name="form_login">
-
-                <div class="input-group" text-align="center">
-                    <input type="text" class="form-control js-phonenumber" placeholder="请输入你的手机号码" onfocus="this.placeholder='请输入你的手机号码'">
-                </div>
-
-                <div class="input-group" text-align="center" style="margin-top:10px">
-                    <input type="text" class="form-control js-passwd" placeholder="请输入密码" onfocus="this.placeholder='请输入密码'">
-                </div>
-
-                <div align="center"><a class="forget-pass" href="" style="margin-right:10px;">忘记密码</a></div>
-
-                <div style="margin:0 auto;clear: both;text-align: center">
-                    <input type="button" class="button js-login" title="Sign In" value="登录"
-                           style="margin:0 auto;letter-spacing:10px;width:360px;">
-                </div>
-            </form>
-
-            <div style="margin-top:15px;">
-                <div align="center">如果您还没注册账号
-                    <a href="register_fisrtstep.html" target="_blank">立即注册</a>
-                </div>
-            </div>
-
-            <hr align="center"/>
-            <!--
-            <div align="center">期待更多功能 </div>
-            -->
-        </div>
+<div class="popup-on-page">
+    <div>
+        <img src="../images/head.png" alt=""/>
     </div>
 
+    <div class="lf m-l-80" >
+        <img src="../images/loginback.jpg" alt="" width="100%"/>
+    </div>
+    <section class="popup-new popup-user-forms-new popup-user-login" style="display: inline-block">
+        <div class="popup-content" >
+            <div class="popup-content-login" style="display: block;">
+                <div class="popup-form">
+                    <form accept-charset="UTF-8" action="" method="post">
+                        <div class="form-row cf">
+                            <div class="input-wrap">
+                                <label>
+                                    <input class="js-phonenumber" maxlength="70" placeholder="请输入手机号码" type="text">
+                                    <span class="f-label">手机号码</span>
+                                </label>
+                                <div class="error-container"><p class="msg-error">请输入正确的手机号码</p></div>
+                            </div>
+                        </div>
+
+                        <div class="form-row cf">
+                            <div class="input-wrap">
+                                <label>
+                                    <input class="js-passwd" placeholder="请输入密码" type="password">
+                                    <span class="f-label">密码</span>
+                                </label>
+
+                                <div class="error-container">
+                                    <p class="msg-error">密码错误, 请重试!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row-buttons cf">
+                            <input class="btn-lrg-standard up fullwidth js-login" id="login-btn" type="submit" value="登录">
+                        </div>
+
+                        <div class="form-row p-t-10 p-b-40">
+                            <label class="fake-check-grey check-text lf" for="user-session-remember-me">
+                                <input id="user-session-remember-me" name="user_session[remember_me]" type="checkbox" value="1" checked="checked">
+                                <span class="chk-img"></span>
+                                记住选择
+                            </label>
+                            <span class="toggle-forgot-pwd rf">
+                                <a class="js-btn-forgotpw" href="#" rel="nofollow" target="_blank">忘记密码</a>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                <div class="divi-new js-form-join-section" data-section="1"><span>OR</span></div>
+                <div class="social-login-buttons cf" data-section="1">
+                    <a href="#!" class="cookie btn-standard btn-social-connect js-btn-facebook-connect facebook  js-gtm-event"><i class="fa fa-facebook"></i></a>
+                    <a href="#!" class="cookie btn-standard btn-social-connect js-btn-google-connect google  js-gtm-event"><i class="fa fa-google"></i></a>
+                    <a href="#!" class="cookie btn-standard btn-social-connect js-btn-linkedin-connect linkedin  js-gtm-event"><i class="fa fa-linkedin"></i></a>
+                </div>
+                <div class="popup-link-footer">
+                    <p>还没有账号? <a href="register_fisrtstep.html" class="" target="_blank">马上注册</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 
-<footer class="mp-box main-footer js-main-footer border-top p-t-20 p-b-30 ">
+<footer class="mp-box main-footer js-main-footer border-top p-t-20 p-b-30">
     <div class="box-row">
         <div class="footer-top cf">
             <ul>
-                <li><a href="/categories">Directory</a></li>
-                <li><a href="/news">Press</a></li>
-                <li><a href="/partnerships">Partnerships</a></li>
-                <li><a href="/jobs">Jobs</a></li>
-                <li><a href="/terms_of_service">Legal</a></li>
-                <li><a href="/privacy-policy">Privacy</a></li>
-                <li><a href="http://forum.fiverr.com/" target="_blank">Forum</a></li>
-                <li><a href="/academy">Academy</a></li>
-                <li><a href="/affiliate_program">Affiliates</a></li>
-                <li><a href="http://support.fiverr.com?user_type=rnc_seller" target="_blank">Contact us</a></li>
-                <li><a href="/best-sellers">Best of Fiverr</a></li>
+                <li><a href="">Directory</a></li>
+                <li><a href="">Press</a></li>
+                <li><a href="">Partnerships</a></li>
+                <li><a href="">Jobs</a></li>
+                <li><a href="">Legal</a></li>
+                <li><a href="">Privacy</a></li>
+                <li><a href="" target="_blank">Forum</a></li>
+                <li><a href="">Academy</a></li>
+                <li><a href="" target="_blank">Blog</a></li>
+                <li><a href="" target="_blank">Store</a></li>
+                <li><a href="">Affiliates</a></li>
+                <li><a href="" target="_blank">Contact us</a></li>
             </ul>
         </div>
-
-        <div class="footer-bot cf">
-            <div class="box-regional js-box-regional">
-                <a href="#" class="js-trigger-regional" data-location="in-footer">
-                    <span class="language-name">English</span>
-                    $ USD
-                    <i class="ficon ficon-chevron-up"></i>
-                </a>
-            </div>
-
-            <a href="#"
-               class="btn-mobile-store app-store js-gtm-event" data-gtm-action="clicked-from-footer"
-               data-gtm-event="ios-promo" data-gtm-label="get-the-app" target="_blank"
-               data-src="assets/v2_buttons/btn-app-store-40-f93b303c19c00340ec37f630bc9ff15b.svg"></a>
-            <a href="#"
-               class="btn-mobile-store play-store js-gtm-event" data-gtm-action="clicked-from-footer"
-               data-gtm-event="android-promo" data-gtm-label="get-the-app" target="_blank"
-               data-src="assets/v2_buttons/btn-play-store-40-179b5ea7c58e42508ebc0ced60d48a58.svg"></a>
-
-
-        </div>
     </div>
-
 </footer>
 
 </body>

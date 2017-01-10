@@ -5345,7 +5345,7 @@ html.no-svg .db-sidebar.todo-sidebar .todo-cta p:after {
     font-weight: bold
 }
 
-.db-edit-gig .edit-gig-form-wrap .form-row .input-wrap .gig-edit-suggestion {
+.db-edit-gig .edit-gig-form-wrap .form-row .input-wrap .show-edit-suggestion {
     padding-top: 6px;
     display: block;
     color: #00698c;
@@ -5356,7 +5356,7 @@ html.no-svg .db-sidebar.todo-sidebar .todo-cta p:after {
     transition: opacity 0.4s ease-in-out
 }
 
-.db-edit-gig .edit-gig-form-wrap .form-row .input-wrap .gig-edit-suggestion.shown {
+.db-edit-gig .edit-gig-form-wrap .form-row .input-wrap .show-edit-suggestion.shown {
     opacity: 1
 }
 
@@ -8852,7 +8852,10 @@ html.no-svg .educational-header li.step-3:after {
     display: block !important;
     margin: 0 auto
 }
-
+.data-analysis-toggle{
+    display: inline-block;
+    float: right;
+}
 .user-dashboard-stats {
     background-color: #fff;
     padding: 30px;

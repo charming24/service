@@ -75,7 +75,7 @@ $(document).ready(function () {
     budget.keydown(function () {
         var e = $(this).event || window.event;
         var code = parseInt(e.keyCode);
-        console.log("aaa")
+        console.log("choose_subcategory")
         if ((code >= 96 && code <= 105) || (code >= 48 && code <= 57) || code == 8 || (code >= 37 && code <= 40)) {
             return true;
         } else {

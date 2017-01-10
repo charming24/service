@@ -1,3 +1,33 @@
+.bounce-enter-active {
+    animation: bounce-in 1.5s;
+}
+.bounce-leave-active {
+    animation: bounce-out 1.5s;
+}
+@keyframes bounce-in {
+    0% {
+        transform: translateX(-1000px);
+    }
+    50% {
+        transform: translateX(40px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+@keyframes bounce-out {
+    0% {
+        transform:  translateX(0px);
+    }
+    5% {
+        transform:  translateX(40px);
+    }
+    100% {
+        transform: translateX(-1000px);
+    }
+}
+
+
 .faq-wrapper .form-wrapper {
     background-color: #f7f7f7;
     padding-bottom: 20px
@@ -302,6 +332,9 @@ body ul.component-accordion li .panel {
     -o-transition: max-height 0.3s, padding-top 0.3s;
     transition: max-height 0.3s, padding-top 0.3s
 }
+body ul.component-accordion li .panel textarea{
+    width: 500px;
+}
 
 body ul.component-accordion li header {
     display: block;
@@ -312,7 +345,16 @@ body ul.component-accordion li header {
     white-space: nowrap;
     text-overflow: ellipsis
 }
+body ul.component-accordion li header .faq-save{
 
+    text-decoration: none;
+    color: #00b22d!important;
+}
+body ul.component-accordion li header .faq-edit{
+
+    text-decoration: none;
+    color: #00b22d!important;
+}
 body ul.component-accordion li.opened {
     color: #0e0e0f
 }
@@ -406,8 +448,8 @@ body:not(.is-mobile-responsive) ul.component-accordion.col-count-3:nth-of-type(2
 /*}*/
 .gig-page-section-faq .component-accordion li a {
     color: red;
+    text-decoration: none;
     font-size: 15px;
-    float: right;
 }
 .gig-page-section-faq .component-accordion li:last-child {
     margin-bottom: 0
