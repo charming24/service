@@ -231,7 +231,7 @@
                             <section class="js-edit-general" data-name="general" data-section-name="general_or_title"
                                      id="js-edit-general" v-if="current_step == 1">
 
-                                <section id="gig-edit-general" class="gig-edit-form-section" data-action="submit"
+                                <section id="gig-edit-general" class="show-edit-form-section" data-action="submit"
                                          data-action-text="Save &amp; Continue">
                                     <header class="pricing-header">
                                         <h1 class="alt">概述</h1>
@@ -1213,7 +1213,6 @@
                                                         <li :class={'opened':faq.answerOpen} v-for="(faq,index) in faqs"
                                                             v-bind:key="faq" @click="answerOpenToggle(index)">
                                                             <header>
-
                                                                 <input type="text" v-model="faq.question"
                                                                        v-if="faq.isEditOrSave=='edit'"
                                                                        @click="preventDefault">
@@ -1225,7 +1224,6 @@
                                                                        v-if="faq.isEditOrSave=='edit'">保存</a>
                                                                     <a @click="deleteFaq(index)">删除</a>
                                                                 </div>
-
                                                             </header>
 
                                                             <div class="panel">
@@ -1283,10 +1281,5 @@
     </footer>
 </div>
 <script src="../js/publish.js"></script>
-<script>
-
-</script>
-
-
 </body>
 </html>

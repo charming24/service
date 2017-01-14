@@ -1,0 +1,215 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="viewport" content="width=1024">
+
+    <link href="../assets/application.css" media="all" rel="stylesheet"/>
+    <link href="../assets/application-deferred.css" media="all" rel="stylesheet"/>
+    <link href="../assets/conversations.css" media="all" rel="stylesheet"/>
+
+
+
+    <title>发布成功</title>
+
+    <link rel="canonical" href="https://www.tworr.com/">
+</head>
+<body class="body-db ismobileblank">
+
+<div id="main-wrapper" class="no-cat">
+
+
+    <div id="main-wrapper-header">
+        <div class="page-light-overlay js-page-light-overlay hidden"></div>
+        <header class="main-header with-shadow main-header-logged-in">
+            <div class="mp-box mp-box-opaque">
+                <div class="box-row">
+                    <a href="/">
+                        <i class="ficon ficon-fiverr-logo ficon-white"></i>
+                    </a>
+
+                    <nav class="global-search-box top-nav-search omnibox-search">
+                        <div class="inner cf">
+
+                            <form accept-charset="UTF-8" action="/search/gigs" id="search-form-nav-bar" method="post"
+                                  onsubmit="return false;">
+                                <div class="global-search js-global-search omnibox ">
+
+                                    <input class="js-search-input js-report-to-aux-data"
+                                           data-aux-data="search-field-clicked" id="" maxlength="40" name="query"
+                                           placeholder="Find Services" type="text"/>
+                                    <a href="#" class="js-search-submit magnify"></a>
+                                    <span class="loading"></span>
+                                </div>
+                            </form>
+
+                        </div>
+                    </nav>
+
+
+                    <nav class="main-nav main-nav-user">
+                        <ul>
+                            <li class="menu-icn icn-todo hint--bottom js-mark" data-mark="todos" data-hint="Dashboard">
+                                <a href="/users/charming852/todos" class="js-gtm-event-auto"
+                                   data-gtm-action="black-nav-loggedin" data-gtm-category="navigation"
+                                   data-gtm-label="to do"></a>
+                            </li>
+
+                            <li class="dropdown header-notify menu-icn icn-notify hint--bottom js-mark"
+                                data-mark="notifications" data-hint="Notifications">
+                                <div class="js-notifications-announcement hidden">
+                                    <span class="gig-badges new">New</span><br><strong>Hi, charming852!</strong> We
+                                    cleaned up your notifications feed - <strong>check it out!</strong>​
+                                </div>
+                                <a href="#!" data-href="/users/charming852/todos?tab=notifications"
+                                   class="hover-drawer-trigger js-hover-drawer-trigger"></a>
+                                <div class="hover-drawer js-hover-drawer hidden">
+                                    <header>
+                                        <h6>Notifications <span class="total-unread-count js-total-unread-count"></span>
+                                        </h6>
+                                        <nav>
+                                            <a href="/users/charming852/edit/account_settings"
+                                               class="icn account-settings hint--bottom js-track"
+                                               data-hint="Notification Settings"></a>
+                                            <a href="/users/charming852/todos?tab=notifications"
+                                               class="js-view-link js-track">View Dashboard</a>
+                                        </nav>
+                                    </header>
+                                    <div class="antiscroll-wrap">
+                                        <div class="antiscroll-inner">
+                                            <ul class="notification-drawer js-notification-drawer"
+                                                data-type="notifications"></ul>
+                                            <div class="notifications-empty-state js-notifications-empty-state">
+                                                <h3>No Notifications</h3>
+                                                <p class="no-notifications">​Browse our amazing catalog of Gigs<br>or
+                                                    offer your talent on Fiverr.</p>
+                                                <p class="notifications-unavailable">Your notifications are temporarily
+                                                    unavailable<br>due to a technical issue. Please try again later.</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <a href="/users/charming852/todos?tab=notifications"
+                                       class="btn-see-all js-see-all js-track">See All</a>
+                                </div>
+                            </li>
+
+                            <li class="menu-icn icn-inbox js-icn-inbox js-mark hint--bottom" data-mark="inbox"
+                                data-hint="Inbox">
+                                <a href="#!" data-href="/conversations"
+                                   class="hover-drawer-trigger js-hover-drawer-trigger"></a>
+                                <div class="hover-drawer js-hover-drawer hidden">
+                                    <header>
+                                        <h6>Inbox <span class="total-unread-count js-total-unread-count"></span></h6>
+                                        <nav>
+                                            <a href="/users/charming852/edit/account_settings"
+                                               class="icn account-settings hint--bottom js-track"
+                                               data-hint="Notification Settings"></a>
+                                            <a href="/conversations" class="js-view-link js-track">View Inbox</a>
+                                        </nav>
+                                    </header>
+                                    <div class="antiscroll-wrap">
+                                        <div class="antiscroll-inner">
+                                            <ul class="notification-drawer js-notification-drawer"
+                                                data-type="inbox"></ul>
+                                            <div class="notifications-empty-state js-notifications-empty-state">
+                                                <h3>No Notifications</h3>
+                                                <p class="no-notifications">​Browse our amazing catalog of Gigs<br>or
+                                                    offer your talent on Fiverr.</p>
+                                                <p class="notifications-unavailable">Your notifications are temporarily
+                                                    unavailable<br>due to a technical issue. Please try again later.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/conversations" class="btn-see-all js-see-all js-track">See All</a>
+                                </div>
+
+                            </li>
+
+                            <li class="header-shopping-cart js-shopping-cart-header menu-icn icn-cart hint--bottom"
+                                data-hint="Shopping cart">
+                                <a href="#!" class="js-shopping-cart-trigger" rel="noindex, nofollow"></a>
+                                <div class="shopping-cart-container js-shopping-cart-container"></div>
+                            </li>
+
+                            <li class="dropdown-container header-user header-user-is-online">
+                                <a href="/charming852" class="user-trigger js-gtm-event-auto"
+                                   data-gtm-action="black-nav-loggedin" data-gtm-category="navigation"
+                                   data-gtm-label="open username">
+                                    <span class="user-pict-24"><img
+                                            src="https://cldn0.fiverrcdn.com/fiverr/t_profile_mini/profile/photos/48954147/original/tc_login_yonghu.jpg"
+                                            alt="charming852" width="24" height="24"></span>
+                                    <span class="user-is-online  is-online" data-user-id="charming852"><em></em></span>
+
+                                    <span class="user-name">charming852</span>
+                                </a>
+                                <div class="dropdown">
+                                    <ul>
+                                        <li><a class="new js-gtm-event-auto" data-gtm-action="black-nav-loggedin"
+                                               data-gtm-category="navigation" data-gtm-label="my dashboard"
+                                               href="/users/charming852/todos">用户后台</a></li>
+
+                                        <li><a class="js-gtm-event-auto" data-gtm-action="black-nav-loggedin"
+                                               data-gtm-category="navigation" data-gtm-label="log out" href="/logout">退出注销</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+    </div>
+
+
+    <div class="main-content">
+        <div class="mp-box">
+            <div class="box-row">
+                <div class="db-edit-gig db-content content-left db-content-edit-gig p-t-50">
+                    <div class="edit-gig-form-wrap db-content-inner">
+                            <section id="show-edit-share" class="show-edit-form-section" style="display: block;">
+                                <h2 class="show-edit-sec-ttl">
+                                   发布成功!!!
+                                </h2>
+                                <h3 class="show-edit-sec-sttl">Our studies show that promoted gigs are 3 times more likely to sell!</h3>
+
+                                <div class="show-edit-content">
+                                    <div class="publish-success-action">
+                                            <a href="">查看作品</a>
+                                            <a href="">需求大厅</a>
+                                    </div>
+                                </div>
+                            </section>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer class="mp-box main-footer js-main-footer border-top p-t-20 p-b-30 ">
+        <div class="box-row">
+            <div class="footer-top cf">
+                <ul>
+                    <li><a href="">Directory</a></li>
+                    <li><a href="">Press</a></li>
+                    <li><a href="">Partnerships</a></li>
+                    <li><a href="">Jobs</a></li>
+                    <li><a href="">Legal</a></li>
+                    <li><a href="">Privacy</a></li>
+                    <li><a href="" target="_blank">Forum</a></li>
+                    <li><a href="">Academy</a></li>
+                    <li><a href="">Affiliates</a></li>
+                    <li><a href="" target="_blank">Contact us</a></li>
+                    <li><a href="">Best of Fiverr</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

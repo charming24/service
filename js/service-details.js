@@ -34,4 +34,3 @@ $(document).ready(function () {
         $(this).find("div").css("border-color", "#1c639f");
     })
 });
-

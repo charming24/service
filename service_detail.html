@@ -8,6 +8,12 @@
     <link href="assets/application-deferred.css" media="all" rel="stylesheet"/>
     <link href="assets/gigs.css" media="all" rel="stylesheet"/>
     <link href="assets/notification-drawer.css" media="all" rel="stylesheet"/>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="http://cdn.bootcss.com/vue/2.1.8/vue.js"></script>
+    <script src="http://cdn.bootcss.com/vue-resource/1.0.3/vue-resource.js"></script>
+
+
     <title>record a Breaking News VIDEO Commercial Special Off</title>
 </head>
 <body class="body-mp body-gig-show">
@@ -24,17 +30,13 @@
                     <nav class="global-search-box top-nav-search omnibox-search">
                         <div class="inner cf">
                             <form accept-charset="UTF-8" action="" id="search-form-nav-bar" method="get">
-
                                 <div class="global-search js-global-search omnibox ">
-
                                     <input class="js-search-input js-report-to-aux-data" id="" maxlength="40"
-                                           name="query"
-                                           placeholder="Find Services" type="text"/>
+                                           name="query" placeholder="Find Services" type="text"/>
                                     <a href="#" class="js-search-submit magnify"></a>
                                     <span class="loading"></span>
                                 </div>
                             </form>
-
                         </div>
                     </nav>
 
@@ -112,1277 +114,595 @@
             <div class="mp-box mp-box-white notop mp-cat-list-curated js-cat-list-curated">
                 <div class="box-row">
                 </div>
+            </div>
         </header>
     </div>
-    </div>
+</div>
 
 
-    <div class="main-content">
-        <section class="mp-box mp-box-grey">
-            <div class="mp-gig-wrapper js-mp-gig-wrapper box-row" itemscope itemtype="http://schema.org/Product">
-                <div class="mp-gig">
-
-
-                    <div class="mp-gig-top-nav js-nav-container p-b-20">
-                        <nav class="gig-nav-bar js-gig-nav-bar cf">
-
-
-                            <div class="gig-collect js-gig-collect coll-gig-2819857" data-coll-id="2819857">
-
-
+<div class="main-content" id="main-content">
+    <section class="mp-box mp-box-grey">
+        <div class="mp-gig-wrapper box-row">
+            <div class="mp-gig">
+                <div class="mp-gig-top-nav p-b-20">
+                    <nav class="gig-nav-bar cf">
+                        <div class="gig-collect">
+                                <span class="hint--bottom" data-hint="点击收藏">
+                                    <a class="icn-heart" href="javascript:void(0)" @click="collect">收藏</a>
                                 </span>
-                                <span class="hint--bottom" data-hint="Favorite">
-            <a class="icn-heart" href="#" rel="noindex, nofollow">收藏</a>
-        </span>
-                                <div class="gig-collect-count js-gig-collect-count">8131</div>
-                            </div>
+                            <div class="gig-collect-count">8131</div>
+                        </div>
 
-                            <script src="js/jquery.min.js"></script>
-                            <ul>
-                                <li id="overview-link" class="selected">
-                                    <a class="gig-page-nav-link" href="#packages">概 &nbsp; &nbsp;述 </a>
-                                </li>
-                                <li id="packages-link">
-                                    <a class="gig-page-nav-link" href="#packages">价格梯度</a>
-                                </li>
-                                <li id="description-link">
-                                    <a class="gig-page-nav-link" href="#description">描述详情</a>
-                                </li>
-                                <li id="faq-link">
-                                    <a class="gig-page-nav-link" href="#faq">问题解答</a>
-                                </li>
-                                <li id="reviews-link">
-                                    <a class="gig-page-nav-link" href="#reviews">评&nbsp; 论</a>
-                                </li>
-                            </ul>
-
-                        </nav>
-                    </div>
-
-
-                    <aside class="gig-sidebar">
-                        <section class="gig-seller-info" itemprop="brand" itemscope itemtype="http://schema.org/Brand">
-
-                            <div class="seller-image cf">
-
-                                <div class="user-pict-130" itemprop="logo">
-                                    <a href="https://www.fiverr.com/sebski22" rel="nofollow,noindex" itemprop="url">
-                                        <img src="https://cldn0.fiverrcdn.com/fiverr/t_profile_original/profile/photos/237525/original/sebski22.jpg"
-                                             alt="sebski22" width="130" height="130">
-                                    </a>
-                                </div>
-
-                                <a href="https://www.fiverr.com/sebski22" class="seller-link" itemprop="url"><span
-                                        itemprop="name">sebski22</span></a>
-
-                                <a href="/levels" class="user-badge-round-med top_rated_seller hint--bottom"
-                                   data-hint="Top Rated Seller"></a>
-
-                            </div>
-
-                            <ul class="seller-stats cf">
-
-                                <li>
-                                    <small>From</small>
-                                    United Kingdom
-                                </li>
-
-                                <li>
-                                    <small>Positive Rating</small>
-                                    100%
-                                </li>
-
-                                <li>
-                                    <small>Speaks</small>
-                                    <ul class="language-container js-language-container">
-                                        <li>
-                                            <em>English</em>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <small>Avg. Response Time</small>
-                                    4 Hrs.
-                                </li>
-
-                            </ul>
-
-                            <div class="seller-desc" itemprop="description">
-                                <p>Hey guys, <br><br>I create high end videos. If you are looking for the best quality
-                                    videos available then check out my gigs or drop me a line to discuss your
-                                    requirements. <br><br>Watch this FREE TUTORIAL VIDEO - "Top 5 Tips for creating a
-                                    KILLER marketing video":<br><br>https://youtu.be/NyV_tOk_Slo</p>
-                                <br><a href="https://www.fiverr.com/sebski22">
-                                Read more</a>
-                            </div>
-
-                            <footer class="cf">
-                                <span class="user-is-online js-user-is-online offset"
-                                      data-user-id="sebski22"><em></em><span class="label-online">online</span><span
-                                        class="label-offline">offline</span></span>
-
-
-                                <a href="/conversations/sebski22?related_gig_id=2819857" class="btn-standard"><i
-                                        class="fa fa-comment-o"></i> Contact Me</a>
-                            </footer>
-
-                        </section>
-                        <ul class="packages-list js-packages-list ">
-                            <li data-package-id="1">
-                                <h2 class="alt">
-                                    <i class="fa fa-angle-down"></i>
-                                    <span class="left-aligned js-str-currency js-price js-package-number-1"
-                                          data-package-price="5.0">
-                $5
-            </span>
-                                    基础
-
-                                    <span class="hidden customized gig-badges hint--top"></span>
-                                </h2>
-
-                                <div class="package-expander">
-                                    <span class="icons">
-                                        <i class="fa fa-clock-o fa-lg"></i>
-                                        <span class="delivery-time">10 days</span>
-                                        完成
-                                    </span>
-                                    <h3 class="m-t-20 js-auto-translate-package">Basic News </h3>
-
-                                    <p class="p-b-10 p-t-5 js-auto-translate-package">FREE INTRO | $5 per 40 words</p>
-
-                                    <ul class="buyables p-t-10 p-b-10">
-                                        <li class="hidden" data-buyable-id="">
-                                            <i></i>Overlay Text
-                                        </li>
-                                        <li class="hidden" data-buyable-id="16581384">
-                                            <i></i>Full HD (1080p)
-                                        </li>
-                                        <li class="hidden" data-buyable-id="2819892">
-                                            <i></i>Extra fast
-                                        </li>
-                                        <li class="" data-buyable-id="32218845">
-                                            <i></i>Background Music
-                                        </li>
-                                        <li class="" data-buyable-id="32218850">
-                                            <i></i>Add Logo
-                                        </li>
-                                    </ul>
-
-                                    <p class="t-a-center p-t-10">
-                                        <a href="#" class="btn-standard-lrg btn-green-grad js-package-select"
-                                           data-col="1" data-popup="" data-package-id="1">Proceed to Order</a>
-                                    </p>
-
-                                    <p class="t-a-center p-b-10">
-                                        <a href="#" class="link-blue js-packages-scroll-to js-gtm-event-auto"
-                                           data-gtm-category="gig-page-triple" data-gtm-action="click"
-                                           data-gtm-label="compare-package-1">Compare Packages</a>
-                                    </p>
-                                </div>
+                        <ul>
+                            <li id="overview-link" class="selected">
+                                <a class="gig-page-nav-link" href="#packages">概 &nbsp; &nbsp;述 </a>
                             </li>
-                            <li data-package-id="2">
-                                <h2 class="alt">
-                                    <i class="fa fa-angle-down"></i>
-                                    <span class="left-aligned js-str-currency js-price js-package-number-2"
-                                          data-package-price="30.0">
-                $30
-            </span>
-                                    标准
-
-                                    <span class="hidden customized gig-badges hint--top"></span>
-                                </h2>
-
-                                <div class="package-expander">
-            <span class="icons">
-                <i class="fa fa-clock-o fa-lg"></i>
-                <span class="delivery-time">12 days</span>
-                Delivery
-            </span>
-
-
-                                    <h3 class="m-t-20 js-auto-translate-package">Up to 2 Presenters COMPLETE
-                                        Package</h3>
-
-                                    <p class="p-b-10 p-t-5 js-auto-translate-package">Inc. ALL Graphic Elements &amp; 2
-                                        presenters. Scripts up to 100 words. Increase QTY as Needed.</p>
-
-                                    <ul class="buyables p-t-10 p-b-10">
-                                        <li class="" data-buyable-id="34121815">
-                                            <i></i>Overlay Text
-                                        </li>
-                                        <li class="hidden" data-buyable-id="16581384">
-                                            <i></i>Full HD (1080p)
-                                        </li>
-                                        <li class="hidden" data-buyable-id="2819892">
-                                            <i></i>Extra fast
-                                        </li>
-                                        <li class="" data-buyable-id="32218845">
-                                            <i></i>Background Music
-                                        </li>
-                                        <li class="" data-buyable-id="32218850">
-                                            <i></i>Add Logo
-                                        </li>
-                                    </ul>
-
-                                    <p class="t-a-center p-t-10">
-                                        <a href="#" class="btn-standard-lrg btn-green-grad js-package-select"
-                                           data-col="2" data-popup="" data-package-id="2">Proceed to Order</a>
-                                    </p>
-
-                                    <p class="t-a-center p-b-10">
-                                        <a href="#" class="link-blue js-packages-scroll-to js-gtm-event-auto"
-                                           data-gtm-category="gig-page-triple" data-gtm-action="click"
-                                           data-gtm-label="compare-package-2">Compare Packages</a>
-                                    </p>
-                                </div>
+                            <li id="packages-link">
+                                <a class="gig-page-nav-link" href="#packages">价格</a>
                             </li>
-                            <li data-package-id="3" class="show-package">
-                                <h2 class="alt">
-                                    <i class="fa fa-angle-down"></i>
-                                    <span class="left-aligned js-str-currency js-price js-package-number-3"
-                                          data-package-price="40.0">$40</span>
-                                    高级
-                                    <span class="hidden customized gig-badges hint--top"></span>
-                                </h2>
-
-                                <div class="package-expander">
-                                    <span class="icons">
-                                        <i class="fa fa-clock-o fa-lg"></i>
-                                        <span class="delivery-time">14 days</span>
-                                        Delivery
-                                    </span>
-
-
-                                    <h3 class="m-t-20 js-auto-translate-package">Up to 3 Presenters COMPLETE
-                                        Package</h3>
-
-                                    <p class="p-b-10 p-t-5 js-auto-translate-package">Inc. All Graphics &amp; up to 3
-                                        presenters. Scripts up to 100 words. Increase QTY as needed. </p>
-
-                                    <ul class="buyables p-t-10 p-b-10">
-                                        <li class="" data-buyable-id="34121815">
-                                            <i></i>Overlay Text
-                                        </li>
-                                        <li class="" data-buyable-id="16581384">
-                                            <i></i>Full HD (1080p)
-                                        </li>
-                                        <li class="hidden" data-buyable-id="2819892">
-                                            <i></i>Extra fast
-                                        </li>
-                                        <li class="" data-buyable-id="32218845">
-                                            <i></i>Background Music
-                                        </li>
-                                        <li class="" data-buyable-id="32218850">
-                                            <i></i>Add Logo
-                                        </li>
-                                    </ul>
-
-                                    <p class="t-a-center p-t-10">
-                                        <a href="#" class="btn-standard-lrg btn-green-grad js-package-select"
-                                           data-col="3" data-popup="" data-package-id="3">Proceed to Order</a>
-                                    </p>
-
-                                    <p class="t-a-center p-b-10">
-                                        <a href="#" class="link-blue js-packages-scroll-to js-gtm-event-auto"
-                                           data-gtm-category="gig-page-triple" data-gtm-action="click"
-                                           data-gtm-label="compare-package-3">Compare Packages</a>
-                                    </p>
-                                </div>
+                            <li id="description-link">
+                                <a class="gig-page-nav-link" href="#description">描述详情</a>
+                            </li>
+                            <li id="faq-link">
+                                <a class="gig-page-nav-link" href="#faq">问题解答</a>
+                            </li>
+                            <li id="reviews-link">
+                                <a class="gig-page-nav-link" href="#reviews">评&nbsp; 论</a>
                             </li>
                         </ul>
-                    </aside>
+
+                    </nav>
+                </div>
 
 
-                    <div class="gig-page-section-dummy" id="overview"></div>
-                    <div class="gig-page-section gig-page-section-overview  ">
+                <aside class="gig-sidebar">
 
+                    <section class="gig-seller-info" itemprop="brand" itemscope itemtype="http://schema.org/Brand">
+                        <div class="seller-image cf">
+                            <div class="user-pict-130" itemprop="logo">
+                                <a href="" rel="nofollow,noindex">
+                                    <img src="https://cldn0.fiverrcdn.com/fiverr/t_profile_original/profile/photos/237525/original/sebski22.jpg"
+                                         alt="sebski22" width="130" height="130">
+                                </a>
+                            </div>
+                            <a href="" class="seller-link"><span>sebski22</span></a>
+                            <a href="" class="user-badge-round-med top_rated_seller hint--bottom"
+                               data-hint="Top Rated Seller"></a>
+                        </div>
 
-                        <header class="mp-gig-header">
+                        <ul class="seller-stats cf">
+                            <li>
+                                <small>From</small>
+                                United Kingdom
+                            </li>
+                            <li>
+                                <small>Positive Rating</small>
+                                100%
+                            </li>
+                            <li>
+                                <small>Speaks</small>
+                                <ul class="language-container">
+                                    <li>
+                                        <em>English</em>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <small>Avg. Response Time</small>
+                                4 Hrs.
+                            </li>
+                        </ul>
 
-                            <h1 itemprop="name">
-        <span class="gig-title">
-               项目标题
-        </span>
-                            </h1>
+                        <div class="seller-desc" itemprop="description">
+                            <p>Hey guys, <br><br>I create high end videos. If you are looking for the best quality
+                                videos available then check out my gigs or drop me a line to discuss your
+                                requirements. <br><br>Watch this FREE TUTORIAL VIDEO - "Top 5 Tips for creating a
+                                KILLER marketing video":<br><br>https://youtu.be/NyV_tOk_Slo</p>
+                            <br>
+                            <a href="" target="_blank">Read more</a>
+                        </div>
 
+                        <footer class="cf">
+                                <span class="user-is-online js-user-is-online offset"><em></em><span
+                                        class="label-online">online</span><span
+                                        class="label-offline">offline</span></span>
+                            <a href="" class="btn-standard"><i
+                                    class="fa fa-comment-o"></i> 联系我</a>
+                        </footer>
 
-                            <span class="stats-row">
-        <span class="rating-circles star-rating-s12 rate-10"></span>
-        <a href="#reviews" class="gig-ratings-count js-gtm-event-auto" data-gtm-category="gig-page-triple"
-           data-gtm-action="click" data-gtm-label="buyer-reviews">(1662)</a>
-    </span>
+                    </section>
+                    <ul class="packages-list">
+                        <li :class="{'show-package':package.isExpanded}" v-for="(package,index) in gradient_packages"
+                            @click="expander_package(index)">
+                            <h2 class="alt">
+                                <i class="fa fa-angle-down"></i>
+                                <span class="left-aligned">￥{{package.price}} &nbsp</span> <span style="color: black"
+                                                                                                 v-text="package.level">基础</span>
+                                <span class="hidden customized gig-badges hint--top"></span>
+                            </h2>
 
-                            <span class="stats-row">24 Orders in Queue</span>
-                            <span class="divider"></span>
+                            <div class="package-expander">
+                                    <span class="icons">
+                                        <i class="fa fa-clock-o fa-lg"></i>
+                                        <span class="delivery-time" v-text="package.deliverTime"></span>
+                                        完成
+                                    </span>
+                                <h3 class="m-t-20" v-text="package.title"></h3>
 
-                            <div class="header-bottom cf">
+                                <div class="p-b-10 p-t-5" v-text="package.description" style="overflow: hidden;width:300px;min-height: 50px;
+                                    white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;"></div>
 
+                                <ul class="buyables p-t-10 p-b-10">
+                                    <li v-for="relate in package.relate" v-if="relate.relate_type=='0'&&relate.relate_value=='1'"><i></i>{{relate.relate_name}}</li>
+                                </ul>
 
-            <span class="lf " itemprop="category">
-                <a class="js-gtm-event-auto" data-gtm-action="click" data-gtm-category="gig-page-triple"
-                   data-gtm-label="bread-crumbs-category" href="/categories/video-animation?source=gig_category_link"
-                   itemprop="url">Video &amp; Animation</a>
-                /
-                <a class="js-gtm-event-auto" data-gtm-action="click" data-gtm-category="gig-page-triple"
-                   data-gtm-label="bread-crumbs-sub-category"
-                   href="/categories/video-animation/promotional-brand-videos?source=gig_sub_category_link"
-                   itemprop="url">Promotional &amp; Brand Videos</a>
-            </span>
+                                <p class="t-a-center p-t-10">
+                                    <a href="#" class="btn-standard-lrg btn-green-grad">立即下单</a>
+                                </p>
 
+                                <p class="t-a-center p-b-10">
+                                    <a href="#" class="link-blue">梯度对比</a>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </aside>
 
+                <div class="gig-page-section gig-page-section-overview">
+                    <header class="mp-gig-header">
+                        <h1 itemprop="name">
+                            <span class="gig-title" v-text="title"></span>
+                        </h1>
+                        <span class="stats-row"><span class="rating-circles star-rating-s12 rate-10"></span>
+                                <a href="#reviews" class="gig-ratings-count" v-text="commentCount"></a>
+                            </span>
+                        <span class="stats-row">24 Orders in Queue</span>
+                        <span class="divider"></span>
+                        <div class="header-bottom cf">
+                                <span class="lf">
+                                    <a href="">Video &amp; Animation</a>/<a href="">Promotional &amp; Brand Videos</a>
+                                </span></div>
+                    </header>
+
+                    <div class="">
+                        <section class="slider-container">
+                            <div class="slider">
+                                <a href="#!" class="slide-nav slide-right" @click="nextThumb"
+                                   v-if="currentThumbIndex !=  thumbs.length-1"><i class="fa fa-chevron-right"></i></a>
+                                <a href="#!" class="slide-nav slide-left" @click="preThumb"
+                                   v-if="currentThumbIndex != 0"><i class="fa fa-chevron-left"></i></a>
+                                <div :class="['slide', thumb.isShowing?'active':'']" v-for="thumb in thumbs">
+                                    <div class="thumbnail">
+                                        <a href="#!" class="fa fa-play slider-video-play" v-if="thumb.isVideo"></a>
+                                        <img onerror="this.onerror=null;this.src='../images/errorImage.png';"
+                                             width="100%" v-bind:src="thumb.thumbUrl">
+                                    </div>
+                                </div>
                             </div>
 
+                            <div class="thumbs-container">
+                                <a href="#!" class="thumbs-nav slide-thumbs-right js-slide-thumbs-right"><i
+                                        class="fa fa-chevron-right"></i></a>
+                                <a href="#!" class="thumbs-nav slide-thumbs-left js-slide-thumbs-left"><i
+                                        class="fa fa-chevron-left"></i></a>
+                                <div class="thumbs" style="width: 2824px; left: -0px;">
+                                    <div :class="['thumb', thumb.isShowing?'active':'']" v-for="(thumb,index) in thumbs"
+                                         @click="chooseThumb(index)">
+                                        <img v-bind:src="thumb.thumbUrl"
+                                             alt="make you this stunning tv quality commercial using 10 live actors"
+                                             onerror="this.onerror=null;this.src='../images/errorImage.png';">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="gig-page-section-dummy" id="packages"></div>
+                <div class="gig-page-section gig-page-section-packages">
+
+                    <form accept-charset="UTF-8" id="packages_form" method="post" name="packages" v-if="isMultiPackages">
+                        <header>
+                            <h4 class="gig-fancy-header">价格梯度</h4>
                         </header>
 
+                        <table class="packages-wrapper">
+                            <tr class="price">
+                                <td class="no-border">&nbsp;</td>
+                                <td class="left-aligned">
+                                    $5
+                                </td>
+                                <td class="left-aligned">
+                                    $30
+                                </td>
+                                <td class="left-aligned">
+                                    $40
+                                </td>
+                            </tr>
 
-                        <div class="js-slider-component">
-                            <section class="slider-container js-slider-container">
-                                <div class="slider js-slider " data-is-mobile="">
-                                    <a href="#!" class="slide-nav slide-right js-slide-right js-gtm-event-auto"
-                                       data-tolerated="" data-gtm-category="gig-page-single" data-gtm-action="click"
-                                       data-gtm-label="gallery-images-navigation" rel="noindex, nofollow"><i
-                                            class="fa fa-chevron-right"></i></a>
-                                    <a href="#!" class="slide-nav slide-left js-slide-left js-gtm-event-auto"
-                                       data-tolerated="" data-gtm-category="gig-page-single" data-gtm-action="click"
-                                       data-gtm-label="gallery-images-navigation" rel="noindex, nofollow"><i
-                                            class="fa fa-chevron-left"></i></a>
+                            <tr class="title">
+                                <td>&nbsp;</td>
+                                <td class="p-t-0"><h2 class="alt">基础</h2></td>
+                                <td class="p-t-0"><h2 class="alt">标准</h2></td>
+                                <td class="p-t-0"><h2 class="alt">高级</h2></td>
+                            </tr>
 
+                            <tr class="title js-auto-translate-package">
+                                <td>标题</td>
+                                <td v-for="package in gradient_packages" v-text="package.title">Basic News</td>
+                            </tr>
 
-                                    <div class="slide js-slide slide-0" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: none;">
-                                        <div class="thumbnail">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/3309200/player?autoplay=true"
-                                               data-url="//view.vzaar.com/3309200/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="" class="js-lazyload-img"
-                                                 alt="make you this stunning tv quality commercial using 10 live actors"
-                                                 itemprop="thumbnail" width="100%" data-reload="inprogress"
-                                                 src="https://cldn0.fiverrcdn.com/fiverr/t_main2_video/v1482203333/vzrthumb/3309200/image">
-                                        </div>
-                                    </div>
-                                    <div class="slide js-slide slide-1" itemscope=""
-                                         itemtype="http://schema.org/ImageObject" style="display: none;">
-                                        <div class="thumbnail ">
-                                            <img alt="make you this stunning tv quality commercial using 10 live actors"
-                                                 data-src="" class="js-lazyload-img" itemprop="thumbnail"
-                                                 data-reload="inprogress"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-680x459-8c99ee76adacfe43145ffd23ebe61b6f.png';"
-                                                 src="https://cldn0.fiverrcdn.com/fiverr/t_main1/gigs/2977007/original/Fiverr_gig_pic.jpg">
-                                        </div>
+                            <tr class="description">
+                                <td>描述</td>
+                                <td v-for="package in gradient_packages" v-text="package.description">Basic News</td>
+                            </tr>
 
-                                    </div>
-                                    <div class="slide js-slide slide-2" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: none;">
-                                        <div class="thumbnail ">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/8839508/player?autoplay=true"
-                                               data-url="//view.vzaar.com/8839508/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="" class="js-lazyload-img"
-                                                 alt="Technology Enterprises Australia" itemprop="thumbnail"
-                                                 width="100%" data-reload="inprogress"
-                                                 src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8839508/image">
-                                        </div>
+                            <tr v-for="relate in relateFilter">
+                                <td>
+                                    <span class="fake-hint-wrap">{{relate[0].relate_name}}
+                                        <div class="fake-hint fade-from-right right">Seller will insert your logo (or another graphic you provide) into the animation</div>
+                                    </span>
+                                </td>
+                                <td class="capitalized booleans" v-for="relateMsg in relate">
+                                    <span><i class="fa fa-check"></i>{{relateMsg.relate_value}}</span>
+                                    <div class="js-extra-values"></div>
+                                </td>
+                                <!--<td class="capitalized booleans">-->
+                                <!--<span><i class="fa fa-check"></i></span>-->
+                                <!--<div class="js-extra-values"></div>-->
+                                <!--</td>-->
+                                <!--<td class="capitalized booleans">-->
+                                <!--<span><i class="fa fa-check"></i></span>-->
+                                <!--<div class="js-extra-values"></div>-->
+                                <!--</td>-->
 
-                                        <footer class="work-review js-work-review">
-                                            <blockquote>great work</blockquote>
-                                            <small>Reviewed by techentaus 1 day ago</small>
-                                        </footer>
-                                    </div>
-                                    <div class="slide js-slide slide-3" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: none;">
-                                        <div class="thumbnail ">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/8801882/player?autoplay=true"
-                                               data-url="//view.vzaar.com/8801882/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="" class="js-lazyload-img" alt="Sell4lessbrokers 2 HD"
-                                                 itemprop="thumbnail" width="100%" data-reload="inprogress"
-                                                 src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8801882/image">
-                                        </div>
-
-                                        <footer class="work-review js-work-review">
-                                            <blockquote>Great communication, did exactly we he said he would do in half
-                                                the time. Definitely will use again and again.
-                                            </blockquote>
-                                            <small>Reviewed by sell4lessbroker 7 days ago</small>
-                                        </footer>
-                                    </div>
-                                    <div class="slide js-slide slide-4" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: none;">
-                                        <div class="thumbnail ">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/8799645/player?autoplay=true"
-                                               data-url="//view.vzaar.com/8799645/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="" class="js-lazyload-img" alt="Go Garage Door Repair Perth"
-                                                 itemprop="thumbnail" width="100%" data-reload="inprogress"
-                                                 src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8799645/image">
-                                        </div>
-
-                                        <footer class="work-review js-work-review">
-                                            <blockquote>great service :)</blockquote>
-                                            <small>Reviewed by creativeswan 7 days ago</small>
-                                        </footer>
-                                    </div>
-                                    <div class="slide js-slide slide-5" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: none;">
-                                        <div class="thumbnail ">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/8791042/player?autoplay=true"
-                                               data-url="//view.vzaar.com/8791042/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="" class="js-lazyload-img" alt="Orient Beach Boracay"
-                                                 itemprop="thumbnail" width="100%" data-reload="inprogress"
-                                                 src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8791042/image">
-                                        </div>
-
-                                        <footer class="work-review js-work-review">
-                                            <blockquote>Very good seller. Very accommodating. Very very good to work
-                                                with. I love this seller. I will transact again now. I recommend
-                                                everyone. 7 Star service.
-                                            </blockquote>
-                                            <small>Reviewed by trustedsign 9 days ago</small>
-                                        </footer>
-                                    </div>
-                                    <div class="slide js-slide slide-6 active" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: block;">
-                                        <div class="thumbnail ">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/8766046/player?autoplay=true"
-                                               data-url="//view.vzaar.com/8766046/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="" class="js-lazyload-img" alt="fixmycreditny HD2"
-                                                 itemprop="thumbnail" width="100%" data-reload="inprogress"
-                                                 style="width: 98%;;"
-                                                 src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8766046/image">
-                                        </div>
-
-                                        <footer class="work-review js-work-review">
-                                            <blockquote>Outstanding Experience!</blockquote>
-                                            <small>Reviewed by fixmycreditny 13 days ago</small>
-                                        </footer>
-                                    </div>
-                                    <div class="slide js-slide slide-7" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: none;">
-                                        <div class="thumbnail ">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/8705518/player?autoplay=true"
-                                               data-url="//view.vzaar.com/8705518/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="" class="js-lazyload-img" alt="Communication Square 2"
-                                                 itemprop="thumbnail" width="100%" data-reload="inprogress"
-                                                 src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8705518/image">
-                                        </div>
-
-                                        <footer class="work-review js-work-review">
-                                            <blockquote>Excellent. Exactly as explained.</blockquote>
-                                            <small>Reviewed by csquare1 13 days ago</small>
-                                        </footer>
-                                    </div>
-                                    <div class="slide js-slide slide-8" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: none;">
-                                        <div class="thumbnail ">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/8689998/player?autoplay=true"
-                                               data-url="//view.vzaar.com/8689998/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="" class="js-lazyload-img" alt="Surrey Real Estate Group F4"
-                                                 itemprop="thumbnail" width="100%" data-reload="inprogress"
-                                                 src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8689998/image">
-                                        </div>
-
-                                        <footer class="work-review js-work-review">
-                                            <blockquote>Outstanding Experience!</blockquote>
-                                            <small>Reviewed by jasoberoi 12 days ago</small>
-                                        </footer>
-                                    </div>
-                                    <div class="slide js-slide slide-9" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: none;">
-                                        <div class="thumbnail ">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/8688167/player?autoplay=true"
-                                               data-url="//view.vzaar.com/8688167/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="" class="js-lazyload-img" alt="Ungated Amazon HD"
-                                                 itemprop="thumbnail" width="100%" data-reload="inprogress"
-                                                 src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8688167/image">
-                                        </div>
-
-                                        <footer class="work-review js-work-review">
-                                            <blockquote>This seller does a fantastic job. I will defiantly use him
-                                                again. Thank you!!!
-                                            </blockquote>
-                                            <small>Reviewed by jetthunt162 25 days ago</small>
-                                        </footer>
-                                    </div>
-                                    <div class="slide js-slide slide-10" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: none;">
-                                        <div class="thumbnail ">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/8634097/player?autoplay=true"
-                                               data-url="//view.vzaar.com/8634097/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="" class="js-lazyload-img" alt="Adam Webster"
-                                                 itemprop="thumbnail" width="100%" data-reload="inprogress"
-                                                 src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8634097/image">
-                                        </div>
-
-                                        <footer class="work-review js-work-review">
-                                            <blockquote>Super Fast Delivery, thanks!</blockquote>
-                                            <small>Reviewed by clevelandsae about 1 month ago</small>
-                                        </footer>
-                                    </div>
-                                    <div class="slide js-slide slide-11" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: none;">
-                                        <div class="thumbnail ">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/8620084/player?autoplay=true"
-                                               data-url="//view.vzaar.com/8620084/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="" class="js-lazyload-img" alt="Beyond Tech Web HD"
-                                                 itemprop="thumbnail" width="100%" data-reload="inprogress"
-                                                 src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8620084/image">
-                                        </div>
-
-                                        <footer class="work-review js-work-review">
-                                            <blockquote>I just have one word for this video. Beautiful! Thank you so
-                                                much.
-                                            </blockquote>
-                                            <small>Reviewed by pctechconcierge about 1 month ago</small>
-                                        </footer>
-                                    </div>
-                                    <div class="slide js-slide slide-12" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: none;">
-                                        <div class="thumbnail ">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/8606513/player?autoplay=true"
-                                               data-url="//view.vzaar.com/8606513/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="" class="js-lazyload-img" alt="River Mist Pools HD"
-                                                 itemprop="thumbnail" width="100%" data-reload="inprogress"
-                                                 src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8606513/image">
-                                        </div>
-
-                                        <footer class="work-review js-work-review">
-                                            <blockquote>Did a nice job customizing for us.</blockquote>
-                                            <small>Reviewed by ttaborsky about 1 month ago</small>
-                                        </footer>
-                                    </div>
-                                    <div class="slide js-slide slide-13" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: none;">
-                                        <div class="thumbnail ">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/8586061/player?autoplay=true"
-                                               data-url="//view.vzaar.com/8586061/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8586061/image"
-                                                 class="js-lazyload-img" alt="I Vision Filmz" itemprop="thumbnail"
-                                                 width="100%" data-reload="inprogress">
-                                        </div>
-
-                                        <footer class="work-review js-work-review">
-                                            <blockquote>good stuff</blockquote>
-                                            <small>Reviewed by ghrttocable about 1 month ago</small>
-                                        </footer>
-                                    </div>
-                                    <div class="slide js-slide slide-14" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: none;">
-                                        <div class="thumbnail ">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/8557663/player?autoplay=true"
-                                               data-url="//view.vzaar.com/8557663/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8557663/image"
-                                                 class="js-lazyload-img" alt="LeeEnnisTax" itemprop="thumbnail"
-                                                 width="100%" data-reload="inprogress">
-                                        </div>
-
-                                        <footer class="work-review js-work-review">
-                                            <blockquote>Had a problem downloading the video, but it may be fiverr's
-                                                fault.
-                                                Great service overall. And Prompt!
-                                            </blockquote>
-                                            <small>Reviewed by leeennisea about 1 month ago</small>
-                                        </footer>
-                                    </div>
-                                    <div class="slide js-slide slide-15" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: none;">
-                                        <div class="thumbnail ">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/8519609/player?autoplay=true"
-                                               data-url="//view.vzaar.com/8519609/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8519609/image"
-                                                 class="js-lazyload-img" alt="Baby Jeudy Dorzion" itemprop="thumbnail"
-                                                 width="100%" data-reload="inprogress">
-                                        </div>
-
-                                        <footer class="work-review js-work-review">
-                                            <blockquote>Outstanding Experience!</blockquote>
-                                            <small>Reviewed by babyjeudy about 2 months ago</small>
-                                        </footer>
-                                    </div>
-                                    <div class="slide js-slide slide-16" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: none;">
-                                        <div class="thumbnail ">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/8391420/player?autoplay=true"
-                                               data-url="//view.vzaar.com/8391420/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8391420/image"
-                                                 class="js-lazyload-img" alt="Knod Designs Intro" itemprop="thumbnail"
-                                                 width="100%" data-reload="inprogress">
-                                        </div>
-
-                                        <footer class="work-review js-work-review">
-                                            <blockquote>great!!!</blockquote>
-                                            <small>Reviewed by knoddesigns 2 months ago</small>
-                                        </footer>
-                                    </div>
-                                    <div class="slide js-slide slide-17" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: none;">
-                                        <div class="thumbnail ">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/8323375/player?autoplay=true"
-                                               data-url="//view.vzaar.com/8323375/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8323375/image"
-                                                 class="js-lazyload-img" alt="City Pocket 3" itemprop="thumbnail"
-                                                 width="100%" data-reload="inprogress">
-                                        </div>
-
-                                        <footer class="work-review js-work-review">
-                                            <blockquote>its being really great, good quality and responsiveness is too
-                                                good. thanks
-                                            </blockquote>
-                                            <small>Reviewed by citypocket 3 months ago</small>
-                                        </footer>
-                                    </div>
-                                    <div class="slide js-slide slide-18" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: none;">
-                                        <div class="thumbnail ">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/8312414/player?autoplay=true"
-                                               data-url="//view.vzaar.com/8312414/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8312414/image"
-                                                 class="js-lazyload-img" alt="Tank Design Studio" itemprop="thumbnail"
-                                                 width="100%" data-reload="inprogress">
-                                        </div>
-
-                                        <footer class="work-review js-work-review">
-                                            <blockquote>Great and fast work. . . will take services again.</blockquote>
-                                            <small>Reviewed by justvimal 3 months ago</small>
-                                        </footer>
-                                    </div>
-                                    <div class="slide js-slide slide-19" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: none;">
-                                        <div class="thumbnail ">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/8304681/player?autoplay=true"
-                                               data-url="//view.vzaar.com/8304681/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8304681/image"
-                                                 class="js-lazyload-img" alt="Alexanderhi HD" itemprop="thumbnail"
-                                                 width="100%" data-reload="inprogress">
-                                        </div>
-
-                                        <footer class="work-review js-work-review">
-                                            <blockquote>AWESOME!! Great work, fast response &amp; did an incredible job!
-                                                Thanks Doug!
-                                                Keith
-                                            </blockquote>
-                                            <small>Reviewed by kds2763 2 months ago</small>
-                                        </footer>
-                                    </div>
-                                    <div class="slide js-slide slide-20" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: none;">
-                                        <div class="thumbnail ">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/8220903/player?autoplay=true"
-                                               data-url="//view.vzaar.com/8220903/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8220903/image"
-                                                 class="js-lazyload-img" alt="Midwest Motors 2" itemprop="thumbnail"
-                                                 width="100%" data-reload="inprogress">
-                                        </div>
-
-                                        <footer class="work-review js-work-review">
-                                            <blockquote>Outstanding Experience!</blockquote>
-                                            <small>Reviewed by midwest2016 3 months ago</small>
-                                        </footer>
-                                    </div>
-                                    <div class="slide js-slide slide-21" itemscope=""
-                                         itemtype="http://schema.org/VideoObject" style="display: none;">
-                                        <div class="thumbnail ">
-                                            <a href="#!"
-                                               class="fa fa-play slider-video-play js-slider-video-play js-gtm-event-auto"
-                                               data-gtm-category="gig-page-" data-gtm-action="click"
-                                               data-gtm-label="gallery-video-play"
-                                               data-src="//view.vzaar.com/8138236/player?autoplay=true"
-                                               data-url="//view.vzaar.com/8138236/player?autoplay=true" rel="nofollow"
-                                               itemprop="url"></a>
-                                            <img data-src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8138236/image"
-                                                 class="js-lazyload-img" alt="Dental Connection Chico 2"
-                                                 itemprop="thumbnail" width="100%" data-reload="inprogress">
-                                        </div>
-
-                                        <footer class="work-review js-work-review">
-                                            <blockquote>Outstanding Experience!</blockquote>
-                                            <small>Reviewed by skymaker 3 months ago</small>
-                                        </footer>
-                                    </div>
-                                </div>
-
-                                <div class="thumbs-container">
-                                    <a href="#!" class="thumbs-nav slide-thumbs-right js-slide-thumbs-right"><i
-                                            class="fa fa-chevron-right"></i></a>
-                                    <a href="#!" class="thumbs-nav slide-thumbs-left js-slide-thumbs-left"><i
-                                            class="fa fa-chevron-left"></i></a>
-                                    <div class="thumbs js-thumbs" style="width: 2824px; left: -537px;">
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="0"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main2_video/v1482203333/vzrthumb/3309200/image"
-                                                 alt="make you this stunning tv quality commercial using 10 live actors"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="1"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_thumbnail3_3/gigs/2977007/original/Fiverr_gig_pic.jpg"
-                                                 alt="make you this stunning tv quality commercial using 10 live actors"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="2"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8839508/image"
-                                                 alt="Technology Enterprises Australia"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="3"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8801882/image"
-                                                 alt="Sell4lessbrokers 2 HD"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="4"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8799645/image"
-                                                 alt="Go Garage Door Repair Perth"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="5"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8791042/image"
-                                                 alt="Orient Beach Boracay"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto active" data-index="6"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8766046/image"
-                                                 alt="fixmycreditny HD2"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="7"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8705518/image"
-                                                 alt="Communication Square 2"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="8"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8689998/image"
-                                                 alt="Surrey Real Estate Group F4"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="9"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8688167/image"
-                                                 alt="Ungated Amazon HD"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="10"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8634097/image"
-                                                 alt="Adam Webster"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="11"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8620084/image"
-                                                 alt="Beyond Tech Web HD"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="12"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8606513/image"
-                                                 alt="River Mist Pools HD"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="13"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8586061/image"
-                                                 alt="I Vision Filmz"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="14"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8557663/image"
-                                                 alt="LeeEnnisTax"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="15"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8519609/image"
-                                                 alt="Baby Jeudy Dorzion"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="16"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8391420/image"
-                                                 alt="Knod Designs Intro"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="17"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8323375/image"
-                                                 alt="City Pocket 3"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="18"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8312414/image"
-                                                 alt="Tank Design Studio"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="19"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8304681/image"
-                                                 alt="Alexanderhi HD"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="20"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8220903/image"
-                                                 alt="Midwest Motors 2"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                        <div class="thumb js-thumb js-gtm-event-auto" data-index="21"
-                                             data-gtm-category="gig-page-single" data-gtm-action="click"
-                                             data-gtm-label="gallery-thumbnail-video-play">
-                                            <img src="https://cldn0.fiverrcdn.com/fiverr/t_main1/v1482203333/vzrthumb/8138236/image"
-                                                 alt="Dental Connection Chico 2"
-                                                 onerror="this.onerror=null;this.src='//assetsv2.fiverrcdn.com/assets/v2_globals/missing-image-90x65-1cf3c27a4bbfd742cc44fd23031992cd.png';">
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-
-                        </div>
-
-
-                    </div>
-                    <div class="gig-page-section-dummy" id="packages"></div>
-                    <div class="gig-page-section gig-page-section-packages  ">
-
-                        <form accept-charset="UTF-8" action="/checkout/package/2819857" class="js-packages-form"
-                              id="packages_form" method="post" name="packages">
-                            <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;"/><input
-                                    name="authenticity_token" type="hidden"
-                                    value="LtXj+hhTC/6o9eNt6z4t9qswK0GxcFxk//A9443IdQE="/></div>
-
-                            <header>
-
-                                <h4 class="gig-fancy-header">价格梯度</h4>
-                                <span class="customized-header hint--top js-customized-header hidden"></span>
-
-                            </header>
-
-                            <input type="hidden" name="packages[gig_id]" value="2819857">
-                            <input type="hidden" name="packages[package_id]" class="js-package-id" value="">
-                            <input type="hidden" name="packages[col_id]" class="js-col-id" value="">
-
-
-                            <table class="packages-wrapper js-gig-packages">
-
-
-                                <tr class="price">
-                                    <td class="no-border">&nbsp;</td>
-                                    <td class="left-aligned js-str-currency js-price js-package-number-1"
-                                        data-package-price="5.0">
-                                        $5
-                                    </td>
-                                    <td class="left-aligned js-str-currency js-price js-package-number-2"
-                                        data-package-price="30.0">
-                                        $30
-                                    </td>
-                                    <td class="left-aligned js-str-currency js-price js-package-number-3"
-                                        data-package-price="40.0">
-                                        $40
-                                    </td>
-                                </tr>
-
-                                <tr class="title">
-                                    <td>&nbsp;</td>
-                                    <td class="p-t-0"><h2 class="alt">Basic</h2></td>
-                                    <td class="p-t-0"><h2 class="alt">Standard</h2></td>
-                                    <td class="p-t-0"><h2 class="alt">Premium</h2></td>
-                                </tr>
-
-                                <tr class="title js-auto-translate-package">
-                                    <td class="no-border">描述</td>
-                                    <td class="b-b-0">Basic News</td>
-                                    <td class="b-b-0">Up to 2 Presenters COMPLETE Package</td>
-                                    <td class="b-b-0">Up to 3 Presenters COMPLETE Package</td>
-                                </tr>
-
-                                <tr class="description">
-                                    <td>&nbsp;</td>
-                                    <td class="js-auto-translate-package">FREE INTRO | $5 per 40 words</td>
-                                    <td class="js-auto-translate-package">Inc. ALL Graphic Elements &amp; 2 presenters.
-                                        Scripts up to 100 words. Increase QTY as Needed.
-                                    </td>
-                                    <td class="js-auto-translate-package">Inc. All Graphics &amp; up to 3 presenters.
-                                        Scripts up to 100 words. Increase QTY as needed.
-                                    </td>
-                                </tr>
-
-                                <tr data-gig-item-id="32218850" class="">
-                                    <td>
-                    <span class="fake-hint-wrap">
-                        Add Logo
-                        <div class="fake-hint fade-from-right right">
-                            Seller will insert your logo (or another graphic you provide) into the animation
-                        </div>
-                    </span>
-                                    </td>
-
-                                    <td class="capitalized booleans" data-price="0" data-duration="0"
-                                        data-package-id="1">
-                                        <span><i class="fa fa-check"></i></span>
-                                        <div class="js-extra-values"></div>
-                                    </td>
-                                    <td class="capitalized booleans" data-price="0" data-duration="0"
-                                        data-package-id="2">
-                                        <span><i class="fa fa-check"></i></span>
-                                        <div class="js-extra-values"></div>
-                                    </td>
-                                    <td class="capitalized booleans" data-price="0" data-duration="0"
-                                        data-package-id="3">
-                                        <span><i class="fa fa-check"></i></span>
-                                        <div class="js-extra-values"></div>
-                                    </td>
-
-                                </tr>
-                                <tr data-gig-item-id="32218845" class="">
-                                    <td>
+                            </tr>
+                            <tr>
+                                <td>
                     <span class="fake-hint-wrap">
                         Background Music
                         <div class="fake-hint fade-from-right right">
                             Seller will include royalty-free background music and/or sound effects
                         </div>
                     </span>
-                                    </td>
+                                </td>
 
-                                    <td class="capitalized booleans" data-price="0" data-duration="0"
-                                        data-package-id="1">
-                                        <span><i class="fa fa-check"></i></span>
-                                        <div class="js-extra-values"></div>
-                                    </td>
-                                    <td class="capitalized booleans" data-price="0" data-duration="0"
-                                        data-package-id="2">
-                                        <span><i class="fa fa-check"></i></span>
-                                        <div class="js-extra-values"></div>
-                                    </td>
-                                    <td class="capitalized booleans" data-price="0" data-duration="0"
-                                        data-package-id="3">
-                                        <span><i class="fa fa-check"></i></span>
-                                        <div class="js-extra-values"></div>
-                                    </td>
+                                <td class="capitalized booleans" data-price="0" data-duration="0"
+                                    data-package-id="1">
+                                    <span><i class="fa fa-check"></i></span>
+                                    <div class="js-extra-values"></div>
+                                </td>
+                                <td class="capitalized booleans" data-price="0" data-duration="0"
+                                    data-package-id="2">
+                                    <span><i class="fa fa-check"></i></span>
+                                    <div class="js-extra-values"></div>
+                                </td>
+                                <td class="capitalized booleans" data-price="0" data-duration="0"
+                                    data-package-id="3">
+                                    <span><i class="fa fa-check"></i></span>
+                                    <div class="js-extra-values"></div>
+                                </td>
 
-                                </tr>
-                                <tr data-gig-item-id="34121815" class="">
-                                    <td>
+                            </tr>
+                            <tr data-gig-item-id="34121815" class="">
+                                <td>
                     <span class="fake-hint-wrap">
                         Overlay Text
                         <div class="fake-hint fade-from-right right">
                             Seller will add additional text to the intro (e.g., a short tagline, your website URL, social media links etc.)
                         </div>
                     </span>
-                                    </td>
+                                </td>
 
-                                    <td class="capitalized booleans" data-price="" data-duration="0"
-                                        data-package-id="1">
-                                        <span>&ndash;</span>
-                                        <div class="js-extra-values"></div>
-                                    </td>
-                                    <td class="capitalized booleans" data-price="0" data-duration="0"
-                                        data-package-id="2">
-                                        <span><i class="fa fa-check"></i></span>
-                                        <div class="js-extra-values"></div>
-                                    </td>
-                                    <td class="capitalized booleans" data-price="0" data-duration="0"
-                                        data-package-id="3">
-                                        <span><i class="fa fa-check"></i></span>
-                                        <div class="js-extra-values"></div>
-                                    </td>
+                                <td class="capitalized booleans" data-price="" data-duration="0"
+                                    data-package-id="1">
+                                    <span>&ndash;</span>
+                                    <div class="js-extra-values"></div>
+                                </td>
+                                <td class="capitalized booleans" data-price="0" data-duration="0"
+                                    data-package-id="2">
+                                    <span><i class="fa fa-check"></i></span>
+                                    <div class="js-extra-values"></div>
+                                </td>
+                                <td class="capitalized booleans" data-price="0" data-duration="0"
+                                    data-package-id="3">
+                                    <span><i class="fa fa-check"></i></span>
+                                    <div class="js-extra-values"></div>
+                                </td>
 
-                                </tr>
-                                <tr data-gig-item-id="16581384" class="">
-                                    <td>
+                            </tr>
+                            <tr data-gig-item-id="16581384" class="">
+                                <td>
                     <span class="fake-hint-wrap">
                         Full HD (1080p)
                         <div class="fake-hint fade-from-right right">
                             File will be delivered in full 1080p HD resolution
                         </div>
                     </span>
-                                    </td>
+                                </td>
 
-                                    <td class="capitalized booleans" data-price="10" data-duration="0"
-                                        data-package-id="1">
-                                        <span>&ndash;</span>
-                                        <div class="js-extra-values"></div>
-                                    </td>
-                                    <td class="capitalized booleans" data-price="10" data-duration="0"
-                                        data-package-id="2">
-                                        <span>&ndash;</span>
-                                        <div class="js-extra-values"></div>
-                                    </td>
-                                    <td class="capitalized booleans" data-price="0" data-duration="0"
-                                        data-package-id="3">
-                                        <span><i class="fa fa-check"></i></span>
-                                        <div class="js-extra-values"></div>
-                                    </td>
+                                <td class="capitalized booleans" data-price="10" data-duration="0"
+                                    data-package-id="1">
+                                    <span>&ndash;</span>
+                                    <div class="js-extra-values"></div>
+                                </td>
+                                <td class="capitalized booleans" data-price="10" data-duration="0"
+                                    data-package-id="2">
+                                    <span>&ndash;</span>
+                                    <div class="js-extra-values"></div>
+                                </td>
+                                <td class="capitalized booleans" data-price="0" data-duration="0"
+                                    data-package-id="3">
+                                    <span><i class="fa fa-check"></i></span>
+                                    <div class="js-extra-values"></div>
+                                </td>
 
-                                </tr>
+                            </tr>
 
-                                <tr class="js-delivery-time">
-                                    <td><span class="fake-hint-wrap"><span class="translation_missing"
-                                                                           title="translation missing: en.general.delivery_time">完成时间</span></span>
-                                    </td>
+                            <tr class="js-delivery-time">
+                                <td><span class="fake-hint-wrap">
+                                    <span class="translation_missing">完成时间</span></span>
+                                </td>
 
-                                    <td class="left-aligned js-fast-delivery" data-package-id="1" data-price="50.0">
-                                        <input type='hidden' name="gig_items[1][1][gig_item_id]" value="2819892">
-                                        <label class="fake-radio-green radio-text m-b-10">
-                                            <input type="radio" class="js-delivery-radio"
-                                                   name="gig_items[1][1][quantity]" value="0" checked>
-                                            <span class="radio-img"></span>
-                                            <span class="delivery-time js-duration-time-1">10 days</span>
-                                        </label>
-                                        <label class="fake-radio-green radio-text">
-                                            <input type="radio" class="js-delivery-radio"
-                                                   name="gig_items[1][1][quantity]" value="1" data-label="Extra fast">
-                                            <span class="radio-img"></span>
-                                            <span class="delivery-time">3 days</span>
-                                            <span class="grey-light">(+<span class="js-str-currency"
-                                                                             data-with-curr-exception>$50</span>)</span>
-                                        </label>
-                                    </td>
-                                    <td class="left-aligned js-fast-delivery" data-package-id="2" data-price="100.0">
-                                        <input type='hidden' name="gig_items[2][1][gig_item_id]" value="2819892">
-                                        <label class="fake-radio-green radio-text m-b-10">
-                                            <input type="radio" class="js-delivery-radio"
-                                                   name="gig_items[2][1][quantity]" value="0" checked>
-                                            <span class="radio-img"></span>
-                                            <span class="delivery-time js-duration-time-2">12 days</span>
-                                        </label>
-                                        <label class="fake-radio-green radio-text">
-                                            <input type="radio" class="js-delivery-radio"
-                                                   name="gig_items[2][1][quantity]" value="1" data-label="Extra fast">
-                                            <span class="radio-img"></span>
-                                            <span class="delivery-time">4 days</span>
-                                            <span class="grey-light">(+<span class="js-str-currency"
-                                                                             data-with-curr-exception>$100</span>)</span>
-                                        </label>
-                                    </td>
-                                    <td class="left-aligned js-fast-delivery" data-package-id="3" data-price="100.0">
-                                        <input type='hidden' name="gig_items[3][1][gig_item_id]" value="2819892">
-                                        <label class="fake-radio-green radio-text m-b-10">
-                                            <input type="radio" class="js-delivery-radio"
-                                                   name="gig_items[3][1][quantity]" value="0" checked>
-                                            <span class="radio-img"></span>
-                                            <span class="delivery-time js-duration-time-3">14 days</span>
-                                        </label>
-                                        <label class="fake-radio-green radio-text">
-                                            <input type="radio" class="js-delivery-radio"
-                                                   name="gig_items[3][1][quantity]" value="1" data-label="Extra fast">
-                                            <span class="radio-img"></span>
-                                            <span class="delivery-time">4 days</span>
-                                            <span class="grey-light">(+<span class="js-str-currency"
-                                                                             data-with-curr-exception>$100</span>)</span>
-                                        </label>
-                                    </td>
+                                <td class="left-aligned">
+                                    <label class="fake-radio-green radio-text m-b-10">
+                                        <input type="radio" value="0" checked>
+                                        <span class="radio-img"></span>
+                                        <span class="delivery-time">10 days</span>
+                                    </label>
+                                    <label class="fake-radio-green radio-text">
+                                        <input type="radio" value="1">
+                                        <span class="radio-img"></span>
+                                        <span class="delivery-time">3 days</span>
+                                        <span class="grey-light">(+<span>$50</span>)</span>
+                                    </label>
+                                </td>
+                                <td class="left-aligned">
+                                    <label class="fake-radio-green radio-text m-b-10">
+                                        <input type="radio" value="0" checked>
+                                        <span class="radio-img"></span>
+                                        <span class="delivery-time">12 days</span>
+                                    </label>
+                                    <label class="fake-radio-green radio-text">
+                                        <input type="radio" value="1">
+                                        <span class="radio-img"></span>
+                                        <span class="delivery-time">4 days</span>
+                                        <span class="grey-light">(+<span>$100</span>)</span>
+                                    </label>
+                                </td>
+                                <td class="left-aligned">
+                                    <label class="fake-radio-green radio-text m-b-10">
+                                        <input type="radio" value="0" checked>
+                                        <span class="radio-img"></span>
+                                        <span class="delivery-time">14 days</span>
+                                    </label>
+                                    <label class="fake-radio-green radio-text">
+                                        <input type="radio" value="1">
+                                        <span class="radio-img"></span>
+                                        <span class="delivery-time">4 days</span>
+                                        <span class="grey-light">(+<span>$100</span>)</span>
+                                    </label>
+                                </td>
+                            </tr>
 
-                                </tr>
+                            <tr class="last-row">
+                                <td>&nbsp;</td>
+                                <td>
+                                    <a href="#" class="btn-standard btn-green-grad">Select <span>$5</span></a>
+                                </td>
+                                <td>
+                                    <a href="#" class="btn-standard btn-green-grad ">Select<span>$30</span></a>
+                                </td>
+                                <td>
+                                    <a href="#" class="btn-standard btn-green-grad">Select <span>$40</span></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
 
-                                <tr class="last-row">
-                                    <td>&nbsp;</td>
-                                    <td>
-                                        <a href="#" class="btn-standard btn-green-grad js-package-select" data-popup=""
-                                           data-col="1" data-package-id="1">Select <span
-                                                class="js-str-currency js-price js-package-number-1">$5</span></a>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn-standard btn-green-grad js-package-select" data-popup=""
-                                           data-col="2" data-package-id="2">Select <span
-                                                class="js-str-currency js-price js-package-number-2">$30</span></a>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn-standard btn-green-grad js-package-select" data-popup=""
-                                           data-col="3" data-package-id="3">Select <span
-                                                class="js-str-currency js-price js-package-number-3">$40</span></a>
-                                    </td>
-                                </tr>
+                <div class="gig-page-section gig-page-section-basic-package" v-if="!isMultiPackages">
+                    <header>
+                        <h4 class="gig-fancy-header js-auto-translate-package">Order Details</h4>
+                    </header>
+
+                    <div class="inner cf">
 
 
-                            </table>
+                        <aside class="basic-quantity">
 
+                            <b>Quantity</b>
 
-                        </form>
-                    </div>
-
-                    <div class="preview-tabs">
-                        <ul class="nav nav-tabs tab-nav" id="previewTab"
-                            style="height: 45px;padding-bottom:2px;border-bottom: none">
-                            <li class="active">
-                                <span data-href="#tab-overview" id="link-tab-details" data-toggle="tab">详情</span>
-                            </li>
-                            <li class="">
-                                <span data-href="#tab-reviews" id="link-tab-reviews" data-toggle="tab">评论(15)</span>
-                            </li>
-                            <li class=""><span data-href="#tab-details" id="link-tab-questions" data-toggle="tab"
-                                               data-template-id="52188">常见问题解答</span></li>
-                            </li>
-                        </ul>
-                        <div class="tab-content" style="display: block;">
-
-                            <div class="tab-pane js-tab-reviews" id="tab-overview">
-                                <div class="gig-main-desc js-gig-main-desc  " itemprop="description">
-                                    <p><b><u>Visit YOUTUBE for more samples:</u></b></p>
-                                    <b>www.youtube.com/AlphaPublishingHouse<br><br></b><b></b><br><b>SPECIAL OFFER
-                                    - </b><br>FREE
-                                    Breaking News Intro worth $20!<br>Include up to <b><u>3 TOP RATED</u></b> Presenters
-                                    in your
-                                    video. Seb UK, Pete USA &amp; Allie USA. <br><br><b>PACKAGES:<br><br>Basic - </b>1
-                                    UK
-                                    Presenter. 1 image on screen. $5 per 40 words. Increase QTY as needed. <u><b>USA
-                                    PRESENTER
-                                    AVAILABLE</b><u><b> </b></u><b>from $20.00 extra per 1<u>0</u>0 words
-                                </b></u><br><b><br></b><br><b>Standard -</b> Up to 2 Presenters including ALL Onscreen
-                                    Graphics.
-                                    $30 per 100 words. Increase QTY as needed<br><br><br><b>Premium -</b> Up to 3
-                                    Presenters
-                                    including ALL Onscreen Graphics. $40.00 per 100 words. Increase QTY as needed
-                                    <br><br><br><br><b><u>IMPORTANT: </u></b><br><br>1.You <b>MUST</b> provide an <b>EXACT</b>
-                                    script. Script is recorded "As Is" including any errors written <br><br>2. Provide
-                                    clear
-                                    "Audio" pronunciation via mp3 for <b>ALL </b>Acronyms &amp; Names <br><br>3. Clearly
-                                    indicate which presenter is speaking which part in your script.
-                                    <b><u>WARNING:</u></b>
-                                    Failure to show presenters parts will mean you will get 1 presenter only. <u>Contact
-                                    us via
-                                    inbox if you need help. </u><br><br>4. Revisions are charged unless we make a
-                                    mistake
-                                    <br><br><br><u><b>NOTE:</b> A production fee of $20 will apply every 200
-                                    words<u>. </u></u><u>Contact us via inbox if you need
-                                    help.</u><br><br><br><br><b><u>&nbsp;You
-                                    MUST provide<u>: </u>Script, Images in landscape, Clips &amp; Text to be shown in
-                                    video.</u></b><br><br>Need
-                                    a quote?...message me <br>
-                                </div>
+                            <div class="fake-dropdown fake-dropdown-real" style="visibility: visible;">
+                                <a class="dropdown-toggle" data-toggle="dropdown" style="width: 85px;">1 (<span>$5</span>)</a>
+                                <ul class="dropdown-menu" role="menu" style="top: -2px; width: 125px;">
+                                    <li v-for="n in 15">
+                                        <a>{{n}} (<span>${{5*n}}</span>)</a>
+                                    </li>
+                                    <li><a>2 (<span>$10</span>)</a></li>
+                                    <li><a>3 (<span>$15</span>)</a></li>
+                                    <li><a>4 (<span>$20</span>)</a></li>
+                                    <li><a >5 (<span>$25</span>)</a></li>
+                                    <li><a>6 (<span>$30</span>)</a></li>
+                                    <li><a>7 (<span>$35</span>)</a></li>
+                                    <li><a>8 (<span>$40</span>)</a></li>
+                                    <li><a>9 (<span>$45</span>)</a></li>
+                                    <li><a>10 (<span>$50</span>)</a></li>
+                                    <li><a>11 (<span>$55</span>)</a></li>
+                                    <li><a>12 (<span>$60</span>)</a></li>
+                                    <li><a>13 (<span>$65</span>)</a></li>
+                                    <li><a>14 (<span>$70</span>)</a></li>
+                                    <li><a>15 (<span>$75</span>)</a></li>
+                                </ul>
                             </div>
+                            <input type="hidden" name="quantity" value="1">
 
-                            <div class="tab-pane js-tab-reviews hidden" id="tab-reviews" style="display: block;">
-                                <div class="yotpo yotpo-main-widget yotpo-medium" data-product-id="52188"
-                                     data-name="Consulting Responsive Drupal Template #52188"
-                                     data-url="https://www.templatemonster.com/drupal-themes/52188.html"
-                                     data-image-url="https://s.tmimgcdn.com/scr/400x400/52100/business-drupal-template_52188-original.jpg"
-                                     data-description="Thinking to launch your business project online? Quite timely. It doesn't matter how large your business is, it should be present on the internet, otherwise you'll miss lots of clients. We offer you a simple solution able to free you from all the troubles connected with website design. Two sliders will showcase all essential information about your company in the most appealing manner. All content is perfectly styled and clarified by photos and illustrations. This is a good chance to convey your company ideas to the targeted audience and not tire it with infinite, poorly legible texts. We are sure that this content-rich yet easy for comprehension template is exactly what you need for passing to the next business level."
-                                     data-yotpo-element-id="1">
-                                    <div class="yotpo-display-wrapper">
+                        </aside>
+                        <div class="basic-description">
+                            <h4>Basic</h4>
+
+                            <p class="js-auto-translate-package">3 Logos for selection with unlimited revisions until you fully satisfy including Transparent PNG.</p>
+
+                            <ul>
+                                <li>
+                                    <span class="hint hint--right" data-hint="Your logo will be rendered in 3D against a background or printed on an item (see Gig description for more details)"><i class="fa fa-check"></i>3D Mockup</span>
+                                </li>
+                                <li>
+                                    <span class="hint hint--right" data-hint="The logo image will have a transparent background (usually .png)"><i class="fa fa-check"></i>Logo Transparency</span>
+                                </li>
+                                <li>
+                                    <span class="hint hint--right" data-hint="Number of different logo designs included in the package"><i class="fa fa-check"></i>3 Logos Included</span>
+                                </li>
+                            </ul>
+
+                            <i class="fa fa-clock-o"></i><b class="capitalized">3 days delivery</b>
+
+                            <i class="fa fa-refresh p-l-10"></i><b class="capitalized">unlimited Revisions</b>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="gig-page-section gig-page-section-extras  basic-package" v-if="!isMultiPackages">
+                    <ul class="gig-extras-list">
+                        <li data-gig-item-id="34976380" class="">
+                            <label class="fake-check-black check-text">
+                                <div class="fake-dropdown fake-dropdown-real extra-fast" style="visibility: visible;">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" style="width: 85px;">1 ($15)</a>
+                                    <ul class="dropdown-menu" role="menu" style="top: -2px; width: 125px;">
+                                        <li><a class="selected">1 (<span>$15</span>)</a></li>
+                                        <li><a>2 (<span>$30</span>)</a></li>
+                                        <li><a>3 (<span>$45</span>)</a></li>
+                                        <li><a>4 (<span>$60</span>)</a></li>
+                                        <li><a>5 (<span>$75</span>)</a></li>
+                                        <li><a>6 (<span>$90</span>)</a></li>
+                                        <li><a>7 (<span>$105</span>)</a></li>
+                                        <li><a>8 (<span>$120</span>)</a></li>
+                                        <li><a>9 (<span>$135</span>)</a></li>
+                                        <li><a>10 (<span>$150</span>)</a></li>
+                                        <li><a>11 (<span>$165</span>)</a></li>
+                                        <li><a>12 (<span>$180</span>)</a></li>
+                                        <li><a>13 (<span>$195</span>)</a></li>
+                                        <li><a>14 (<span>$210</span>)</a></li>
+                                        <li><a>15 (<span>$225</span>)</a></li>
+                                    </ul>
+                                </div>
+                                <input class="gig_item-34976380" type="checkbox">
+                                <span class="chk-img"></span>
+                                <span class="extra-text capitalize">
+                                    <em>Extra Fast:1 day Delivery</em>
+                                </span>
+                            </label>
+                        </li>
+
+                        <li class="pricing-factor additional-versions">
+                            <label class="fake-check-black check-text">
+                                <div class="fake-dropdown fake-dropdown-real" style="visibility: visible;">
+                                    <a class="dropdown-toggle"  data-toggle="dropdown" rel="noindex, nofollow" style="width: 85px;">1 ($10)</a>
+                                    <ul class="dropdown-menu" role="menu" style="top: -2px; width: 125px;">
+                                        <li><a class="selected">1 (<span>$15</span>)</a></li>
+                                        <li><a>2 (<span>$30</span>)</a></li>
+                                        <li><a>3 (<span>$45</span>)</a></li>
+                                        <li><a>4 (<span>$60</span>)</a></li>
+                                        <li><a>5 (<span>$75</span>)</a></li>
+                                        <li><a>6 (<span>$90</span>)</a></li>
+                                        <li><a>7 (<span>$105</span>)</a></li>
+                                        <li><a>8 (<span>$120</span>)</a></li>
+                                        <li><a>9 (<span>$135</span>)</a></li>
+                                        <li><a>10 (<span>$150</span>)</a></li>
+                                        <li><a>11 (<span>$165</span>)</a></li>
+                                        <li><a>12 (<span>$180</span>)</a></li>
+                                        <li><a>13 (<span>$195</span>)</a></li>
+                                        <li><a>14 (<span>$210</span>)</a></li>
+                                        <li><a>15 (<span>$225</span>)</a></li>
+                                    </ul>
+                                </div>
+                                <input class="gig_item-51272994" type="checkbox">
+                                <span class="chk-img"></span>
+                                <span class="extra-text">
+                                    <em>
+                    Additional Logo
+                        <span class="fake-hint-wrap">
+                            <i class="fa fa-question-circle"></i>
+                            <div class="fake-hint fake-hint-top-left bottom">
+                                Add an additional logo design
+                            </div>
+                        </span>
+                        <span class="duration">
+                            (+2 days)
+                        </span>
+                                    </em>
+                                </span>
+                            </label>
+                        </li>
+                    </ul>
+                    <div class="gig-order-button">
+                        <div class="shopping-cart cf">
+                            <a href="#" class="btn-standard-lrg btn-green-grad order-now" rel="noindex, nofollow">Order Now (<span class="">$5</span>)</a>
+                            <button class="btn-standard-lrg btn-green-grad add-to-cart hint--right"><i class="icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="preview-tabs">
+                    <ul class="nav nav-tabs tab-nav" id="previewTab"
+                        style="height: 45px;padding-bottom:2px;border-bottom: none">
+                        <li @click="previewTabs('detail')" :class={'active':currentTab=='detail'}>
+                            <span id="link-tab-details">详情</span>
+                        </li>
+                        <li @click="previewTabs('review')" :class={'active':currentTab=='review'}>
+                            <span id="link-tab-reviews">评论(15)</span>
+                        </li>
+                        <li @click="previewTabs('faq')" :class={'active':currentTab=='faq'}>
+                            <span id="link-tab-questions">常见问题解答</span>
+                        </li>
+                    </ul>
+                    <div class="tab-content" style="display: block;">
+                        <div class="tab-pane" id="tab-details" v-if="currentTab=='detail'">
+                            <div class="gig-main-desc">
+                                <p><b><u>Visit YOUTUBE for more samples:</u></b></p>
+                                <b>www.youtube.com/AlphaPublishingHouse<br><br></b><b></b><br><b>SPECIAL OFFER
+                                - </b><br>FREE
+                                Breaking News Intro worth $20!<br>Include up to <b><u>3 TOP RATED</u></b> Presenters
+                                in your
+                                video. Seb UK, Pete USA &amp; Allie USA. <br><br><b>PACKAGES:<br><br>Basic - </b>1
+                                UK
+                                Presenter. 1 image on screen. $5 per 40 words. Increase QTY as needed. <u><b>USA
+                                PRESENTER
+                                AVAILABLE</b><u><b> </b></u><b>from $20.00 extra per 1<u>0</u>0 words
+                            </b></u><br><b><br></b><br><b>Standard -</b> Up to 2 Presenters including ALL Onscreen
+                                Graphics.
+                                $30 per 100 words. Increase QTY as needed<br><br><br><b>Premium -</b> Up to 3
+                                Presenters
+                                including ALL Onscreen Graphics. $40.00 per 100 words. Increase QTY as needed
+                                <br><br><br><br><b><u>IMPORTANT: </u></b><br><br>1.You <b>MUST</b> provide an
+                                <b>EXACT</b>
+                                script. Script is recorded "As Is" including any errors written <br><br>2. Provide
+                                clear
+                                "Audio" pronunciation via mp3 for <b>ALL </b>Acronyms &amp; Names <br><br>3. Clearly
+                                indicate which presenter is speaking which part in your script.
+                                <b><u>WARNING:</u></b>
+                                Failure to show presenters parts will mean you will get 1 presenter only. <u>Contact
+                                us via
+                                inbox if you need help. </u><br><br>4. Revisions are charged unless we make a
+                                mistake
+                                <br><br><br><u><b>NOTE:</b> A production fee of $20 will apply every 200
+                                words<u>. </u></u><u>Contact us via inbox if you need
+                                help.</u><br><br><br><br><b><u>&nbsp;You
+                                MUST provide<u>: </u>Script, Images in landscape, Clips &amp; Text to be shown in
+                                video.</u></b><br><br>Need
+                                a quote?...message me <br>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="tab-reviews" v-if="currentTab=='review'">
+                            <div class="yotpo yotpo-main-widget yotpo-medium"
+                                 data-name="Consulting Responsive Drupal Template #52188"
+                                 data-url="https://www.templatemonster.com/drupal-themes/52188.html"
+                                 data-image-url="https://s.tmimgcdn.com/scr/400x400/52100/business-drupal-template_52188-original.jpg"
+                                 data-description="Thinking to launch your business project online? Quite timely. It doesn't matter how large your business is, it should be present on the internet, otherwise you'll miss lots of clients. We offer you a simple solution able to free you from all the troubles connected with website design. Two sliders will showcase all essential information about your company in the most appealing manner. All content is perfectly styled and clarified by photos and illustrations. This is a good chance to convey your company ideas to the targeted audience and not tire it with infinite, poorly legible texts. We are sure that this content-rich yet easy for comprehension template is exactly what you need for passing to the next business level."
+                                 data-yotpo-element-id="1">
+                                <div class="yotpo-display-wrapper">
                                         <span class="yotpo-display-wrapper">
                                         <div class="yotpo-regular-box yotpo-bottomline yotpo-bottomline-ditribution-version">
                                             <div class="yotpo-stars-and-sum-reviews">
@@ -1398,427 +718,204 @@
 
                                         </div>
                                     </span>
-                                        <div class="yotpo-small-box yotpo-nav">
-                                            <div class="yotpo-nav yotpo-nav-primary js-reviews">
-                                                <ul>
-                                                    <li class="yotpo-nav-tab yotpo-active" data-type="reviews"
-                                                        data-content="yotpo-reviews-5a12176f-be6c-46a6-abd4-60cc381dfe5d">
-                                                        <div class="yotpo-nav-wrapper" style="border-color: #1c639f;">
-                                                            <span>全部评论</span>
-                                                            <span class="nav-tab-sum yotpo-reviews-nav-tab-sum">(15)</span>
-                                                        </div>
-                                                    </li>
-                                                    <li class="yotpo-nav-tab yotpo-active" data-type="reviews"
-                                                        data-content="yotpo-reviews-5a12176f-be6c-46a6-abd4-60cc381dfe5d">
-                                                        <div class="yotpo-nav-wrapper"><span>好评</span> <span
-                                                                class="nav-tab-sum yotpo-reviews-nav-tab-sum">(15)</span>
-                                                        </div>
-                                                    </li>
-                                                    <li class="yotpo-nav-tab yotpo-active" data-type="reviews"
-                                                        data-content="yotpo-reviews-5a12176f-be6c-46a6-abd4-60cc381dfe5d">
-                                                        <div class="yotpo-nav-wrapper"><span>差评</span> <span
-                                                                class="nav-tab-sum yotpo-reviews-nav-tab-sum">(15)</span>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                                <div class="yotpo-clr"></div>
-                                            </div>
+                                    <div class="yotpo-small-box yotpo-nav">
+                                        <div class="yotpo-nav yotpo-nav-primary">
+                                            <ul>
+                                                <li class="yotpo-nav-tab yotpo-active">
+                                                    <div class="yotpo-nav-wrapper"  @click="chooseReview('all')" v-bind:style="{borderColor:currentReview=='all'?'green':''}">
+                                                        <span>全部评论</span>
+                                                        <span class="nav-tab-sum yotpo-reviews-nav-tab-sum">(15)</span>
+                                                    </div>
+                                                </li>
+                                                <li class="yotpo-nav-tab yotpo-active">
+                                                    <div class="yotpo-nav-wrapper" @click="chooseReview('positive')" v-bind:style="{borderColor:currentReview=='positive'?'green':''}">
+                                                        <span>好评</span>
+                                                        <span class="nav-tab-sum yotpo-reviews-nav-tab-sum">(15)</span>
+                                                    </div>
+                                                </li>
+                                                <li class="yotpo-nav-tab yotpo-active">
+                                                    <div class="yotpo-nav-wrapper" @click="chooseReview('negative')" v-bind:style="{borderColor:currentReview=='negative'?'green':''}">
+                                                        <span>差评</span>
+                                                        <span class="nav-tab-sum yotpo-reviews-nav-tab-sum">(15)</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="yotpo-clr"></div>
                                         </div>
-                                        <div class="yotpo-nav-content">
-                                            <div class="yotpo-reviews yotpo-active"
-                                                 id="yotpo-reviews-5a12176f-be6c-46a6-abd4-60cc381dfe5d">
-
-
-                                                <div class="yotpo-review yotpo-regular-box " data-review-id="9586739">
-                                                    <div class="yotpo-header yotpo-verified-user "><span
-                                                            class="yotpo-icon-profile yotpo-header-element pull-left"> <label
-                                                            class="yotpo-user-letter">G</label> <span
-                                                            class="yotpo-icon yotpo-icon-circle-checkmark yotpo-action-hover"
-                                                            data-type="toggleFade" data-target="yotpo-tool-tip"></span> </span>
-                                                        <div class="yotpo-header-element"><label
-                                                                class="y-label yotpo-user-name yotpo-font-bold pull-left">Gustav</label>
-                                                            <div class="yotpo-clr"></div>
-                                                            <span class="yotpo-review-stars"> <span
-                                                                    class="yotpo-icon yotpo-icon-star pull-left"></span><span
-                                                                    class="yotpo-icon yotpo-icon-star pull-left"></span><span
-                                                                    class="yotpo-icon yotpo-icon-star pull-left"></span><span
-                                                                    class="yotpo-icon yotpo-icon-star pull-left"></span><span
-                                                                    class="yotpo-icon yotpo-icon-star pull-left"></span> </span>
-                                                            <div class="yotpo-clr"></div>
-                                                        </div>
-                                                        <div class="yotpo-header-element yotpo-header-actions"><label
-                                                                class="y-label yotpo-review-date">10/13/15</label></div>
+                                    </div>
+                                    <div class="yotpo-nav-content">
+                                        <div class="yotpo-reviews yotpo-active">
+                                            <div class="yotpo-review yotpo-regular-box" v-for="review in reviews">
+                                                <div class="yotpo-header yotpo-verified-user">
+                                                    <img src="images/head.png" width="50px" height="50px">
+                                                    <div class="yotpo-header-element"><label
+                                                            class="y-label yotpo-user-name yotpo-font-bold pull-left"
+                                                            v-text="review.userNickname"></label>
+                                                        <div class="yotpo-clr"></div>
+                                                        <span class="yotpo-review-stars">
+                                                            <span class="yotpo-icon yotpo-icon-star pull-left"></span>
+                                                            <span class="yotpo-icon yotpo-icon-star pull-left"></span>
+                                                            <span class="yotpo-icon yotpo-icon-star pull-left"></span>
+                                                            <span class="yotpo-icon yotpo-icon-star pull-left"></span>
+                                                            <span class="yotpo-icon yotpo-icon-star pull-left"></span>
+                                                        </span>
+                                                        <div class="yotpo-clr"></div>
                                                     </div>
-                                                    <div class="yotpo-main">
-                                                        <div class="content-title yotpo-font-bold"> 5 stars!</div>
-                                                        <div class="yotpo-clr"></div>
-                                                        <div class="yotpo-review-wrapper">
-                                                            <div class="content-review"> Bought a template here for my
-                                                                first time, after hours of selecting among others. Was
-                                                                worried that there may be some flaws, but instead I
-                                                                installed 52188 without any problems. Designed in solid
-                                                                business style, which is awesome! appreciate your work
-                                                                guys, thanks!
-                                                            </div>
-                                                        </div>
-                                                        <a href="https://yotpo.com/go/jxWylVXy" target="_blank">
-                                                            <div data-product-id="3877650" class="y-label product-link">
-                                                                On Business Drupal Template
-                                                            </div>
-                                                        </a></div>
-                                                    <div class="yotpo-footer">
-
-                                                        <div class="yotpo-helpful"><label class="y-label label-helpful">Was
-                                                            this review helpful?</label>
-                                                            <div class="yotpo-icon-btn-small transparent-color-btn vote-btn"
-                                                                 data-type="up"><span
-                                                                    class="yotpo-icon yotpo-icon-thumbs-up"></span>
-                                                            </div>
-                                                            <label class="y-label yotpo-sum vote-sum"
-                                                                   data-type="up">0</label>
-                                                            <div class="yotpo-icon-btn-small transparent-color-btn vote-btn"
-                                                                 data-type="down"><span
-                                                                    class="yotpo-icon yotpo-icon-thumbs-down"></span>
-                                                            </div>
-                                                            <label class="y-label yotpo-sum vote-sum"
-                                                                   data-type="down">0</label></div>
-
-                                                        <div class="yotpo-clr"></div>
+                                                    <div class="yotpo-header-element yotpo-header-actions"><label
+                                                            class="y-label yotpo-review-date"
+                                                            v-text="review.reviewDate"></label>
                                                     </div>
                                                 </div>
-                                                <div class="yotpo-review yotpo-regular-box " data-review-id="9586801">
-                                                    <div class="yotpo-header yotpo-verified-user "><span
-                                                            class="yotpo-icon-profile yotpo-header-element pull-left"> <label
-                                                            class="yotpo-user-letter">K</label> <span
-                                                            class="yotpo-icon yotpo-icon-circle-checkmark yotpo-action-hover"
-                                                            data-type="toggleFade" data-target="yotpo-tool-tip"></span> </span>
-                                                        <div class="yotpo-header-element"><label
-                                                                class="y-label yotpo-user-name yotpo-font-bold pull-left">Kristin
-                                                            K.</label>
-                                                            <div class="label-with-tooltip pull-left"><span
-                                                                    class="y-label yotpo-user-title yotpo-action-hover"
-                                                                    data-type="toggleFade" data-target="yotpo-tool-tip">Verified Reviewer</span>
-                                                            </div>
-                                                            <div class="yotpo-clr"></div>
-                                                            <span class="yotpo-review-stars"> <span
-                                                                    class="yotpo-icon yotpo-icon-star pull-left"></span><span
-                                                                    class="yotpo-icon yotpo-icon-star pull-left"></span><span
-                                                                    class="yotpo-icon yotpo-icon-star pull-left"></span><span
-                                                                    class="yotpo-icon yotpo-icon-star pull-left"></span><span
-                                                                    class="yotpo-icon yotpo-icon-star pull-left"></span> </span>
-                                                            <div class="yotpo-clr"></div>
+                                                <div class="yotpo-main">
+                                                    <div class="content-title yotpo-font-bold"> 5 stars!</div>
+                                                    <div class="yotpo-clr"></div>
+                                                    <div>
+                                                        <div class="content-review">
+                                                            Bought a template here for my
+                                                            first time, after hours of selecting among others. Was
+                                                            worried that there may be some flaws, but instead I
+                                                            installed 52188 without any problems. Designed in solid
+                                                            business style, which is awesome! appreciate your work
+                                                            guys, thanks!
                                                         </div>
-                                                        <div class="yotpo-header-element yotpo-header-actions"><label
-                                                                class="y-label yotpo-review-date">10/13/15</label></div>
                                                     </div>
-                                                    <div class="yotpo-main">
-                                                        <div class="content-title yotpo-font-bold"> I like it</div>
-                                                        <div class="yotpo-clr"></div>
-                                                        <div class="yotpo-review-wrapper">
-                                                            <div class="content-review"> Thank you very much for the
-                                                                template. I am working on this template for my friend. I
-                                                                have some skills with php, html, and css. So thank you
-                                                                for excellent services. Have a nice day.
-                                                            </div>
+
+                                                    <div class="star-rating-row rating-seller m-t-10 p-l-40" v-if="review.replyComment!=''">
+                                                        <div class="" style="float: left;position:absolute;left: 93px">
+                                                            <img class="user-pict-40" src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/profile/photos/310626/original/13407281_1434257183254888_6226247227060991463_n.jpg">
+                                                            <p>aahah</p>
                                                         </div>
-                                                        <a href="https://yotpo.com/go/jxWylVXy" target="_blank">
-                                                            <div data-product-id="3877650" class="y-label product-link">
-                                                                On Business Drupal Template
-                                                            </div>
-                                                        </a></div>
-                                                    <div class="yotpo-footer">
-
-                                                        <div class="yotpo-helpful"><label class="y-label label-helpful">Was
-                                                            this review helpful?</label>
-                                                            <div class="yotpo-icon-btn-small transparent-color-btn vote-btn"
-                                                                 data-type="up"><span
-                                                                    class="yotpo-icon yotpo-icon-thumbs-up"></span>
-                                                            </div>
-                                                            <label class="y-label yotpo-sum vote-sum"
-                                                                   data-type="up">0</label>
-                                                            <div class="yotpo-icon-btn-small transparent-color-btn vote-btn"
-                                                                 data-type="down"><span
-                                                                    class="yotpo-icon yotpo-icon-thumbs-down"></span>
-                                                            </div>
-                                                            <label class="y-label yotpo-sum vote-sum"
-                                                                   data-type="down">0</label></div>
-
-                                                        <div class="yotpo-clr"></div>
+                                                        <div class="msg-body" >
+                                                            Oh No! Sorry to hear this, very RARE to receive a bad
+                                                            review. after reviewing your order I found some
+                                                            inconsistencies with your feedback. 1)Your order was
+                                                            completed 10 days ago, not 1 month as indicated. 2) You did
+                                                            send me a message, but you gave me less than 4 hours to
+                                                            reply.
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="yotpo-review yotpo-regular-box " data-review-id="9645378">
-                                                    <div class="yotpo-header yotpo-verified-user "><span
-                                                            class="yotpo-icon-profile yotpo-header-element pull-left"> <label
-                                                            class="yotpo-user-letter">J</label> <span
-                                                            class="yotpo-icon yotpo-icon-circle-checkmark yotpo-action-hover"
-                                                            data-type="toggleFade" data-target="yotpo-tool-tip"></span> </span>
-                                                        <div class="yotpo-header-element"><label
-                                                                class="y-label yotpo-user-name yotpo-font-bold pull-left">Juliette</label>
-                                                            <div class="label-with-tooltip pull-left"><span
-                                                                    class="y-label yotpo-user-title yotpo-action-hover"
-                                                                    data-type="toggleFade" data-target="yotpo-tool-tip">Verified Reviewer</span>
-                                                            </div>
-                                                            <div class="yotpo-clr"></div>
-                                                            <span class="yotpo-review-stars"> <span
-                                                                    class="yotpo-icon yotpo-icon-star pull-left"></span><span
-                                                                    class="yotpo-icon yotpo-icon-star pull-left"></span><span
-                                                                    class="yotpo-icon yotpo-icon-star pull-left"></span><span
-                                                                    class="yotpo-icon yotpo-icon-star pull-left"></span><span
-                                                                    class="yotpo-icon yotpo-icon-empty-star pull-left"></span> </span>
-                                                            <div class="yotpo-clr"></div>
-                                                        </div>
-                                                        <div class="yotpo-header-element yotpo-header-actions"><label
-                                                                class="y-label yotpo-review-date">10/15/15</label></div>
-                                                    </div>
-                                                    <div class="yotpo-main">
-                                                        <div class="content-title yotpo-font-bold"> A bit difficult
-                                                        </div>
-                                                        <div class="yotpo-clr"></div>
-                                                        <div class="yotpo-review-wrapper">
-                                                            <div class="content-review"> Template is very nice and
-                                                                interesting because of its front page. I also missed
-                                                                some details by installation. The instructions were
-                                                                poor. Apart from that it is absolutely without problems.
-                                                            </div>
-                                                        </div>
-                                                        <a href="https://yotpo.com/go/jxWylVXy" target="_blank">
-                                                            <div data-product-id="3877650" class="y-label product-link">
-                                                                On Business Drupal Template
-                                                            </div>
-                                                        </a></div>
-                                                    <div class="yotpo-footer">
-                                                        <div class="yotpo-helpful"><label class="y-label label-helpful">Was
-                                                            this review helpful?</label>
-                                                            <div class="yotpo-icon-btn-small transparent-color-btn vote-btn"
-                                                                 data-type="up"><span
-                                                                    class="yotpo-icon yotpo-icon-thumbs-up"></span>
-                                                            </div>
-                                                            <label class="y-label yotpo-sum vote-sum"
-                                                                   data-type="up">0</label>
-                                                            <div class="yotpo-icon-btn-small transparent-color-btn vote-btn"
-                                                                 data-type="down"><span
-                                                                    class="yotpo-icon yotpo-icon-thumbs-down"></span>
-                                                            </div>
-                                                            <label class="y-label yotpo-sum vote-sum"
-                                                                   data-type="down">0</label></div>
 
-                                                        <div class="yotpo-clr"></div>
-                                                    </div>
+                                                    <a href="https://yotpo.com/go/jxWylVXy" target="_blank">
+                                                        <div class="y-label product-link">
+                                                            On Business Drupal Template
+                                                        </div>
+                                                    </a>
                                                 </div>
-                                                <div class="pagi-standard" style="display: block;">
-                                                    <a class="js-gtm-event-auto" data-gtm-action="click"
-                                                       data-gtm-category="gig-page-single"
-                                                       data-gtm-label="reviews-show-more" href="#"
-                                                       rel="noindex, nofollow">显示更多</a>
-                                                </div>
+                                            </div>
 
-                                                <div class="spinner"
-                                                     style=" position: relative;z-index: 1;top: 30%;left: 35%;">
-                                                    <div class="bounce1"></div>
-                                                    <div class="bounce2"></div>
-                                                    <div class="bounce3"></div>
-                                                </div>
+                                            <div class="pagi-standard" style="display: block;">
+                                                <a class="js-gtm-event-auto" data-gtm-action="click"
+                                                   data-gtm-category="gig-page-single"
+                                                   data-gtm-label="reviews-show-more" href="#"
+                                                   rel="noindex, nofollow">显示更多</a>
+                                            </div>
+
+                                            <div class="spinner"
+                                                 style=" position: relative;z-index: 1;top: 30%;left: 35%;">
+                                                <div class="bounce1"></div>
+                                                <div class="bounce2"></div>
+                                                <div class="bounce3"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane js-tab-questions hidden" id="tab-questions"></div>
+                        </div>
+                        <div class="tab-pane" id="tab-questions" v-if="currentTab=='faq'">
+                            <div class="gig-page-section gig-page-section-faq" style="width:100%;">
+                                <header>
+                                    <h4 class="gig-fancy-header">常见问题与解答</h4>
+                                </header>
+
+                                <ul class="component-accordion col-count-1 js-component-accordion">
+                                    <li :class="{'opened':faq.answerOpen}" @click="answerOpenToggle(index)" v-for="(faq,index) in faqs">
+                                        <header>What Information will I need to give you ?</header>
+                                        <div class="panel">To get started, I'll need your site URL and up to 3 keywords that you'd like to be found for, a short description of your site would be great too</div>
+                                    </li>
+                                </ul>
+
+                            </div>
                         </div>
                     </div>
-
-
                 </div>
-            </div>
 
-        </section>
-
-
-        <section class="mp-box  topline">
-
-
-            <div class="box-row  p-t-40 ">
-
-
-                <article class="mp-gig-carousel">
-
-                    <aside class="translated-by js-translated-by hidden">
-                        <p>Translated by</p>
-                    </aside>
-
-                    <header>
-                        <h2>
-
-
-                            Other Gigs By <a href="/sebski22">sebski22</a>
-
-                        </h2>
-                    </header>
-
-                    <div class="gig-carousel f-slider loading  cf "
-                         data-json-path="/gigs/other_gigs_by?host=gig_page&amp;type=endless&amp;limit=28&amp;user_id=237353&amp;gig_id=2819857"
-                         data-load-more="false"
-                         data-hide-empty="true"
-                         data-hide-parent="true"
-                         data-gigs-shown="4"
-                         data-do-sliding="true"
-                         data-two-lines="false"
-                         data-do-lazyload="false"
-                         data-on-viewport="false"
-                         data-do-endless="false"
-                         data-initial-gigs-received="0"
-                         data-is-small-gig="false"
-                         data-with-add-to-cart="false"
-                         data-host="gig_page"
-                         data-box-id="gig_page_sebski22_record-a-breaking-news-video-presentations"
-                         data-create-new-gig-btn="false"
-                         data-sellers-focused="false">
-
-                        <a class="slider-nav nav-prev js-slider-nav inactive" rel="nofollow"><span><i
-                                class="fa fa-chevron-left"></i></span></a>
-                        <a class="slider-nav nav-next js-slider-nav" rel="nofollow"><span><i
-                                class="fa fa-chevron-right"></i></span></a>
-
-
-                        <div class="slider-box">
-                            <div class="slider-hider cf"></div>
-                        </div>
-
-
-                    </div>
-
-
-                </article>
 
             </div>
-
-
-            <div class="box-row  p-t-40 p-b-30">
-
-
-                <article class="mp-gig-carousel">
-
-                    <aside class="translated-by js-translated-by ">
-                        <p>Translated by</p>
-                    </aside>
-
-                    <header>
-                        <h2>
-
-
-                            Recommended for you in <a href="/categories/video-animation/promotional-brand-videos">Promotional
-                            &amp; Brand Videos</a>
-
-                        </h2>
-                    </header>
-
-                    <div class="gig-carousel f-slider loading  cf "
-                         data-json-path="/recommendations/gig_page/2819857"
-                         data-load-more="false"
-                         data-hide-empty="true"
-                         data-hide-parent="true"
-                         data-gigs-shown="4"
-                         data-do-sliding="true"
-                         data-two-lines="false"
-                         data-do-lazyload="false"
-                         data-on-viewport="false"
-                         data-do-endless="false"
-                         data-initial-gigs-received="0"
-                         data-is-small-gig="false"
-                         data-with-add-to-cart="false"
-                         data-host="gig_page"
-                         data-box-id="gig_page_similar_record-a-breaking-news-video-presentations"
-                         data-create-new-gig-btn="false"
-                         data-sellers-focused="false">
-
-                        <a class="slider-nav nav-prev js-slider-nav inactive" rel="nofollow"><span><i
-                                class="fa fa-chevron-left"></i></span></a>
-                        <a class="slider-nav nav-next js-slider-nav" rel="nofollow"><span><i
-                                class="fa fa-chevron-right"></i></span></a>
-
-
-                        <div class="slider-box">
-                            <div class="slider-hider cf"></div>
-                        </div>
-
-
-                    </div>
-
-
-                </article>
-
-            </div>
-
-
-            <div class=""/>
-
-            <div class="box-row  p-b-30">
-
-
-                <article class="mp-gig-carousel gig-card-small">
-
-                    <aside class="translated-by js-translated-by ">
-                        <p>Translated by</p>
-                    </aside>
-
-                    <header>
-                        <h2>
-
-
-                            Your recently viewed gigs
-
-                        </h2>
-                        <a href="#!" class="js-clear-all">Clear All</a>
-                    </header>
-
-                    <div class="gig-carousel f-slider loading  cf "
-                         data-json-path="/recommendations/recently_viewed/gigs?exclude=2819857&amp;source_page=gig_page&amp;limit=50"
-                         data-load-more="false"
-                         data-hide-empty="true"
-                         data-hide-parent="true"
-                         data-gigs-shown="6"
-                         data-do-sliding="true"
-                         data-two-lines="false"
-                         data-do-lazyload="false"
-                         data-on-viewport="false"
-                         data-do-endless="false"
-                         data-initial-gigs-received="0"
-                         data-is-small-gig="true"
-                         data-with-add-to-cart="false"
-                         data-host="recently_viewed"
-                         data-box-id="gig_page_recently_viewed_f85df659-b3f5-4fcd-8772-486b73289408"
-                         data-create-new-gig-btn="false"
-                         data-sellers-focused="false">
-
-                        <a class="slider-nav nav-prev js-slider-nav inactive" rel="nofollow"><span><i
-                                class="fa fa-chevron-left"></i></span></a>
-                        <a class="slider-nav nav-next js-slider-nav" rel="nofollow"><span><i
-                                class="fa fa-chevron-right"></i></span></a>
-
-
-                        <div class="slider-box">
-                            <div class="slider-hider cf"></div>
-                        </div>
-
-
-                        <nav>
-                            <ul class="f-slider-circles">
-                            </ul>
-                        </nav>
-                    </div>
-
-
-                </article>
-
-            </div>
-
-
-    </div>
+        </div>
 
     </section>
 
 
-    <aside class="popup-base popup-order-social-share js-popup-gig-social-share">
+    <section class="mp-box  topline">
+        <div class="box-row  p-t-40 ">
+            <article class="mp-gig-carousel">
+                <header>
+                    <h2>Other Gigs By <a href="/sebski22">sebski22</a></h2>
+                </header>
+
+                <div class="gig-carousel f-slider loading  cf ">
+                    <a class="slider-nav nav-prev js-slider-nav inactive" rel="nofollow"><span><i
+                            class="fa fa-chevron-left"></i></span></a>
+                    <a class="slider-nav nav-next js-slider-nav" rel="nofollow"><span><i
+                            class="fa fa-chevron-right"></i></span></a>
+                    <div class="slider-box">
+                        <div class="slider-hider cf"></div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+
+        <div class="box-row  p-t-40 p-b-30">
+            <article class="mp-gig-carousel">
+                <header>
+                    <h2>向你提供的相关推荐 <a href="">Promotional
+                        &amp; Brand Videos</a>
+                    </h2>
+                </header>
+
+                <div class="gig-carousel f-slider loading  cf ">
+                    <a class="slider-nav nav-prev js-slider-nav inactive" rel="nofollow"><span><i
+                            class="fa fa-chevron-left"></i></span></a>
+                    <a class="slider-nav nav-next js-slider-nav" rel="nofollow"><span><i
+                            class="fa fa-chevron-right"></i></span></a>
+                    <div class="slider-box">
+                        <div class="slider-hider cf"></div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="box-row  p-b-30">
+            <article class="mp-gig-carousel gig-card-small">
+                <header>
+                    <h2>
+                        Your recently viewed gigs
+                    </h2>
+                    <a href="#!" class="js-clear-all">Clear All</a>
+                </header>
+
+                <div class="gig-carousel f-slider loading  cf ">
+                    <a class="slider-nav nav-prev js-slider-nav inactive" rel="nofollow"><span><i
+                            class="fa fa-chevron-left"></i></span></a>
+                    <a class="slider-nav nav-next js-slider-nav" rel="nofollow"><span><i
+                            class="fa fa-chevron-right"></i></span></a>
+                    <div class="slider-box">
+                        <div class="slider-hider cf"></div>
+                    </div>
+                    <nav>
+                        <ul class="f-slider-circles">
+                        </ul>
+                    </nav>
+                </div>
+
+            </article>
+
+        </div>
+    </section>
+
+
+    <aside class="popup-base popup-order-social-share">
 
         <header>
             <a href="#!" class="btn-close js-btn-close">&times;</a>
@@ -1827,7 +924,7 @@
 
         <footer>
 
-            <form class="email-delivery-share js-email-delivery-share" id="email-gig-delivery">
+            <form class="email-delivery-share" id="email-gig-delivery">
                 <input buyable_type=""
                        class="btn-standard-lrg btn-white email js-gtm-event js-fiverr-event js-share-delivery-data"
                        data-fiverr-event="email_send" data-gtm-action="order-page-delivery" data-gtm-event="social"
@@ -1881,7 +978,41 @@
     </div>
 </footer>
 </div>
+<script src="js/service-detail.js"></script>
+<script language="javascript">
 
-<script src="js/service-details.js"></script>
+
+    window.onbeforeunload = function() //author: meizz
+    {
+        var n = window.event.screenX - window.screenLeft;
+        var b = n > document.documentElement.scrollWidth-20;
+        if(b && window.event.clientY < 0 || window.event.altKey)
+        {
+            alert("是关闭而非刷新");
+            window.event.returnValue = "kkkkkkkkkkkkkkkkk"; //这里可以放置你想做的操作代码
+        }
+    }
+
+
+
+
+    var second = 0;
+    var minute = 0;
+    var hour = 0;
+    window.setInterval("OnlineStayTime();", 1000);
+    function OnlineStayTime() {
+        second++;
+        if (second == 60) {
+            second = 0;
+            minute++;
+        }
+        if (minute == 60) {
+            minute = 0;
+            hour++;
+        }
+//window.status = "停留时间" + hour + ":" + minute + ":" + second;
+//接触注释讲在页面关闭时弹出用户在页面停留时间。
+    }
+</script>
 </body>
 </html>

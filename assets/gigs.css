@@ -3766,7 +3766,7 @@ html.no-svg .db-manage-requests-new-resume .educational-resume-header li:before 
 
 .gig-page-section {
     border: 1px solid #dddddd;
-    margin-bottom: 20px
+    /*margin-bottom: 20px*/
 }
 
 .gig-page-section.gig-page-section-reviews {
@@ -5520,7 +5520,7 @@ ul.packages-list > li .package-expander a.btn-standard-lrg {
     text-align: center
 }
 
-.mp-gig-review .reviews-list li h4, .mp-gig-review .reviews-list li p, .mp-gig-review .reviews-list li .msg-body {
+.mp-gig-review .reviews-list li h4, .mp-gig-review .reviews-list li p,  .msg-body {
     color: #0e0e0f;
     font-size: 14px;
     line-height: 20px;
@@ -5696,7 +5696,7 @@ ul.packages-list > li .package-expander a.btn-standard-lrg {
 .preview-tabs .tab-content .tab-pane {
     min-height: 200px;
     display: block;
-    padding: 20px 35px
+    /*padding: 20px 35px*/
 }
 
 .preview-tabs .tab-content .tab-pane > h2 {
@@ -5781,7 +5781,7 @@ ul.packages-list > li .package-expander a.btn-standard-lrg {
 }
 
 .preview-tabs #tab-questions {
-    padding: 2px 35px 40px
+    /*padding: 2px 35px 40px*/
 }
 
 .preview-tabs #tab-questions h3 {
@@ -6103,6 +6103,10 @@ ul.packages-list > li .package-expander a.btn-standard-lrg {
     min-width: 20px;
     max-width: 250px;
 }
+.yotpo .yotpo-nav li .reviewchosen{
+    border-color: #1c639f;!important;
+}
+
 .yotpo .yotpo-nav ul .yotpo-nav-tab.yotpo-active span {
     color: #1c639f;
 }

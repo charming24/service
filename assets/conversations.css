@@ -4718,7 +4718,7 @@ html.no-svg .db-sidebar.todo-sidebar .todo-cta p:after {
     min-height: 600px
 }
 
-.db-edit-gig .edit-gig-form-wrap .gig-edit-form-section {
+.db-edit-gig .edit-gig-form-wrap .show-edit-form-section {
     position: relative;
     -webkit-transition: height 2s ease-in-out;
     -moz-transition: height 2s ease-in-out;
@@ -4746,13 +4746,13 @@ html.no-svg .db-sidebar.todo-sidebar .todo-cta p:after {
     z-index: 100;
 }
 
-.db-edit-gig .edit-gig-form-wrap .gig-edit-form-section h2 {
+.db-edit-gig .edit-gig-form-wrap .show-edit-form-section h2 {
     font-size: 28px;
     line-height: 31px;
     padding-bottom: 10px
 }
 
-.db-edit-gig .edit-gig-form-wrap .gig-edit-form-section h2.gig-edit-sec-ttl {
+.db-edit-gig .edit-gig-form-wrap .show-edit-form-section h2.show-edit-sec-ttl {
     margin-top: -8px;
     font-size: 40px;
     line-height: 43px;
@@ -4760,18 +4760,18 @@ html.no-svg .db-sidebar.todo-sidebar .todo-cta p:after {
     color: #00668c
 }
 
-.db-edit-gig .edit-gig-form-wrap .gig-edit-form-section h3 {
+.db-edit-gig .edit-gig-form-wrap .show-edit-form-section h3 {
     font-size: 18px;
     line-height: 23px
 }
 
-.db-edit-gig .edit-gig-form-wrap .gig-edit-form-section h3.gig-edit-sec-sttl {
+.db-edit-gig .edit-gig-form-wrap .show-edit-form-section h3.show-edit-sec-sttl {
     font-size: 24px;
     line-height: 31px;
     text-align: center
 }
 
-.db-edit-gig .edit-gig-form-wrap .gig-edit-form-section h4.gig-edit-shipping-check {
+.db-edit-gig .edit-gig-form-wrap .show-edit-form-section h4.gig-edit-shipping-check {
     margin-top: 15px;
     padding-bottom: 30px;
     font-size: 16px;
@@ -4780,7 +4780,7 @@ html.no-svg .db-sidebar.todo-sidebar .todo-cta p:after {
     font-weight: 700
 }
 
-.db-edit-gig .edit-gig-form-wrap .gig-edit-form-section p.section-description {
+.db-edit-gig .edit-gig-form-wrap .show-edit-form-section p.section-description {
     display: block;
     font-size: 20px;
     line-height: 23px
@@ -4788,23 +4788,23 @@ html.no-svg .db-sidebar.todo-sidebar .todo-cta p:after {
 
 
 
-.db-edit-gig .edit-gig-form-wrap .gig-edit-form-section .upload-explain {
+.db-edit-gig .edit-gig-form-wrap .show-edit-form-section .upload-explain {
     color: #dddddd;
     font-size: 24px;
     line-height: 34px;
     padding: 15px 0 25px 0
 }
 
-.db-edit-gig .edit-gig-form-wrap .gig-edit-form-section .upload-explain li {
+.db-edit-gig .edit-gig-form-wrap .show-edit-form-section .upload-explain li {
     counter-increment: level1
 }
 
-.db-edit-gig .edit-gig-form-wrap .gig-edit-form-section .upload-explain li:before {
+.db-edit-gig .edit-gig-form-wrap .show-edit-form-section .upload-explain li:before {
     content: counter(level1) " ";
     font-weight: 700
 }
 
-.db-edit-gig .edit-gig-form-wrap .gig-edit-form-section .upload-explain em {
+.db-edit-gig .edit-gig-form-wrap .show-edit-form-section .upload-explain em {
     color: #555555;
     font-size: 14px;
     padding-left: 10px;
@@ -4813,7 +4813,7 @@ html.no-svg .db-sidebar.todo-sidebar .todo-cta p:after {
 }
 
 
-.db-edit-gig .edit-gig-form-wrap .gig-edit-form-section:after {
+.db-edit-gig .edit-gig-form-wrap .show-edit-form-section:after {
     content: "";
     position: absolute;
     bottom: -4px;
@@ -4823,18 +4823,18 @@ html.no-svg .db-sidebar.todo-sidebar .todo-cta p:after {
     background: #fff url("//cdnil20.fiverrcdn.com/assets/v2_backgrounds/bg-order-divi-top-7ebeb95a8abba22d253473d5bc9e617b.png") repeat-x center 0
 }
 
-.db-edit-gig .edit-gig-form-wrap .gig-edit-form-section ul.gig-video-samples {
+.db-edit-gig .edit-gig-form-wrap .show-edit-form-section ul.gig-video-samples {
     padding-top: 25px
 }
 
-.db-edit-gig .edit-gig-form-wrap .gig-edit-form-section ul.gig-video-samples li {
+.db-edit-gig .edit-gig-form-wrap .show-edit-form-section ul.gig-video-samples li {
     width: 170px;
     height: 120px;
     padding: 0 50px 10px 0;
     display: inline-block
 }
 
-.db-edit-gig .edit-gig-form-wrap .gig-edit-form-section ul.gig-video-samples li:last-child {
+.db-edit-gig .edit-gig-form-wrap .show-edit-form-section ul.gig-video-samples li:last-child {
     padding-right: 0
 }
 
@@ -5459,14 +5459,14 @@ html.no-svg .db-sidebar.todo-sidebar .todo-cta p:after {
     font-weight: 400
 }
 
-.db-edit-gig .edit-gig-form-wrap .gig-extra-section.gig-edit-form-section p.section-description {
+.db-edit-gig .edit-gig-form-wrap .gig-extra-section.show-edit-form-section p.section-description {
     float: right;
     font-weight: 400;
     font-size: 14px;
     padding-top: 8px
 }
 
-.db-edit-gig .edit-gig-form-wrap .gig-extra-section.gig-edit-form-section p.section-description strong {
+.db-edit-gig .edit-gig-form-wrap .gig-extra-section.show-edit-form-section p.section-description strong {
     font-size: 18px
 }
 
@@ -5763,58 +5763,31 @@ html.no-svg .db-sidebar.todo-sidebar .todo-cta p:after {
     transition: opacity 0.4s
 }
 
-.db-edit-gig .edit-gig-form-wrap #gig-edit-share {
+.db-edit-gig .edit-gig-form-wrap #show-edit-share {
     padding-bottom: 0
 }
 
-.db-edit-gig .edit-gig-form-wrap #gig-edit-share .gig-edit-content {
+.db-edit-gig .edit-gig-form-wrap #show-edit-share .show-edit-content {
     margin-top: 15px;
     padding-top: 15px;
     border-top: 1px solid #dddddd
 }
-
-.db-edit-gig .edit-gig-form-wrap #gig-edit-share .gig-edit-content .social-link {
-    position: relative;
-    font-size: 14px;
+.db-edit-gig .edit-gig-form-wrap #show-edit-share .show-edit-content .publish-success-action {
+    margin: 0 auto;
     text-align: center;
-    margin: 15px auto;
-    width: 180px
+    width:400px;
+    height: 50px;
 }
-
-.db-edit-gig .edit-gig-form-wrap #gig-edit-share .gig-edit-content .social-link a {
-    display: none;
-    position: absolute;
-    z-index: 1;
-    top: 8px;
-    right: -40px;
-    font-weight: 700;
-    font-size: 13px;
-    margin-left: 4px
+.db-edit-gig .edit-gig-form-wrap #show-edit-share .show-edit-content a {
+    line-height: 50px;
+    font-size:18px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px 30px;
+    color:#fff;
+    background-color: #00b22d;
+    margin:0 10px
 }
-
-.db-edit-gig .edit-gig-form-wrap #gig-edit-share .gig-edit-content .social-link input {
-    width: 180px;
-    padding-left: 30px
-}
-
-.db-edit-gig .edit-gig-form-wrap #gig-edit-share .gig-edit-content .social-link input.processing {
-    background: #f2f2f2 url("//cdnil20.fiverrcdn.com/assets/v2_buttons/btn-progress-ddd-45f91d251d41c4ea973fc218332762ea.gif") no-repeat center center
-}
-
-.db-edit-gig .edit-gig-form-wrap #gig-edit-share .gig-edit-content .social-link:before {
-    content: "";
-    background: transparent url("//cdnil20.fiverrcdn.com/assets/v2_globals/icn-master-small-b1960bdd84446a5d4f6fb2033318459c.png") no-repeat 0 0;
-    position: absolute;
-    z-index: 1;
-    display: block;
-    overflow: hidden;
-    background-position: -550px -900px;
-    width: 18px;
-    height: 19px;
-    top: 6px;
-    left: 6px
-}
-
 .db-edit-gig .edit-gig-form-wrap .gig-edit-share-container {
     margin-top: 30px;
     text-align: center
